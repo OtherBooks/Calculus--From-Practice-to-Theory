@@ -1,0 +1,71 @@
+\documentclass[oneside]{book}
+%\documentclass[]{book}
+\input{CalcHeaders.tex}
+\input{Calcmacs.tex}
+
+%% Uncomment the line below to prevent the \hyperref macro from
+%% throwing errors on Windows
+%%\input{HypDel.tex}
+
+% \textwidth=410pt
+% \oddsidemargin=10pt
+\textwidth=390pt
+
+% \makeindex{general}
+% \makeindex{embeddedproblems}
+% \makeindex{notation}
+
+\begin{document}
+\title{Calculus: From Practice to Theory}
+\author{Eugene Boman \\The Pennsylvania State University, \\Harrisburg
+  campus\\[5mm]Robert Rogers \\State University of New York \\at
+  Fredonia }
+\maketitle
+\date{}
+%\newpage{}
+\tableofcontents{}
+\bibliographystyle{plain}
+%%%\baselineskip=1cm
+
+\include{ProblemSolving}
+
+\include{Introduction}
+% \include{PreCalc}
+
+\part{Differential Calculus: Practice}
+\newpage{}
+\include{ScienceBeforeCalculus}
+\include{Differentials}
+\include{LastElementaryFunctions}
+
+\include{RatesOfChange}
+\include{Optimization}
+\include{Diffeqs}
+
+\part{Differential Calculus: Theory}
+\include{Foundations}
+ \include{Applications}
+% \newpage{}
+
+\part{Integral Calculus: Practice}
+ \newpage{}
+ \newpage{}
+\include{FTC}
+\include{ApplicationsOfIntegration}
+\include{TaylorSeries}
+
+\part{Integral Calculus: Theory}
+\part{Temporary Holding Area}
+% \include{HoldingArea}
+% \include{HW-Holding}
+
+% \printindex{general}{Index}
+% \printindex{embeddedproblems}{Embedded Problems}
+% \printindex{notation}{Notations}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
