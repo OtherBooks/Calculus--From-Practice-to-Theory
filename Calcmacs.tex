@@ -1,0 +1,262 @@
+\def\halmos{\mbox{\raggedright\rule{0.1in}{0.1in}}}
+\newcommand{\xqedhere}[2]{%
+  \rlap{\hbox to#1{\hfil\llap{\ensuremath{#2}}}}}
+
+% \usepackage{chngcntr}               
+% \counterwithout{section}{chapter} %reformats displayed section numbers
+                                    %to not include the chapter number
+
+%\renewcommand{\chaptername}{} % removes the word "Chapter" from
+                               % chapter headings
+
+\newcommand{\xqed}[1]{%
+  \leavevmode\unskip\penalty9999 \hbox{}\nobreak\hfill
+  \quad\hbox{\ensuremath{#1}}}
+
+% \newcommand{\qedfilled}{\nobreak \ifvmode \relax \else
+%       \ifdim\lastskip<1.5em \hskip-\lastskip
+%       \hskip1.5em plus0em minus0.5em \fi \nobreak
+%       \vrule height0.75em width0.5em depth0.25em\fi}
+\def\google{{\bf{}{\textcolor{blue}G}{\textcolor{red}o}{\textcolor{yellow}o}{\textcolor{blue}g}{\textcolor{green}l}{\textcolor{red}e}}}
+\def\abs#1{\left|#1\right|}
+% \newenvironment{ProofOutline}{{\bf Sketch of Proof:}}{\hfill{}QED?\\}
+% \newenvironment{hint}{\noindent{}\hfill\\{\rm\bf Hint: }}{}
+\newenvironment{scrapwork}{\noindent{}\hfill\\{\bf{} SCRAPWORK}:
+}{\bf\hfill\\ END OF SCRAPWORK} 
+%\newenvironment{hmmm}{{\bf Something to think about:\,}}{\hfill Hmmm\ .\ .\ .}
+%\renewenvironment{proof}{\noindent{}{\bf Proof:\,}}{\hfill\halmos{}\\[2mm]}
+
+\newenvironment{myproof}{\noindent{}{\bf Proof:\,}}{\hfill \halmos{}\\[2mm]}
+
+
+%% Set up margin notes
+\setlength{\marginparwidth}{1.2in}
+\let\oldmarginpar\marginpar
+\renewcommand\marginpar[1]{\-\oldmarginpar[\raggedleft\footnotesize #1]%
+{\raggedright\footnotesize #1}}
+%
+
+
+
+%%%% Parameters to control what's visible
+%\def\ShowBomanP{0}
+% \def\ShowSolutionsP{0}
+% \def\solution#1{\ifnum\ShowSolutionsP=1 {{\bf Solution: }#1}\fi}
+
+%\def\problem{\addcontentsline{toc}{}{\ \\\noindent{}Problem \theproblem}\ \\\#\#\#\# {\sc EndProblem }\\}
+%\def\LabelProblem#1#2{\label{#1}\index{Problem!#2}\addcontentsline{toc}{subsection}{\hskip1cm Problem~\ref{#1}}}
+
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\unif}{\stackrel{unif}{\longrightarrow}}
+\newcommand{\ptwise}{\stackrel{ptwise}{\longrightarrow}}
+
+\newcommand{\CC}{\mathbb {C}}
+\newcommand{\DD}{\mathbb {D}}
+\newcommand{\RR}{\mathbb {R}}
+\newcommand{\QQ}{\mathbb {Q}}
+\newcommand{\NN}{\mathbb {N}}
+\newcommand{\ZZ}{\mathbb {Z}}
+
+
+%\newtheorem{problem}{Problem}%{\ \hfill{}\bowtie{}\\[2mm]}}
+%\newtheorem{definition}{Definition}
+\newtheorem{mytheorem}{Theorem}
+\newtheorem*{myconjecture}{Conjecture}
+\newtheorem{mycorollary}{Corollary}
+\newtheorem{mylemma}{Lemma}
+
+\def\IndexProblem#1#2{\index{problems}{Problem~\ref{#1}, {#2}}}
+
+% When I refer to the counter "definition" in the latex file it gives
+% me both a chapter number and the definition counter, e.g. 2.1
+% instead of just 1. To solve this model the definition environment on
+% the myexample environment
+\newcounter{definition}
+\refstepcounter{definition}
+%\newenvironment{definition}[1]{{\ \vskip2mm\noindent{\bf Definition \thedefinition:#1 {}}}}{\refstepcounter{definition}{\ \hfill$\bowtie{}$\vskip2mm{}}}
+\newenvironment{definition}[1]
+{
+  {\ \vskip2mm\noindent
+    {
+      \bf Definition \thedefinition:
+    }
+  }
+  #1
+}
+{
+  {
+    \ \hfill$\bowtie{}$\vskip2mm{}
+  }
+  \refstepcounter{definition}
+}
+
+
+
+\newcounter{myexample}
+\newenvironment{myexample}[1][]
+{\refstepcounter{myexample}\par\medskip\noindent%
+   \textcolor{red}{\textbf{Example~\themyexample: #1}} \rmfamily}
+{
+  \ \\
+  \textcolor{red}{\bf End Of Example~\themyexample.}
+}
+
+% \newcounter{myexample}
+% \setcounter{myexample}{1}
+% %\refstepcounter{myexample}
+% \newenvironment{myexample}[1]
+% {
+%   {\ \newline{}\noindent
+%     {
+%       \bf \textcolor{red}{Example \themyexample:{}}
+%     }
+%   }
+%   #1
+% }
+% {
+%   \refstepcounter{myexample}
+%   {
+%    \ \\\hfill{\textcolor{red}{\sc End Of Example}}%$\bowtie{}$
+% \vskip1mm{}
+% %    \vskip2mm
+% %\hrule\vskip1mm
+%   }
+% }
+
+
+% \newcounter{notation}
+% \stepcounter{notation}
+%  \newenvironment{notation}[2]{{\ \vskip2mm{}\noindent\underline{\bf #1 Notation:}\index{Notation!#1} #2 }}{\refstepcounter{notation}{\ \hfill$\bowtie{}$\vskip2mm{}}}
+\newcounter{mynotation}
+\stepcounter{mynotation}
+% \newenvironment{notation}[2]
+% {
+%   \begin{center}
+%     \begin{minipage}{4.5in}
+%       \ \vskip2mm{}
+%       \noindent
+%       \underline{\bf #1 Notation:} \index{notation}{Notation!#1} #2
+%     \end{minipage}{}
+%   \end{center}
+% }
+% {
+%   \refstepcounter{notation}
+%   {
+%     %%% \ \hfill$\bowtie{}$
+%     \vskip2mm{}
+%   }
+% }
+\newenvironment{mynotation}[1]
+{
+  \begin{center}
+%    \begin{minipage}{4.5in}
+%      \ \vskip2mm{}
+      \underline{\bf#1 Notation:} %\index{notation}{#1} \index{general}{Notation!#1} 
+%    \end{minipage}{}
+  \end{center}
+}
+{
+  \refstepcounter{mynotation}
+  {
+    \ \\
+    \centerline{$\bowtie{}\kern-6pt\bowtie{}\kern-6pt\bowtie{}\kern-6pt\bowtie{}\kern-6pt\bowtie{}\kern-6pt\bowtie{}\kern-6pt\bowtie{}\kern-6pt\bowtie{}\kern-6pt\bowtie{}\kern-6pt\bowtie{}\kern-6pt\bowtie{}\kern-6pt\bowtie{}\kern-6pt\bowtie{}\kern-6pt$}
+    \vskip2mm{}
+  }
+}
+
+% \newcounter{embeddedproblem}
+% \stepcounter{embeddedproblem}
+% \newenvironment{embeddedproblem}[1]{{\ \newline{}\noindent{\bf
+%        \textcolor{blue}{Problem in Context \#\theembeddedproblem:}}\\{}{\indent{}#1} 
+%   }}{{\ \\\bf{}\textcolor{blue}{End of Problem \#\theembeddedproblem{}}\\[2mm]}\refstepcounter{embeddedproblem}}
+\newcounter{embeddedproblem}
+\stepcounter{embeddedproblem}
+\newenvironment{embeddedproblem}[1]
+{
+  {\ \newline{}\noindent
+    {
+      \bf
+      \textcolor{blue}{Problem in Context \#\theembeddedproblem:}
+     }\\
+     {}
+     {
+       \indent{}#1
+     } 
+   }
+ }
+ {
+   {
+     \ \\\bf{}\textcolor{blue}{End of Problem \#\theembeddedproblem{}}\\[2mm]
+   }
+%   \index{embeddedproblems}{Problem \#\theembeddedproblem{} }
+   \index{Problem \#\theembeddedproblem{} }
+   \refstepcounter{embeddedproblem}
+ }
+
+% \newcounter{embeddedproblem}
+% \stepcounter{embeddedproblem}
+% \newenvironment{embeddedproblem}[1]{{\ \newline{}\noindent{\bf
+%        Problem in Context \#\theembeddedproblem:\\{}{#1}} 
+%   }}{{\ \\\bf{}End of Problem \#\theembeddedproblem{}\\[2mm]}\refstepcounter{embeddedproblem}}
+
+
+\newcounter{problem}
+\stepcounter{problem}
+%  \newenvironment{problem}[1]{{\ \newline{}\noindent{\bf Problem
+%        \thesection.\theproblem:} {#1} }}{\stepcounter{problem}{\
+%      \hfill}\vskip.1mm}
+\newenvironment{myproblem}[1]{{\ \newline{}\noindent{\bf Problem
+       \thesection.\theproblem:} {#1} }}{\stepcounter{problem}{\
+     \hfill}\vskip.1mm}
+
+% \newcounter{problem}
+% \stepcounter{problem}
+% \newenvironment{problem}[1]{{\ \newline{}\noindent{\bf Problem
+%       \thechapter.\theproblem#1: {}}}}{\stepcounter{problem}{\
+%     \hfill}\vskip.1mm{}}
+
+\newenvironment{ProblemSection}{
+  \setcounter{problem}{1}
+  \section*{}\ %\newpage{}
+  \centerline{\sc\Large Exercises}\vskip3mm{}\hrule\vskip2mm{}}{\hrule\newpage{}}
+% \newenvironment{ProblemSection}{
+%   \setcounter{problem}{1}
+%   \section*{}\ \newline{}
+%   \centerline{\sc\Large Exercises}\\\hrule}{\hrule\newpage{}}
+
+
+%\def\digress#1{{\sc #1:}}
+\def\digress#1{\vskip5mm{\centerline{\bf{}{\sc{} Foreshadowing: #1}}}}
+\def\enddigress#1{{\large\ \\\centerline{{\sc{}************************************}}\vskip5mm{}}}
+%\def\enddigress#1{{\large\ \\\noindent{\sc #1}}}
+
+\def\aptta{{\large\bf A Problem to Think About:\\}}
+\def\endaptta{\ \\\centerline{*********************}\\}
+%\def\endaptta{{\ \\\hrulevskip5mm}}
+%\def\endaptta{\hrule}
+
+%%% macros for generic formatting
+\def\imp{\ \Rightarrow\ }
+\def\abs#1{\left|#1\right|}
+\def\limit#1#2#3{{\displaystyle\lim_{#1\rightarrow #2}#3}}
+\def\inverse#1{#1^{-1}}
+\def\IsDefinedAs{\stackrel{def}{\equiv}}
+\def\d#1{\thinspace{\rm d}#1}
+\def\dfdx#1#2{\frac{\text{d}{#1}}{\text{d}{#2}}} 
+\def\partialfx#1#2{\frac{\partial{#1}}{\partial{#2}}} 
+\def\partialfxn#1#2#3{\frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}} 
+\def\dfdxn#1#2#3{\frac{\text{d}^{#3}{#1}}{\text{d}{#2}^{#3}}} 
+\def\dfdxat#1#2#3{\left.{}\frac{\text{d}{#1}}{\text{d}{#2}}\right|_{#3}}
+
+\def\DefiniteIntegral#1#2#3#4{\int_#1^#2#3\d{#4}}
+\def\IndefiniteIntegral#1#2{\int#1\d{#2}}
+\def\PrimeDerivative#1{#1^\prime}
+
+\def\InsertGraphic#1{    \centerline{
+      {\sc insert graphic here:} #1}    }
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

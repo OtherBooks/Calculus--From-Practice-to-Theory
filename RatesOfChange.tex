@@ -1,0 +1,1835 @@
+\chapter{Motion, Rates of Change, Tangent Lines}
+  \label{chapt:RatesOfChange}
+\markright{{\sc Motion, Tangent Lines, and Shapes}}
+
+
+It is a truth universally acknowledged that the Calculus was the
+invention (discovery?) of two men, Isaac Newton $(1643-1727)$ and
+Gottfried Wilhelm von Leibniz $(1646-1716).$ Newton developed his
+ideas at his home of Woolsthorpe Manor in Lincolnshire while Cambridge
+University was closed by a plague in the summer of $1665.$ In a period
+of less than two years he made the extraordinary advances while still
+under the age of $25.$ Independently Leibniz developed his ideas
+during the period 1673-1675 while serving as a diplomat in Paris. He
+wrote the first paper\footnote{The rather cumbersome title of Leibniz
+  $1684$ paper: \emph{A New Method for Maxima and Minima, as Well as
+    Tangents, Which is Impeded Neither by Fractional nor Irrational
+    Quantities, and a Remarkable Type of Calculus for This,} is very
+  revealing.  Clearly, the problem of optimizing (finding maxima and
+  minima) is of central importance and somehow finding tangent lines
+  to curves is involved.  That this is a \underline{\emph{new}} method
+  means that other methods were available first.} about calculus in
+$1684.$
+
+
+As with most scientific discoveries, although they are given credit,
+it is a mistake to believe that these two men worked in isolation.
+Indeed, Newton is frequently quoted as saying, ``If I have seen
+further than others, it is by standing upon the shoulders of giants,''
+and, Leibniz remarks in his paper that ``Other very learned men have
+sought in many devious ways what someone versed in this calculus can
+accomplish in these lines as by magic.''
+
+\section{Rates of Change}
+\label{sec:rates-change}
+
+One of the ``learned giants'' that Newton and Leibniz referred to was
+Galileo Galilei (1564-1642).
+
+Galileo was interested in questions like these: Suppose you throw a
+ball straight up into the air with an initial velocity of \(15\)
+meters per second.  How high will the ball go?  How long will it take
+for it to hit the ground?  What will its velocity be at impact?  If
+you throw the ball up with twice as much initial velocity will it go
+twice as high?
+
+% These are interesting on their own. However Newton observed that many
+% physical problems that are not about velocity or acceleration can be
+% analyzed as if they are. That is, the mathematics is the same. We need
+% only change the way we think about the meaning of our symbols.
+
+We will spend some time examining how Calculus is used to describe the
+motion of objects. If physics isn't your particular interest be
+assured that this is only a starting point. Calculus is applicable to
+the real world far beyond physics. However it was first invented as a
+way to describe motion, and the language of Calculus reflects
+this. Moreover, motion will serve as the foundational metaphor for
+many of the other applications so it is well worth out time to
+understand this fundamental problem very well before proceeding.
+
+Of course, an object falling freely under the influence of Earth's
+gravity gets moving pretty quickly so it's speed can be hard to
+measure and the tools for measuring time in Galileo's day were limited
+to say the least. He slowed things down by letting small balls roll
+down a ramp assuming, correctly, that friction with the ramp would not
+significantly influence his measurements or computations. He noticed
+that the balls always accelerated at a constant rate which depended on
+the steepness the ramp. That is, the ball's velocity increased at a
+constant rate. More precisely, the acceleration of the rolling ball varied with the
+angle $\theta,$ as in this diagram. \\
+\centerline{\includegraphics*[height=2in,width=1in,angle=90]{Figures/GalileoRamp}}
+
+
+%%% working wraptable example
+%  \begin{wraptable}[]{r}{1.75in}
+%  \begin {tabular}{llc}
+%  \hline %
+%  \multicolumn{2}{c}{Sample} & Roughness $ R_ a $\\
+%  & & ( nm )\\\hline %
+%  A & ring & 385\\\cline{2 -3}
+%  & plate & 397\\\hline
+%  B & ring & 376\\\cline{2 -3}
+%  & plate & 390\\\hline
+%  \end {tabular}
+%  \end{wraptable}
+ \begin{wraptable}[]{r}{1.75in}
+ \begin{tabular}{c|c}
+ \hline
+   $\theta$ &Acceleration\\
+      (in radians)      & in $(m/s^2)$\\[2mm]
+ \hline{}
+   $\pi/3$&4.9\\
+   $\pi/4$&6.93\\
+   $\pi/6$&8.49\\
+   $\pi/12$&9.47\\
+   $\pi/24$&9.72\\
+   $\pi/48$&9.78\\
+   $\pi/100$&9.795\\
+   $\pi/200$&9.799\\
+   $\pi/300$&9.799\\\hline
+ \end{tabular}
+ \end{wraptable}
+When $\theta=\pi/2$ clearly the ball doesn't move so its acceleration
+is zero. When $\theta=0$ the ball accelerates freely under the
+influence of gravity. Galileo measured the acceleration associated
+with steeper and steeper ramps (that is for $\theta$ closer and closer
+to zero) obtaining a table of values for similar to the one at the right. 
+From this table it is clear that as $\theta$ gets closer and closer to
+zero the acceleration is getting closer and closer to $9.8.$ Thus
+Galileo  deduced that when there is no ramp (when
+$\theta =0$) the \emph{velocity} will increase each second by $9.8\,
+m/s.$ 
+
+That is, the \emph{acceleration} of an object falling under the
+influence of the earth's gravity is $9.8$ meters per second each
+second. This is usually abbreviated as $9.8\,m/s^2.$ 
+\begin{embeddedproblem}{}
+  Actually, Galileo wouldn't have made that many measurements. Instead
+  he would have made one measurement very carefully and deduced the
+  vertical acceleration, $g=9.8 m/s^2,$  from that. 
+
+  Use the first line of the table above and the following diagram, and
+  the knowledge that $\cos\left(\frac{\pi}{6}\right)=\frac12$\\ 
+\InsertGraphic{}
+  to deduce that $g=9.8.$
+\end{embeddedproblem}
+This means that as an object falls its \emph{velocity} increases at the
+constant rate of \(9.8\, m/s\) every second so we have $v=9.8t.$ If we
+drop the ball from some height, then initially its initial velocity is
+zero. It is not moving. After one second it will be falling at a rate
+of \(9.8\,m/s,\) after two seconds, its speed will be
+\(9.8\times2=19.6\,m/s,\) etc.
+
+In general, if the ball's \underline{velocity} in meters per second
+($m/s$) is changing at a constant rate, say $r$ meters per second, per
+second ($m/s^2$) and $t$ is the number of elapsed seconds then
+$$
+v=rt.
+$$
+We can verify that this is correct\footnote{Or nearly so.} by looking
+at the  units of measurement. Since the acceleration, $r,$ is measured
+in $m/s^2$ and $t$ is measured in seconds when they are multiplied the
+obvious symbolic cancellation gives
+$$
+m/s^2\cdot s = m/s
+$$
+or meters per second, which are the units of measurement of velocity
+as they should be.
+
+Of course the specific value of $9.8\,m/s$  is an artifact of the units
+we've chosen to measure distance (meters) and the fact that we are on
+the surface of a particular planet. If we measure distance in feet
+instead then a falling object will accelerate at $32 ft/s^2.$ If we
+are on the surface of the moon it will accelerate at $1.6\, m/s.$
+
+\begin{embeddedproblem}{}
+  Show that if we measure distance in feet the acceleration constant
+  on the moon is $5.2 m/s^2.$
+\end{embeddedproblem}
+
+
+\subsection{The Simplest Case: A Dropped Ball}
+\label{subsec:simpl-case:-dropp}
+
+To begin we will only consider the case of an object falling
+vertically under the influence of gravity.  Suppose we drop a ball
+from a height of $9.8$ meters. Will it hit the ground at the end of
+that first second?
+
+Clearly not. To reach the ground after $1$ second the ball would have
+to average $9.8\,m/s$  during the entirety of that first second.  But at
+first it is not moving at all (velocity $=0$). After one second its
+velocity has increased to $9.8 m/s.$ So for the entire duration of
+that first second the ball's \emph{average} velocity is \emph{less
+  than} $9.8 m/s.$ So it has not yet hit the ground. But exactly how
+far it has fallen is not yet clear.
+
+Reasoning similarly, at the beginning of the next second the ball is
+already falling at $9.8\,m/s$  and thereafter it increases, so it falls
+\emph{at least} $9.8$ meters during the next second. So, while we
+cannot yet tell \emph{exactly} how far it falls during either second,
+we can say that it will hit the ground some time during the second
+second\footnote{How the word ``second'' came to have two such
+  different meanings is interesting. Google it.}
+
+But how can we find out exactly when the ball strikes the ground?
+
+Clearly, the formula $v=rt$ which tells us the ball's velocity at any
+time $t$ is not sufficient.  But if we had a similar expression for
+$p,$ the ball's position at any time $t$ we would be in much better
+shape. 
+
+\begin{mynotation}{Function}
+  Since $p$ and $t$ are the quantities of interest, and $p$ depends on
+  $t$ we will use the functional notation, $p(t)$ to represent all of
+  this succinctly.  This is just a shorter way to indicat that
+  position $p,$ depends on the elapsed time $t.$
+\end{mynotation}
+Now suppose we know that the graph of $p(t)$ looks like this:
+
+\centerline{\includegraphics*[height=2in,width=2in]{Figures/GenericVelocity}}
+
+
+We are not suggesting that the graph above actually is the graph of
+$p(t).$ After all, if we knew that our problem would be solved. 
+But suppose it is. Can we tell from this
+what the velocity, $v(t),$ will be at a given time, $t?$
+
+Sure we can. 
+
+All we need are the differentials that we introduced in
+Chapter~\ref{chapt:differentials}. That is, if $p(t)$ is the ball's
+position at time $t,$ and we allow time to tick forward by an
+infinitesimal amount, $\d{t}$ then we have the following picture:
+
+\centerline{\includegraphics*[height=2in,width=2in]{Figures/GenericVelocityWithDiffTri}}
+
+
+We know from our work in Chapter~\ref{chapt:differentials} that
+$\dfdx{p}{t}$ is the derivative of $p(t).$
+
+Moreover $\d{p}$ is measured in meters while $\d{t}$ is measured in
+seconds so $\dfdx{p}{t}$ is measured in meters per second. The obvious
+conclusion is that if $p(t)$ gives the position of the ball then
+$\dfdx{p}{t}$ is it's velocity.
+
+\begin{embeddedproblem}{}
+Use an argument  analogous to this to show that the derivative of
+velocity is acceleration.
+\end{embeddedproblem}
+
+Our problem of course is exactly the reverse of this. We have the
+velocity
+$$
+v(t) = 9.8 t = \dfdx{p}{t}
+$$
+and we need to construct the position function, $p(t).$ This might seem
+a little daunting at first but it really isn't too bad. We need only
+ask ourselves what $v(t) = 9.8t$ is the derivative of? Clearly it is 
+$$
+p(t) = \frac{9.8}{2}t^2=4.9t^2
+$$ 
+since 
+$$
+\dfdx{4.9t^2}{t}=2(4.9)t=9.8t.
+$$
+
+So we can now solve our problem, right? All we have to do is find the
+time, $t,$ when our position $p(t),$ is zero. That is, we solve
+\begin{align*}
+  p(t)&=0\\
+  4.9t^2&=0\\
+  t^2&=0\\
+  t&=0.
+\end{align*}
+So the ball reaches the ground after zero seconds.
+
+{\sc Wait!} That can't be right.
+
+At zero seconds we've just released the ball $9.8$ meters above the
+ground so our position at $t=0,$ $p(0)$ should be $9.8$ not zero. And
+$p(t)$ should be zero for some \emph{positive} value of $t,$  since
+the ball strikes the ground some time \emph{after} we drop it.
+
+Something seems to have gone terribly wrong with our analysis of the
+problem\footnote{Most likely you already see what's gone wrong. If so,
+good for you! If not, no big deal. Keep reading.}. What could it be?
+
+There really isn't anything wrong with our \emph{reasoning.} The
+difficulty is with some \emph{assumptions} we made that we weren't
+really aware of as we worked through the problem.
+
+Specifically, we concluded that the ball's position is given by
+$p(t)=4.9t^2.$ This is actually true but we need to remember that
+position is always given as a distance from somewhere else, some other
+location. In this case since at $t=0$ we have $p(0)=0,$ our $p(t)$
+gives us the distance from our starting position. Thus when we solved
+$p(t)=0$ what we found was how long it takes for the ball to reach its
+starting position. Since it is already there, naturally this is $t=0$
+seconds.
+
+Apparently what we need to solve is $p(t)=9.8.$ This will tell us how
+long it takes the ball to travel the $9.8$ meters to the
+ground. Solving this gives
+\begin{align*}
+  p(t) &= 9.8\\
+  4.9t^2&=9.8\\
+  t^2&=2\\
+  t&=\sqrt{2}\approx 1.414
+\end{align*}
+or slightly less than one and a half seconds.
+
+\noindent\underline{\bf Coordinate Systems}\\
+It is tempting to leave things there, but this problem of implicit
+assumptions -- assumption we are not aware we are making -- is a
+difficulty that will come back over and over again, sometimes in much
+more complex situations so we will take a few pages to understand it
+now in this much simpler context.
+
+
+When we observed that the velocity $v(t),$ is the derivative of
+position, $p(t),$ we asked what $9.8t$ is the derivative of. The
+answer we found was $p(t) =4.9t^2.$ But this is only one
+possibility. The derivative of $4.9t^2+5$ is also $9.8t;$ and of
+$4.9t^2+12;$ and of $4.9t^2-700;$ and in particular the deriviative
+of $4.9t^2+9.8$ is also $9.8t.$ In fact if $k$ is any constant
+whatsoever then the derivative of $4.9t^2+k$ is still $9.8t.$
+
+When we chose $p(t)=4.9t^2$ as our position function we implicitly
+assumed that our constant was zero. However we could have chosen $k$
+to be any constant whatsoever. All that changes is what distance is being measured. 
+
+
+\begin{wrapfigure}[]{r}{1in}
+\captionsetup{labelformat=empty}
+\includegraphics*[height=2in,width=1in]{Figures-HandDrawn/FallingBall1}
+\label{fig:FallingBall1}
+\end{wrapfigure}
+For example either $p_1(t) =4.9t^2$ or $p_2(t)=4.9t^2-9.8$ will work
+as a position function. What is the difference between them?
+
+If we use $p_1(t) = 4.9t^2$ we are assuming that at time $t=0$ our
+position is also zero. Physically we have the following situation:\\
+where at $p(0) =0$ and $p(\sqrt{2}=9.8.$ We have
+\begin{wrapfigure}[]{l}{1in}
+\captionsetup{labelformat=empty}
+\includegraphics*[height=2in,width=1in]{Figures-HandDrawn/FallingBall2}
+\label{fig:FallingBall2}
+\end{wrapfigure}
+implicitly assumed that at time zero our starting position is also
+zero. After releasing the ball time moves forward as usual so $t$
+increases through positive numbers, and since $p(t)$ measures the
+distance from our starting point, it also increases through positive
+numbers.
+
+On the other hand, if we use $p_2(t)=4.9t^2-9.8$ to measure distance
+then 
+we have implicitly assumed that our starting position ($t=0$) is
+at $-9.8$ meters, that is $9.8$ meters above the ground, so that
+$p_2(t)$ measures how far the ball is away from the ground. 
+
+\begin{embeddedproblem}{}
+  If other values of $k$ are used then the starting position (position
+  when $t=0$) and ending position (position when $t=\sqrt{2}$) of the
+  ball are implicitly changed, but the falling time will not. Find the
+  position function for each of the following values of $k.$ Also give
+  a sketch like the two above for each value of $k,$ and show that in
+  every case the falling time is $\sqrt{2}.$
+  \begin{multicols}{2}
+    \begin{description}
+    \item[(a)] $k=5$
+    \item[(b)] $k=12$
+    \item[(c)] $k=-700$
+    \item[(d)] $k=9.8$
+    \item[(e)] $k=-9.8$
+    \end{description}
+  \end{multicols}
+  Which of these seems to you like the best choice\footnote{There is
+    no correct answer to this question. That is the point.}.
+\end{embeddedproblem}
+
+In either case, we are asking how long it takes the ball to fall $9.8$
+meters. In the first case we are asking how long it takes the ball
+to move $9.8$ meters \underline{from} the starting position. In the
+second we are asking how long it takes to move \underline{to} the
+ending position.
+
+The former probably feels more natural. This is because we habitually
+measure our position in the future by assigning it a value (in meters)
+which tells us how far we have moved from our starting position. We do
+this every when we tell a friend something like, ``You're about
+five miles away from me.''
+
+But just because this is a common habit of mind does not mean that it
+is necessarily \emph{always} the best way to measure position.
+
+For example, one consequence of this for our current problem is that
+the ball falls in the \emph{positive} direction. This is true whether
+we use $p_1(t)$ or $p_2(t)$ In the former case is that as $t$
+increases the position, $p_1(t),$ changes from zero to $9.8$ meters -- it becomes
+``more positive.'' In the latter it also becomes more positive but in
+this case $p_2(t)$ changes from $-9.8$ to zero meters\footnote{Perhaps
+we should call this ``less negative?''}. In either case the position
+now is represented by a number that is greater than the position
+previously, so the positive direction is \emph{downward} when we use
+either $p_1(t)$ or $p_2(t).$  
+
+\begin{embeddedproblem}{}
+We don't normally think of down as positive. Find a new position
+function $p_3(t)$ which models the same falling ball but has down as
+the negative direction. There is more than one way to do this so
+verify that you have a valid function by solving for the time needed
+to reach the ground. You should still get $\sqrt{2}.$
+\end{embeddedproblem}
+
+Ultimately what this all comes down to is choosing a coordinate system
+to work in. You are used to thinking of coordinates as an ordered pair
+of numbers $(x,y),$ that specify a location in the plane. But you were
+using a coordinate system long before you started graphing equations
+in the plane. 
+
+Choosing a coordinate system is nothing more or less than choosing a
+distinguished point as a reference from which the location of all
+other points is measured. So as soon as you were taught to think of
+the real numbers ``as points strung out on a line'' you were using a
+coordinate system. The point at zero is specified (and called the
+origin) and all other points are named ($1, 2, 3, \ldots$) according
+to how far they are from the origin. 
+
+This is what we did when we chose the {\bf k}onstant above. When we
+chose $k=0$ so that $p(t)=4.9t^2$ we placed the origin at $9.8$ meters
+above the surface of the earth. When we chose $k=-9.8$ so that
+$p(t)=4.9t^2-9.8$ we placed the origin at the surface of the
+earth. But of course neither gravity nor the ball care what coordinate
+system we use so it falls to the ground in $\sqrt{2}$ seconds no
+matter where we decide to place the origin.
+
+In the first case since $p(t)=4.9t^2$ we see that $p(0) = 0$ and
+$p(\sqrt{2}) = 9.8$ so the ball moved from $0$ to $9.8$ meters. It
+follows that ``down'' must be the positive direction and ``up'' the
+negative direction.
+
+Similarly if we use $p(t)=4.9t^2-9.8$ we see that $p(0) = -9.8$ and
+$p(\sqrt{2}) = 0.$ Although the position of the ball is always
+negative, it moves from a more negative position, $-9.8,$ to a
+non-negative position, $0.$ So again ``down'' must be the positive and
+``up'' the negative direction.
+
+This seems natural when we think about a falling ball, but of course
+when we choose a coordinate system we get to choose both the origin
+and  the directionality. In the next section it will be more natural
+to take ``up'' as the positive direction.
+
+\subsection{A Tossed Ball: How High Will the Ball Go?}
+\label{subsec:tossed-ball}
+
+Instead of simply dropping the ball suppose we toss it vertically
+upwards with some initial velocity of say \(15 m/s.\) Then after one
+second it will have \emph{lost} \(9.8 m/s\) of its initial
+velocity. That is, its velocity after \(1\) second will be
+\(15-9.8=5.02\,m/s.\) After \(2\) seconds, its velocity will be
+\(15-9.8\times{}2=-4.58 m/s.\)
+
+In general, after \(t\) seconds its velocity will be \(15-9.8t\, m/s.\) 
+Notice that the velocity is positive at the one second mark $(t=1)$
+and negative at the two second mark $(t=2.)$
+
+As we observed at the end of the last section, it thus seems natural
+to interpret \underline{positive} velocity as climbing (moving in the
+positive direction). We'll need to keep this in mind as we proceed.
+
+So the height of the ball increases until the velocity drops to
+zero. At that time the ball's height has reached its zenith. After
+that the ball will continue to drop. But now its velocity will become
+larger in the negative direction (because the ball is falling, or
+moving in the negative direction), Although we don't know exactly what
+the height is at any given time we can see that there is a point where
+the ball reaches its zenith. The ball's height increases (velocity is
+positive) until it reaches its zenith and then decreases (velocity is
+negative) thereafter. The zenith occurs when the velocity has
+decreased to zero.
+
+Since we know that the velocity is positive at one second and negative
+at two seconds we can say that the ball must reach its zenith at
+somewhere between \(1\) second and \(2\) seconds after it is released.
+To find out the exact time, notice that this is precisely when the
+velocity equal to zero because for an instant at the top of its climb
+the ball's velocity is zero. Solving for $t$ gives:
+\begin{align*}
+  15-9.8 t&=0 \\
+t=15/9.8&\approx 1.53 
+\label{eq:accel}
+\end{align*}
+Thus the zenith is reached after approximately $1.53$ seconds.
+
+\begin{embeddedproblem}{}
+  Suppose the initial velocity is double what it was originally.
+  Would it take twice as long for the ball to reach its maximum
+  height?  What if the initial velocity was half?
+\end{embeddedproblem}
+
+So far, so good.  But now we ask: How high will the ball go? 
+
+As before what we need is not the velocity function, $v(t) =15-9.8t,$
+but the position function, $p(t).$ Since we know how long it takes to
+reach the maximum height ($\approx 1.53$ seconds) all we need to do is
+compute $p(1.53).$
+
+Since we know that position is the derivative of velocity all we need
+to do is ask ourselves; What is $v(t) = 15-9.8t$ the derivative of?
+Give this a few moment's thought before reading on. See if you can
+figure it out for yourself. We'll wait.
+
+It should be clear that the position function is: $p(t) = 15t-4.9t^2.$
+Is it?
+
+But wait a moment. Remember the trouble we had before with the
+konstant, $k?$ Let's think about this a bit more. The derivative of 
+$$
+p(t) = 15t-4.9t^2 +k
+$$
+is
+$$
+v(t) =15-9.8t
+$$
+no matter what the numerical value of $k$ is, so let's see if we can
+find the value of $k$ that makes things easiest for
+us. If\footnote{Notice that we've rearranged the order of the
+  terms. This isn't really necessary, but it's a good idea to always
+  write polynomial in the standard form, unless there is a compelling
+  reason not to. This makes things easier to read when you come back
+  looking for the errors that will inevitably happen.}  $p(t) =
+-4.9t^2+15t +k$ then at time $t=0$ the ball's position is $p(0) =
+-4.9(0)^2+15(0) +k = k.$ Since we're standing on the ground when we
+toss our ball we'll probably release the ball about $5$ feet above the
+ground\footnote{Both authors are over six feet tall. If you are much
+  taller or much shorter you should adjust this number as
+  appropriate.}, or about $1\frac{2}{3} = 5/3$ meters. So it seems to
+make sense to set $k=5/3.$ Thus our position function is:
+$$
+p(t) = -4.9t^2+15t +  5/3
+$$
+
+Therefore the maximum height of the ball is approximately $p(1.53) =
+-4.9(1.53)^2+15(1.53) +  5/4 \approx 13.15$ meters.
+
+\begin{embeddedproblem}{}
+  Suppose you toss the ball twice as hard so that its initial velocity
+  (its velocity when it leaves your hand) is $30 m/s.$ 
+  \begin{description}
+  \item[(a)] How long will it take to reach its maximum height?
+  \item[(b)] What is its maximum height?
+  \item[(c)] How long does it take the ball to hit the ground?
+  \item[9c)] What is its velocity when it hits the ground?
+  \end{description}
+\end{embeddedproblem}
+
+We now have everything we need to describe the motion of a ball thrown
+vertically. We know the following facts:
+\begin{enumerate}
+\item The derivative of the position $p(t),$ is the velocity $v(t).$
+\item The derivative of the velocity $v(t),$ is the acceleration.
+\item At the surface of the earth the acceleration due to gravity is
+  $9.8\,m/s^2.$ To keep our analysis as general as possible we will
+  just say that the acceleration is a constant and us $\alpha$ to
+  represent it.
+\end{enumerate}
+
+First, to find the velocity function $v(t),$ we ask, what is the
+constant $\alpha$ is the derivative of? Clearly this is
+$$
+v(t) =\alpha t+ v_0
+$$
+where $v_0$ is an unknown constant. To determine the value of $v_0$
+we evaluate the velocity when $t=0.$ Since 
+$$
+v(0) = \alpha\cdot0+v_0 = v_0
+$$
+we see that $v_0$ is the \underline{initial velocity} of the ball;
+its velocity just as it is released.
+
+Next we ask what is 
+$$
+v(t) = \alpha t+v_0
+$$ 
+the derivative of? Clearly this is 
+$$
+p(t) = \frac{\alpha}{2}t^2+v_0t+p_0
+$$
+where $p_0$ is the \underline{initial position} by a similar argument.
+
+\begin{myexample}
+  Suppose you toss the ball vertically with an  initial velocity of
+  $30\,m/s$ while standing at the edge of a $120$ meter building.
+  (its velocity when it leaves your hand) is $30 m/s.$ 
+  \begin{description}
+  \item[(a)] How long will it take to reach its maximum height?
+  \item[(b)] What is its maximum height?
+  \item[(c)] How long does it take the ball to hit the ground?
+  \item[d)] What is its velocity when it hits the ground?
+  \end{description}
+\end{myexample}
+
+\subsection{Motion in Parametric Form}
+\label{subsec:moti-param-form}
+
+\begin{wrapfigure}[]{r}{2in}
+\captionsetup{labelformat=empty}
+\includegraphics*[height=2in,width=2in]{Figures/FallingBallGraph1}
+\label{fig:FallingBallGraph1}
+\end{wrapfigure}
+Suppose we toss a ball upward from the ground with an initial velocity
+of $15\,m/s.$ Then if we place the origin at ground level, and the
+position  function is given by:
+$$
+p(t) = 5/3 + 15t-4.9t^2,
+$$
+and its graph is shown at the right.
+
+Before we go on take a moment to notice that this is \emph{\bf{}not}
+the graph of the ball's trajectory. Remember the ball is moving
+straight up and down. Rather this graph  represents a fairly abstract
+representation of the purely vertical motion of the ball. Notice that
+the horizontal axis of this graph represents $t,$ the elapsed time.
+
+That is if we start our clock at the moment the ball leves our hands
+then at time $t=0$ we have $p(0)=5/3.$ so the point $(0,5/3)$
+represents the fact that when we start our clock the ball is $5/3$
+meters above ground.
+
+Moreover, as we observed previously sin in this graph the vertical is
+measured in meters and the horizontal in seconds, it should be clear
+that the slope of $p(t)$ at $t=0$ is the velocity at $t=0.$ That is,
+$$
+\left.\dfdx{p}{t}\right|_{t=0} = \left.v\right|_{t=0} = 15-9.8(0)^2= 15
+\text{ meters.}
+$$
+
+Our point is that although this graph contains a great deal of
+information about the ball's motion it is \underline{not} a picture of
+the ball's \emph{actual path} through the air if it is thrown
+vertically. Recall that the ball moves vertically upward from our
+hands and then vertically downward to the ground.
+
+However we all know that it is nearly impossible to toss a ball
+perfectly vertically. Inevitably the ball will receive some non-zero
+lateral (horizontal) velocity. When that happens the path the ball
+follows will indeed look very much like the previousl graph. This can
+lead to  confusion so it is worth taking a few moments to clarify this
+a bit. 
+
+If we were to releast the ball in such a way that its initial
+\underline{vertical} velocity is $15 m/s$ as before, but also with an
+initial \underline{horizontal} velocity of $1 m/s$ then the path the
+ball follows looks exactly like the previous graph:
+
+\begin{wrapfigure}[]{l}{2in}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=1in,width=2in]{Figures/FallingBallPath1}}
+\label{fig:FallingBallPath1}
+\end{wrapfigure}
+\noindent{}\underline{except} for the labelling on the axes. Notice that the
+horizontal axis shown is labelled ``$x$'' and the vertical is
+``$y.$'' This is because the horizontal axis now represents the
+physical, horizontal distance the ball has traveled, rather than the
+number of seconds elapsed since it was released.
+
+The vertical axis still represents the vertical position of the ball
+but since the position now requires two coordinates, $x$ and $y,$ we
+now simply label the vertical axis ``$y$'' as per tradition. 
+
+The reason the two graphs are identical (except for the axis labels,
+of course) in this case is that we chose an initial horizontal
+velocity of $v(0)=1.$ If we also choose our horizontal origin to be
+where we are standing when we release the ball, then the horizontal
+position is given by:
+$$
+x=t.
+$$
+Since the initial vertical velocity is unchanged (as is the
+acceleraton due to gravity: $9.8 m/s^2$) the vertical position is
+still 
+$$
+p(t) = 5/3 + 15t-4.9t^2.
+$$
+
+We use $y$ (instead of $p$) to represent the vertical position of the
+ball because the ball's position in this situation requires
+two\footnote{Actually we need $3.$ Do you see why we can ignore the
+  third this time? If not, pause here and think about it for a moment.
+We'll wait.}
+coordinates, $x$ \underline{and} $y,$ whereas previously we only
+needed one, the $y$ coordinate.
+
+If we want to use $p$ to represent the ball's position at time $t$ (we
+do) then $p(t)$  will have to return two coordinates for each value of
+$t:$
+$$
+p(t) = \left(x(t), y(t)\right).
+$$
+
+To see why the two graphs above coincide we need only observe that
+since 
+$$
+x=t
+$$
+it doesn't matter whether we label the horizontal axis $t,$ in which
+caxse the graph gives the vertical position at any time $t,$ or $x,$
+in which case the curve gives the actuall position of the eball. They
+\underline{look}  the same even if they mean different things.
+
+We got $x=t$ because we assumed an initial horizontal velocity,
+$v_x(0)$ of $1 m/s$ and an initial horizontal position, $x_0$ of
+zero. 
+
+\begin{wrapfigure}[]{l}{2in}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=1in,width=2in]{Figures/FallingBallPath2}}
+\label{fig:FallingBallPath2}
+\end{wrapfigure}
+Suppose we set our horizontal origin $2$ meters to the left of where
+we released the ball. Then we get
+\begin{align*}
+  x&=t+2\\
+  y&=5/3 + 15t-4.9t^2,
+\end{align*}
+so the ball follows the given trajectory.
+\begin{embeddedproblem}{}
+For each set of conditions given below, answer the following three questions:
+    \begin{description}
+    \item[(1)] What are the $x$ and $y$ coordinates of the ball's
+      position at time, $t.$
+    \item[(2)] Plot the ball's position on the $x-y$ plane.
+    \item[(3)] Plot the \underline{vertical position only} of the ball
+      on the $p-t$ plane. (This should not necessarily look the same
+      as the graph you drew for part (b). (You should be curious about
+      the difference. In fact, you should be so curious that you will
+      spend a few minutes trying to puzzle out why and how they are
+      different. If you are not curious, pretend that you are and do
+      it anyway.)
+    \item[(4)] At what time does the ball reach its maximum height?
+    \item[(5)] What is the maximum height?
+    \item[(6)] How long before the ball hits the ground?
+    \item[(7)] Where does it strike the ground?
+    \item[(8)] What is it's horizontal and vertical velocity at the
+      moment it strikes the ground?
+    \end{description}
+
+  \begin{description}
+   \item[(a)] Suppose our initial horizontal velocity is $2 m/s,$ and that
+    the initial vertical velocity is $15 m/s.$
+  \item[(b)] Suppose our initial horizontal velocity is $1/2 m/s,$ and that
+    the initial vertical velocity is $15 m/s.$
+  \item[(c)] Suppose our initial horizontal velocity is $0 m/s,$  that
+    the initial vertical velocity is $15 m/s,$ but
+    that the ball is accelerating to the right at a constant rate of
+    $2 m/s^2.$
+ \end{description}
+\end{embeddedproblem}
+
+The position of a moving object must always be given as a function of
+time because we always need to know when it arrives at some position
+along with the position itself.
+
+When, like our falling ball, the object is moving both horizontally
+and vertically we clearly need two coordinates in order to specify its
+position. That is, the $x$ and $y$ coordinates depend on $t$ as a
+common parameter.
+
+Thus the equations 
+\begin{align*}
+  x&=2t-3\\
+  y&=5/3 + 15t-4.9t^2,
+\end{align*}
+are called  \underline{Parametric Equations.}
+
+We have barely scratched the surface of this important topic but this
+is enough for now. We will return to this in more depth later.
+
+% \begin{wrapfigure}[]{l}{2in}
+% \captionsetup{labelformat=empty}
+% \centerline{\includegraphics*[height=1in,width=2in]{Figures/velocity}}
+% \label{fig:velocity}
+% \end{wrapfigure}
+
+
+% % \begin{wrapfigure}[]{R}{2in}
+% \includegraphics*[height=1.75in,width=2in]{Figures/parab-sec}
+% % \caption{}
+% % \label{fig:parab-sec}% \end{wrapfigure}
+
+% \centerline{\includegraphics*[height=2in,width=2in]{Figures/parab-tan}}
+
+% % % \begin{wrapfigure}[]{L}{2in}
+% \centerline{\includegraphics*[height=2in,width=2in]{Figures/ProposedGraph}}
+% % % \caption{Proposed graph of $h=h(t)$}
+% % % \label{fig:proposed}
+% % % \end{wrapfigure}
+
+% Because the change in velocity, $v,$ is so simple, $v=15-9.8t$ it is easy to
+% discover \emph{when} the ball reaches it maximum height,
+% but what \emph{is} the maximum height?  This is a bit trickier, as the
+% change in position is not as simple.  Notice that
+% initially the velocity was
+% \(15 m/s.\) If the ball traveled that speed throughout the first
+% second (which it doesn't), then the ball would travel \(15\)
+% meters in the first second.  At one second, the velocity was \(5.02\,m/s,\)
+%  so if it stayed that velocity (which it doesn't), then in the
+% next second the ball would again travel $5.02$) meters. But if the
+% ball is accelerating it will actually go further during the second
+% $1-$second interval than the first. We need to figure out some way to
+% measure the distance traveled for an object whose velocity is
+% continually changing.
+
+
+% We will develop the tools for this soon.  But first let's look at this
+% problem graphically.  If we plot the velocity
+% $v=15-9.8t$ as a function of time, we have 
+
+% Notice that the slope of this line is $-9.8,$ the (constant) acceleration due
+% to gravity.  This makes sense since the slope of this line is the
+% change in velocity divided by the change in time
+% ($\frac{\text{m}}{\text{s}}/s = m/s^2$), which as we have seen is the
+% acceleration, and Galileo showed that the acceleration is
+% constant\footnote{Actually it isn't. The acceleration of falling
+%   objects depends on their distance from the center of the
+%   Earth. However, \emph{near} the surface of the Earth the change is
+%   so small that Galileo couldn't measure it with the tools he had. In
+%   any case, the change is so slight that it can be taken to be
+%   constant for our purposes.}.
+
+
+% But what about the graph of the height, \(h(t)?\)
+% A graph of what \(h=h(t)\)
+% might look like is given in the following figure:
+
+% \centerline{\includegraphics*[height=2in,width=2in]{Figures/ProposedGraph}}
+
+% This is not the trajectory of the ball (remember it is moving straight
+% up and down), but is a plot of height versus time.  Since the velocity
+% is continually changing, the graph of the height versus time will not have a constant slope the
+% way that the graph of velocity did.
+
+% There is a relationship between
+% the graphs in these figures which is easiest to see by considering
+% what the horizontal and vertical axes measure. In the graph
+% \centerline{\includegraphics*[height=1in,width=2in]{Figures/velocity}}
+% the vertical axis is the velocity which is measured in meters per
+% second, $m/s$ and the horizontal axis is measured in seconds.
+% In the graph
+% \centerline{\includegraphics*[height=2in,width=2in]{Figures/ProposedGraph}}
+% the vertical axis is the height, $h,$ which is measured in meters, and again
+% the horizontal axis is the time, $t,$ which is measured in seconds.
+% The first graph measures velocity directly. However Since the velocity is the change in
+% distance divided by the change in time, we can use the information in
+% the second graph to deduce the velocity at some time $t_0$ as
+% follows.  We follow Leibniz's example and think of the graph as made
+% up of infinitely small straight line segments, infinitesimals. In that
+% case the slope of the second graph at $t_0$ is given by $\dfdx{h}{t}.$
+% Since this fraction is measured in meters per second ($m/s$) the slope
+% of the graph of height versus time is the velocity of the ball at the
+% time $t_0.$ Or, to put it another way, the vertical coordinate of the
+% first graph (velocity versus time) at any time $t_0$ gives the slope
+% of the the second graph at the same time, $t_0.$
+
+% More abstractly, we can say that the velocity (vertical coordinate of
+% velocity versus time) at time $t_0$ is the slope of the line tangent
+% to the graph of position (height versus time) at time $t_0.$
+% This abstraction is what we have really been aiming for all along
+% however before we go too far down the rabbit hole of abstraction,
+% let's review what we've learned from this very concrete physical
+% problem.
+
+
+% then it seems that the slope
+% of the curve in the second at any point \((t,h(t))\) should be the
+% value \(v(t).\) But what do we mean by the slope of a curve?  This
+% where our physical depiction of throwing a ball into the air might
+% help.
+
+
+% As we noted, on the way up the ball is continually slowing down.  On
+% the way down, it is continually speeding up.  We can find the average
+% velocity over any time interval \([t_0,t_1]\)
+% by computing the ratio \(\frac{h(t_1 )-h(t_0 )}{t_1-t_0}.\)
+% On our proposed graph of \(h(t),\) 
+% this would be the slope of the line connecting the points
+% \((t_0,h(t_0))\)
+% and \((t_1,h(t_1))\)
+
+% \centerline{\includegraphics*[height=1.75in,width=2in]{Figures/parab-sec}}
+
+
+% \begin{embeddedproblem}{}
+%   What would happen to the
+%   slope of the line segment joining \((t_0,h(t_0 ))\) to \((t_1,h(t_1 ))\) in
+%   relation to the slope of the tangent line?  How does this translate
+%   into the velocities of the ball in the original problem?
+% \end{embeddedproblem}
+
+% However, as we noted before, this is not the velocity of the ball at
+% time \(t_0\) since that ball is slowing down.
+
+% If we could somehow force the ball to stop slowing down, if we could
+% somehow turn off gravity, at the instant \(t_0\) then from that time
+% on the ball would move in a straight line with the velocity it has at
+% the instant \(t_0.\) A moment's reflection makes it clear that this
+% line must be the tangent line to the curve \(h(t)\) at the point
+% \((t_0,h(t_0 )).\)
+
+
+% Figure 5
+
+% Bud  later when we talk about limits, we can come back to this and use a series of drawings where the time interval gets smaller.  Or do you think we should get into this now?  One possibility is the following problem
+
+% While it is true that we can't physically make the ball stop
+% slowing down, this 'thought experiment' gives us insight into
+% the relationship between the graph of the ball's velocity and height
+% versus time. Clearly the
+% values of \(v(t)\) represent the slopes of the tangent lines to the curve
+% \(h=h(t).\)
+
+% \begin{wrapfigure}[]{L}{2in}
+%   \includegraphics*[height=2in,width=2in]{Figures/parab-tan}
+% \caption{}
+% \label{fig:parab-tan}
+% \end{wrapfigure}
+
+
+
+% Using the tools of  Calculus we can exploit this relationship between
+% the graph of a curve and the slope of its tangent line.  This
+% fact led to one of ``golden periods'' of mathematics in the
+% 1700s where the power of Calculus was used to examine all sorts of
+% geometric and physical problems.  In order to exploit this
+% relationship, we will need to establish rules for computing.  Indeed,
+% as we observed in the previous section, this is what a 'calculus' is a
+% set of rules for computation.  In the case of differential Calculus,
+% it is literally a set of rules for computing infinitely small
+% (infinitesimal) differences.  The key turns out to be relating
+% everything back to the graphs of straight lines since straight lines
+% are the graphs of quantities whose rates of change are constant and
+% thus are easily measured.
+
+% Developing these rules will allow us to examine the relationship
+% between the graphs of \(v=v(t)\)
+% and \(h=h(t)\)
+% algebraically.  In particular, we will see how to find the equation of
+% one curve, for example the height of a falling object, if we are given
+% the other, for example its velocity.  Once we develop these tools, we
+% will be ready to see how Calculus led to this golden period of
+% mathematics. 
+
+% \subsection{Tangent Lines}
+% \label{sec:tangent-lines}
+
+% In many ways, the invention of calculus was the culmination of the
+% merging of geometry and kinematics with algebra, while exploiting
+% infinitesimals.  While it is true that algebraic methods are the
+% predominant tool of a calculus class, the blending of it with geometry
+% and kinematics helps students adapt these techniques to physical and
+% geometric applications.  In a curriculum that has downplayed the role
+% of geometry, having precalculus problems which bring it back can pay
+% future dividends.
+
+% Consider the method of Gilles Personne de Roberval (1602-1675) for
+% constructing the tangent to a curve.  In a blend of kinematics and
+% geometry, Roberval considered a curve as generated by a point whose
+% motion is compounded from 2 known motions.  The ``velocity vectors'' of
+% the motions will combine to give the resultant tangent vector to the
+% curve [Boyer, p. 390].  For example, consider that a parabola is the
+% set of points in the plane equidistant from a fixed point (focus) and
+% fixed line (directrix).  We can think of the parabola as generated by
+% point moving so that it maintains the same distance from the focus as
+% it does from the directrix.\\
+% \centerline{\includegraphics*[height=3in,width=2.5in]{Figures/Roberval1}}
+
+% Since the point maintains the same distance from the focus as it does
+% from the directrix, the velocity vectors of these two motions (away
+% from $F$ and $d$) will be the same length and the tangent vector will be
+% the diagonal of the rhombus.  While this method is limited from an
+% algebraic point of view (in terms of computing a slope), it does have
+% a nice geometric consequence.  Since the diagonal of a rhombus bisects
+% the angle, then we have $\angle 1\cong\angle2\cong\angle3.$  This provides the reflective
+% property of a parabola which says that any light ray, sound wave,
+% radio wave, etc. parallel to the axis of the parabola will be
+% reflected to the focus.  This is important to the design of satellite
+% dishes and reflective telescopes. \\
+% \centerline{\includegraphics*[height=3in,width=5in]{Figures/Telescopes}}
+% \begin{verbatim}
+% First image from http://media-2.web.britannica.com/eb-media/82/72982-004-9191583E.jpg. 
+% Second image from http://astro-canada.ca/_en/_illustrations/a4304_newton_en_p.jpg.
+% \end{verbatim}
+
+% \begin{myproblem}{}
+%   Given that an ellipse is the set of points in the plane, the sum of
+%   whose distances from two fixed points (foci) is constant, use
+%   Roberval's idea to construct the tangent to the ellipse.  Notice
+%   that one of the motions is away from a focus and the other is
+%   towards the other focus.  Why?\\
+% \centerline{\includegraphics*[height=2in,width=2in]{Figures/Roberval2}}
+
+% Conclude that the parallelogram must be a rhombus and use this to
+% demonstrate the reflective property of the ellipse, namely that any
+% ray emanating from one focus of the ellipse is reflected by the
+% ellipse to the other focus.   
+% \end{myproblem}
+
+% The aforementioned reflective property is noticed in a whispering
+% gallery, where a person at one focus can speak quietly and the person
+% at the other focus can hear it.  It is also used in the treatment of
+% kidney stones through a procedure called extracorporeal shock wave
+% lithotripsy (ESWL).  As imposing as the title sounds, the name makes
+% sense.  Lithotripsy literally means “rock grinding” and the procedure
+% utilizes shockwaves generated outside the body to crush kidney stones
+% into granules that can pass relatively painlessly.  Ellipses are
+% utilized to direct the shock waves from the generator to the stone as
+% can be seen below.\\
+% \centerline{\includegraphics*[height=2in,width=2in]{Figures/Lithotripsy}}
+
+% Image 1 from http://www.hussainkidney.com/images/LithotripsyVSsurgery.jpg.
+% Image 2 from http://blogs.nejm.org/now/wp-content/uploads/2012/07/Electrohydraulic-Lithotripter.jpg
+
+% As can be seen from the images, shock waves are generated outside the
+% body at one focus of the elliptical reflector and are reflected to the
+% other focus where the stone is located.  The procedure is done on an
+% outpatient basis and is a very effective, non-invasive procedure for
+% treating kidney stones.
+
+% As another (future) application, consider the following image.
+% \centerline{\includegraphics*[height=2in,width=2in]{Figures/MagRes}}
+
+% Image from http://physics.bu.edu/~condmat/pictures/mirage.jpg .
+
+% This image represents the magnetic resonance of 36 cobalt atoms placed
+% in an elliptical ring called a quantum corral by scientists at IBM
+% Almaden labs.  When researchers bombarded a cobalt atom placed at one
+% focus with electrons, the electron partial waves reflected off of the
+% elliptical ring to produce a weaker “mirage” at the other focus even
+% though there was no atom present
+% [http://cerncourier.com/cws/article/cern/28197].  IBM is hoping to
+% utilize this “Quantum Mirage” effect to transmit information on a
+% nanoscale, where normal circuitry does not work.  This would lead
+% toward nano-sized processors.  Below is an artist’s rendition of a
+% nanobot attaching itself to a damaged nerve and becoming a prosthetic
+% nerve
+% [http://www.cg4tv.com/animation/stock-images-3d/neurons-nanobot-high-resolution.jpg].
+% \\
+% \centerline{\includegraphics*[height=2in,width=2in]{Figures/Nanobot}}
+% This technology doesn’t yet exist, but it demonstrates how even old
+% ideas can lead to future developments.
+
+% \begin{myproblem}{}
+%   A hyperbola is the set of points in the plane, the difference of
+%   whose distances from two fixed points (foci) is constant.  Use
+%   Roberval's idea to construct the tangent to the hyperbola and derive
+%   the reflective property of a hyperbola, namely that any ray directed
+%   at one focus will reflect off of the hyperbola to the other focus.\\
+% \centerline{\includegraphics*[height=2in,width=2in]{Figures/Roberval3}} 
+% \end{myproblem}
+
+% The aforementioned reflective property is utilized in the secondary
+% reflector of a cassegrain antenna.\\
+% \centerline{\includegraphics*[height=2in,width=2in]{Figures/Telescope2}}
+% Image 1 from http://www.antedo.com/images/13-Meter-(TCS).jpg .
+% Image 2 from http://www.rfwireless-world.com/images/cassegrain-feed-antenna.jpg .
+
+
+% \subsection{}
+
+% \begin{wrapfigure}[]{O}{3in}
+% %\vskip-.7cm{}
+% \includegraphics*[height=1.75in,width=3in]{Figures/CosApprox2}
+% \caption{Approximating $\cos x$ with a quadratic polynomial}
+% \label{fig:CosApprox2}
+% \end{wrapfigure}
+
+
+
+% \begin{wrapfigure}[]{O}{3in}
+% %\vskip-.7cm{}
+% \includegraphics*[height=1.75in,width=3in]{Figures/CosApprox4}
+% \caption{Approximating $\cos x$ with a quartic polynomial}
+% \label{fig:CosApprox4}
+% \end{wrapfigure}
+
+% \marginpar{These last paragraphs should be somewhere else. But where?}
+% For example, for values of \(x\)
+% between \(-\frac\pi2\) and \(\frac\pi2\) the
+%   \label{page:cosine-approx}
+%   cosine of \(x\) is closely approximated by the polynomial
+%   \(1-\frac{x^2}{2}+\frac{x^4}{24}.\) So for values of \(x\) in that
+%   range we can replace \(\cos(x)\) with
+%   \(1-\frac{x^2}{2}+\frac{x^4}{24}\) with very little loss of
+%   accuracy. This is useful because, for example, \(\cos(.7)\) can be
+%   very hard to compute whereas \(1-\frac{(.7)^2}{2}+\frac{(.7)^4}{24}
+%   \approx 0.77\) is relatively easy.
+
+%   % Once known this approximation is easy to confirm and to use.  But
+%   % coming up with it in the first place, finding the right polynomial
+%   % to use is quite difficult, until you've learned a little Calculus as
+%   % we will see in section~\ref{subsec:tangent-lines}.
+
+%   % This approximation is easy to confirm and to use \emph{once it is
+%   %   known.}  But coming up with it in the first place is quite
+%   % difficult until you've learned a little Calculus as we will see in
+%   % section~\ref{subsec:tangent-lines}.\marginpar{A word about the use
+%   %   of technology should be added here.}
+
+% \subsection{}
+% Of particular note is the following technique of
+%   Gilles Personne de Roberval (1602-1675).  Roberval thought of a
+%   curve in the plane as being generated by a point whose motion is
+%   compounded from two known motions.  By combining the ``velocity
+%   vectors'' of these motions, the tangent vector will
+%   result. With the tangent vector in hand the tangent line is easily
+%   computed.
+
+
+% We'll apply this idea to a parabola.  You probably think of a parabola
+% as being determined by a quadratic function (which it is), but that is
+% the modern approach. The older way to define a parabola is geometric: A
+% parabola is the set of points in a plane which are equidistant from a
+% fixed point called the focus and a fixed line called the directrix. In
+% the figure, the point $P$ on the parabola is the same
+% distance from the focus $F$ as it is from the directrix $d.$ These
+% lengths  change as $P$ moves along the parabola, but the distance
+% from $P$ to $F$ will always equal the distance from $P$ to $d.$
+% \begin{embeddedproblem}{}
+%   \begin{description}
+%   \item[a.] Explain why the parallelogram in the figure is
+%     a rhombus.
+%   \item[b.] Given that the parallelogram in the  figure is
+%     a rhombus, show that the two angles $\alpha,$ and $\beta$ are
+%     congruent.
+%   \end{description}
+% \end{embeddedproblem}
+
+% If we think of the motion of $P$ as a combination of motion away from
+% $F$ and motion away from $d,$ then we can modify our drawing to
+% reflect this as in the figure. While this geometric approach does
+% not produce the equation of the tangent line, it does have the
+% interesting consequence
+% \begin{wrapfigure}[]{O}{2in}
+% %\vskip-.7cm{}
+% \includegraphics*[height=1.5in,width=2in]{Figures/Ellipse}
+% \caption{}
+% \label{fig:ellipse}
+% \end{wrapfigure}
+% that any light ray, radio wave, sound
+% wave, etc. which comes in parallel to the axis of the parabola
+% (perpendicular to the directrix) will reflect off of the parabola to
+% the focus.  Among other things, this is why satellite dishes and
+% primary mirrors in reflective telescopes are parabolic.  
+% \begin{embeddedproblem}{}
+% Consider that an ellipse is the set of points in a plane, the sum of
+%   whose distances from two fixed points (foci) is
+%   constant. Using Roberval's idea, we can think of the
+%   motion of a point P on the ellipse as being the result of a motion
+%   away from one focus and toward the other focus.
+%   Explain why the parallelogram in the figure must be a rhombus and
+%   use this to show that angle $\alpha$ is congruent to angle $\beta.$
+% \end{embeddedproblem}
+
+% \begin{wrapfigure}[]{O}{2in}
+% %\vskip-.7cm{}
+% \includegraphics*[height=1.5in,width=2in]{Figures/RockGrinding}
+% \caption{}
+% \label{fig:RockGrind}
+% \end{wrapfigure}
+
+% This says that any light ray, sound wave, etc. emanating from
+% one focus will reflect off of the ellipse to the other focus.  Among
+% other things, this reflective property is used to treat kidney stones.
+% The treatment is called Extracorporeal Shock Wave Lithotripsy (ESWL)
+% and is really what the name says.  Lithotripsy literally means ``rock
+% grinding,'' and this technique uses shock waves which are generated
+% outside the body (See
+% Figures~\ref{fig:RockGrind})\footnote{http://us.medispec.com/patient/kidney-stones/treatment-using-eswl/
+%   and\\
+%   http://bme240.eng.uci.edu/students/09s/ysantoro/CurrTechn.html} As
+% you can see in the figure, the table contains a cup which is in
+% the shape of part of an ellipse.  At one focus of the ellipse is an
+% electrode which generates shock waves.  These shock waves reflect off
+% of the elliptical cup and converge on the other focus.  When the
+% kidney stone is positioned at that focus, the shock waves will pummel
+% it into small pieces which can be passed relatively painlessly through
+% the ureter.
+% \begin{embeddedproblem}{}
+%   An hyperbola is the set of points in the plane, the difference of
+%   whose distances from two fixed points (foci) is constant.  Using the
+%   ideas of Roberval, show that any light ray, sound wave,
+%   etc. directed at one focus will reflect off of the hyperbola toward
+%   the other focus.
+% \end{embeddedproblem}
+% This idea is utilized in the secondary mirror of Cassegrain
+% telescopes.
+
+% \begin{wrapfigure}[]{O}{2in}
+% %\vskip-.7cm{}
+% \includegraphics*[height=2in,width=2in]{Figures/ReflectingHyperbola}
+% \caption{}
+% \label{fig:ReflectingHyperbola}
+% \end{wrapfigure}
+
+% Roberval's idea to use distances from fixed objects to describe the
+% location of a point on a plane is the essence of analytic geometry.
+% You are accustomed to plotting points by determining the distances
+% from two fixed axes to give the coordinates of a point.  This allows
+% us to identify geometric curves by their corresponding equations.
+% Specifically, a point will lie on a curve provided its coordinates
+% satisfy a certain equation.  For example, the point $P$ with coordinates
+% $(2,4)$ lies on the parabola with equation $y=x^2$ since $4=2^2,$ whereas
+% the point $Q$ with coordinates $(2,5)$ does not since $5\neq2^2.$
+% Notice that, remarkably, we were able to answer a geometry question
+% without drawing a picture!  We're not promoting not drawing pictures,
+% but it does illustrate the power of analytic geometry; we can bring
+% the tools and techniques of algebra to bear on solving the geometry
+% problems.  
+
+% \begin{myproblem}{}
+%   Before the invention of calculus, Galileo tried to determine the
+%   motion of a projectile as it fell to the ground.  Efforts of people
+%   such as Galileo in handling specific problems such as this helped
+%   Newton and Leibniz to generalize the ideas to form differential
+%   calculus.  We will recreate some of these ``pre-calculus'' ideas.
+%   To start, by experimenting with a ball rolling down a plane, Galileo
+%   surmised that an objected falling under the influence of gravity
+%   accelerated at a constant rate (ignoring air resistance, friction,
+%   etc.).  Today we know that rate to be $9.8$ (meters/second)/second.
+%   Suppose we stand at some height and drop a ball.  This says that the
+%   velocity of the object at time t seconds is given by $v(t)=9.8t$
+%   meters/second.  Figuring out how far the ball has fallen is a bit
+%   trickier as the velocity is not constant.
+%   \begin{description}
+%   \item[(a)] Suppose we divide the time interval $[0,t]$ into four
+%     equal intervals.  Determine that average value of $v(0), v(t/4),
+%     v(2t/4), v(3t/4), v(4t/4)$ is $4.9t.$ What if we divided the time
+%     interval into $8, 16,$ or $32$ equal intervals?
+%   \item[(b)] Assuming that the average velocity during the time
+%     interval $[0,t]$ is given by $4.9t\,m/s,$  show that the distance
+%     the ball has fallen at time $t$ is given by $y(t)=4.9t^2.$
+%   \item[(c)] To check if Galileo is correct that $y(t)=4.9t^2$ meters,
+%     compute the average velocity of the ball from time $t$ to time
+%     $t+\Delta t$ for $\Delta t=.1, .01, .001,$ and $.0001.$
+%   \item[(d)] Based on what you obtained in part (c), what would the
+%     instantaneous velocity be at time $t,$ (i.e., when $\Delta t=0$).
+%     Does this agree with what we had as $v(t)$ before?
+%   \end{description}
+% \end{myproblem}
+
+
+%   \begin{myexample}
+%     Consider the curve $y=x^2:$\\
+% \centerline{\includegraphics*[height=2in,width=2in]{Figures/Quadratic}}
+%     We wish to find an equation of the line tangent to this curve at
+%     the point $(3,9).$
+%     It is clear from the graph that the line tangent to this curve at
+%     the point $(3,9)$ will also pass through the $y-$axis, say at
+%     the point $(0,b).$ If we can find $b$ we have the tangent line. 
+    
+%     The slope of the tangent line is $m=\frac{9-b}{3}$ so the equation
+%     of the tangent line will be 
+%     \begin{equation}
+%       y=\left(\frac{9-b}{3}\right)x+b\label{eq:TanSq}
+%     \end{equation}
+%     for one, and only one, value of $b.$ If $b$ is anything other than
+%     that one value then equation~\ref{eq:TanSq} will intersect the parabola
+%     twice: once at the point $(3,9),$ and once at another point, say
+%     $(x,x^2).$ At this second point we have 
+%     $$
+%     x^2=\left(\frac{9-b}{3}\right)x+b.
+%     $$
+    
+%     Rearranging this slightly we have 
+%     $$
+%     x^2-\left(\frac{9-b}{3}\right)x-b=0
+%     $$
+%     which is a quadratic and we can solve quadratics.
+
+%     Before charging blindly forward though, let's stop and think about
+%     what we're trying to accomplish. We want to find the value of $b$
+%     which guarantees that there is only \emph{one} solution. We're
+%     not really interested in the actual solution itself. We just want
+%     to ensure that there is only one.
+
+%     From the Quadratic Formula we see that:
+%     $$
+%     x=
+%     \frac{\left(\frac{9-b}{3}\right)\pm\sqrt{\left(-\left(\frac{9-b}{3}\right)\right)^2+4b}}{2},
+%     $$
+%     which has one solution precisely when the discriminant\footnote{The part under
+%     the square root symbol.} is zero. Thus
+%   \begin{align*}
+%    \left(\frac{9-b}{3}\right)^2+4b&=0\\
+%      \frac{9^2-18b+b^2}{9}+4b&=0\\
+%     9^2-18b+b^2+36b&=0\\
+%     b^2+18b+9^2&=0\\
+%     (b+9)^2&=0,
+%   \end{align*}
+% so $b=-9.$ Thus an equation of the line tangent to $y=x^2$ at the point
+% $(3,9)$ is
+% $$
+% y=6x-9.
+% $$
+
+  
+
+% \begin{embeddedproblem}{}
+%   Use this method to find an equation of the line tangent to
+%   $y=x^2$ at each of the following points:\\
+%   \begin{description}
+%   \item[(a)] $(2,4)$
+%   \item[(b)] $(-3,9)$
+%   \item[(c)] $(1,1)$
+%   \item[(d)] $\left(\frac12,\frac14\right)$
+%   \item[(e)] $(a,a^2)$
+%   \end{description}
+% \end{embeddedproblem}  
+
+% \begin{embeddedproblem}{}
+%   Use this method to find an equation of the line tangent to the given
+%   curve  at the given point:\\
+%   \begin{description}
+%   \item[(a)] $y=x^2+x$ at $(2,6).$
+%   \item[(b)] $y=x^2+x$ at $(\tau,\tau^2+\tau).$
+%   \item[(c)] $y=x^2-3x+2$ at $(\tau,\tau^2-3\tau+2).$
+%   \item[(d)] $y=ax^2+bx+c$ at $(\tau,a\tau^2+b\tau+c).$
+%   \end{description}
+% \end{embeddedproblem}
+%   %   For example, he showed that the line tangent to the parabola at the
+%   % point $(0,b)$ in the following diagram will always pass through the
+%   % point $(0,-b).$
+% \end{myexample}
+
+\chapter{What the Derivative Tells Us}
+\label{cha:what-deriv-tells}
+\section{Newton's View: Motion as a Metaphor}
+\label{sec:newtons-view:-motion}
+
+
+Newton invented Calculus for a specific purpose. He was trying to
+describe the physical motion. Naturally this affected the way that he
+thought about Calculus and the language he used to talk about
+it. Although he quickly realized that his Calculus could be used for
+other purposes his approach is deeply tied to the idea of motion.
+
+Newton's kinematic approach can be extended to other types of
+problems. Recall that in order to find out how high the tossed ball
+will go we first needed to discover how long it takes for the ball's
+velocity to drop to zero. This is, obviously, because the ball
+continues to rise until its velocity is zero. Thereafter it will
+fall. Once we know that the velocity is zero at time, say
+$t_{\text{max}},$ then we have $v(t_{\text{max}})=0,$ and the
+position, $p(t_{\text{max}}),$ at the same time is the maximimum
+height of the ball's flight.
+
+This is all fairly intuitive. 
+
+\begin{wrapfigure}[]{r}{2in}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=2in,width=2in]{Figures/metaphor1}}
+\label{fig:metaphor1}
+\end{wrapfigure}
+Can we use this same kind of reasoning to find the coordinates of the
+highest point on the graph at the right?
+
+Notice that the horizontal and vertical axes are no longer
+``position'' and ``time.'' Since there is no motion taking place there
+is clearly no velocity, so we can't simply set our velocity function
+equal to zero an solve for the time, $t,$ when velocity is zero like
+we did for the falling ball. Not only is there no velocity function,
+there is no time $(t)$ either!
+
+Or can we? Yes, it is true that there is no motion, and no time
+involved. But so what? Once we plot velocity against time we just have
+a curve. The only place where either velocity or time appear is in the
+labelling of the axes. 
+
+So let's just change the labels.
+
+That is, let's pretend -- for now -- that this \emph{is} a motion
+problem, that the vertical axis \emph{is} position, and that the
+horizontal axis \emph{is} time. In that case we can proceed as before:
+Find the velocity function (derivative), set it equal to zero to find
+the time (number of chocolate bars) when the velocity (derivative) is
+zero, put that back into the position (anxiety) function, $A(C),$ to
+find the maximum level of anxiety.
+
+This was Newton's idea.  Any such problem can be thought of as a
+problem of motion. In this case we think of our anxiety level as
+dependent on how many chocolate bars we have. If the number of
+chocolate bars changes then the anxiety level increases (or decreases)
+accordingly.
+
+But it is silly to rename our functions just to do the analysis and
+then change them back. Rather than explicitly pretending that motion
+is involved we keep that conceit in the background and adapt our
+notation and language to our motion metaphor.
+
+In particular we have seen that $\dfdx{p}{t}=v,$ (velocity is the
+derivative of position). Since velocity is by definition the rate of
+change of position ``with respect to time'' we adopt the convention,
+in this case, of interpreting the symbol $\dfdx{A}{C}$ as the rate of
+change of anxiety ``with respect to the number of chocolate bars we
+own.''  
+
+In this way the metaphor of motion is simply built into the language
+and notation we use, and we say things like ``As the number of
+chocolate bars increases our anxiety decreases, then increases, and
+then decreases again,'' just as if $C,$  (the number of chocolate
+bars) is constantly increasing in the same way that $t,$ (time) does.
+
+
+\begin{wrapfigure}[]{l}{2in}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=2in,width=2in]{Figures/metaphor2}}
+\label{fig:metaphor2}
+\end{wrapfigure}
+It can be illuminating to look at the graph of both our function and
+its derivative at the same time. The sketch at the left shows the graph
+of $A(C)$ (in green) and $\dfdx{A}{C}$ (in orange) together on the
+same set of axes.
+
+Since $A(0) = 5$ when $C=0$ we seem to be fairly anxious. This is probably
+because we have no chocolate. As our number of chocolate bars
+increases\footnote{Notice how the language of motion is naturally
+  co-opted for our purposes. We either own chocolate or we
+  don't. Nothing is changing, but we pretend that as time goes on we
+  are getting more chocolate.}
+our anxiety level is decreasing so the value of $\dfdx{A}{C}$ is
+negative (below the horizontal axis). When $\dfdx{A}{C} =0,$ at
+slightly less than one chocolate bar, our anxiety level ``bottoms
+out.'' Presumably this is because we're looking forward to eating our
+chocolate. As we gain chocolate our anxiety level rises again,
+probably because in these uncertain times you never know who is
+coveting your chocolate, or when it might be taken from you just because you
+have a lot of it. As we accumulate more our anxiety level drops again
+because we have plenty to share so we don't need to worry about some
+theif taking it from us. 
+
+This is a silly example of course, but the point of this silliness is
+quite serious: The derivative of a curve can tell us a lot about the
+curve. If  we simply pretend that the curve is the position of some
+object and that the derivative is its velocity then it is clear what
+the derivative can tell us:
+\begin{enumerate}\label{list:FirstDerivTest-Newton}
+\item If the derivative is positive then the object is moving in the
+  positive direction. Usually this will be \emph{up} or \emph{to the
+    right}, but in any case the object moves in the positive direction
+  whatever that is in our coordinate system.
+\item If the derivative is negative then the object is moving in the
+  negative direction. Usually this will be \emph{down} or \emph{to the
+    left}, but in any case the object moves in the negative direction
+  whatever that is in our coordinate system.
+\item If the derivative is neither positive nor negative -- that is,
+  if it is zero -- then the object has stopped moving\footnote{Our
+    metaphor actually breaks down a little bit here. No one would say
+    that a vertically tossed ball is not moving at the top of its
+    flight since it immediately begins to fall. Nevertheless, at the
+    top of its flight its velocity is zero and it does ``stop'' just
+    for an instant.
+  }.
+\end{enumerate}
+
+\subsection{Population Growth}
+\label{sec:population-growth}
+
+
+Suppose we have a single microbe living in a petri dish and that it
+divides once every hour. Then after one hour we have two microbes and
+our population has grown by one microbe per hour. After the second
+hour our population is now $4$ microbes, and the rate of growth during
+that second hour is $3$ microbes per hour. If this continues for $10$
+hours our microbe population will have grown according to the
+following chart\marginpar{This is supposed to be $P(t)=(5/2)^t.$ Check the numbers.}:
+$$
+\begin{array}{|ccc||ccc|}
+\hline
+  \text{hours}&\text{population}&\text{rate of
+                                  growth}&\text{hours}&\text{population}&\text{rate
+                                                                          of
+                                                                          growth}\\\hline{}
+  1&2.5&1.5\frac{\text{\tiny microbes}}{\text{\tiny hour}}&6&244.1&97.2\frac{\text{\tiny microbes}}{\text{\tiny hour}}\\[1mm]
+  2&6.3&2.5\frac{\text{\tiny microbes}}{\text{\tiny hour}}&7&610.4&242.9\frac{\text{\tiny microbes}}{\text{\tiny hour}}\\[1mm]
+  3&15.6&6.2\frac{\text{\tiny microbes}}{\text{\tiny hour}}&8&1525.9&607.2\frac{\text{\tiny microbes}}{\text{\tiny hour}}\\[1mm]
+  4&39.1&15.5\frac{\text{\tiny microbes}}{\text{\tiny hour}}&9&3814.7&1518.0\frac{\text{\tiny microbes}}{\text{\tiny hour}}\\[1mm]
+  5&97.7&38.9\frac{\text{\tiny microbes}}{\text{\tiny hour}}&10&9536.7&3795.1\frac{\text{\tiny microbes}}{\text{\tiny hour}}\\[1mm]\hline
+\end{array}
+$$
+Can we find a function $P(t)$ which  tells us our microbe
+population at any time?
+
+\section{Leibniz's View: Geometry and Differentials}
+\label{sec:leibn-view:-geom}
+\begin{wrapfigure}[]{r}{2in}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=1in,width=2in]{Figures/LeibnizGraph1}}
+\label{fig:LeibnizGraph1}
+\end{wrapfigure}
+Newton's dynamical view of the Calculus is very useful. However it is
+only one way to approach the topic. Leibniz had an entirely different
+approach. In Leibniz's view every point on the graph  at the right is
+already in place so the graph can be thought of as a completed
+entity. It is not ``brought into being'' by the motion of a point, a
+pixel, or anything else. If we want to know the shape of this graph
+. . . well, that's easy isn't it? Just look at it.
+
+Of course that only works if we have a picture of the graph in hand,
+or if we can generate one easily. But suppose we hadn't shown you the
+above graph. Suppose instead we'd asked you to describe the graph of:
+$$
+y=-\frac15(4x^3-16x^2+11x-9).
+$$
+
+Ok. Sure. Since you're living after the invention of computing
+technology you'd have just pulled some electronic device out of your
+pocket, opened your favorite graphing app, punched in the formula
+above, held it out to us and said, ``Here it is.''
+
+Touch\^{e} You got us.
+
+Obviously though, neither Newton nor Leibniz could have done that, but
+so what? We can, so we're done, right?
+
+Well maybe.
+
+Suppose now that we'd said there is  curve whose derivative
+is
+$$
+\dfdx{y}{x}=-\frac{12}{5}x^2 +\frac{32}{5}x-\frac{11}{5},
+$$
+and asked, ``What is its shape?''
+
+This is harder, but Leibiz's differential notation is extremely
+well-suited to express his approach. The expression $\dfdx{y}{x}$
+clearly expresses the idea that the deriviative is the slope of the
+tangent to\footnote{Leibniz would have said ``tangent of'' rather
+than ``tangent to.'' In his view he was computing the slope of the
+curve itself.} the curve $y$ at the point $.$
+
+We know a lot about lines. For example we know that:
+ \begin{enumerate}\label{list:FirstDerivTest-Lines}
+\item If the slope of a line is positive then the $y$ coordinate is
+  increasing.
+\item If the slope is negative then the $y$ coordinate is decreasing.
+\item If the slope is zero then the $y$ coordinate is not changing.
+\end{enumerate}
+
+Of course, lines are easy because the slope of a line never
+changes. But we're interested in curves. The slope of a curve changes
+from point to point so how does this list help us?
+
+This is where Leibniz's conception of the derivative as a ratio of
+differentials is helpful. Since $\dfdxat{y}{x}{x=a}$ is the slope of
+the function at the point $x=a$ it is clear that the above list of
+statements generalizes as follows:
+\begin{enumerate}\label{list:FirstDerivTest-Leibniz}
+\item At every point $x=a$ where $\dfdxat{y}{x}{x=a}>0$  the curve is
+  increasing. (Notice that we can only claim that the curve is
+  increasing at the single point $x=a.$ 
+\item At every point $x=a$ where $\dfdxat{y}{x}{x=a}<0$  the curve is
+  decreasing. (Notice that we can only claim that the curve is
+  decreasing at the single point $x=a.$ 
+\item At every point $x=a$ where $\dfdxat{y}{x}{x=a}=0$  the curve is
+  horizontal.
+\end{enumerate}
+
+\begin{wrapfigure}[]{r}{2in}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=2in,width=2in]{Figures/MaxMin1}}
+\label{fig:MaxMin1}
+\end{wrapfigure}
+Regarding item 3) above, if
+$\dfdxat{y}{x}{x=a}=0$ then clearly near $x=a$ the graph of $y$ has
+one of the two shapes at the right, which confirms that we can find
+the maximum height of a tossed by by setting 
+$$
+v(t) = \dfdx{p}{t} =0
+$$
+and solving for $t.$ This is only common sense.
+
+Unfortunately our common sense fails us here. It is, in fact,
+\underline{\bf not} true that if
+$$
+\dfdxat{y}{x}{x=a}=0
+$$ 
+then $y$ is either a maximum or a minimum at $x=a$ as the following
+problem demonstrates.
+\begin{embeddedproblem}{}
+  Consider the polynomial
+$$
+y = (x+1)^3(x-1)(x+3).
+$$
+\begin{description}
+\item[(a)] Show that $\dfdxat{y}{x}{x=-1}=0.$ (Hint: You can save
+  yourself a lot of work on this problem by keeping you eye on the
+  goal. You are not asked to compute $\dfdx{y}{x}.$ The problem is to
+  show that $\left.\dfdx{y}{x}\right|_{x=-1}=0.$ You don't need to
+  fully expand $\dfdx{y}{x}$ to do that.)
+\item[(b)]  Graph $y$ near $x=1$ to convince yourself that $y$ is
+  neither a maximum nor a minimum at $x=-1$.
+\item[(c)] We don't really need a polynomial as complicated as the one
+  given in part (a) to make the point we're getting at. Repeat parts
+  (a) and (b) with the polynomial $y=x^3$ at $x=0.$
+\end{description}
+
+\end{embeddedproblem}
+
+It is important to notice, as we did above, that when we are dealing
+with curves rather than lines we can only state that the curve is
+increasing at the single point where the derivative is positive.
+
+% \subsection{Tangent Lines: Decartes's Method of
+%     Normals}
+% % It is difficult to explain to students the
+% %       necessity of the language invented for mathematics. Obviously we
+% %       could just say ``perpendicular'' and mean the same thing. Why
+% %       use ``normal''? The answer to this is much deeper than you might
+% %     think. The fact is that ``perpendicular'' has  a very specific,
+% %     geometric meaning. 
+
+% \label{sec:descartes-normals}
+
+%   \noindent{\bf Apollonius and Conic Sections}
+%   The problem of finding the tangent line to a curve is a geometry
+%   problem, so it is not surprising that some of the first attempts
+%   were geometric. The Greek mathematician Apollonius of Perga (circa
+%   262 BC to 190 BC) used geometric methods to construct tangent lines to
+%   the classical conic sections: the ellipse, the hyperbola, and the
+%   parabola.
+
+
+%   Since algebra had not yet been invented, Apollonius's methods were
+%   entirely geometric, and could not be easily generalized for curves
+%   that were not conic sections. 
+
+
+% Ren\`e{} Descartes (1596-1650)  was one of the pioneers in applying the
+% techniques of algebra to solve geometry problems.  In his \emph{La
+%   Geometrie} he remarked that the problem of finding the tangent to a
+% curve was ``. . .  not only the most useful and most general problem
+% in geometry that I know, but even that I have ever desired to know.''
+
+% Descartes' technique is often called the Method of Normals\footnote{In this context, ``normal'' means
+%       perpendicular.} because
+% what he actually finds is the line normal to (perpendicular to) a
+% curve.  Once the normal is obtained, then the tangent line is
+% perpendicular to that.
+
+% His method for finding the normal to a curve can be described as
+% follows.
+
+% Given a curve and a point $P$ on that curve, we find the circle
+% passing through $P$ whose center is on the $x$ axis. The line from the
+% center of that circle throught the point $P$ will be the normal (and
+% its perpendicular through the point (P) will be the tangent.
+
+% Let's take a look at how this might be done in a particularly simple
+% situation. Consider the line $y=3x+2$ and the point $(1,5)$ on that
+% line.
+
+% \InsertGraphic{}
+
+% We know that the slope of the line normal to this curve\footnote{Yes,
+%   we know that lines aren't curved. It is convenient
+%   to think of a line as a special case of a curve.} is $-1/3.$ Thus
+% the normal line passes through the point $(1,5)$ with slope $-1/3$ so
+% the equation of this line is 
+% $
+% y-5=-\frac13(x-1)
+% $
+% or 
+% $$
+% y=-\frac13 x+\frac{16}{3}
+% $$
+% which crosses the $x$-axis at $(16,0).$ Since the distance from
+% $(1,5)$ to $(16,0)$ is $\sqrt{122}$ we see that the equation of the
+% circle with center $(16, 0)$ and radius $\sqrt{122}$ is $(x-16)^2 +y^2
+% = 122,$ as seen below.
+
+% \InsertGraphic{}
+
+% We now have a point on our tangent line, $(1,5),$  and it's slope,
+% $3,$  so we can write down the equation of the tangent line:
+% \begin{align*}
+%   y-5&=3(x-1), \text{ or, in slope-intercept form}\\
+%   y&=3x+2.
+% \end{align*}
+
+% Wait a minute! That can't be! This is the equation of our original
+% line!
+
+% But think about it for a moment. When we say ``tangent line'' what do
+% we really mean? The first definition we usually encounter is ``a line
+% that touches a curve at exactly one point.'' But this can't possibly
+% work as a definition for a tangent line. To see why not consider the
+% tangent to the curve $y=x^3-3x$ at the point $(-1,2).$ It passes
+% through two points on the curve: $(-1,2)$ and $(0,2).$
+
+% When we use the word ``tangent'' in ordinary speech we usually mean
+% something more like, ``getting off of the main point, but in the same
+% direction that things are currently moving.'' When we think
+% of ``tangent'' in this way is is clear that a line and it's tangent
+% must be the same line. After all, there is only one line \emph{through a
+% given point} that \emph{always} points in a given direction.
+
+% But we've gotten off on a tangent.
+
+% Returning to the problem at hand it is clear that we didn't really
+% need to find the equation of our circle. Once we have the slope of the normal line,
+% the slope of the tangent is known. But this is an artifact of the
+% simplicity of our problem. Straight lines are easy. When the curve is
+% more complex we \emph{will} need the circle.
+
+% This is because there is one special curve, the circle, whose tangent line is
+% obvious. Pick a point on a circle and draw the radius to that
+% point. It is well known that the tangent line at that point will be
+% the line perpendicular to the radius.
+
+
+
+% % To find the tangent line to a general curve Descartes found the
+% % tangent circle to a curve and used that to determine the tangent line.
+% We'll illustrate Descartes' idea with the following example.
+
+% \begin{myexample}
+% Find the slope of the normal (and tangent) line to the curve $y=\sqrt{2x}$ at the
+% point $(2,2).$
+
+% \centerline{\includegraphics*[height=2.7in,width=4in]{Figures/DescartesCircle}}
+
+
+% Following Descartes' approach we look at the family of circles whose
+% centers lie on the $x$ axis and which pass through the point $(2,2).$
+% The dashed circle represents a generic member of that family of
+% circles.  Notice that typically these circles intersect the parabola twice.  We
+% are searching for the circle that hits the curve only once.  This is
+% the solid circle in our picture.  If we can find the center of that
+% circle then its radius through the point $(2,2)$ will be normal to the curve and we can find its
+% slope (and the tangent's slope).
+
+% % \begin{wrapfigure}[]{O}{3in}
+% % %\vskip-.7cm{}
+% % \includegraphics*[height=2in,width=3in]{Figures/CassegrainTelescope}
+% % \caption{}
+% % \label{fig:CassegrainTelescope}
+% % \end{wrapfigure}
+
+% If we let $(a,0)$ denote the coordinates of the center of a generic circle in that
+% family, then the equation of the circle with center $(a,0)$ is
+% $(x-a)^2+y^2=r^2$ where $r$ is the radius of the circle. Since we
+% require our circle to pass through the point $(2,2)$ this radius will
+% be the distance from $(2,2)$ to $(a,0).$ That is
+% $r=\sqrt{(2-a)^2+2^2}.$
+% Thus we have
+% $$
+% (x-a)^2+y^2=(2-a)^2+2^2.
+% $$
+
+% Substituting $y=\sqrt{2x}$ into the equation of the circle, we get
+% \begin{align*}
+%   (x-a)^2+2x&=(2-a)^2+4\\
+%   x^2-2ax+a^2+2x&=4-4a+a^2+4\\
+%   x^2+(2-2a)x+(4a-8)&=0
+% \end{align*}
+
+% It is tempting at this point, to use the quadratic formula to solve
+% for $x$ and get (typically two) values for $x$ in terms of $a.$
+% However, before do a bunch of unnecessary work, let's keep in mind
+% what we are trying to do.  We want to find the value of $a$ where the
+% circle and the curve intersect exactly once.  We really don't care
+% about $x$ at this point.  But think about this for a moment. If we use
+% the quadratic formula to solve this equation then we will get only one
+% solution precisely when the discriminant (the part under the square
+% root) is zero.  For our problem, the discriminant is
+% $(2-2a)^2-4(4a-8).$ Setting this equal to zero and solving, we get
+% \begin{align*}
+%   4-8a+4a^2-16a+32&=0\\
+%   4a^2-24a+36&=0\\
+%   4(a-3)(a-3)&=0\\
+%   a&=3.
+% \end{align*}
+
+%  Thus the center of the circle which intersects the curve exactly once
+%  is $(3,0)$ and the slope of the normal line is  $(2-0)/(2-3)=-2.$
+%  So the tangent line to the curve $y=\sqrt{2x}$ at $(2,2)$ has slope
+%  $1/2.$  
+
+%  Since we have both a point on the tangent line: $(2,2),$ and the
+%  slope of the tangent line we can use the point-slope form of the
+%  equation of a line to write down the equation of the tangent
+%  line: $$y=\frac{1}{2}x+1.$$
+% \end{myexample}
+
+%  \begin{embeddedproblem}{}
+%    Use Descartes' Method of Normals to find the slope of the tangent
+%    line to the curve $y=\sqrt{x}$ at the point $(4,2).$
+%  \end{embeddedproblem}
+
+%  \begin{embeddedproblem}{}
+%    In a variation of Descartes' method, find the tangent line to the
+%    curve $y=x^2$ at the point $(3,9)$ by considering the family of all
+%    the lines passing through the point $(3,9).$ Out of all those lines, only
+%    two will intersect the curve exactly once, the vertical line and
+%    the tangent line.  Use this method to find the tangent line to
+%    $y=x^2$ at $(3,9).$ What would happen if you tried this idea for
+%    the curve $y=x^3?$ (Maybe this explains why Descartes used
+%    circles.)
+%  \end{embeddedproblem}
+
+%  Descartes' method is not only clever, it is completely algebraic.
+%  But it is also unwieldy. And for curves that are more complex than
+%  parabolas it is often simply impossible to use.
+
+%  Descartes' Method of Normals was not the only technique developed for
+%  finding tangent lines before Calculus was invented, but it is
+%  typical in both it's  applicability and in the computational effort
+%  required.
+
+ Compare this with the ease of finding the equation of the tangent
+ line to $y=x^3$ in the problem above using Calculus: We have $y=x^3$
+ from which we have $\dfdx{y}{x} = 3x^2.$ So the slope of the tangent
+ line at $(3,9)$ is $\left.\dfdx{y}{x}\right|_{x=3} = 3(3)^2=27.$ Thus
+ the equation of the line tangent to $y=x^3$ at the point $(3,9)$ is
+$$
+y-9=27(x-3). \text{ (Tada!)}
+$$
+
+It is easy to see how the methods of Calculus replaced previous
+efforts.
+
+
+
+% The
+%  search for finding a double root of a general polynomial led the
+%  Dutch mathematician Johann Hudde (1628-1704) to algebraically show
+%  that a double root of the polynomial $p(x)=a_0+a_1 x+a_2 x^2++a_n
+%  x^n$ must also be a root of the polynomial
+%  \begin{align*}
+%    q(x)&=a_1 x+2a_2 x^2+3a_3 x^3+\ldots+na_n x^n\\
+%        &=x\left(a_1+2a_2 x+3a_3x^2+\ldots+na_n x^{n-1}\right)
+%  \end{align*}
+
+% We won't derive this result, but we will return to it later when we
+% have built up some Calculus.
+
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% outline-minor-mode: t
+%%% TeX-master: "Calculus"
+%%% End: 

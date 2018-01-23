@@ -1,0 +1,585 @@
+\chapter{Science Before Calculus}
+\label{chapt:pre-calculus}
+\markboth{{\sc Pre-Calculus}}{{\sc Pre-Calculus}}
+\aptta{}
+Mathematics is such an integral part of the training of any scientist,
+that it is hard to believe that the notion of using mathematics to
+study physical phenomena is a relatively “new” notion.  Consider, for
+example, the title page of the \emph{Nova Scientia (New Science)} written by
+Niccolo Tartaglia in 1537. 
+
+\centerline{\includegraphics*[height=3in,width=2in]{Figures/NovaScientia}}
+
+There is much allegory in this picture of which we will point out some
+items.  Inside the large ring is a group of muses including Geometria
+and Arithmetica and others surrounding Tartaglia observing the
+trajectory of a cannonball.  This represents the fact that this was
+one of the first works which studied the science of projectile motion
+(artillery fire) using mathematical principles rather than empirical
+data.  At the door of the ring is Euclid, representing the notion that
+one can only reach this inner ring through an understanding of
+Euclid’s Elements (geometry).  Clearly the man trying to scale the
+wall does not know geometry as his ladder is woefully short.  The
+smaller ring, separate from the larger ring is occupied by Philosophia
+on a throne.  Of course, the only entrance to the ring of philosophy
+is through the larger ring of mathematics.    At that gate are
+Aristotle (on the larger ring side) and Plato (on the philosophy
+side).  On the banner is the motto of Plato’s Academy, “Let no one
+ignorant of geometry enter.”  Of course, such allegory is open to
+interpretation, but the message is clear that mathematics would play
+an important role in the “new science.”    
+
+Of course, how does one apply
+mathematical principles to study physical phenomena?  To do so, there
+must be some sort of rules which seem to govern nature.  One of the
+tenants that scientists hold onto nowadays is NATURE IS LAZY!  Nature
+tries to do things in the most efficient manner.  Whether this is true
+or not, it gives a starting point to applying mathematics to study
+phenomena.  This was a driving force to mathematicians in the 1600’s
+as they looked for techniques for optimization.  We will be looking at
+some of these presently, but let’s start with some optimization
+problems of our own.
+ 
+Consider this: Out of all rectangles with a fixed perimeter, which one
+encompasses the greatest area? Give this some thought before reading
+further.
+
+
+One might guess that the answer is a square.  To see that this is
+true, consider a square whose side is $s$.  The perimeter of this
+square is $4s$ and the area is $s^2.$  Suppose we now increase the
+length by $x.$  To maintain the same perimeter, we must now decrease
+the width by the same $x.$  This $s-x$ by $s+x$ rectangle still has a
+perimeter of $4s,$ but its area is $(s-x)(s+x)=s^2-x^2<s^2.$  Thus the
+square has a larger area than this rectangle with the same perimeter. 
+
+
+Consider the following variation on the problem.
+ \begin{embeddedproblem}{}
+   Out of all rectangles with a fixed perimeter, which one has the
+   shortest diagonal? (Hint: This can be done in essentially the same
+   manner as the previous problem.)
+ \end{embeddedproblem}
+
+Now how about this one:
+\begin{embeddedproblem}{}
+  Consider all square based boxes with a fixed surface area $S.$ Does
+  the cube enclose the largest volume?  Justify you answer.
+\end{embeddedproblem}
+
+This problem may or may not be able to be solved using techniques
+similar to the above, but it is this type of problem which prompted
+mathematicians from the 1600’s to develop techniques that ultimately
+led to the invention of calculus.  We will come back to this problem
+toward the end of the chapter.  
+\endaptta{}
+
+The interest in optimization problems -- finding the biggest or
+smallest values of some variable quantity -- set the stage for the
+invention of Calculus which solves exactly those kinds of problems. It
+does much more of course, but it solves optimization problems
+spectacularly well.
+
+It is widely accepted that the Calculus was the invention (discovery?)
+of two men, Isaac Newton (1643-1727) and Gottfried Wilhelm von Leibniz
+(1646-1716). Newton developed his ideas at his home of Woolsthorpe
+Manor in Lincolnshire while Cambridge University was closed by a
+plague in the summer of $1665.$ In a period of less than two years he
+made the extraordinary advances while still under the age of $25.$
+Independently Leibniz developed his ideas during the period 1673-1675
+while serving as a diplomat in Paris. He wrote the first paper about
+calculus in $1684.$
+
+  % As with most scientific discoveries, it would be a mistake to assume
+  % that these two men worked in a vacuum.  Indeed, Newton is quoted as
+  % saying, ``If I have seen further than others, it is by standing upon
+  % the shoulders of giants.''  Who are these giants?
+
+  The rather cumbersome title of Leibniz $1684$ paper: \emph{A New Method for Maxima
+  and Minima, as Well as Tangents, Which is Impeded Neither by
+  Fractional nor Irrational Quantities, and a Remarkable Type of
+  Calculus for This,}  is very revealing.  Clearly,
+  the problem of optimizing (finding maxima and minima) is of central
+  importance and somehow finding tangent lines to curves is involved.
+  That this is a \underline{\emph{new}} method means that other
+  methods were available first. Indeed, Leibniz remarks in his paper that
+  ``Other very learned men have sought in many devious ways what
+  someone versed in this calculus can accomplish in these lines as by
+  magic.''  Who are these learned men and what are these devious ways?
+
+  The purpose of this section is two-fold.  Before we can exploit the
+  ideas of calculus, we will examine some of the precalculus
+  techniques from this pre-calculus\footnote{We will use the
+    unhyphenated ``precalculus'' to refer to the mathematical methods
+    which came before Calculus, and the hyphenated ``pre-calculus'' to
+    refer to the time period before Calculus was invented.} period.
+  This will not only give us some perspective when we move on to the
+  computational rules of calculus, but will also will provide a
+  framework for attacking mathematical problems with or without
+  Calculus.
+
+
+  The problem of finding the tangent line to a curve is a geometry
+  problem, so it is not surprising that some of the first attempts
+  were geometric. The Greek mathematician Apollonius of Perga (circa
+  262 BC to 190 BC) used geometric methods to construct tangent lines to
+  the classical conic sections: the ellipse, the hyperbola, and the
+  parabola.
+
+
+  Since algebra had not yet been invented, Apollonius's methods were
+  entirely geometric, and could not be easily generalized for curves
+  that were not conic sections. However we since we do have access to
+  algebraic techniques we can derive his result for the parabola
+  rather easily.
+
+  \begin{myexample}
+    Consider the curve $y=x^2:$\\
+\centerline{\includegraphics*[height=2in,width=2in]{Figures/Quadratic}}
+    We wish to find an equation of the line tangent to this curve at
+    the point $(3,9).$
+    It is clear from the graph that the line tangent to this curve at
+    the point $(3,9)$ will also pass through the $y-$axis, say at
+    the point $(0,b).$ If we can find $b$ we have the tangent line. 
+    
+    The slope of the tangent line is $m=\frac{9-b}{3}$ so the equation
+    of the tangent line will be 
+    \begin{equation}
+      y=\left(\frac{9-b}{3}\right)x+b\label{eq:TanSq}
+    \end{equation}
+    for one, and only one, value of $b.$ If $b$ is anything other than
+    that one value then equation~\ref{eq:TanSq} will intersect the parabola
+    twice: once at the point $(3,9),$ and once at another point, say
+    $(x,x^2).$ At this second point we have 
+    $$
+    x^2=\left(\frac{9-b}{3}\right)x+b.
+    $$
+    
+    Rearranging this slightly we have 
+    $$
+    x^2-\left(\frac{9-b}{3}\right)x-b=0
+    $$
+    which is a quadratic and we can solve quadratics.
+
+    Before charging blindly forward though, let's stop and think about
+    what we're trying to accomplish. We want to find the value of $b$
+    which guarantees that there is only \emph{one} solution. We're
+    not really interested in the actual solution itself. We just want
+    to ensure that there is only one.
+
+    From the Quadratic Formula we see that:
+    $$
+    x=
+    \frac{\left(\frac{9-b}{3}\right)\pm\sqrt{\left(-\left(\frac{9-b}{3}\right)\right)^2+4b}}{2},
+    $$
+    which has one solution precisely when the discriminant\footnote{The part under
+    the square root symbol.} is zero. Thus
+  \begin{align*}
+   \left(\frac{9-b}{3}\right)^2+4b&=0\\
+     \frac{9^2-18b+b^2}{9}+4b&=0\\
+    9^2-18b+b^2+36b&=0\\
+    b^2+18b+9^2&=0\\
+    (b+9)^2&=0,
+  \end{align*}
+so $b=-9.$ Thus an equation of the line tangent to $y=x^2$ at the point
+$(3,9)$ is
+$$
+y=6x-9.
+$$
+
+  
+
+\begin{embeddedproblem}{}
+  Use this method to find an equation of the line tangent to
+  $y=x^2$ at each of the following points:\\
+  \begin{description}
+  \item[(a)] $(2,4)$
+  \item[(b)] $(-3,9)$
+  \item[(c)] $(1,1)$
+  \item[(d)] $\left(\frac12,\frac14\right)$
+  \item[(e)] $(a,a^2)$
+  \end{description}
+\end{embeddedproblem}  
+
+\begin{embeddedproblem}{}
+  Use this method to find an equation of the line tangent to the given
+  curve  at the given point:\\
+  \begin{description}
+  \item[(a)] $y=x^2+x$ at $(2,6).$
+  \item[(b)] $y=x^2+x$ at $(\tau,\tau^2+\tau).$
+  \item[(c)] $y=x^2-3x+2$ at $(\tau,\tau^2-3\tau+2).$
+  \item[(d)] $y=ax^2+bx+c$ at $(\tau,a\tau^2+b\tau+c).$
+  \end{description}
+\end{embeddedproblem}
+  %   For example, he showed that the line tangent to the parabola at the
+  % point $(0,b)$ in the following diagram will always pass through the
+  % point $(0,-b).$
+\end{myexample}
+
+As we mentioned, although his methods were much different than this,
+Apollonius was able to construct the tangent line to each of the conic
+sections (the parabola, ellipse and the hyperbola). Construction the
+tangent line to the ellipse and the hyperbola is still rather
+difficult to do, even with algebraic methods we used above, so we will leave
+them for another time.
+
+\noindent{\bf Decartes's Method of Normals}
+
+There is one special case where the tangent line of a conic section is
+obvious. This is the special case of the circle. Pick a point on a
+circle and draw the radius to that point. It is well known that
+the tangent line at that point will be the line perpendicular to the
+radius.
+
+Ren\`e{} Descartes (1596-1650) used this fact to good effect in his
+Method of Normals\footnote{``Normal'' means perpendicular in this
+  context.}  Descartes was one of the pioneers in applying the
+techniques of algebra to solve geometry problems.  In his \emph{La
+  Geometrie} he remarked that the problem of finding the tangent to a
+curve was ``. . .  not only the most useful and most general problem
+in geometry that I know, but even that I have ever desired to know.''
+% Descartes' technique is often called the Method of Normals because it
+% uses algebra to find the normal (perpendicular) to a curve.  Once the
+% normal is obtained, then the tangent line is perpendicular to that.
+
+% His method for finding the normal to a
+% curve can be described as follows.
+
+% Given the equation of a curve $f(x,y)=0$ and a point $P$ on that
+% curve, we can consider the family of circles whose centers are on the
+% $x$ axis and passing through $P.$ We can algebraically find the center
+% of the circle which intersects the curve only once.  The radius of
+% that circle will be the normal (and its perpendicular through the
+% point will be the tangent.)
+
+
+To find the tangent line to a curve Descartes found the tangent circle
+to a curve and used that to determine the tangent line.  We'll
+illustrate Descartes' idea with the following example.
+
+\begin{myexample}
+Find the slope of the normal (and tangent) line to the curve $y=\sqrt{2x}$ at the
+point $(2,2).$
+
+\centerline{\includegraphics*[height=2.7in,width=4in]{Figures/DescartesCircle}}
+
+
+Following Descartes' approach we look at the family of circles whose
+centers lie on the $x$ axis and which pass through the point $(2,2).$
+The dashed circle represents a generic member of that family of
+circles.  Notice that typically these circles hit the curve twice.  We
+are searching for the circle that hits the curve only once.  This is
+the solid circle in our picture.  If we can find the center of that
+circle then its radius will be normal to the curve and we can find its
+slope (and the tangent's slope).
+
+% \begin{wrapfigure}[]{O}{3in}
+% %\vskip-.7cm{}
+% \includegraphics*[height=2in,width=3in]{Figures/CassegrainTelescope}
+% \caption{}
+% \label{fig:CassegrainTelescope}
+% \end{wrapfigure}
+
+If we let $(a,0)$ denote the coordinates of the center of a generic circle in that
+family, then the equation of the circle with center $(a,0)$ is
+$(x-a)^2+y^2=r^2$ where $r$ is the radius of the circle. Since we
+require our circle to pass through the point $(2,2)$ this radius will
+be the distance from $(2,2)$ to $(a,0).$ That is
+$r=\sqrt{(2-a)^2+2^2}.$
+Thus we have
+$$
+(x-a)^2+y^2=(2-a)^2+2^2.
+$$
+
+Substituting $y=\sqrt{2x}$ into the equation of the circle, we get
+\begin{align*}
+  (x-a)^2+2x&=(2-a)^2+4\\
+  x^2-2ax+a^2+2x&=4-4a+a^2+4\\
+  x^2+(2-2a)x+(4a-8)&=0
+\end{align*}
+
+It is tempting at this point, to use the quadratic formula to solve
+for $x$ and get (typically two) values for $x$ in terms of $a.$
+However, before we go doing a bunch of unnecessary work, let's recall
+what we are trying to do.  We want to find the value of $a$ where the
+circle and the curve intersect exactly once.  We really don't care
+about $x$ at this point.  But think about this for a moment. If we use
+the quadratic formula to solve this equation then we will get only one
+solution precisely when the discriminant (the part under the square
+root) is zero.  For our problem, the discriminant is
+$(2-2a)^2-4(4a-8).$ Setting this equal to zero and solving, we get
+\begin{align*}
+  4-8a+4a^2-16a+32&=0\\
+  4a^2-24a+36&=0\\
+  4(a-3)(a-3)&=0\\
+  a&=3.
+\end{align*}
+
+ Thus the center of the circle which intersects the curve exactly once
+ is $(3,0)$ and the slope of the normal line is  $(2-0)/(2-3)=-2.$
+ Thus the tangent line to the curve $y=\sqrt{2x}$ at $(2,2)$ has slope
+ $1/2.$  
+
+ Since we have both a point on the tangent line: $(2,2),$ and the
+ slope of the tangent line we can use the point-slope form of the
+ equation of a line to write down the equation of the tangent
+ line: $$y=\frac{1}{2}x+1.$$
+\end{myexample}
+
+ \begin{embeddedproblem}{}
+   Use Descartes' Method of Normals to find the slope of the tangent
+   line to the curve $y=\sqrt{x}$ at the point $(4,2).$
+ \end{embeddedproblem}
+
+ \begin{embeddedproblem}{}
+   In a variation of Descartes' method, find the tangent line to the
+   curve $y=x^2$ at the point $(3,9)$ by considering the family of all
+   the lines passing through the point $(3,9).$ Out of all those lines, only
+   two will intersect the curve exactly once, the vertical line and
+   the tangent line.  Use this method to find the tangent line to
+   $y=x^2$ at $(3,9).$ What would happen if you tried this idea for
+   the curve $y=x^3?$ (Maybe this explains why Descartes used
+   circles.)
+ \end{embeddedproblem}
+
+ Descartes' method is not only clever, it is completely
+ algebraic.  It is also  unwieldy for curves that are of
+ higher degree than that of a parabola (in our case $y^2=2x$). The
+ search for finding a double root of a general polynomial led the
+ Dutch mathematician Johann Hudde (1628-1704) to algebraically show
+ that a double root of the polynomial $p(x)=a_0+a_1 x+a_2 x^2++a_n
+ x^n$ must also be a root of the polynomial
+ \begin{align*}
+   q(x)&=a_1 x+2a_2 x^2+3a_3 x^3+\ldots+na_n x^n\\
+       &=x\left(a_1+2a_2 x+3a_3x^2+\ldots+na_n x^{n-1}\right)
+ \end{align*}
+
+We won't derive this result, but we will return to it later when we
+have built up some Calculus.
+
+Recall that in the title of Leibniz' first paper on Calculus, there was
+mention of a new method for maxima and minima, as well as tangents.
+Well, we've certainly looked at older methods for tangents.  What
+about older methods for maxima and minima; that is, to find values
+which optimize a function (quantity).  As we will see, these problems
+are intimately related.
+
+A contemporary of 
+%Roberval and 
+Descartes was Pierre de Fermat
+(1601-1665).  To address the problem of optimizing a function, Fermat
+developed a method often called the Method of Adequality.  The modern
+word ``adequate'' has its origin from the Latin verb adaequāre which
+means to equalize.  When something is adequate,  it is
+ equal to whatever your needs are.   Equalizing appears
+in Fermat's method as follows.  Fermat noticed that the values of a
+function $f(x)$ are very nearly equal near a maximum or minimum value.
+This is noticeable during the year with the number of hours of
+daylight.  At the summer and winter solstices, the daily change in the
+amount of daylight is relatively small as compared to that at the
+equinoxes.  This can be seen if we look at a graph of
+the hours of sunlight vs. day of the year~\footnote{http://www.geog.ucsb.edu/ideas/OtherImages/DaylightLengthInSantaBarbaraGraph500w.png}.
+
+\centerline{\includegraphics*[height=2in,width=3in]{Figures/SantaBarbaraDaylight}}
+
+
+Notice that for days near the maximum which occurs at day $172$ and
+the minimum which occurs at day $356,$ the number of hours of daylight
+does not vary too much.  This reasoning is the basis behind Fermat's
+idea to determine where a maximum or minimum occurs.  In general, if we
+are near a maximum, then for $h$ relatively small essentially $f(x+h)=f(x).$ After
+performing some algebra, we set $h=0$ to ``make it correct.''  Let's
+see how this works with an example.
+
+Suppose we want to divide $10$ into two lengths so that the product of
+the lengths is a maximum.  If we let $x$ denote one of the lengths, then
+the other length would be $10-x.$  Thus the product of the lengths is
+given by $P(x)=x(10-x)=10x-x^2,$ $0<x<10.$
+
+It is important to notice, explicitly, what  values $x$ can have.
+The domain of the function $P(x)$ itself is $(-\infty,\infty),$ but
+since we are dealing with lengths, this restricts our domain.
+According to Fermat, we should set $P(x)=P(x+h).$ Doing this we have
+\begin{align*}
+  10x-x^2&=10(x+h)-(x+h)^2\\
+  10x-x^2&=10x+10h-x^2-2xh-h^2\\
+  0&=10h-2xh-h^2\\
+  0&=10-2x-h.
+\end{align*}
+Setting $h=0$ ``to make it correct,'' we get $0=10-2x,$ so $x=5$ and
+$f(5)=5(10-5)=25$ 
+provides the maximum product.  (We know it is a maximum and not a
+minimum by the context of the problem.)
+
+\begin{embeddedproblem}{}
+  Consider all square based boxes with a fixed surface area $S.$
+  Does the cube enclose the largest volume?  Justify you answer.
+\end{embeddedproblem}
+
+As a side note, notice that in the graph of the number of hours of
+daylight that at the maximum and minimum points on the graph, the
+tangent line is horizontal.  As you go further, you will see that this
+concept is what drives Fermat's method.  We will be exploiting this
+idea later after we learn some calculus tools.
+
+These are a few of the ``devious methods''
+sought by ``learned men'' to solve such problems.  This begs the
+following question, ``If these techniques were already known, then why
+do Newton and Leibniz get credit for inventing the Calculus?''
+
+
+The answer is that pre-calculus people were using ad-hoc precalculus
+methods to solve specific problems.  Newton and Leibniz certainly knew
+of these methods.  What they did was to develop a systematic way of
+solving these sorts of problems in general.  This is what Leibniz
+refers to as ``A Remarkable Type of Calculus for This'' in his $1684$
+paper. As we've observed the word ``calculus'' means ``pebble.'' and has
+come to mean a set of rules for calculating.  Our purpose is to first
+develop and then
+exploit these rules/tools to solve these and related problems. By
+using Calculus won't have to be as clever as these pre-calculus
+``giants.''  They were all brilliant people. But brilliance is a lot
+to ask of merely ordinary people like us. We'll have to settle for
+being educated.
+
+
+
+To apply Fermat’s Method of Adequality to this problem, we must create
+an equation for the volume so we can maximize it.  With this in mind,
+let the dimensions of the box be $x$ by $x$ by $y$ and let the fixed surface
+area be given by $S.$
+
+\includegraphics*[height=2in,width=2in]{Figures/Parallelepiped}
+
+Thus we want to maximize the volume $V=x^2y$ subject to the constraint
+that  $2x^2+4xy=S.$
+
+\begin{problem}{}
+  Use the constraint to write $V$ in terms of $x$ alone and use Fermat’s
+  method to find the dimensions of the box that will maximize the
+  volume.  Is this box a cube? 
+\end{problem}
+
+\marginpar{\textcolor{red}{Bob says everything from ``We had'' to the
+    Problem section should go after we do the differentiation
+    rules. Not clear to me where he means. We must discuss.}} We had noted earlier that to apply calculus to natural phenomena,
+people often start with the assumption that nature is lazy, that is
+nature tries to optimize.  Take, for example, a beam of light.  If one
+were to shine a laser pointer in a room, then it would be reasonable
+to assume that light travels in a straight line which minimizes
+distance traveled.  This premise is reflected (pun intended) in light
+reflecting off a mirror.  Assuming that light travels the shortest
+path, we can examine what path light would travel in this case.
+Mathematically, we are given two points $A, B,$ and a line $m$ (for mirror,
+not slope).  We wish to find the shortest path from $A$ to $m$ to $B.$   
+
+\includegraphics*[height=2in,width=2in]{Figures/Fermat1}
+% These rules/tools were developed to be used on expressions (functions
+% and equations).  With that in mind, we will have you practice the
+% ``precalculus'' task of creating equations of one independent variable
+% which model non-equation scenarios.
+
+This can be done without calculus by reflecting $B$ across $m.$  We will
+denote this reflection by $B_R.$  Clearly the shortest path from $A$ to $m$
+to $B_R$ is a straight line.
+
+\includegraphics*[height=2in,width=2in]{Figures/Fermat2}
+
+Specifically, this says that the solid straight line path in the above
+picture is shorter than the dotted path.  If we reflect the parts of
+the paths that are below line $m,$ then the solid path will still be
+shorter than the dotted path. 
+
+\includegraphics*[height=2in,width=2in]{Figures/Fermat3}
+
+This solid path represents the shortest path from $A$ to $m$ to $B.$
+Notice that on this shortest path, we have the following situation.
+
+\includegraphics*[height=2in,width=2in]{Figures/Fermat4}
+
+To sum up, this says that by traveling the shortest path, light
+reflects off of a mirror so that the angle of incidence, $\angle 1,$ is
+congruent to the angle of reflection, $\angle 3.$  We’ve examined the
+reflection of light (without calculus); what about refraction of light
+as it passes from one medium to another, say from water to air.
+
+\includegraphics*[height=2in,width=2in]{Figures/Fermat5}
+
+Notice that light does not travel the shortest path anymore, as this
+would be a straight line from the fish to the kingfisher.  This seems
+incongruous with our tenant before that nature will be lazy and light
+will travel the shortest path.  We will get to that in a moment, but
+for now we will try to determine what the path of refracted light is.
+
+\begin{ProblemSection}
+  \begin{problem}{}
+    The area of a rectangle is $400 m^2.$  Find a formula for the
+    perimeter of the rectangle in terms of one of the sides of the
+    rectangle.  Remember to define what your variables are (along with
+    their units).  Also remember to include the possible values for
+    your independent variable (the domain of your function).
+  \end{problem}
+  \begin{problem}{}
+    \begin{description}
+    \item[a)] You throw a ball straight up with an initial velocity of
+      $50 m/s.$ Assuming that there is no air resistance and that the
+      ball accelerates toward the earth at a constant rate of
+      $9.8 ((m/s))/s,$ what would the ball's velocity be at $t$
+      seconds.
+   \item[b)] How would your formula change if you threw the ball
+     downward?
+    \end{description}
+  \end{problem}
+  \begin{problem}{}
+    If a promoter charges $\$50$ each for concert tickets, then he/she
+    will sell $15000$ tickets.  For each $\$1$ increase in price per
+    ticket, $100$ tickets less will be sold.  Determine a formula for
+    the revenue based on the price per ticket, assuming that the price
+    will be at least $\$50$ per ticket.
+  \end{problem}
+  \begin{problem}{}
+    The perimeter of an isosceles triangle is $100$ units.  Find the
+    area of the triangle as a function of the base.  Don't forget to
+    define your variables and give the domain of the function.
+  \end{problem}
+  \begin{problem}{}
+    A cylindrical tank must hold $500$ cubic feet of water.  The ends of
+    the tank are cut from two individual squares of metal, and the
+    side is constructed from one rectangular sheet of metal.  The
+    metal for the ends costs $\$5$ per square foot and the metal for the
+    side costs $\$4$ per square foot.  The weld for the seams costs $\$2$
+    per linear foot.  What is the cost of the tank (a) As a function of
+    its height?  (b)  As a function of the radius?  Don't forget
+    to identify variables and to provide the domain.
+  \end{problem}
+  \begin{problem}{}
+    Consider a rectangular box with a square base whose volume is
+    $500~ m^3.$ Find the surface area of the box as a function of its
+    height.  Now find it as a function of the length of the side of
+    the base.  Don't forget to identify your variables and to provide
+    the domain.
+  \end{problem}
+  \begin{problem}{}
+    \begin{description}
+    \item[(a)] The fixed cost for publishing a specific calculus book
+      is $\$100,000.$ These are costs that the publisher would incur
+      no matter how many books were printed.  Beyond that, it costs
+      $\$20$ per book to actually print the book.  If we let n denote
+      the number of books printed and $C=C(n)$ denote the cost in
+      dollars from printing this many books, then give a formula for
+      the total cost to print $n$ books.  What would the cost per book
+      be?
+    \item[(b)] Suppose the company plans to charge $\$150$ per book.
+      Assuming the company can sell as many books as it produces (as
+      with a print-on-demand company), write a formula for the profit
+      $P$ in dollars that the company would have from printing and
+      selling $n$ books.  How many books would need to be sold to
+      break even?
+    \end{description}
+  \end{problem}
+\end{ProblemSection}
+%%% Local Variables: 
+%%% mode: latex
+%%% outline-minor-mode: t
+%%% TeX-master: "Calculus"
+%%% End: 

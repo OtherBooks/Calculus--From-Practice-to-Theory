@@ -1,0 +1,701 @@
+\section{The Shape of Things}
+\label{sec:optim-shape-things}
+\markright{{\sc The Shape of Things}}
+% \section{The Abstract Viewpoint}
+% \label{sec:abstract-viewpoint-1}
+Whether we use Newton's dynamic view or Leibniz's more geometric
+interpretation of the techniques of Calculus is largely a matter of
+choice, and personal preference. For some problems Newton's
+interpretation is more natural and easier to use, for others Leibniz's
+viewpoint is better. What is important is that we recognize that
+neither approach \underline{\bf{}is} The Calculus. They are ways of
+interpreting, or ``thinking about'' The Calculus. 
+
+In this section we will try to think about Calculus directly, without
+any metaphors between us and the topic. For the most part we will
+fail, but never mind that. This is just our first attempt. We will get
+better.
+ 
+In the previous two sections\footnote{specifically, on
+pages~\pageref{list:FirstDerivTest-Newton},
+\pageref{list:FirstDerivTest-Lines}
+and~\pageref{list:FirstDerivTest-Leibniz}} we saw that the derivative
+gives us information about curves in much the same way that the slope
+of a straight line gives us information about the line. The only
+difference is that since the numerical value of the derivative changes
+at each point it only gives us \emph{local} information about the
+curve at that point. Whereas the slope gives us global information
+about the whole line.
+
+Moreover, since we reached the same conclusions regardless of whether
+we used Newton's or Leibniz's point of view, we can be reasonably
+confident that our conclusions are independent of which point of view we
+use. That is, we can be sure that what we have found  are fundamental
+truths of The Calculus itself. We repeat these conclusions in the
+abstract:
+\begin{description}
+\item[Increasing Functions:] If the derivative of a function is
+  positive at some point then the function is increasing at that
+  point.
+\item[Decreasing Functions:] If the derivative of a function is
+  negative at some point then the function is decreasing at that
+  point. 
+\end{description}
+
+As simple and intuitive as this seems there are two problems with
+it. We will need to proceed carefully.
+
+\begin{wrapfigure}[]{r}{2in}
+\captionsetup{labelformat=empty}
+\centerline{\includegraphics*[height=2in,width=2in]{Figures/Abstract1}}
+\label{fig:}
+\end{wrapfigure}
+The first problem is, what do we mean by increasing and decreasing? 
+
+No, really. What do we mean?
+
+You've been taught all of your life that increasing means ``rising to
+the right'' and that decreasing means ``dropping to the right.'' Thus
+the graph at the right is usually said to be is increasing from the
+far left to a point somewhere between zero and one, decreasing from
+that point to a point somewhere between three and four, and then
+increasing again thereafter.  That interpretation is deeply tied to
+the convention of saying that as we go farther to the right on the
+$x$-axis the values of $x$ get bigger. But this is only a convention.
+
+Conventions are handy, but they are not reality. If, for some reason,
+we had adopted the convention that moving farther to the \emph{left}
+causess the value of $x$ to increase then we would say (reading
+right-to-left) that this graph decreases first, then increases for a
+while, and then decreases again.
+
+The good news here is that we \emph{will} be adopting the usual
+conventions so we can say, loosely, that a graph is increasing if it
+rises as we move to the right. \underline{But} keep in mind that what
+this really means is that a function, $f(x),$ gets bigger if $x$ gets
+bigger. Which direction means ``bigger'' depends entirely on the
+context of a given problem.
+
+Resolving this issue was simply a matter of recognizing our own
+convention. Such difficulties are usually easy to resolve once we
+realize that's what they are.  However, distinguishing between a
+convention (especially one as old and comfortable as this one) and
+reality can be very difficult because conventions, once we've gotten
+comfortable with them, begin to feel as if they are {\bf actual}
+reality. They are not.
+
+But we have another problem and this one cannot be resolved by
+noticing that we've mistaken a convention for reality. We stated above
+that if the derivative of some function $f(x),$ is positive at some
+point $x=a,$ then $f(x)$ is increasing \emph{at that point.}
+
+The problem is, what does it mean to be increasing at a single point?
+
+In order to know that $f(x)$ has increased we need to move away from
+$x=a$ to some point (to the right of $a$ in our adopted convention),
+say $x=a+h,$ and see if $f(a+h)$ is bigger than $f(a).$ But even if
+$f(a+h)$ \emph{is} bigger the only information we have is that
+$f(a+h)>f(a).$ This does not guarantee that $f(x)$ was increasing the
+whole time. That is, there might be some point between $a$ and $a+h$
+-- let's call it $\alpha,$ -- where $f(\alpha)<f(a).$ Even worse there
+might be some point, $\beta$ between $a$ and $\alpha$ where
+$f(\beta)>f(a).$ Yet again there might \emph{another} point $\gamma$
+between $a$ and $\beta$ where $f(\gamma) < f(a),$ again. And so on
+$\ldots$
+
+If the distance between $a$ and $a+h$ is very small (that is, if $h$
+is very small) and if $f(a+h)>f(a),$  it is very easy to
+\emph{believe} that $f(x)$ increased through all of the points from
+$a$ to $a+h.$ But belief is not knowledge. In fact, we have no
+information whatsoever about the behavior of $f(x)$ between $a$ and
+$a+h.$ We simply know that when $x=a+h$ the function was greater than
+it was at $x=a.$
+
+This is getting very hard to think about isn't it? That's because what
+we are getting caught on here is one of Zeno's
+Paradoxes\footnote{Specifically, the arrow paradox. Briefly, Zeno said
+  that an arrow in flight can't really move. This is because to get
+  from where it is now, to any other point in space it has to traverse
+  all of the (infinitely many) points in between. But this is also
+  true of all of those points. Thus before the arrow can move once it
+  has to move infinitely many times. That's crazy.}. If you have never
+heard of the Greek philosopher Zeno, you really should \google{}
+him. He's an interesting guy. 
+
+But wait until you are done with your Calculus for today.
+
+Here's how we get around this difficulty. We all know what we mean
+when we say that a curve is increasing at a point. The mental image
+that is generated is very clear. The problem is that any attempt to
+put this into words runs headlong into Zeno and his paradox. We cannot
+solve this problem, so we will simply go around it. That is, we first
+recognize that the usual intuitive meaning of the word increasing does
+not apply at a single point, since we need at least two points to say
+we've increased from one to the other.  We are thus free to define the
+phrase ``increasing at a point'' in any manner we choose. We choose
+the following:
+\begin{definition}{}
+  Consider the graph of the function $y(x),$ at some point $(a, y(a)).$
+  \begin{enumerate}
+  \item The graph is said to be \emph{increasing} at $x=a$ if $\dfdxat{y}{x}{x=a} > 0$
+  \item The graph is said to be \emph{decreasing}\footnote{Notice that
+      our definition does \underline{\bf{}not} address the situation
+      $\dfdxat{y}{x}{x=a}=0.$ Since the definition does not address
+      this we say that the function is neither increasing nor
+      decreasing when $\dfdxat{y}{x}{x=a}=0.$ } at $x=a$ if
+    $\dfdxat{y}{x}{x=a} < 0$
+  \end{enumerate}
+  \label{def:first-deriv-test}
+\end{definition}
+
+
+Does this feel like cheating to you? It probably does.  After all,
+what have we really accomplished? We took our highly intuitive
+observation above, that if the derivative is positive then the
+function is increasing, and turned it around to make it a
+definition. It probably seems like we're blathering on about nothing
+at all, making easy things seem difficult and getting lost in a jungle
+of logical pecadillos. This is the usual criticism brought against
+mathematicians and mathematics.
+
+But stop and think about this just a little more deeply. Is that
+really all that we've done?
+
+Suppose we we would like to know when a function is increasing and
+when it is decreasing (we do). In the absence of any other tools,
+our only option is to look at the value of the function here, then
+look at it over there, and decide which is bigger. Unfortunately, as
+Zeno pointed out this tells us exactly nothing about what happened in
+between. So we are obliged to look at a point in between, and another,
+and another $\ldots$
+
+On the other hand, if we know the derivative of our curve all we have
+to do is check, to see for which values of $x$ the derivative is
+positive (function is increasing) and for which it is negative
+(function is decreasing). Most of the time we don't have to look at
+the points one at a time. We can consider entire classes of points all
+at once.  
+
+
+\begin{myexample}
+  For example, consider the function whose derivative is $\dfdx{y}{x}=
+  3x^2-3.$ Can you tell us where this curve is increasing and where it
+  is decreasing?
+  
+  Sure you can. Since $\dfdx{y}{x}$ is positive when $x<-1$ and when
+  $x>1,$ but negative when $-1<x<1.$ Thus our curve increases until
+  $x=-1,$ decreases from $x=-1$ to $x=1$ and increases thereafter.
+  \begin{embeddedproblem}{}
+    Do the computations necessary to show that $\dfdx{y}{x}$ is
+    positive when $x<-1$ and when $x>1,$ but negative when $-1<x<1.$
+
+    Then find at least one function whose derivative is $3x^2-3,$
+    graph it, and confirm that it increases when $x<-1$ and when
+    $x>1,$ and decreases when $-1<x<1.$
+  \end{embeddedproblem}
+\end{myexample}
+
+Definition~\ref{def:first-deriv-test} is sometimes called the First
+Derivative Test, but such an imposing name seems unnecessarily
+overblown to us. On the other hand, we mention the name because it
+suggests that there might be something called a Second Derivative
+Test, and indeed there is. Here's what it says: If the second
+derivative of a function is positive at a point then the graph of the
+function is concave upward at that point. If the second
+derivative of a function is negative at a point then the graph of the
+function is concave downward at that point. 
+
+Clearly this will not make sense until we've understood all of the
+words being used. For example, what can ``concave upward'' possibly
+mean. We will illuminate this with the following examples.
+
+Each of the following graphs:\\
+\centerline{\includegraphics*[height=2in,width=4in]{Figures/ConcaveUp}}
+exemplifies the idea of ``concave up,'' whereas the following graphs are ``concave down.''\\
+\centerline{\includegraphics*[height=1.5in,width=4in]{Figures/ConcaveDown}}
+
+Obviously concave up means ``a bowl that opens up,'' and concave down
+means ``a bowl that opens down. However it is easy to get the wrong
+impression from simple examples so let's look at some more.
+
+Is this graph\\
+\centerline{\includegraphics*[height=1.75in,width=3in]{Figures/ConcaveUpDown}}
+concave up or concave down? 
+
+Clearly it is both. On the interval $(0,\pi)$ it is concave down and
+on the interval $(\pi,2\pi)$ it is concave up. So this notion is like
+increasing/decreasing in that we will always need to specify the
+interval on which a given function is either concave up or concave down.
+
+Now what about these two?\\
+\centerline{\includegraphics*[height=2in,width=4in]{Figures/ConcaveUpDownUnclear}}
+
+The graph on the left is clearly\footnote{Never mind that we can't
+  actually see \emph{all} of the graph.}  concave up when $x<0,$ but
+what about when $x>0?$ Is it concave up there? Concave down?  Neither?
+Both? It is very hard to tell from the graph.  The one on the right is
+similarly vague in the region around $x=0.$
+
+Clearly, if it is important for us to distiguish concave up from
+concave down\footnote{It is.} we will need a more precise method
+than simply looking at graphs.
+
+Let's proceed slowly. Since we're studying Calculus the derivative
+will probably be instrumental in our understanding of concavity, so we
+ask what we can determine about the derivative of a function whose
+graph is concave up.
+
+Consider our first example $y(x) = x^2+1.$ This is concave up
+everywhere so we will consider how its derivative changes as $x$ moves
+increases. The following sketches show the graph and
+its tangent at $x=1,$ $x=2,$ and $x=3.$\\
+\centerline{\includegraphics*[height=2in,width=4in]{Figures/ConcaveUpWithTangent}}
+Notice that as $x$ increases the tangent line gets steeper and
+steeper. That is to say its slope gets larger. Or, even more formally,
+the derivative increases.
+\begin{embeddedproblem}{}
+  Look back up to the graph of the other ``concave up'' examples and
+  convince yourself that this is true of all of them: As $x$ increases
+  the derivative of each function also increases.
+\end{embeddedproblem}
+
+Does that mean that the derivative of a concave down function will
+decrease as $x$ increases? Yes, of course it does.
+\begin{embeddedproblem}{}
+  Look back up to the graph of the  ``concave down'' examples and
+  convince yourself that this is true of all of them: As $x$ increases
+  the derivative of each function decreases.
+\end{embeddedproblem}
+
+So, apparently in order to distinguish where a function is concave up
+from where it is concave down we need to locate where the derivative
+is increasing and where it is decreasing.  If only we had a tool to
+tell us when a function is increasing and when it is decreasing the
+problem would be solved.
+
+But we do! That's exactly what the First Derivative Test tells us! If
+we want to know where the graph of $y(x)$ is increasing or decreasing
+we look at its derivative, $\dfdx{y}{x}$ and find where this is
+positive or negative.
+
+To find out where the graph of $y(x)$ is concave up or concave down,
+we ask where its derivative, $\dfdx{y}{x},$ is increasing and where it
+is decreasing. Where the derivative is increasing the graph of $y(x)$
+will be concave up and where it is decreasing the graph of $y(x)$ will
+be concave down.
+
+To determine where the derivative is increasing or decreasing we need
+to look at the \emph{derivative of the derivative,} $\dfdxn{y}{x}{2}$
+and ask where it is positive and where it is negative.
+
+
+So apparently the derivative of $y(x)$ can tell us where a function is
+increasing, decreasing, concave up, and concave down. This is actually quite a lot to tell 
+
+% \section{The Shape of Things}
+% \label{sec:shape-things}
+% Can we graph the function in the previous example? Well, almost. One
+% possibility is the graph at the right.
+
+
+\begin{ProblemSection}
+  \begin{myproblem}{}
+    Find all values of $x$ for which each of the following curves is
+    increasing and for which it is decreasing. \\
+         Hint:
+         Recall that the definition of the absolute value is: 
+         $$
+         \abs{x} =
+         \begin{cases}
+           x& \text{if } x\ge0 \\
+           -x& \text{if } x<0 
+         \end{cases}.
+         $$
+    \begin{multicols}{3}
+      \begin{description}
+       \item[(a)] $y=\frac{1}{x^2}$
+       \item[(b)] $y=\frac{x^2}{x+1}$
+       \item[(c)] $y=\abs{x}$
+       \item[(d)] $y=\cos^2x -\cos x, 0\le x\le 1\pi$
+       \item[(e)] $y=$
+       \item[(f)] $y=$
+       \item[(g)] $y=$
+       \item[(h)] $y=$
+       \item[(i)] $y=$
+       \item[(j)] $y=$
+       \item[(k)] $y=$
+       \item[(l)] $y=$
+      \end{description}
+    \end{multicols}
+\end{myproblem}
+
+  \begin{myproblem}{} 
+    Consider the top view of an airplane $P$ starting at the point
+    $(1,0)$ and traveling up the line $x=1$ at a constant speed $v.$
+    When the plane is at $(1,0),$ a homing missile $M$ is fired from
+    the origin directly at the plane. Assuming that the missile
+    travels at a speed which is $k$ times the speed of the plane
+    $(k>1)$ and is always aimed directly at the plane, find the path
+    the missile takes.  [Such a path is called a pursuit curve.]  The
+    diagram below shows the situation at time $t.$\\
+    \centerline{\includegraphics*[height=3in,width=4in]{Figures/PursuitCurve}}
+    \begin{description}
+    \item [(a)]  If we let $s$ denote the distance the missile has traveled
+      at time $t,$ show that the pursuit curve must satisfy the
+      differential equation
+      \[\dfdx{y}{x}=\frac{(\frac{s}{k}-y)}{1-x}\]
+      and use this to show that the pursuit curve must satisfy the
+      differential equation
+      \[(1-x) \dfdxn{y}{x}{2}=1/k \dfdx{s}{x}=1/k \sqrt{1+(\d y/\d x)^2}\]
+      with the initial conditions $y(0)=0,$ $\dfdx{y}{x}(0)=0.$
+    \item[(b)]  Solve the differential equation in part (a).  [Hint: Let
+      $z=\dfdx{y}{x}$ and solve the resulting equations for $z.$]
+    \item[(c)]  How long does it take for the missile to catch the plane?
+    \end{description}
+  \end{myproblem}
+
+\begin{myproblem}{}
+  \begin{description}
+  \item[(a)] Show that $x^2=1+2(x-1) +(x-1)^2.$
+  \item[(b)] Find the equation of the straight line tangent to the
+    graph of $y=x^2$ at the point $(1,1).$
+  \item[(c)] How is your formula in part (b) related to the formula in
+    part (a)?
+  \end{description}
+\end{myproblem}
+
+\begin{myproblem}{}
+  Consider the functions:\marginpar{This belongs with the foreshadowing of power series}
+\[    y(x) = \frac{x^2}{x^2+1} \text{ and } p(x)=Ax^2+Bx+C.\] 
+We want to find values for the parameters, $A, B,$ and $C$ that make
+the graphs of these two functions as similar as possible near the
+point $(2, 4/5).$
+  \begin{description}
+  \item[(a)] First compute $\dfdx{y}{x},$ and $\dfdxn{y}{x}{2}$ at the
+    point $x=2.$
+  \item[(b)] Naturally we'll want both functions to pass through the
+    point $(2, 4/5)$ so we set 
+    \begin{align}
+      p(2) &= f(2).\label{TS:1}
+      \intertext{To guarantee that the graphs are ``pointing in the
+        same direction'' we set their derivatives at the point $(2,
+        4/5)$ equal as well.}
+      y^\prime(2) &= p^\prime(2)\label{TS:2}
+      \intertext{To guarantee that the graphs are ``similarly curved''
+        we set their second derivatives at the point $(2,
+        4/5)$ equal as well.}
+      y^{\prime\prime}(2) &= p^{\prime\prime}(2)\label{TS:3}
+    \end{align}
+    Solve equations~\ref{TS:1},~\ref{TS:2}, and~\ref{TS:3} to find $A,
+    B,$ and $C.$
+  \item[(c)] On the same set of axes graph $f(x)$ and $p(x).$ How are
+    these graphs similar and how are they different?
+  \end{description}
+
+\end{myproblem}
+
+    \begin{myproblem}{}
+      \marginpar{This should be somewhere else.}  L'Hopital's Rule
+      problem: $\limit{x}{0}{(1-ax)^{\frac1x}}.$ (Form: $0^0$ but is
+      \underline{not} equal to $1.$
+  \end{myproblem}
+
+\end{ProblemSection}
+
+% \subsection{Precalc vs. Pre-calc}
+% An argument could be made that a student who is not comfortable with
+% precalculus topics such algebra and analytic geometry would find the
+% going in calculus difficult and anecdotal evidence suggests that
+% students that students do not possess the necessary fluency with these
+% topics.  Efforts such ``just in time'' algebra have tried to address
+% this issue.  Perhaps looking at Pre-calculus would provide another
+% opportunity while setting the stage for the course.  After all,
+% calculus in its present form would not exist without the achievement
+% of utilizing algebra to solve geometry problems (and vice versa).
+% Furthermore, both Newton and Leibniz acknowledged the contributions of
+% their predecessors.   
+
+% Consider, for example, Leibniz's 1684 paper on calculus A New Method
+% for Maxima and Minima as Well as Tangents, Which is Impeded Neither by
+% Fractional No by Irrational Quantities, and a Remarkable Type of
+% Calculus for This.  The title alone is telling and should be shared
+% with students to pique their interest and to set the stage for the
+% course, while providing opportunities to review pre-calculus topics.
+% For example, notice the word New.  What were the old methods and why
+% did this supplant them?  What actually is a Calculus?  Even more
+% curious are the following excerpts from the article [Calinger,
+% p. 387-392].
+
+% ``Knowing thus the Algorithm (as I may say) of this calculus, which I
+% call differential calculus, all other differential equations can be
+% solved by a common method. We can find maxima and minima, as well as
+% tangents without the necessity of removing fractions, irrationals, and
+% other restrictions, as had to be done according to the methods that
+% have been published hitherto.''
+
+% ``Other very learned men have sought in many devious ways what someone
+% versed in this calculus can accomplish in these lines as by magic.''
+
+% If we make the claim to students that calculus is one of the pinnacles
+% of human thought, and that it is important to learn, then it behooves
+% us to look at the methods that this supplanted to set the stage for
+% its development and to put the rules of calculus into context.  It
+% also affords the opportunity to practice precalculus skills as the
+% following problems provide. 
+
+% \begin{myproblem}{}
+%   Descartes' Method of Normals: [Boyer, p. 166-167] In his work
+%   G\'e{}om\'e{}trie [1637], Ren\'e{} Descartes (1595-1650) presented a
+%   completely algebraic method for finding the normal (perpendicular)
+%   to a curve.  From there it is straightforward to find the tangent to
+%   the curve, a problem which ``I dare say that this problem
+%   (constructing tangents) is not only the most useful and general
+%   problem in geometry that I know, but even that I have ever desired
+%   to know.''  Given a curve f(x,y)=0 and a point $P$ on that curve, we
+%   can find the normal line by considering the family of circles whose
+%   centers lie on the $x$ axis and passing through $P.$ We can
+%   algebraically find the center of the circle with intersects the
+%   curve only once.  The radius of that circle will be the normal and
+%   its perpendicular through $P$ will be the tangent to both the circle
+%   and the curve.  Consider the point $(4,2)$ lying on the parabola
+%   $y=\sqrt{x}.$
+%   \begin{description}
+%   \item[(a)] Find the equation of the circle passing through
+%     $(4,2)$ centered at $(a,0).$\\[1mm]
+% \centerline{\includegraphics*[height=2.5in,width=5in]{Figures/DescartNorm}    }
+%   \item[(b)] Find the value of $a,$ so that the parabola and the
+%     circle only intersect once.  Compute the value of the slope of the
+%     line joining $(4,2)$ and $(a,0),$ and use this to determine the
+%     slope of the tangent line to the parabola at $(4,2).$
+%   \end{description}
+% \end{myproblem}
+
+% It should be noted that Descartes' Method requires one to find the
+% double root of an equation, which is tedious at best.  Fortunately,
+% algorithms were developed to address this problem.  One such rule was
+% developed by the Dutch mathematician Johann Hudde (1628-1704):
+
+% Given the polynomial $f(x)=a_0+a_1 x+\ldots+a_n x^n$ and any arithmetic
+% progression $a,a+b,a+2b,\ldots,a+nb,$ form the polynomial
+% $$ 
+% f^* (x)=a_0 a+a_1 (a+b)x+a_2 (a+2b) x^2+\ldots+a_n (a+nb) x^n
+% $$
+
+% Huddes' rule states that any double root of f must be a root of $f^*$
+% [Katz, p. 474].  Huddes' rule can be verified algebraically, but this
+% might not be appropriate for the beginning of a calculus class.
+% However, It can be verified later by noticing that $f^*
+% (x)=af(x)+bf^\prime(x).$ This leads to the following problem which can be
+% assigned after learning the product rule.
+
+% \begin{myproblem}{}
+%   \begin{description}
+%   \item[(a)] Consider the polynomial $f(x)=a_0+a_1 x+\ldots+a_n x^n.$
+%     Show that if $x=r$ is a double root of $f(x)$ then it is a root of
+%     $f^\prime(x).$
+%   \item[(b)] Use part (a) to verify Hudde's rule, namely that if $x=r$ is a double root of $f(x),$ then it is a root of
+% $$  
+% f^*(x)=a_0 a+a_1 (a+b)x+a_2 (a+2b) x^2+\ldots+a_n (a+nb) x^n.
+% $$
+
+%   \end{description}
+% \end{myproblem}
+
+% It should be noted that Hudde's rule was a precursor to calculus and
+% that Newton and Leibniz would certainly have been aware of it when
+% they were developing their calculus rules.
+
+
+
+
+\subsection{Rainbows}
+Did you ever notice a double rainbow?  
+\InsertGraphic{} 
+Look carefully at the order of the colors in the primary rainbow and
+the secondary rainbow.  Do you notice that it is reversed?  Why does
+this happen?  There are some other questions which readily come to
+mind.  Why is the primary rainbow below the secondary one?  Why is the
+primary rainbow brighter and why isn’t there always a secondary
+rainbow?  We will use what we know about the refraction and reflection
+of light to examine some of these questions.
+
+When a ray of light enters a raindrop (which is spherical), it gets
+both refracted and reflected.
+\includegraphics*[height=2in,width=2in]{Figures/Rainbow1}
+
+As you can see in the diagram, the ray of light entering the raindrop
+at an angle of radian measure $\alpha$ is refracted to an angle of radian
+measure $\beta.$  This is governed by Snell’s Law $\sin\alpha/v_a =\sin\beta/v_b,$
+where $v_a$ and $v_b$ are the velocities of light in air and water,
+respectively.  Actually only a portion is refracted as the other
+portion is reflected off the exterior of the raindrop.  Once inside
+the raindrop, it reflects off of the back of the raindrop (again only
+a portion) so that the angle of incidence equals the angle of
+reflection.  A portion of the light then exits the raindrop governed
+by Snell’s Law again.  The total amount of (clockwise) rotation in
+this process is called the deviation angle $D(\alpha).$
+
+\begin{myproblem}{}
+  Show that $D(\alpha)=\pi-2(2\beta-\alpha)=\pi-4\beta+2\alpha.$
+
+Notice that $\alpha$ and $\beta$ are not independent, they are governed by Snell’s Law which we will rewrite as 
+$$
+\sin\alpha=v_a/v_b\sin\beta=k \sin\beta
+$$
+where $k=v_a/v_b$  is the index of refraction (for water).  In the case of white light, this index of refraction is about $4/3.$  Graphing $D(\alpha)$ for this value of $k$ and $0\le\alpha\le \pi/2,$ we have
+\includegraphics*[height=2in,width=2in]{Figures/Rainbow2}
+
+Notice from the graph that the minimum of this curve appears to be
+around the point $(1.03,2.41).$  This says that the minimum value of
+$D(\alpha)$ is about $2.41 radians\approx 138^\circ $ and it occurs when $\alpha\approx 1.03
+radians\approx 59.4^\circ.$  Notice from an enlargement the graph near that minimum
+that for values of $\alpha$ near $1.03$ the amount of deviation is roughly the
+same.
+\includegraphics*[height=2in,width=2in]{Figures/Rainbow3}
+
+This says that light rays entering the raindrop at approximately
+$59\circ$ have the highest concentration when exiting the raindrop.
+At other values of $\alpha$ the dispersion of light is greater.  This
+provides the angle that the rainbow makes with an observer.  This
+supplementary angle to $D(\alpha)$ is called the rainbow angle,
+$$
+R(\alpha)=\pi-D(\alpha)  radians=180^\circ-(180^\circ)/\pi D(\alpha).
+$$
+
+\includegraphics*[height=2in,width=2in]{Figures/Rainbow4}
+\end{myproblem}
+
+\begin{myproblem}{}
+  Show that for an index of refraction $k$ that $D(\alpha)$ is minimized when
+  $\sin\alpha=\sqrt{(4-k^2)/3}.$  Use this to fill in the following table:
+$$  
+  \begin{array}[c]{|c|c|c|c|}
+    \hline{}
+    Color&k&\alpha in degrees&R(\alpha) in degrees\\\hline
+     \text{Red}&1.331&&\\\hline
+    Orange&1.332&&\\\hline
+    Yellow&1.333&&\\\hline
+    Green&1.335&&\\\hline
+    Blue&1.337&&\\\hline
+    Indigo&1.340&&\\\hline
+    Violet&1.344&&\\\hline
+  \end{array}
+$$
+\end{myproblem}
+
+The values of $R(\alpha)$ you obtained in the table accounts for the
+various color bands that appear in the rainbow as sunlight hits
+droplets at various angles.
+
+\includegraphics*[height=2in,width=2in]{Figures/Rainbow5}
+
+The primary rainbow is created by light entering the upper portion of
+the raindrop.  If light is bright enough then a secondary rainbow is
+created from light entering the lower portion of the raindrop as in
+the diagram below.
+
+\includegraphics*[height=2in,width=2in]{Figures/Rainbow6}
+
+This time the deviation angle $D(\alpha)$ is the total amount of clockwise
+rotation and the rainbow angle would be $R(\alpha)=D(\alpha)-\pi.$  Note that the
+extra reflection accounts for the rainbow being not as bright.
+
+\begin{myproblem}{}
+  Show that in the case of the secondary rainbow
+$$
+D(\alpha)=2\alpha-6\beta+2\pi.
+$$
+and show that this is minimized when $\cos\alpha\sqrt{(k^2-1)/8.}$ Use
+this to complete the following table.
+$$  
+  \begin{array}[c]{|c|c|c|c|}
+    \hline{}
+    Color&k&\alpha in degrees&R(\alpha) in degrees\\\hline
+     \text{Red}&1.331&&\\\hline
+    Orange&1.332&&\\\hline
+    Yellow&1.333&&\\\hline
+    Green&1.335&&\\\hline
+    Blue&1.337&&\\\hline
+    Indigo&1.340&&\\\hline
+    Violet&1.344&&\\\hline
+  \end{array}
+$$
+Use this table and the table in the previous problem to explain why the secondary
+rainbow is above the primary rainbow and its colors are reversed.
+\end{myproblem}
+
+
+\begin{ProblemSection}
+  \begin{myproblem}{}
+    The area of a rectangle is $400 m^2.$  Find a formula for the
+    perimeter of the rectangle in terms of one of the sides of the
+    rectangle.  Remember to define what your variables are (along with
+    their units).  Also remember to include the possible values for
+    your independent variable (the domain of your function).
+  \end{myproblem}
+  \begin{myproblem}{}
+    \begin{description}
+    \item[a)] You throw a ball straight up with an initial velocity of
+      $50 m/s.$ Assuming that there is no air resistance and that the
+      ball accelerates toward the earth at a constant rate of
+      $9.8 ((m/s))/s,$ what would the ball's velocity be at $t$
+      seconds.
+   \item[b)] How would your formula change if you threw the ball
+     downward?
+    \end{description}
+  \end{myproblem}
+  \begin{myproblem}{}
+    If a promoter charges $\$50$ each for concert tickets, then he/she
+    will sell $15000$ tickets.  For each $\$1$ increase in price per
+    ticket, $100$ tickets less will be sold.  Determine a formula for
+    the revenue based on the price per ticket, assuming that the price
+    will be at least $\$50$ per ticket.
+  \end{myproblem}
+  \begin{myproblem}{}
+    The perimeter of an isosceles triangle is $100$ units.  Find the
+    area of the triangle as a function of the base.  Don't forget to
+    define your variables and give the domain of the function.
+  \end{myproblem}
+  \begin{myproblem}{}
+    A cylindrical tank must hold $500$ cubic feet of water.  The ends of
+    the tank are cut from two individual squares of metal, and the
+    side is constructed from one rectangular sheet of metal.  The
+    metal for the ends costs $\$5$ per square foot and the metal for the
+    side costs $\$4$ per square foot.  The weld for the seams costs $\$2$
+    per linear foot.  What is the cost of the tank (a) As a function of
+    its height?  (b)  As a function of the radius?  Don't forget
+    to identify variables and to provide the domain.
+  \end{myproblem}
+  \begin{myproblem}{}
+    Consider a rectangular box with a square base whose volume is
+    $500~ m^3.$ Find the surface area of the box as a function of its
+    height.  Now find it as a function of the length of the side of
+    the base.  Don't forget to identify your variables and to provide
+    the domain.
+  \end{myproblem}
+  \begin{myproblem}{}
+    \begin{description}
+    \item[(a)] The fixed cost for publishing a specific calculus book
+      is $\$100,000.$ These are costs that the publisher would incur
+      no matter how many books were printed.  Beyond that, it costs
+      $\$20$ per book to actually print the book.  If we let n denote
+      the number of books printed and $C=C(n)$ denote the cost in
+      dollars from printing this many books, then give a formula for
+      the total cost to print $n$ books.  What would the cost per book
+      be?
+    \item[(b)] Suppose the company plans to charge $\$150$ per book.
+      Assuming the company can sell as many books as it produces (as
+      with a print-on-demand company), write a formula for the profit
+      $P$ in dollars that the company would have from printing and
+      selling $n$ books.  How many books would need to be sold to
+      break even?
+    \end{description}
+  \end{myproblem}
+\end{ProblemSection}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% outline-minor-mode: t
+%%% TeX-master: "Calculus"
+%%% End: 
+

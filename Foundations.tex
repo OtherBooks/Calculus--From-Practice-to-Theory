@@ -1,0 +1,331 @@
+\chapter{Foundations}
+\label{cha:foundations}
+
+\section{What's Wrong with Differentials?}
+\label{sec:whats-wrong-with}
+On page~\pageref{MurkyFoundation} in
+section~\ref{sec:calc-stack-pebbl} we mentioned that the foundations
+of the Calculus have always been murky. For example, we have developed
+all of our differentiation rules using the concept of  infinitely
+small displacements: differentials.
+
+\section{Limits}
+\label{sec:limits}
+\aptta{}
+\endaptta{}
+\subsection{Continuity}
+\label{subsec:continuity}
+\section{The Definition of the Derivative}
+\label{sec:defin-deriv}
+\aptta{}
+Functions are more complicated entities than we might suppose at
+first. We have alluded to the fact that some functions do not have
+derivatives, but the reality is much more subtle and interesting
+than we might suppose at first. Some functions have derivatives
+everywhere in their domain except at a single point. Some at multiple
+points. 
+
+Some do not have derivatives anywhere and yet are continuous
+everywhere. Very strange.
+
+Unfortunately this is not the place to investigate all of this in
+depth, but we will consider the following: Each of the following
+functions is differentiable everywhere, except possibly at $x=0.$ Can
+you tell which is, and which is not differentiable at $x=0?$
+\begin{itemize}
+\item $f(x) =
+  \begin{cases}
+    x^{\frac13}\sin\left(\frac1x\right)& x\neq0\\
+    0                                & x=0 
+  \end{cases}$
+\item $f(x) =
+  \begin{cases}
+    x\sin\left(\frac1x\right)& x\neq0\\
+    0                                & x=0 
+  \end{cases}$
+\item $f(x) =
+  \begin{cases}
+    x^{\frac23}\sin\left(\frac1x\right)& x\neq0\\
+    0                                & x=0 
+  \end{cases}$
+\item $f(x) =
+  \begin{cases}
+    x^2\sin\left(\frac1x\right)& x\neq0\\
+    0                                & x=0 
+  \end{cases}$
+\end{itemize}
+\endaptta{}
+\marginpar{Note: Here we want to show that differentiability implies continuity.}
+\section{Rolle's Theorem and the Mean Value Theorem}
+\label{sec:rolles-theorem-mean}
+\aptta{}
+\endaptta{}
+\section{Some ``Obvious'' Theorems}
+\label{sec:some-obvi-theor}
+\aptta{}
+\endaptta{}
+\marginpar{Note: Here we want to prove that a positive derivative means an
+increasing function. Also negative implies decreasing
+}
+
+\marginpar{And Fermat's Theorem and its converse.
+}
+
+And if $f^\prime(x) = 0, \forall x\in[a,b]$ then $f(x) =0$ on $[a,b].$
+\section{Differentiation Rules, Redux}
+\label{sec:diff-rules-redux}
+\aptta{}
+
+\endaptta{}
+
+\subsection{Exponential Development}
+We'd like to find $y$ as a function of $x,$ (denoted $y(x),$) which
+has the property that \marginpar{Unclear.}
+$\dfdx{y}{x} =y.$ As posed this problem is similar to asking for a
+solution of the algebraic equation $3y-2x=0$ because there are, in
+fact, many solutions. Put another way, there is no
+  \emph{unique} solution.  For example, $(3,2),$ $(6,4),$ and $(12,8)$
+  are all solutions of $3y-2x=0$. If we add another constraint, for
+  example,
+  $8y-5x=1$ then there is a unique solution. (Find it.).
+
+We need to add another constraint to this problem in
+order to have a unique solution. We'll add this one\footnote{This
+  question of when unique solutions exist is deep and complex. We will not
+  address it now because it is not important at the moment.}: When $x=0,$
+$y=1.$ What can we find out about the graph of this function?
+
+Before we start try to imagine what the graph of $y(x)$ would look
+like. Notice that the statement $\dfdx{y}{x} =y$ says that the slope
+of the graph, $\dfdx{y}{x}$ is exactly the same as the $y$
+coordinate. So when $y(x)$ is very small then the tangent line is
+nearly horizontal. When $y(x)$ very large then the tangent line is
+nearly vertical. 
+
+Keeping this in mind, we ask what happens if $y(x)$ is exactly equal
+to zero for some value of $x?$ That is, if there is a number, $b$ such
+that $y(b) = 0$ what does this tell us about $y(x)?$ To find out
+suppose that $t<b$ and that $y(t) >0.$ This situation is
+pictured in the following sketch:\\
+\centerline{\includegraphics*[height=1in,width=2in]{Figures/ExpFunc1}}
+
+But wait! What we have drawn in this sketch is impossible! Do you see why?
+
+Clearly the slope of the tangent line drawn at the point
+$(t_1,y(t_1))$ is negative. But $y(t_1)>0$ and 
+$$
+\left.\dfdx{y}{x}\right|_{x=t_1} = y(t_1) > 0.
+$$
+So $\left.\dfdx{y}{x}\right|_{x=t_1} >0$ and
+$\left.\dfdx{y}{x}\right|_{x=t_1} <0.$ But a number cannot be both
+positive \emph{and} negative, so our original assumption, that
+$y(t_1)>0$ must be wrong.
+
+Therefore it must be true that $y(t_1)\leq 0.$
+%\index{general}{Proof by contradiction}
+\index{Proof by contradiction}
+
+\begin{embeddedproblem}{}
+  Actually we haven't been completely honest with you in the arguments
+  above. Specifically, in the first diagram it will not necessarily be
+  true that the graph of $y(x)$ passes through the point
+  $(t_1, y(t_1))$ with a negative slope. Nevertheless, there will
+  always be a point to the left of $b$ where the slope of the
+  tangent line will be negative. Convince yourself of this and give a
+  written explanation. Make it as clear as you can.
+\end{embeddedproblem}
+
+But $y(t_1)$ cannot be strictly less than zero either. You can
+convince yourself of this by using essentially the same argument as
+above and the following sketch:\\
+
+\centerline{\includegraphics*[height=1in,width=2in]{Figures/ExpFunc2}} 
+\begin{embeddedproblem}{}
+  Modify the argument above and use the previous sketch to show that
+  $y(t_1)\geq0.$ Again, this sketch does not capture all of the
+  possibilities in that there is no \emph{a priori} reason to believe
+  that the slope of the tangent line will be positive. However, as in
+  the previous problem there will always be a point to the left of $b$
+  where the slope of the tangent line is positive. 
+\end{embeddedproblem}
+
+The only possible conclusion then, is that $y(t_1)=0$ for every
+$t_1<b.$
+
+Thus we have the following lemma:
+\begin{mylemma}
+  If $\dfdx{y}{x}=y$ and $y(b)=0$ for any real number $b,$ then $y(x)
+  = 0$ for every $x<b.$
+\end{mylemma}
+
+
+This is interesting. Even more interesting is the fact that when $x>b$
+it remains true that $y(x)=0.$ To see this consider the following
+sketch:\\
+\centerline{\includegraphics*[height=2in,width=3in]{Figures/ExpFunc3}}
+
+In our sketch $y(b)=0$ so $y(x)=0$ for all $x<b$ by our argument
+above. But to the right of $b$ either $y(x)\geq0$ or $y(x)\leq0.$ In
+our sketch we have assumed that $y(x)\ge0.$ Look closely at the
+tangent line of $y(x)$ at the point $x$ and at that secant line
+between the points $(b,0)$ and $(x,y(x).$ 
+
+In particular consider the slopes of these two lines. The slope of the
+tangent line will be $\left.\dfdx{y}{x}\right|_{x=x_0}$ since that's what the derivative
+is. But since $\dfdx{y}{x}=y(x)$ the slope of the tangent line at $x$
+will be $y(x).$
+
+Also it is clear from the sketch that the slope of the secant is
+$\frac{y(x)}{x-b}$ and that $\frac{y(x)}{x-b} < \dfdx{y}{x} = y(x).$
+So 
+\begin{align*}
+ \frac{y(x)}{x-b} &<  y(x).
+\intertext{Since $y(x)\neq0$ we can divide by it so}
+ \frac{1}{x-b} &<  1.
+\end{align*}
+
+This last statement is impossible, but at first glance it may not be
+obvious why.  The only constraint we put on $x$ is that $x>b.$ That
+means that $x$ can be \emph{any} number greater than $b$ and it must
+still be true that $\frac{1}{x-b}<1.$ Put this way it is a little more
+clear that this can't be true. Suppose for example that $x=b+1/2.$
+Then we get $2<1$ which is certainly not true.
+
+Since this line of reasoning leads to impossible
+conclusions\index{Proof by contradiction} it must be that  our
+initial assumption that is wrong. Therefore $y(x)$ is not positive.
+
+A similar argument will show that $y(x)$ is not negative. Thus the
+only conclusion is that $y(x)=0$ and as before this is true for all
+numbers to the right of $b.$
+
+\begin{embeddedproblem}{}
+%\index{embeddedproblems}{P1}{}
+  Show that $y(x)$ is not negative when $x>b.$
+\end{embeddedproblem}
+
+The question we've been addressing is, ``If $y(b)=0$ for any number
+$b$ what can we tell about the function, $y(x)?$ Based on the
+arguments we've just seen the answer seems to be that if $y(x)$ is
+\emph{ever} zero then it is \emph{always} zero.
+
+Does this mean that $y(x)$ is constantly zero? If so that would be
+very disappointing. But this isn't really what we've seen. Look
+carefully at the statement, ``If $y(x)$ is \emph{ever} zero then it is
+\emph{always} zero.''  Another way\index{Contrapositive} to
+say the same thing is ``If $y(x)$ is not zero \emph{somewhere}, then
+it is not zero \emph{anywhere}.'' That is, if $y(x)$ is positive
+anywhere it must be positive everywhere. This is because if it is
+positive in one place and negative in another then it must be zero in
+between. But that isn't possible since we've just shown that $y(x)$ is
+zero anywhere then it is zero everywhere. Similarly if $y(x)$ is
+negative anywhere then it is negative everywhere.
+
+% Now recall that in our first example we started with one microbe so,
+% at least in our first thought experiment above, $y(0)=1.$ Thus, for
+% that experiment at least, it must be that $y(x)>0$ for all real
+% numbers, $x.$
+
+This will be important later so we formalize the results of this
+discussion as a theorem.
+
+\begin{mytheorem}
+  \label{thm:zero-exp}
+  If $y(x)$ is a function which satisfies the differential equation 
+  \begin{equation}
+    \label{eq:exp-diffeq}
+     \dfdx{y}{x} = y,
+  \end{equation}
+then one of the following statements is true:
+\begin{enumerate}
+\item $y(x)$ is always positive,
+\item $y(x)$ is always negative, or
+\item $y(x)$ is always zero.
+\end{enumerate}
+\end{mytheorem}
+
+This result took a long time to get and our reasoning was fairly
+subtle. The next result is a little simpler so we will simply state it
+as a theorem and prove it.
+
+\begin{mytheorem}
+  \label{thm:exp-multiple}
+  If $y(x)$ and $g(x)$ both satisfy equation~\ref{eq:exp-diffeq}, and
+  that $g(x)\neq0.$ Then $y(x) = c\cdot g(x)$ for some constant $c.$
+\end{mytheorem}
+\begin{myproof}
+  This follows immediately from the
+  \hyperref[thm:quotient-rule]{Quotient Rule} as follows. 
+Taking the derivative of the quotient $y(x)/g(x)$ we have:
+\begin{align*}
+  \dfdx{\left(\frac{y(x)}{g(x)}\right)}{x} &=
+                        \frac{g(x)\dfdx{y}{x}-y(x)\dfdx{g}{x}}{\left[g(x)\right]^2} \\
+                      &=\frac{g(x)y(x)-y(x)g(x)}{\left[g(x)\right]^2} \\
+                      &=0.
+\end{align*}
+From theorem~\ref{thm:zero-exp} we see that
+$\dfdx{\left(\frac{y(x)}{g(x)}\right)}{x}=0.$ So from
+theorem~\ref{thm:ConstantDifferential} we have
+$\frac{y(x)}{g(x)}$ is a constant. Call that constant $c$ so that
+$$
+y(x) = c\cdot g(x).
+$$
+\end{myproof}
+
+\begin{mytheorem}
+  \label{thm:exp-add-prop}
+  If $a$ is a real number and $y(x)$ satisfes equation~\ref{eq:exp-diffeq}, then
+  $y(x+a)=y(x)\cdot y(a).$  
+\end{mytheorem}
+
+\begin{myproof}
+  From equation~\ref{eq:exp-diffeq} we see that 
+$$
+\dfdx{y}{x}(x+a) = y(x+a),
+$$
+so by theorem~\ref{thm:exp-multiple} we have 
+$$
+y(x+a) = c\cdot y(a).
+$$
+This must be true for any value of $a$ so we can find $c$ by simply
+taking $a=0.$ In that case
+\begin{align*}
+y(x) &= c\cdot y(0),
+\intertext{but since $y(0)=1,$ again by equation~\ref{eq:exp-diffeq}
+       we have}
+y(x) &= c
+\end{align*}
+so that
+$$
+y(x+a) = y(x)\cdot y(a).
+$$
+\end{myproof}
+
+At this point we will pause to clean up our notation a bit. The
+property
+$$
+y(x+a) = y(x)\cdot y(a).
+$$
+is very familiar. The function $f(x) = 2^x$ has this property since
+$f(x+a) = 2^{x+a} = 2^x\cdot2^a = f(x)\cdot f(a), $ as does $3^x,$ or
+$5^x$ In fact, any function of the form $g(x) = a^x$ where $a>0$ has
+this property. Such a function is called an \emph{exponential
+  function.}  The \emph{natural exponential} is \emph{defined} to be
+the function
+$$
+\text{exp}(x) = e^x
+$$
+where the number $e$ is chosen so that $\text{exp}(x)$ satisfies the
+conditions $y(0) = 1$ from equation~\ref{eq:exp-diffeq}. That is
+\begin{align*}
+  \dfdx{(\text{exp})}{x} &= \text{exp}(x).
+\end{align*}
+
+If we take $y=e^x$ then $y(x)$ satisfies the differential
+equation~\ref{eq:exp-diffeq} by definition. 
+
+%%% Local Variables: 
+%%% mode: latex
+%%% outline-minor-mode: t
+%%% TeX-master: "Calculus"
+%%% End: 

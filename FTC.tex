@@ -1,0 +1,654 @@
+\chapter{The Fundamental Theorem of Calculus }
+  \label{chapt:FTC}
+\markboth{{\sc The Fundamental Theorem of Calculus}}{{\sc The Fundamental Theorem of Calculus}}
+\aptta{}
+\endaptta{}
+Consider the region bounded by $y=x^2,$ $y=0,$ $x=1,$ $x=4$ as below\\
+\centerline{\includegraphics*[height=2in,width=5in]{Figures/FTC-1}}
+The problem at hand is to compute the area of this region.  With this
+in mind, suppose we place an infinitely skinny box in that region as
+below.\\ 
+\centerline{\includegraphics*[height=2in,width=5in]{Figures/FTC-2}}
+The height of this generic box is y.  As we’ve done in the past with
+differentiation, we will denote the width of the box by $\d x.$  Thus the
+area of this generic box is thus $y\d x.$  If we envision this region as
+being composed of such boxes, then the area of this region would be
+the (infinite) sum of the areas of these boxes, as below\\
+\centerline{\includegraphics*[height=2in,width=5in]{Figures/FTC-3}}
+
+  You might wonder, looking at the picture, how we can say that the
+  area of the (curved) region can be the sum of rectangular boxes.
+  Bear in mind that the drawing above is not totally accurate as the
+  boxes are infinitely skinny and there are infinitely many of them.
+  Later we will examine this more carefully and use this observation
+  to approximate areas under more complicated curves, but for now
+  let’s imagine that the boxes are infinitely skinny.  We will see, as
+  mathematicians saw in the 1700’s, that this will be very fruitful.
+  We need some notation for this sum.  Originally, Leibniz used the
+  notation omn which was short for the Latin word omnis meaning all.
+  Shortly after, he replaced omn with an elongated s which stood for
+  the latin word summa (sum).  We use this notation today and write
+  the sum of these infinite areas as 
+$$
+\text{Total area } =\int_{x=1}^4 y \d x =\int_{x=1}^4x^2 \d x.
+$$
+
+As we will see, having a good notation will help when we apply this
+technique to more applications that go beyond computing areas, but it
+doesn’t tell us how to add infinitely many, infinitely small areas.
+Surprisingly, we actually have the tools to accomplish this task, and
+this realization was one of the things that made calculus such a great
+tool from the 1700’s until now.  To do this with our above example,
+let’s choose a random value $x=b$ and let $A(b)$ denote the area under the
+curve $y=x^2$ from $x=1$ to $x=b.$  In other words,  
+$$
+A(b)=\int_{x=1}^bx^2 \d x.
+$$
+Suppose we increase $b$ by the infinitely small differential $\d b.$
+If $\d A$
+denotes the corresponding change in area, then we have $\d A=y(b)\d x=b^2
+\d b.$ [See below.] \\
+\centerline{\includegraphics*[height=2in,width=4in]{Figures/FTC-4}}
+To recap, we have this function $A(b),$ we don’t have a formula for it,
+but we know some things about it. 
+$$
+\dfdx{A}{b}=b^2,\ \      A(1)=0
+$$
+We know how to solve this antidifferentiation problem.
+$$
+A(b)=\frac{b^3}{3}+C
+$$
+where $C$ is a constant. Using the fact that $A(1)=0,$ we get
+\begin{align*}
+  0&=A(1)\\
+   &=\frac{1^3}{3}+C \text{ so that}\\
+  C&=-\frac{1^3}{3}.\\
+\intertext{Thus we have}
+\int_{x-1}^bx^2\d x &= A(b)\\
+&= \frac{b^3}{3}=\frac{1^3}{3}.\\
+\intertext{Letting $b=4,$ we get} 
+\int_{x-1}^bx^2\d x &= \frac{4^3}{3}-\frac{1^3}{3}\\
+&= \frac{63}{3}= 21.
+\end{align*}
+
+We could apply the same technique to compute
+$$
+\int_{x=0}^\pi\sin x\d x.
+$$
+Letting $A(b) = \int_{x=0}^b\sin x\d x$ and letting $\d b$ denote an
+infinitely small change in $b,$  we have $\d A=\sin b\d b$ which leads
+to the antidifferentiation problem 
+$$
+\dfdx{A}{b} = \sin b,\ A(0)=0.
+$$
+Solving this, we get 
+$$
+A(b) =-\cos b+C.
+$$
+Using the initial condition $0=A(0)=-\cos 0+C,$ gives $C=-(-\cos0)$ so
+that
+$$
+\int_{x=0}^b\sin x\d x = A(b) = -\cos b-(-\cos 0)
+$$
+and so
+$$
+\int_{x=0}^b\sin x\d x = -\cos\pi-(-\cos 0)=1+1=2.
+$$
+Notice that we deliberately did not simplify the above equation right
+away as it demonstrates how our technique can be generalized.
+Specifically, suppose we have a function, $y=y(x)$ with an antiderivative $Y,$ that
+is $\dfdx{Y}{x}=y.$  To compute $A(b)=\int_{x=a}^by\d x,$ notice that
+we have 
+$$
+\dfdx{A}{b}=y(b), \ A(a)=0.
+$$
+Solving this antidifferentiation problem, we have
+$$
+A(b)=Y(b)+C.
+$$
+Using the initial condition, we get 
+\begin{align*}
+  0&=A(a)\\
+   &=Y(a)+C \text{ so that }\\
+  C&=-Y(a).
+\end{align*}
+Thus
+$$
+\int_{x-a}^by\d x = A(b)=Y(b)-Y(a).
+$$
+The amazing fact that an area problem can be reduced to an
+antidifferentiation problem is called the Fundamental Theorem of
+Calculus, and can be summarized as follows. 
+\begin{mytheorem}{\bf{}The Fundamental Theorem of Calculus}
+  If $Y$ is an antiderivative of $y,$ then 
+$$
+\int_{x=a}^b y\d x = Y(b)-Y(a).
+$$
+\end{mytheorem}
+Notice that the Fundamental Theorem states that $Y$ is
+\underline{an} antiderivative of $y$ not \underline{the}
+antiderivative.  This is because if a function has an antiderivative,
+then it has many\footnote{Infinitely many, in fact.}. The theorem does
+not require that we find a particular antiderivative. Any of them will
+do.
+
+\section{The Natural Logarithm}
+\label{sec:natural-logarithm}
+
+Suppose we have a single microbe living in a petri dish and that it
+divides once every hour. Then after one hour we have two microbes and
+our population has grown by one microbe per hour. After the second
+hour our population is now $4$ microbes, and the rate of growth during
+that second hour is $3$ microbes per hour. If this continues for $10$
+hours our microbe population will have grown according to the
+following chart\marginpar{This is supposed to be $P(t)=(5/2)^t.$ Check the numbers.}:
+$$
+\begin{array}{|ccc||ccc|}
+\hline
+  \text{hours}&\text{population}&\text{rate of
+                                  growth}&\text{hours}&\text{population}&\text{rate
+                                                                          of
+                                                                          growth}\\\hline{}
+  1&2.5&1.5\frac{\text{\tiny microbes}}{\text{\tiny hour}}&6&244.1&97.2\frac{\text{\tiny microbes}}{\text{\tiny hour}}\\[1mm]
+  2&6.3&2.5\frac{\text{\tiny microbes}}{\text{\tiny hour}}&7&610.4&242.9\frac{\text{\tiny microbes}}{\text{\tiny hour}}\\[1mm]
+  3&15.6&6.2\frac{\text{\tiny microbes}}{\text{\tiny hour}}&8&1525.9&607.2\frac{\text{\tiny microbes}}{\text{\tiny hour}}\\[1mm]
+  4&39.1&15.5\frac{\text{\tiny microbes}}{\text{\tiny hour}}&9&3814.7&1518.0\frac{\text{\tiny microbes}}{\text{\tiny hour}}\\[1mm]
+  5&97.7&38.9\frac{\text{\tiny microbes}}{\text{\tiny hour}}&10&9536.7&3795.1\frac{\text{\tiny microbes}}{\text{\tiny hour}}\\[1mm]\hline
+\end{array}
+$$
+Can we find a function $P(t)$ which  tells us our microbe
+population at any time?
+
+\subsection{Logistic Growth}
+Before, we looked at exponential growth models, that is models
+governed by the equation
+$$
+\dfdx{p}{t}=rp.
+$$
+
+
+Here, $p=p(t)$ is the population level at time $t$ and $r$ is the
+(continuous) growth rate of the population.  Recall that the solution
+to this is the exponential function $p=p_0 e^rt$ where $p_0$ is the
+initial population.  As we pointed out, this model is really only
+applicable in the short run, as this function grows exponentially.
+For example, if $r=10=.1$) and $p_0=1$ gram of a bacteria population,
+and $t$ is measured in hours, then $p(100)=e^.1(100)\approx{}22026$ grams and
+$p(200)=e^.1(200)\approx{}485165195$ grams.  Clearly, there are limitations to
+this model.  This is the case with all mathematical models which, of
+necessity, must be simplified to make tractable.  People who model
+with mathematics understand this and the mantra is to start simple,
+and add on extra complications.  While no model will be exactly real
+life, the idea is to put in enough complexity to approximately real
+life, while keeping the model simple enough to use.  We will do this
+in this case.
+
+For example, consider the differential equation
+$$
+\dfdx{p}{t}=.1p\left(1-\frac{p}{500}\right).
+$$
+Notice that this is similar to the differential equation for
+exponential growth, but has an extra factor, namely $(1-p/500).$  The
+$500$ is called the carrying capacity of the environment (notice that it
+must be measured in grams to match the unit of $p$).  This number
+represents the limitation placed on the population by the environment,
+and does not allow the population to grow exponentially without bound.
+
+\begin{embeddedproblem}{}
+  \begin{description}
+  \item[(a)] Show that for $0<p<500$ the population is growing, and
+    for $p>500$ the population is shrinking.  Does the name carrying
+    capacity make sense now?  Explain.  Plot a graph of growth rate
+    vs. time.
+  \item[(b)]  For what level of p is the population growing at the fastest
+    rate?  What is this rate?
+  \item[(c)]  For what values of p is the growth rate increasing (that is,
+    the population's level is accelerating)?  For what values is the
+    population's growth rate decreasing?
+  \item[(d)] According to the model, what happens to the population if it
+    should ever hit $500?$  What happens to the growth rate as p
+    approaches $500?$
+  \item[(e)] On the same set of axes, draw reasonable graphs of the
+    population level $p(t)$ with the given initial values:
+    $p(0)=100,$ $p(0)=300,$ $p(0)=500,$ $p(0)=600.$  (It is a fact from the
+    theory of differential equations that these trajectories will
+    never cross.  You can assume this when you draw your graphs.)
+  \end{description}
+
+
+This model is called a logistic growth model, and is a refinement of
+the original exponential model.  Notice that for small values of $p,$ 
+the factor $(1-p/500)\approx 1$ and the model is very much like exponential
+growth.  However, this model is more refined than the original as it
+better illustrates the fact that the population cannot grow
+exponentially without bound.  Notice also, that this differential
+equation is a bit harder to solve (we will learn integration
+techniques to solve it later).  Nonetheless, we were able to use it to
+provide reasonable qualitative graphs of $p(t)$ without actually having
+an equation for $p(t).$ 
+\end{embeddedproblem}
+
+\begin{embeddedproblem}{}
+  Let $f(t)$ represent the amount of a certain
+  species of fish in a lake (in tons) at time $t.$  If fishing is
+  allowed at a (uniform) rate of $20$ tons per year, then the growth
+  rate of the population can be modeled with the differential equation
+$$
+\dfdx{f}{t}=0.25f\left(1-\frac{f}{500}\right)-20.
+$$
+\begin{description}
+\item[(a)] What is the carrying capacity of the population?
+\item[(b)] Plot the graph of $\dfdx{g}{t}$ vs. $t.$
+\item[(c)] What will happen to the population over time if initially
+  $f(0)=150?$
+\item[(d)] Suppose initially $f(0)=150,$ but fishing is allowed at a
+  uniform rate of $30$ tons per year.  How would the differential
+  equation be altered and what would the model predict about the
+  population over time?
+\end{description}
+
+  Alas, with every model, the logistic model also has limitations.
+  Consider the following refinement of that model.
+$$
+\dfdx{p}{t} = 0.1p\left(1-\frac{p}{500}\right)\left(\frac{
+p}{20}-1\right).
+$$
+
+  The number $20$ is called the minimum viability level of the
+  population.
+\end{embeddedproblem}
+
+\begin{embeddedproblem}
+  Plot the graph of $\dfdx{p}{t}$ vs. $t.$  In
+  particular, where is the growth rate positive, negative, and zero.
+  Explain why $20$ is called the minimum viability level of the
+  population?
+\end{embeddedproblem}
+
+\begin{embeddedproblem}
+  Use the graph of $\dfdx{p}{t}$ to plot
+  reasonable graphs of $p(t)$ for various initial values.  Specifically
+  use $p(0)=15, 20, 150, 400, 500, 600.$ 
+
+
+  Notice that even without having a formula for $p(t),$ we were able
+  to understand it from information given by the function
+  $\dfdx{p}{t}.$ This function has a special name, the derivative. The
+  history of this name is interesting and represents a shift in the
+  study of calculus.  Throughout the 1700’s, infinitesimal
+  differentials were utilized to help explain physical and
+  mathematical phenomena (as you have experienced in this book so
+  far).  There were issues as to what an infinitely small quantity is,
+  but it was overshadowed by its power and utility.  Too make a long
+  story short, foundational issues as to what an infinitely small
+  difference is grew in importance.  To help address these issues,
+  Joseph Louis Lagrange developed the concept of a {\it fonction d\'eriv\'e{}e},
+  that is a function derived from the original function.  Thus instead
+  of focusing on curves, this marked the beginning of focusing on
+  functions and derivatives instead of infinitely small differentials
+  (useful as they are).  He even developed an new notation, $f^\prime(x),$
+  instead of $\dfdx{f}{x}.$  Today these symbols are synonymous, but
+  in Lagrange's day, it represented an attempt to suppress the
+  infinitely small.  In practice, it is still advantageous to utilize
+  the older differential notation, but there are times where the
+  “prime” notation has its advantages, especially when one wants to
+  focus on the derivative as a function rather than a process
+  (differentiation).  One of the first places is what we’ve been
+  doing, namely gathering information from a function by examining its
+  derivative.
+
+\end{embeddedproblem}
+
+\subsection{Compound Interest and the Exponential Functions}
+Suppose I invest money in a bond which nominally pays 5\% annually,
+compounded quarterly.  The effective yield would be 5.09\%.  What does
+any of this mean?
+
+To start, the effective yield represents the actual amount of money I
+will have earned at the end of one year.  For example, if the
+investment was not compounded at all, then at the end on one year,
+every dollar invested would yield $\$1.05$ in return.  If the investment
+is compounded semiannually, then this means that half of interested
+earned in paid out halfway through the year.  This money is then
+re-invested for the next half year.  This is summarized in the
+following table.
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|}\hline{}
+    Time $t$ in years&Amount investment is worth in dollars\\\hline
+    $1/2$ & $\$1+\$1\$\left(\frac{.05}{2}\right)=\$1\left(1+\frac{.05}{2}\right)$\\\hline
+    1 & $\$1\left(1+\frac{.05}{2}\right)\left(1+\frac{.05}{2}\right)=\$1\left(1+\frac{.05}{2}\right)^2$\\\hline
+  \end{tabular}
+  \caption{Semiannual compounding}
+  \label{tab:1}
+\end{table}
+
+If the investment was compounded three times in a year, we would have
+the following modified table.
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|}\hline{}
+    Time $t$ in years&Amount investment is worth in dollars\\\hline
+    $1/3$ & $\$1+\$1\$\left(\frac{.05}{3}\right)$\\\hline
+    2/3 & $\$1\left(1+\frac{.05}{3}\right)^2$\\\hline
+    1 & $\$1\left(1+\frac{.05}{3}\right)^3$\\\hline
+  \end{tabular}
+  \caption{Compounding three times annually}
+  \label{tab:2}
+\end{table}
+\newpage{}
+Compounded quarterly means that the interest is re-invested three
+times.  Our table looks like this:
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|}\hline{}
+    Time $t$ in years&Amount investment is worth in dollars\\\hline
+    $1/4$ & $\$1+\$1\$\left(\frac{.05}{4}\right)$\\\hline
+    1/2 & $\$1\left(1+\frac{.05}{4}\right)^2$\\\hline
+    3/4 & $\$1\left(1+\frac{.05}{4}\right)^3$\\\hline
+    1 & $\$1\left(1+\frac{.05}{4}\right)^4\approx \$1.0509$\\\hline
+  \end{tabular}
+  \caption{Compounding quarterly}
+  \label{tab:3}
+\end{table}
+
+The effective yield comes from the last entry in the table.  That is,
+it is the difference between the amount the investment is worth at the
+end of the year and what it is worth at the beginning of the year:
+$1.0509-1=.0509=5.09\%.$
+
+Following the same reasoning, if the investment was compounded daily,
+then the effective yield would be $(1+.05/365)^{365}-1\approx.0513=5.13\%.$   
+
+In general, if we compound n times in a year, then the return the
+investment on one dollar at the end of one year would be
+$$
+\left(1+\frac{.05}{n}\right)^n.
+$$
+
+\noindent{\bf Alternative 1.}  Doing exponential function first, then
+logarithm
+
+Going one step further, if we let $p(t)$ denote the value of the investment of one dollar earning $5\%$ annually, compounded $n$ times per year, after $t$ years, then we have
+$$
+p(t)=\left(1+\frac{.05}{n}\right)^{nt}, \ \ t=0,1,2,\ldots
+$$
+
+What if the investment was compounded continuously?  What does this
+mean, and what would the value $p(t)$ be?  To examine this, it will be
+convenient to write $p(t)$ as
+$$
+p(t)=\left(1+\left(\frac{.05}{n}\right)\right)^{\frac{n(.05t)}{.05}}
+=\left[\left(1+\frac{.05}{n}\right)^{\frac{n}{.05}}\right]^{.05t}
+=\left[\left(1+\frac{1}{\frac{n}{.05}}\right)^{\frac{n}{.05}}\right]^{.05t}
+$$
+
+Let’s rewrite $m=\frac{n}{.05},$ and consider what would happen if we
+compounded a very large number of times (let $n$ be very large).
+Table~\ref{tab:4} looks at some values of
+$\left(1+\frac{1}{m}\right)^m,$ where $m$ is large.
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|}\hline{}
+     $m$        & $\left(1+\frac{1}{m}\right)^m$\\\hline
+    $100$       & $2.70481382942$ \\\hline
+    $1000$      & $2.71692393224$ \\\hline
+    $10000$     & $2.71814592683$ \\\hline
+    $100000$    & $2.71826823717$ \\\hline
+    $1000000$   & $2.71828046932$ \\\hline
+    $1000000$   & $2.71828169255$ \\\hline
+  \end{tabular}
+  \caption{Compounding quarterly}
+  \label{tab:4}
+\end{table}
+
+It would appear from Table~\ref{tab:4}, that $(1+\frac{1}{m})^m$ approaches a fixed number
+as $m$ becomes indefinitely large.  This will be given more precision
+later, but for now let’s assume that it does and call this number $e.$ 
+By the table, it appears that $e\approx{}2.71828169255.$  All of this suggests
+that if the investment is being continually compounded, then
+$$
+p(t)=e^.05t.
+$$
+Let’s examine the situation from a different perspective. If we abuse
+notation by letting $p(t)$ be the amount that the investment is worth
+at time $t$ in Tables~\ref{tab:1}, \ref{tab:2}, \ref{tab:3} as well,
+then Table~\ref{tab:1} says
+$$
+p(0)=1,\ p(1/2)=(1+.05/2),p(0), \ p(2/2)=(1+.05/2)p(1/2).
+$$
+Likewise, Table\ref{tab:2} says 
+$$
+p(0)=1,\ p(1/3)=(1+.05/3)p(0),\ p(2/3)=(1+.05/3)p(1/3),\ p(3/3)=(1+.05/3)p(2/3). 
+$$
+and Table~\ref{tab:3} says 
+$$
+p(0)=1,\ p(1/4)=(1+.05/4)p(0),\ p(2/4)=(1+.05/4)p(1/4),\ p(3/4)=(1+.05/4)p(2/4),\ p(4/4)=(1+.05/4)p(3/4).  
+$$
+If we let $\Delta t=1/n$ denote the change in time, then this can be
+written more succinctly as 
+$$
+\Delta p=p(t+Δt)-p(t)=(1+.05\cdot\Delta
+t)p(t)-p(t)=.05\cdotp(t)\cdot\Delta t.
+$$
+
+Extrapolating this to the case of continuous compounding where we use
+the infinitesimal quantity $``\d" t$ instead of the increment $\Delta t,$ we have
+that the amount the investment is worth at time $t$ must satisfy the
+differential equation $``\d" p=.05p\cdot ``\d" t.$
+
+All of this suggests that $p=e^{.05t}$ satisfies the differential
+equation $``d" p/``d" t=.05p$ with initial condition $p(0)=1.$  In
+general, we would have $p(t)=e^{rt}$ satisfying the equations $``d" p/``d"
+t=rp,\ \ p(0)=1.$
+
+\begin{embeddedproblem}{}
+  What would the effective yield be for a bond nominally rated at
+  $5\%$ annually compounded continuously?  How does this compare to
+  the effective yield of an investment compounded daily?
+\end{embeddedproblem}
+
+\begin{embeddedproblem}{}
+  Suppose we had two investments growing continually with nominal
+  rates of $5\%$ and $10\%$ annually?  Would the effective yield of
+  the second investment be twice that of the first?  Justify your
+  answer.
+\end{embeddedproblem}
+
+For $r=1,$ we have the function $p(t)=e^t,$ which is called the
+natural exponential function and it satisfies $``d" e^t /``d" t=e^t,\
+\ e^0=1.$
+
+Such a function which grows this way constitutes exponential growth.
+You might have heard the phrase ``growing exponentially'' referring to
+something which grows very fast.  The following graph of $p(t)=e^t$
+illustrates this\\
+\centerline{ \includegraphics*[height=2.5in,width=3in]{Figures/ExpGraph}}
+Indeed, Table compares values of $f(x)=x^2$ and $p(x) = e^x$ for
+various values of $x.$
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|c|}\hline{}
+     $x$ & $f(x)=x^2$&$p(x)=e^x$\\\hline
+    $1$  & $1$ &2.71828\\\hline
+    $2$  & $4$ &7.38906\\\hline
+    $3$  & $9$ &20.08554\\\hline
+    $4$  & $16$ &54.59815\\\hline
+    $5$  & $25$ &148.41316\\\hline
+    $6$  & $36$ &403.42879\\\hline
+    $$   & $\vdots{}$ &\\\hline
+    $100$& $10000$ &$2.68817\times 10^{43}$\\\hline
+    $1000$   & $1000000$ &$1.97007 \times 10^{434}$\\\hline
+  \end{tabular}
+  \caption{Compounding quarterly}
+  \label{tab:5}
+\end{table}
+
+Not only do continuously compounded investments grow in this manner,
+but exponential growth can be used to model other phenomena (at least
+in the short run).  As an example, consider the following situation. 
+
+\begin{myexample}
+  Consider a strain of bacteria growing in a Petri dish.  Initially
+  there are $10$ mg of the bacteria growing continually at a (nominal)
+  hourly rate of 25\%.  How much bacteria would there be at time $t$
+  hours.
+
+\noindent{\bf{}\underline{Solution:}}  Let $b=b(t)$ denote the amount of bacteria (in mg) at time $t$ hours.  We have that $b$ satisfies the following differential equation and initial condition
+$$
+\dfdx{b}{t}=.25b,\ \ b(0)=10.
+$$
+
+This says that  $b(t)=10e^.25t.$
+\end{myexample}
+
+The term nominal growth rate, though appropriate for investing money,
+is not typically used in such a biological example.  Typically, such
+problems are stated more in this fashion.
+
+
+
+\begin{myexample}
+  Consider a strain of bacteria growing in a Petri dish.  Initially
+  there is $10$ mg of the bacteria and it is noticed that in $3$ hours,
+  the amount has doubled.  How much will there be at any time $t.$ 
+
+  \noindent{\bf{}\underline{Solution:}} As before, we let $b=b(t)$
+  represent the amount of bacteria (in mg) at time $t$ hours.  Assuming
+  that the bacteria grows at a rate proportional to the amount
+  present, we have the following
+$$
+\dfdx{b}{t}=rb\ \ b(0)=10.
+$$
+where $r$ is some as yet to be determined constant.  At this point, we
+know that $b=10e^rt,$ and we need to determine $r.$  To do this, we have
+a different piece of information, namely, $b(3)=20.$  Substituting this
+in, we get
+$$
+20=b(3)=10b^{3r}
+$$
+What we need to do is find the inverse of this exponential function.
+With this in mind, we define the \emph{natural logarithm} function, denoted
+$\ln x,$ as follows.
+\centerline{$y=\ln x$ exactly when  $x=e^y.$}
+
+Another way of saying this is that $\ln x$ is the exponent so that
+$e^{\ln x}=x.$
+For example, we have some fairly straightforward observations:
+%   \centerline{$\ln 1=0$ since $e^0=1$ }
+%   \centerline{$\ln e=1$ since $e^1=e$ }
+%   \centerline{$\ln e^a=a$ since $e^a=e^a$}
+
+At this point it would be useful to compare the graphs of $y=e^x$ and
+$y=\ln x.$  Since they are inverse functions then one graph is the
+reflection of the other about the line $y=x.$ 
+\centerline{ \includegraphics*[height=2.5in,width=3in]{Figures/LogAndExp}}
+\end{myexample}
+
+Before we delve further into the natural logarithm function, let’s see
+how it applies to our problem above. 
+
+We needed to solve the equation $20=10e^3r.$  To do this, we get
+\begin{align*}
+2&=e^3r\\
+\ln 2&=\ln e^3r =3r\\
+r&=ln2/3≈2.463
+\end{align*}
+
+Thus the amount of bacteria at time t is given by 
+$$
+b≈10e^{2.463t}.
+$$
+Of course, as with any mathematical model, this is only an
+approximation of real life.  As we noticed, this exponential function
+would grow exponentially, and there is definitely a limit to the
+amount of bacteria that will grow in a Petri dish.  At best, this
+model can only be used for relatively small values of $t.$  Later we
+will look at more complicated models for this growth, where we put
+limitations in.  But for now, notice that we can play with our
+function mathematically, we can get an equation that might be a bit
+more appealing.
+$$
+b=10e^{\ln2/3 t}=10\left(e^{\ln 2}\right)^(t/3)=10\cdot2^{t/3}
+$$
+
+This general exponential function is a bit more appealing as it
+encapsulates better the idea that the amount doubles every $3$ hours.
+The natural logarithm function is actually the key to a number of
+related properties of general exponential functions.  But before we do
+that, let’s consider the case of exponential decay.  You may have
+heard of utilizing radioactive carbon dating to determine the age of
+various fossils.  What does this entail and how is it related to what
+we have been talking about?  Radioactive carbon dating was invented by
+Willard Libby in the late $1940$’s at it became a standard tool for
+archeologists to date their discoveries.  Libby received the Nobel
+Prize in Chemistry in $1960$ for his work on this.  The idea is based on
+the fact that radiocarbon ($C_{14}$) is constantly being created in the
+atmosphere by the interaction of cosmic rays with atmospheric
+nitrogen. The resulting radiocarbon combines with atmospheric oxygen
+to form radioactive carbon dioxide, which is incorporated into plants
+by photosynthesis; animals then acquire $C_{14}$ by eating the plants. When
+the animal or plant dies, it stops exchanging carbon with its
+environment, and from that point onwards the amount of $C_{14}$ it contains
+begins to reduce as the $C_{14}$ undergoes radioactive decay. Measuring the
+amount of $C_{14}$ in a sample from a dead plant or animal such as piece of
+wood or a fragment of bone provides information that can be used to
+calculate when the animal or plant died 
+(http://en.wikipedia.org/wiki/Radiocarbon\_dating).  Exponential decay
+comes from the fact that radioactive materials decay at a rate which
+is proportional to the amount of radioactive material left.  This rate
+is measured by the materials half-life.  For example, $C_{14}$ has a
+half-life of about $5730$ years.  This says that if we have an amount of
+$C_{14},$ then in $5730$ years we would have half of that amount, in another
+$5730$ years we would have half of that (one quarter the original), and
+so on.  The following example illustrates how the technique works.
+
+\begin{myexample}
+Let $c=c(t)$ represent the amount of Carbon-14 in a sample at any time
+$t$ years.  If we let $c(0)=c_0$ denote the original amount in the
+sample, then how much is in the sample at any time $t.$ 
+
+\noindent{\bf{}\underline{Solution:}} We have that $c$ satisfies the
+differential equation $\dfdx{c}{t}=rc.$  This says that $c=c_0e^{rt}.$
+To determine $r,$ notice that $c(5730)=1/2 c_0.$  This gives us 
+$1/2c_0=c_0 e^{5730r},$ $r=\ln(1/2)/5730.$
+
+Thus we have
+$$
+c=c_0 e^{\ln(1/2)/5730 t}=c_0 \left(e^{\ln(1/2)}\right)^{t/5730}=c_0
+(1/2)^{t/5730}.
+$$
+
+This is consistent with the idea that the amount halves every $5730$
+years.  Of course, we can apply this to other situations as well. 
+  
+\end{myexample}
+
+\begin{myexample}
+  Suppose we have a wooden handle from a tool that contains 80\% of
+  the amount of $C_{14}$ that it should contain.  How old is the tool?
+
+\noindent{\bf{}\underline{Solution:}}  Applying the previous formula, we have
+$$
+c_0 e^{\ln(1/2)/5730 t}=.8c_0
+$$
+and we need to find $t.$  Solving we get:
+\begin{align*}
+  e^{\ln(1/2)/5730 t}&=.8\\
+  \ln(1/2)/5730 t&=\ln(.8)\\
+  t&=5730\ln(.8)/\ln(.5) \approx 1845 \text{years}
+\end{align*}
+
+\begin{embeddedproblem}{}
+  How old would the tool be if the amount of $C_{14}$ was 70\% or 90\%?
+\end{embeddedproblem}
+
+
+\end{myexample}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% outline-minor-mode: t
+%%% TeX-master: "Calculus"
+%%% End: 
+

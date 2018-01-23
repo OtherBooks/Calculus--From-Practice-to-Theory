@@ -1,0 +1,828 @@
+\chapter{The Last of the Elementary Functions}
+\label{cha:last-elem-funct}
+\markright{{\sc Last Elementary Functions}}
+
+\aptta{}
+Previously (p. XX)  we showed that the catenary (hanging chain)
+$y=y(x)$ satisfied the equation 
+$$
+\dfdx{y}{x}{2}=\frac{w}{H} \sqrt{1+  \left(\dfdx{y}{x}\right)^2 }
+$$
+where $w$ is the weight density of the chain, and $H$ is the constant
+(magnitude of the) horizontal tension.  We also showed that a parabola
+does not satisfy this equation.  In this chapter we will look at
+functions which help us to determine the solution.
+\endaptta{}
+
+\section{The Natural Exponential}
+\label{sec:exponential}
+
+Early efforts to find the line tangent to a curve focussed on what
+was  called the subtangent problem. That is, given a curve, $y,$ as in
+this figure\\
+\centerline{\includegraphics*[height=1in,width=2in]{Figures/subtan1}}
+where $B$ is on the curve, $y,$ $AB$ is perpendicular to $CA$ and $BC$
+is tangent to $y$ at $B,$ we'd like to find the coordinates of the
+point $C.$ The line segment $AC$ is called the subtangent, and finding
+the coordinates of $C$ is equivalent to finding the derivative of $y$
+at $B.$  This is because if $B$ and $C$ are known then the slope of
+the line segment $BC$ is the derivative of $y$ at $B.$
+
+As a technique the subtangent problem quickly fell out of favor with
+the invention of Calculus. However the following subtangent problem is
+instructive: We ask is there a curve with the property that it
+subtangent always has length one?\\
+\centerline{\includegraphics*[height=1in,width=2in]{Figures/subtan2}}
+It is instructive because, $\dfdx{y}{x},$ the derivative of $y$
+appears very naturally. If we take $\d y$ to be an infinitesimal
+vertical displacement of the curve $y$ at $B,$ and $\d x$ to be a
+horizontal displacement\\
+\centerline{\includegraphics*[height=1in,width=2in]{Figures/subtan3}}
+then by proportional triangles we have $\dfdx{y}{x} = \frac{y}{1},$ or
+\begin{equation}
+  \label{eq:ExpDiffeq}
+  \dfdx{y}{x} = y.
+\end{equation}
+For obvious reasons this is called a \emph{differential equation.} In
+fact, this is the same differential equation we examined in
+section~\ref{sec:eulers-method} so we already have an approximate
+graph of this curve. Recall that in section~\ref{sec:eulers-method} we
+found that near the point $(0,1)$ the curve looks like this:
+\centerline{\includegraphics*[height=2in,width=2in]{Figures/exp-piecewise-linear}}
+A graphical approximation is nice but we'd really like an explicit formula. 
+
+% Ok. At this point you have memorized all of the general differentiation
+% rules. Really. All of them. Using them in tandem you can take the
+% derivative of any function that can be written down as an algebraic combination
+% of polynomials, trigonometric function and their inverses.
+
+% So what?  What is this good for?
+
+% Just like Geometry, Algebra or Trigonomety, Calculus was invented to
+% solve a particular type of problem. When you drop a ball it is clear
+% that how fast the ball is moving depends on how far it has fallen. To
+% state this more carefully: The ball's \emph{rate of change} is related
+% to its position. This is the sort of problem Calculus
+% was invented to address. 
+
+% An example is in order.
+
+% \begin{myexample}
+%   Suppose we have some quantity, $y,$ which depends on another
+%   quantity, $x.$ We don't really care what $x$ or $y$ represent for
+%   this first example. We have seen that the symbol $\dfdx{y}{x}$ is
+%   the \emph{rate of change of y} with respect to $x$ so let's make the
+%   relationship between $y$ and its rate of change, $\dfdx{y}{x},$ as
+%   simple as we possibly can. Let's say they are equal. 
+
+% That is, suppose
+
+
+We would like to find a function, $f(x),$ that satisfies
+equation~\ref{eq:ExpDiffeq}. Nothing really obvious comes to mind as a
+solution but before we give up, let's see if we can 
+guess a solution.
+
+No, really. Let's try guessing. It can be surprisingly effective. You
+know this of course. You've been doing it all of your life, but you've
+probably been discouraged from it in the past so you tend to deny
+doing it. It's ok. Guess anyway. We won't tell anyone.
+
+The fact is that guessing is a tried and true solution technique and
+we encourage you to use it regularly. If you guess wrong, which is
+most likely, then you have this related problem to think about:
+All of your intuition said this was a good guess.  Why didn't it work?
+The answer to that question almost always gives some insight into the
+original problem.  Even a bad guess can be useful. 
+
+Bad guesses are
+easy. If you don't know what else to do, make a bad guess. But all by
+itself a bad guess is a waste of time. You must also figure out why
+your bad guess doesn't work.
+
+\underline{\Large\bf But} the real danger in guessing -- the reason
+it is usually discouraged -- is that when you do guess correctly
+it is {\bf very} tempting to just move on from there. \underline{Don't
+  do that.} When you guess correctly it is crucial that you take a few
+moments to ask yourself what was the intuition that lead you to that
+guess. Guessing correctly means that your intuition was very good. But
+intuition is unconcious. If you don't stop and ask yourself why this
+seemed like a good idea your thought process will remain unconscious
+and thus nearly useless. It  is just as important to understand where a good
+guess came from  as it is to understand why a bad guess didn't work.
+
+Stop. Take a breath.  Think. Then move on.
+
+So let's take a guess. There is no need to get really, really crazy
+though. let's try this guess: $y = 1.$ Obviously this won't work
+because $\dfdx{y}{x}$ is equal to zero, not one. But wait! The
+derivative of $x$ is $1$ so if we we guess $y=1+x$ we get $\dfdx{y}{x}
+= 1.$ This almost works.  When we differentiate we recover the first, constant
+term ($1$) but lose the second, linear term ($x$).
+
+Can we adjust this last guess so as to recover the second term?
+Sure. Let's try $y=1+x+\frac{x^2}{2}.$ In that case $\dfdx{y}{x} =
+1+x$ and again, upon differentiating we get everything back but the
+last term. 
+
+Clearly we can pick up that term by adding $\frac{x^3}{3\cdot2}$ to
+our last guess. That is, if we take
+$y=1+x+\frac{x^2}{2}+\frac{x^3}{3\cdot2}$ then $\dfdx{y}{x} =
+1+x+\frac{x^2}{2}.$ But again, the last missing term is a
+problem. Continuing to add terms won't help as the following problem
+shows. 
+
+\begin{embeddedproblem}{}
+Compute $\dfdx{y}{x}$ and $y-\dfdx{y}{x}$ for each of the following.
+  \begin{multicols}{2}
+    \begin{description}
+    \item[(a)] $y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}$
+    \item[(b)] $y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}$
+    \item[(c)]
+      $y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\frac{x^5}{5!}$
+    \item[(d)]
+      $y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots +
+      \frac{x^{n-1}}{(n-1)!} + \frac{x^n}{n!}$
+    \end{description}
+  \end{multicols}
+\end{embeddedproblem}
+
+  Clearly, we've almost got something here. If we take
+  \begin{align*}
+   y&= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots +
+  \frac{x^{999999}}{999999!} +   \frac{x^{1000000}}{1000000!} \\
+\intertext{  then}
+  \dfdx{y}{x} &= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots +
+  \frac{x^{999999}}{999999!}, \\
+\intertext{and}
+    y-\dfdx{y}{x} &= \frac{x^{1000000}}{1000000!}.
+  \end{align*}
+  So the  difference between $y$ and $\dfdx{y}{x}$ is that stupid
+  one-millionth term! Surely we can handle that somehow!
+
+  Sadly no. The fact is that there is no polynomial that solves the
+  differential equation $\dfdx{y}{x}=y.$
+
+  So a fair question is, ``Why have we led you down this wild goose
+  chase?''
+
+As we mentioned earlier differential equations can be extremely
+difficult to solve. But often in real applications an approximate
+solution is almost as good. Clearly we have an approximate solution
+here. One million is a very large number, so one million factorial
+($1000000!$) is inconceivably large. Thus for any reasonable value of
+$x$ that one millionth term, $\frac{x^{1000000}}{1000000!},$ is
+  vanishingly small and can probably be ignored in real applications. 
+
+In fact, we don't really have to take anywhere near that many
+terms. Depending on the application involved
+$y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}$ might be entirely adequate as an
+approximate solution. Indeed, for some applications the approximation
+$y=1+x$ is all that is really needed. Although we haven't
+\underline{solved} the problem we have found a very good
+approximation.
+
+
+If there is no \emph{polynomial} that solves
+equation~\ref{eq:ExpDiffeq} does that mean there is no solution at
+all? Certainly not. In fact, since  that last term of the polynomial
+was always the stumbling block it should be clear that all we need to
+do is \underline{not have a last term}. That is, the solution of
+equation~\ref{eq:ExpDiffeq} is:
+$$
+   y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \cdots
+$$ 
+where the dots at the end mean that the summation goes on
+forever so there is no last term. 
+\begin{embeddedproblem}{}
+Differentiate
+$$
+   y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots
+$$ 
+term-by-term to show that 
+$$
+   \dfdx{y}{x}= y.
+$$ 
+\end{embeddedproblem}
+
+% \digress{Power Series}
+% But this ``solution'' doesn't really help us understand anything at
+% all. It is (for now) just empty symbol manipulation. 
+
+% As soon as we ask ourselves what it means it is clear that we don't
+% really know. For example, and most profoundly, what does it mean to
+% add up infinitely many monomial terms? That is, what is an ``infinite
+% polynomial.'' Does such an expression actually mean anything?
+
+% These kinds of questions have probably never come up in your
+% mathematics education before, but they will become more common from
+% this point on and we will have to watch for them. Writing down an expression like 
+% $$
+%    y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots
+% $$ 
+% is rather like asking, ``Which is bigger or a giraffe?'' It looks like
+% standard English. All the parts are there: subject, verb, etc.. But
+% when you put it all together it is simply meaningless. 
+
+
+% If $ y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots $ it is to have any
+% meaning we will have to decide, and agree on, what meaning we want it
+% to have.
+% \enddigress{}
+
+% This approach to solving equation~\ref{eq:ExpDiffeq} will turn out to
+% be very fruitful. In fact, there \underline{is} a solution and it
+% \underline{can} be express as the ``infinite polynomial''
+% $$
+%    y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \cdots
+% $$
+% but before we can use this ``solution'' we will have to find a way to
+% give meaning to the idea of ``adding up'' infinitely many terms. As
+% you might imagine this will be rather tricky, so we will let it be for
+% now. 
+
+% On the other hand, the solution of equation~\ref{eq:ExpDiffeq} is of
+% profound importance in all of mathematics and all of science. We will
+% need to understand it as thoroughly as possible so let's try to come
+% at this problem in a new way. 
+
+% The formula 
+% $$
+% \dfdx{y}{x} =y
+% $$ 
+% says that the slope of the tangent line of our curve
+% $\left(\dfdx{y}{x}\right)$ at every point is exactly equal to the $y$
+% coordinate at the same point. What could such a curve look like?
+
+% For example suppose our curve passes through the point $(0,0).$ Then
+% the tangent line at $(0,0)$ will be horizontal (slope $=0.$) It is
+% easiest to think of the curve as being traced out by the motion of a
+% point for this example.
+
+% We are now in a
+% position to work out the essential properties of the solution of
+% equation~\ref{eq:ExpDiffeq} using only the concept of the derivative
+% so we we will do that now. When we are done we will have another, much
+% simpler, expression for
+% $ y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots. $
+
+
+% \underline{\sc{}Fair Warning:} The development of the solution of
+% equation~\ref{eq:ExpDiffeq} that you are about to read will be
+% difficult to follow. You'll need to slow down and be sure you follow
+% each step to fully understand what we're doing.
+
+% Now consider the following table which gives the population of
+% snaggle-toothed hornpops over a period of $10$ hours.
+% $$
+% \begin{array}{|ccc||ccc|}
+% \hline
+%   \text{hours}&\text{population}&\text{rate of
+%                                   growth}&\text{hours}&\text{population}&\text{rate
+%                                                                           of
+%                                                                           growth}\\\hline{}
+%   0&1&&6&64&32\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+%   1&2&1\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&7&128&64\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+%   2&4&2\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&8&256&128\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+%   3&8&4\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&9&512&256\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+%   4&16&8\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&10&1024&512\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+%   5&32&16\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&11&2048&1024\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]\hline
+% \end{array}
+% $$
+
+% Clearly there is a pattern to these numbers and the pattern is easy to
+% see. If $t$ is the number of hours elapsed then the population,
+% $P = 2^t,$ and the rate of change of the population
+% $\dfdx{P}{t}=2^{t-1}.$ So it appears that $\dfdx{P}{t}=2P.$ It is
+% interesting that $P$ and $\dfdx{P}{t}$ seem to be so closely
+% related. Let's examine that relation.
+
+% % $$
+% % \begin{array}{|ccc||ccc|}
+% % \hline
+% %   \text{hours}&\text{population}&\text{rate of
+% %                                   growth}&\text{hours}&\text{population}&\text{rate
+% %                                                                           of
+% %                                                                           growth}\\\hline{}
+% %   1&2.5&1.5\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&6&244.140625&97.1533224297\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+% %   2&6.25&2.4871250542\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&7&610.3515625&242.883306074\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+% %   3&15.625&6.2178126355\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&8&1525.87890625&607.208265186\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+% %   4&39.0625&15.5445315888\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&9&3814.697265631&1518.02066296\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]
+% %   5&97.65625&38.8613289719\frac{\text{\tiny hornpops}}{\text{\tiny hour}}&10&9536.74316406&3795.05165741\frac{\text{\tiny hornpops}}{\text{\tiny hour}}\\[1mm]\hline
+% % \end{array}
+% % $$
+
+% % The first thing we notice about this table is the utter futility of 
+% % displaying so many decimals. The table is so overrun with digits
+% % that it is nearly impossible to see any pattern to the numbers. Here
+% % is the same chart with each number rounded to the nearest tenth.
+
+
+% % That's better, but only slightly. 
+
+% % There seems to be a relationship
+% % between $\dfdx{P}{t}$ and $P$ similar to the relationship we noticed
+% % in the bacteria problem earlier. However in this case it is clearly
+% % not true that  $\dfdx{P}{t}=2P.$ 
+
+% Clearly the coefficient of proportiality, $2,$ is special to this
+% particular problem. Let's generalize things a bit by supposing instead
+% that $\dfdx{P}{t}=kP$ for some unknown constant, $k.$
+
+% Ok. Now what? It seems that we've made the problem even harder by
+% introducing $k.$ At least we know something about the number $2,$ but
+% $k$ is an arbitrary constant. It could be anything.
+
+% Remembering that we're ultimately interested in the more general
+% problem let's make this as simple as we can, for now, by assuming that
+% $k=1.$ If we can solve this simpler problem maybe it will give us some
+% insight into the general situation.
+
+
+% \digress{}
+% Moreover, once we have
+% decided what is meant by an expression like 
+% $ y=
+% 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots $ we will have 
+% $$
+% e^x=
+% 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots
+% $$
+% as well.
+% \enddigress{}
+
+At this point we have two approximate answers to the question, ``What
+curve satisfies the differential equation $\dfdx{y}{x}=y?"$ By Euler's
+Method we've found several approximate points on the curve and by
+trying to guess a solution we've found that a polynomial of the form
+$$
+y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+ \cdots + \frac{x^n}{n!}
+$$
+is also probably a good approximation as well. If both of those
+statements are true then the graphs should be similar. In the following
+figure we have both our Euler approximation and the graph of
+$y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}.$\\
+\centerline{\includegraphics*[height=2in,width=6in]{Figures/ExpEulerCubic}}
+As you can see they are indeed similar, at least near the point
+$(0,1),$ so we can be confident that we are on the right track.
+
+A disadvantage of Euler's Method is that a great deal of effort is
+needed to find just a few (approximate) points on our curve. But now
+that we have convincing evidence that the polynomials
+$y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+ \cdots + \frac{x^n}{n!}$ also
+make good approximations we can use those to see what our function
+looks like farther from $(0,1).$ Here is the graph of the polynomial
+$y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}:$ \\
+\centerline{\includegraphics*[height=2in,width=2in]{Figures/CubicExpApprox}}
+and here is the graph of $y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+ \cdots
++ \frac{x^{10}}{10!}:$\\
+\centerline{\includegraphics*[height=2in,width=2in]{Figures/TenthExp}}
+
+Do these graphs make sense to you? Stop and think about it for a
+moment.
+
+Our differential equation is $\dfdx{y}{x}=y.$ This says that
+the slope of the curve at any point is equal to its
+$y-$coordinate. Put another way, as the graph rises is will get
+steeper.
+
+Here is the graph of $y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+ \cdots +
+\frac{x^{50}}{50!}.$ You can see for yourself that this is what happens.\\
+\centerline{\includegraphics*[height=2in,width=2in]{Figures/FiftiethExp}}
+
+But wait a minute! Have you seen a graph like this before?
+
+Of course you have. The graph of $y=10^x$ looks very similar:\\
+\centerline{\includegraphics*[height=2in,width=2in]{Figures/TenToTheX}}
+Now this is interesting. If everything we've done so far is valid the
+the solution of $\dfdx{y}{x}=y$ is probably something like
+$$
+y=e^x
+$$
+where $e$ is some, currently unknown, number.
+
+Let's proceed on that assumption\footnote{Obviously this is actually
+  true or we wouldn't have spent this much time on it.} for now,
+recognizing that this is only a conjecture for now. That is, we make
+the following conjecture.
+
+\begin{myconjecture}
+  There is a real number we'll denote by $e,$ with the property that
+  $e^x$ satisfies equation~\ref{eq:ExpDiffeq}. That is
+$$
+\dfdx{(e^x)}{x} = e^x.
+$$
+\end{myconjecture}
+
+Depending on your mathematical background you may have seen this
+number before and you may already know that it is approximately
+$2.7128.$ This is true but it isn't especially useful information for
+our purposes right now.
+
+What is useful is that we now have strong evidence that the solution
+of equation~\ref{eq:ExpDiffeq} is $y=e^x,$  and that this can be
+interpreted as an exponential function just like $10^x$ or $2^x.$
+Because of this the expression $e^x$ has been named the ``natural
+exponential.''
+
+We will admit that nothing seems ``natural'' about $y=e^x$ being the
+natural exponential function.  One could say that satisfying $dy/dx=y$
+makes it natural, but there is more to it than that.  First, consider
+that by the chain rule, if $x=kt$ for some constant $k,$ then
+$\dfdx{y}{t}=\dfdx{e^kt}{t}=\dfdx{e^x}{x}\dfdx{x}{t}=e^x\cdot{}k=ky.$
+If we interpret $t$ as time, then this says that the quantity
+$y=y(t)=e^kt$ grows at a rate proportional to the amount present.  In
+here, the constant $k$ is called the ``relative (nominal) growth
+rate.''  The name makes sense if you notice that
+$k=\frac{\dfdx{y}{t}}{y}=\frac {\frac{\d{y}}{y}}{t},$ and often this
+growth rate is stated as a percentage.  Consider the following
+example.
+
+\begin{myexample}
+  Suppose a strain of bacteria, under controlled conditions, grows
+  continuously with a relative growth rate of 5\% per hour.  If we
+  start with $2$ grams of this bacteria, how much would we have in $4$ 
+  hours?
+
+    If we let $B$ represent the amount of bacteria (in grams) at
+    time $t$ hours, then we have that this must satisfy 
+    $$
+    \dfdx{B}{t}=.05 B, \ \     B(0)=2.
+    $$
+
+    You can check that $B=Ce^.05t$ will satisfy this differential
+    equation for any arbitrary constant $C.$  To find $C,$ we will utilize
+    the initial condition $B(0)=2.$  Substituting $t=0,$ and  $B=2$ into our
+    equation $B=Ce^kt$ we get
+    $$
+    2=Ce^{.05\cdot0}=C\cdot1=C
+    $$
+    and so the amount of bacteria at any time is given by $B=2e^.05t$ 
+    and after $4$ hours we have $B(4)=2e^{.05\cdot4}\approx 2.44$ grams.  Notice that
+    after $400$ hours, the model predicts that we would have
+    $B(400)=2e^{.05\cdot400}\approx 970330390.8$ grams.  This illustrates the
+    notion that something growing exponentially grows really fast, and
+    that our model is not a good predictor for large values of $t.$ 
+    This limitation makes sense as the bacteria could not sustain a
+    growth rate of $5$\% indefinitely.  There are modifications to this
+    model which we will explore later to take this into account, but
+    for now we will utilize this exponential growth within reason.
+  \end{myexample}
+  
+We will explore some more examples of exponential growth models.
+
+\begin{myexample}
+  Suppose that any investment grows continuously at a nominal rate of
+  $7$\% per year.  What would be the effective yield of this
+  investment?  That is, how much would the investment actually pay in
+  one year?
+
+  Solution: Let $A=A(t)$ denote the value of the investment (in dollars)
+  at time $t$ years and let $A_0$ denote the initial amount.  Then we have
+  that $A$ must satisfy
+  $$
+  \dfdx{A}{t}=.07A,\ \  A(0)=A_0
+  $$
+  Thus, as before, we have $A(t)=A_0e^.07t.$  Thus in one year, the
+  investment is worth $A(1)=A_0e^.07\approx 1.0725A_0.$  Thus, our annual
+  yield is actually $1.0725A_0-A_0=.0725A_0$ which represents and
+  effective yield of $7.25$\% as opposed to a nominal rate of $7$\%.
+
+\marginpar{  Bud,  we could put some of these at the end of the section on
+  logarithms, including some standard exponential growth and decay,
+  Newton's law of cooling.}
+
+  Of course, the relative (nominal) rate is not always given so neatly
+  and often we need to glean it from the information given.  To do
+  this, we will need to look at the inverse of the natural exponential
+  function, namely the natural logarithm function.  But before we do
+  this, we will utilize our new-found friend to settle the matter of
+  the catenary.
+\end{myexample}
+\begin{embeddedproblem}{}
+  \begin{description}
+  \item[(a)] Show that the curve
+  $$
+  y=\frac{H}{w} \left(\frac{e^{\frac{w}{H}x}+e^{-\frac{w}{H}
+        x}}{2}\right)
+  $$
+  really does satisfies the equation of the catenary
+  $$
+  \dfdxn{y}{x}{2}=\frac{w}{H} \sqrt{1+(dy/dx)^2}
+  $$
+  where $w$ is the weight density of the chain, and $H$ is the
+  constant (magnitude of the) horizontal tension.
+\item[(b)]   Assume $w=1,$ and  $H=1$ and graph this curve.  Does it look like a chain?
+  What happens to the graph if we use $w=1, H=2$ or $w=2, H=1.$  Does this
+  make sense physically?  Why or why not?
+\end{description}
+
+\end{embeddedproblem}
+
+\section{The Natural Logarithm}
+\label{sec:natural-logarithm-1}
+
+You may not have thought of it this way before, but exponentiation
+changes addition to multiplication and multiplication to
+exponentiation.  Specifically, we have
+$$
+b^{x+y}=b^x b^y,\ \ \ b^xy=(b^x )^y.
+$$
+The inverse function (a logarithm) will do exactly the opposite; it
+will change multiplication to addition and exponentiation to
+multiplication.  Here are the details.
+
+As we mentioned in the last section, we need to look at the inverse of
+an exponential function.  This inverse is call a logarithm.  The word
+logarithm is a combination of two Greek words logos (reckoning) and
+arithmos (number), so literally a logarithm is a ``reckoning number.''
+What does this mean?
+
+Logarithms were invented by John Napier $(1550-1617)$ as a device which
+changes multiplication to addition.  Nowadays, with the availability
+of handheld calculators, this may not seem like a big deal.  However,
+back in the $16$th and $17$th centuries, where astronomy was growing and
+calculations were completed by hand, this was a major innovation.
+Think about it, is it easier to multiply astronomical numbers or to
+add them?  As put forth by the mathematical historian Howard Eves, the
+invention of logarithms literally ``doubled the life of the
+astronomer.''
+
+While logarithms' computational value has diminished somewhat, the
+idea of changing multiplication to addition (and exponentiation to
+multiplication) is a valuable mathematical tool and we will have
+opportunities to exploit this.  For now, let us see what the
+connection is to exponential functions.
+
+
+\begin{definition}{}
+  Let $b>0,$ and  $x>0.$  Then $y=\log_b x$ exactly when $x=b^y.$ 
+\end{definition}
+
+A few things to note on this definition.
+\begin{enumerate}
+\item The above definition says
+$$
+  b^{\log_b x} =b^y=x ,\  \log_b b^y =\log_b x=y.
+$$
+\item   The number $b$ is called the base of the logarithm (and the
+  exponential function) and is relegated to being a positive number.
+  Furthermore, since $x=b^y,$ then $x>0$ is necessary as well.
+\end{enumerate}
+To see that the logarithm fulfills Napier's desire to change
+multiplication into addition and exponentiation into multiplication,
+we have the following result.
+
+\begin{embeddedproblem}{}
+  Let $b>0,$ $x>0,$ $y>0$ and  let $c$ be any real number.
+  \begin{description}
+  \item[(a)] Show that $\log_b  xy=\log_b x+\log_b y.$  [Hint: Consider
+    $b^{\log_b x+\log_b y}$  and use properties of exponents to show that
+    this equals $xy.$]
+
+    Show that $\log_b x^c =c \log_b x.$  [Hint: Consider $b^{c
+      log_b x}$ and use properties of exponents to show that this
+    equals $x^c.$]
+  \end{description}
+\end{embeddedproblem}
+
+Just as $e^x$ is called the natural exponential function, $y=\log_e x$
+is called the natural logarithm, and is denoted by $y=\ln x.$  This is
+just what we need to deal with exponential growth (and decay) when the
+relative (nominal) growth rate is not explicitly given.
+
+\begin{myexample}
+Suppose we have a bacteria culture which grows at a rate proportional
+to the amount present.  We noticed that initially we have $2$ grams, and
+$24$ hours later we have $3$ grams.  How much would we have in $48$ hours? 
+
+Before we solve this, what is your guess?  Will it be $4$ grams? More?
+Less?  Let's see.
+
+As before, let $B=B(t)$ be the amount of bacteria (in grams) at time $t$ 
+(hours).  Again, we know $B(0)=2.$  Though we don't know what the
+relative growth rate is, we can call it something, say $k.$  Thus we
+have 
+$$
+\dfdx{B}{t}=kB,\  B(0)=2,\text{ and} B(24)=3.
+$$
+
+The differential equation is satisfied by $B=Ce^kt$ for some constant
+$C.$ Utilizing our initial condition, we can determine $C.$ 
+$$
+2=B(0)=Ce^{k\cdot0}=C\cdot1=C.
+$$
+
+So $C=2$ and we have $B=2e^kt.$  To determine $k,$ we will utilize our
+other bit of information. 
+\begin{align*}
+  3&=B(24)=2e^24k \\
+  3/2&=e^24k\\
+  \ln \frac{3}{2}&=24k\\
+  \frac{1}{24} \ln \frac{3}{2}&=k.
+\end{align*}
+
+Thus $B=2e^{\left(\frac{1}{24} \ln \frac{3}{2}\right)t}.$  This is kind
+of cumbersome, so let's use properties of exponents and logarithms to
+clean it up before we look at $B(48).$ 
+$$
+B=(e^{\left(\frac{1}{24} \ln \frac{3}{2}\right)t} = \left(e^{\ln(3/2)}\right)^\frac{t}{24}  =\left(\frac{3}{2}\right)^{\frac{t}{24}}
+$$
+$$
+B(48)=\left(\frac{3}{2}\right)^(48/24)=\left(\frac{3}{2}\right)^2=\frac{9}{4}=2.25
+\text{ grams}.
+$$
+How does this match your guess?  
+\end{myexample}
+
+A natural question is to ask how long
+will it take for the culture to reach $4$ grams.  Translating this into
+a mathematical question, we want $t$ when $B=4.$ 
+\begin{align*}
+  4&=\left(\frac{3}{2}\right)^{\frac{t}{24}}\\
+ \ln 4&=\ln \left(\frac{3}{2}\right)^{\frac{t}{24}}  \\
+ &=\frac{t}{24} \ln \left(\frac{3}{2}\right) \\
+t&=\frac{24  \ln 4}{\ln \left(\frac{3}{2}\right)}\\
+ &\approx 82.06 hours.
+\end{align*}
+Of course, this assumes that the exponential model holds for that long
+a period of time. 
+
+Exponential functions are not only used to model growth, but also
+decay.  This is especially important when speaking of radioactive
+decay.  You might have heard terms such as radiocarbon dating and
+half-life, but what do these terms mean?  Let's look at both.
+
+Radiocarbon dating is a technique for dating organic material from the
+past.  It was developed by Willard Libby in $1949$ and revolutionized
+the field of archeology.  He was awarded the Nobel Prize in Chemistry
+in $1960$ for this development. Radiocarbon $(C_{14})$ is a
+radioactive isotope of carbon which is constantly being created in the
+atmosphere by the interaction of cosmic rays with atmospheric
+nitrogen. The resulting radiocarbon combines with atmospheric oxygen
+to form radioactive carbon dioxide, which is incorporated into plants
+by photosynthesis; animals then acquire $C_{14}$ by eating the
+plants. When the animal or plant dies, it stops exchanging carbon with
+its environment, and from that point onwards the amount of $C_{14}$ it
+contains begins to decrease as the $C_{14}$ undergoes radioactive
+decay. Measuring the amount of $C_{14}$ in a sample from a dead plant
+or animal such as a piece of wood or a fragment of bone provides
+information that can be used to calculate when the animal or plant
+died
+\begin{verbatim}
+[https://en.wikipedia.org/wiki/Radiocarbon_dating].
+\end{verbatim}
+
+
+This is where the notion of half-life comes into play.  The half-life
+of $C_{14}$ is about $5,730$ years.  This means that given any initial
+amount of $C_{14},$ in $5,730$ years, half of the radiocarbon will
+remain (the other half having decayed).  Of course, the decaying
+process is gradual.  It is reasonable to assume that the rate of decay
+of the radiocarbon (or any radioactive material) is proportional to
+the amount present.  After all, the more material there is, the more
+there is to decay.  All of these ideas are incorporated in the
+following example.
+
+\begin{myexample}
+  The Shroud of Turin is a religious relic which is reputed to be the
+  burial shroud of Jesus and bears the image of a man which is alleged
+  to be that of Jesus.  The Vatican agreed to subject pieces of the
+  shroud to radiocarbon dating in $1987.$ To examine this, let
+  $A=A(t)$ be the amount of $14C$ (in mg) at time $t$ years, where $t=0$ 
+  represents when the shroud was used.  Let $A(0)=A_0$ be the initial
+  amount of $C_{14}$ present in the sample.  How much $C_{14}$ would be present
+  if the shroud was 2000 years old?  Mathematically, we have
+$$
+\dfdx{A}{t}=kA,\ \ \ A(0)=A_0,\ \ \text{and}   A(5730)=\frac{1}{2} A_0,
+$$
+and we want to know what $A(2000)$ is.
+
+The solution of the differential equation and initial condition is $A=A_0e^kt.$  To determine $k,$ we utilize the half-life.
+\begin{align*}
+  1/2 A_0&=A(5730)\\
+  &=A_0 e^5730k \\
+ \frac{1}{2}&=e^5730k \\
+k&=1/5730 ln \frac{1}{2}.
+\end{align*}
+Notice that this is negative since $\ln (1/2)=-ln 2.$  This makes
+sense. This the growth rate should be negative since the amount of
+$C_{14}$ is shrinking.   Thus 
+$$
+A=A_0 e^{\frac{1}{5730}\ln (1/2) }t=A_0 \left(\frac{1}{2}\right))^\frac{t}{5730}
+$$
+and so
+$$
+A(2000)=A_0 \left(\frac{1}{2}\right)^{\frac{2000}{5730}} \approx 0.785A_0.
+$$
+This says that an authentic shroud should contain about $78.5\%$ of  the original amount.
+
+\begin{embeddedproblem}{}
+  One of the samples contained $88.9\%$ of the original $C_{14}.$ How
+  old would this sample be?
+\end{embeddedproblem}
+The technique of carbon dating is not in dispute, but there are issues
+about the quality of the sample and other issues.  Interested readers
+can read
+https://www.usatoday.com/story/news/world/2013/03/30/shroud-turin-display/2038295/.
+\end{myexample}
+
+\marginpar{Bud, do we want to put in Newton's Law of cooling here, or wait until we talk more about solving differential equations. I can insert it here if you think we shouldn't wait.
+}
+
+% Of course, $y=ln x$ has uses in other places, so we should treat it like
+% any other function we have come across.  In particular, what do we get
+% if we differentiate it?
+
+You should already be familiar with logarithms as the inverses of
+exponentials. That is, if $f(x)=10^x$ and $\inverse{f}(x)=\log_{10}(x)$
+then
+$$
+f\left(\inverse f(x)\right) = 10^{\log_{10}(x)}=x
+$$
+and
+$$
+\inverse f\left(f(x)\right) = \log_{10}(10^x) = x.
+$$
+
+We will define the ``natural logarithm'' in precisely the same way.
+
+\begin{definition}{}
+  If $f(x) = e^x$ then $\inverse f(x) = \log_e(x),$ where 
+$$
+f\left(\inverse f(x)\right) = e^{\log_{e}(x)}=x
+$$
+and
+$$
+\inverse f\left(f(x)\right) = \log_{e}(e^x) = x.
+$$
+\end{definition}
+\begin{mynotation}{Natural Logarithm}
+  The natural logarithm is often shortened to $\ln(x).$ We will use
+  this shortened form hereafter.
+\end{mynotation}
+
+A natural question to ask is, ``What is the derivative of $\ln(x)?$ At
+first this may seem to be a difficult question to answer but  
+it is actually quite straight-forward. In fact, we will use the same
+trick that we used to obtain
+$\dfdx{\inverse\sin(x)}{x}=\frac{1}{\sqrt{1-x^2}}.$
+
+First let $y=\ln(x)$ and then we simply differentiate both sides of 
+$$
+e^y=x
+$$
+to obtain
+\begin{align*}
+  e^y\dfdx{y}{x} &=1\\
+  \intertext{from which }
+  \dfdx{y}{x}    &= \frac{1}{e^y}\\
+                 &= \frac{1}{e^{\ln(x)}}\\
+                  &= \frac{1}{x}.
+\end{align*}
+
+Thus we have the following:
+\begin{mytheorem}
+  \begin{enumerate}
+  \item Suppose that $y=e^x.$ Then $\dfdx{y}{x} = e^x.$
+  \item Suppose that $y=\ln(x).$ Then $\dfdx{y}{x} = \frac1x.$
+  \end{enumerate}
+\end{mytheorem}
+
+Aside from being the inverse function of an exponential, a logarithm
+is an important function in its own right, as illustrated in the
+following problem.  
+
+\begin{embeddedproblem}{}\label{prob:tractrix1}
+Consider the top view of a tractor-trailer.  Initially, the center of
+the rear axle of the tractor is at the origin and the center of the
+rear axle of the trailer is at the point $(1,0).$
+  \centerline{\includegraphics*[height=3in,width=4in]{Figures/Tractrix}}
+  \begin{description}
+  \item[(a)] 	Suppose the tractor pulls the front wheels up the
+    $y$-axis and that the rear wheels don't slip.  Show that the path
+    $y=y(x)$ that the center of the rear axle of the trailer follows
+    must satisfy the equations 
+    \begin{align*}
+      \dfdx{y}{x}&=-\frac{\sqrt{1-x^2}}{x}\\
+      y(1)&=0.
+    \end{align*}
+    This path is called a tractrix from the Latin verb trahere ``to
+    drag or pull,'' the same root that gives us farm tractors and
+    ``tractor beams'' from science fiction.
+  \item[(b)] 	Show that  
+    $$
+    y=\ln\left(\frac{1+\sqrt{1-x^2}}{x}\right)-\sqrt{1-x^2}
+    $$
+    satisfies the above differential equation and the condition $y(1)=0.$
+    Graph this.  Does it make sense?
+  \item[(c)] How far will the tractor have gone (in trailer
+    lengths) before the trailer is within one degree of vertical?
+  \end{description}
+\end{embeddedproblem}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% outline-minor-mode: t
+%%% TeX-master: "Calculus"
+%%% End: 
