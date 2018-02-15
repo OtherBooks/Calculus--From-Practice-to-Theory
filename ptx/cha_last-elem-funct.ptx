@@ -1,0 +1,25 @@
+
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="cha_last-elem-funct">
+  <title>The Last of the Elementary Functions</title>
+  <introduction>
+    <p>
+      { A Problem to Think About:
+      }
+      Previously (p. XX) we showed that the catenary (hanging chain)
+      <m>y=y(x)</m> satisfied the equation
+      <me>
+        \dfdx{y}{x}{2}=\frac{w}{H} \sqrt{1+  \left(\dfdx{y}{x}\right)^2 }
+      </me>
+      where <m>w</m> is the weight density of the chain, and <m>H</m> is the constant
+      (magnitude of the) horizontal tension. We also showed that a parabola
+      does not satisfy this equation. In this chapter we will look at
+      functions which help us to determine the solution.
+
+      *********************
+    </p>
+  </introduction>
+  <xi:include  href="sec_exponential.ptx" />
+  <xi:include  href="sec_natural-logarithm-1.ptx" />
+</chapter>
+

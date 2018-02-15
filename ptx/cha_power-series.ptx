@@ -1,0 +1,8 @@
+
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="cha_power-series">
+  <title>Power Series</title>
+  <xi:include  href="sec_repr-numb.ptx" />
+  <xi:include  href="sec_repr-polyn.ptx" />
+</chapter>
+

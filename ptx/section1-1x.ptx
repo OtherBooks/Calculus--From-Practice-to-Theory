@@ -1,0 +1,996 @@
+
+
+<section>
+  <title>Science Before Calculus</title>
+  <introduction>
+    <p>
+      {Warning for teachers and students alike! }
+    </p>
+
+    <figure>
+      <image width="28%" source="images/NovaScientia.png" />
+    </figure>
+
+    <p>
+      n
+      There is a real temptation to skip this section and get to <q>the
+      Calculus part.</q> Don't do it.
+    </p>
+
+    <p>
+      This is an error for two reasons. First, the story of Calculus, what
+      sorts of problems it was invented to address and why the tools of
+      Calculus were developed in the way that they were, is very helpful in
+      understanding what Calculus is and what it is not. Second, the real
+      world problems Calculus was invented to solve are not <q>Calculus
+      problems<fn>By which we mean that they are not drill problems
+        designed to exercise you Calculus skills. There were, and still are,
+      very hard problems in science and technology that the tools of
+      Calculus can be used to solve, but only if your skills are already
+      honed.</fn>.</q>
+      That is, to solve these problems the techniques of Calculus are not
+      the only mathematical tools that will we need. Indeed, frequently they
+      will not be the first tools will need, but the last.
+    </p>
+
+    <p>
+      This section addresses both precalculus<fn>Define
+        precalculus and pre-calculus.</fn>and pre-calculus. The techniques
+      predate Calculus and were subsequently supplanted by more general
+      calculus techniques, but these techniques allow students to practice
+      (relearn?) algebra and analytic geometry techniques while solving
+      actual problems instead of just practice. Calculus would not exist
+      without these precalculus techniques, and fluency in them will be
+      crucial in applying Calculus to solve problems. So, enjoy the entire
+      story of how Calculus became one of the great human achievements and
+      ushered in a golden period in mathematics and science.
+    </p>
+
+    <p>
+      <em>A Problem to Think About</em>
+    </p>
+
+    <p>
+      Mathematics is such an integral part of the training of any scientist,
+      that it is hard to believe that the notion of using mathematics to
+      study physical phenomena is a relatively new notion. Consider, for
+      example, the title page of the <em>Nova Scientia (New Science)</em> written by
+      Niccolo Tartaglia in <m>1537.</m>
+    </p>
+
+    <p>
+      There is much allegory in this picture of which we will point out some
+      items. Inside the large ring is a group of Muses including Geometria
+      and Arithmetica and others surrounding Tartaglia observing the
+      trajectory of a cannonball. This represents the fact that this was
+      one of the first works which studied the science of projectile motion
+      (artillery fire) using mathematical principles rather than empirical
+      data. At the door of the ring is Euclid, representing the notion that
+      one can only reach this inner ring through an understanding of
+      Euclid's Elements (geometry). Clearly the man trying to scale the
+      wall does not know geometry as his ladder is woefully short. The
+      smaller ring, separate from the larger ring is occupied by Philosophia
+      on a throne. Of course, the only entrance to the ring of philosophy
+      is through the larger ring of mathematics. At that gate are
+      Aristotle (on the larger ring side) and Plato (on the philosophy
+      side). On the banner is the motto of Plato's Academy, <q>Let no one
+      ignorant of geometry enter.</q> Of course, such allegory is open to
+      interpretation, but the message is clear that mathematics would play
+      an important role in the <q>new science.</q>
+    </p>
+
+    <p>
+      But in order to apply mathematical principles to study physical
+      phenomena there must be some sort of rules which seem to govern
+      nature. One of the tenets that scientists hold onto nowadays is
+      {NATURE IS LAZY!} Nature tries to do things in the most
+      efficient manner. Whether this is true or not, it gives a starting
+      point to applying mathematics to study phenomena. This was a driving
+      force to mathematicians in the <m>1600</m>s as they looked for techniques
+      for optimization. We will look at some of this presently, but let's
+      start with some optimization problems of our own.
+    </p>
+
+    <p>
+      <em>Example 1:</em> Out of all rectangles with a fixed
+      perimeter, which one encompasses the greatest area?
+    </p>
+
+    <p>
+      One might guess that the answer is a square. To see that this is
+      true, consider a square whose side is <m>s.</m> The perimeter of this square
+      is <m>4s</m> and the area is <m>s^2.</m> Suppose we now increase the length by <m>x.</m>
+      To maintain the same perimeter, we must now decrease the width by the
+      same <m>x.</m> This <m>(s-x)</m> by <m>(s+x)</m> rectangle still has a perimeter of <m>4s,</m>
+      but its area is <m>(s-x)(s+x)=s^2-x^2\lt s^2.</m> Thus the square has a larger
+      area than this rectangle with the same perimeter. Consider the
+      following variation on the problem, which can be done in a somewhat
+      similar manner.
+    </p>
+
+    <p>
+      <em>Problem 1:</em> Out of all rectangles with a fixed
+      perimeter, which one has the shortest diagonal? Justify your answer.
+    </p>
+
+    <p>
+      As mentioned above, Problem <m>1</m> can be done in a manner similar to
+      Example <m>1.</m> But what about this problem?
+    </p>
+
+    <p>
+      {Example 2.} Consider all square based boxes with a
+      fixed surface area <m>S.</m> Does the cube enclose the largest volume?
+      Justify you answer.
+    </p>
+
+    <p>
+      This problem may or may not be able to be solved using techniques
+      similar to the above, but it is this type of optimization problem
+      which prompted mathematicians from the <m>1600</m>'s to develop techniques
+      that ultimately led to the invention of Calculus. We will come back
+      to this problem later in this section.
+    </p>
+
+    <p>
+      <em><em>Fermat's Method of Aedequality</em></em>
+    </p>
+
+    <p>
+      One of the mathematicians developing techniques for solving such
+      problems was Pierre de Fermat (1601-1665). To address the problem of
+      optimizing a function, Fermat developed a method often called the
+      <em>Method of Adequality.</em> The modern word <q>adequate</q> has its origin from
+      the Latin verb <em>adaequ\={a}re</em> which means to equalize. When something is
+      adequate, then it is essentially being made equal to whatever your
+      needs are. The equalizing appears in Fermat's method as follows.
+      Fermat noticed that the values of a function <m>f(x)</m> are very nearly
+      equal near a maximum or minimum value. This is noticeable during the
+      year with the number of hours of daylight. At the summer and winter
+      solstices, the daily change in the amount of daylight is relatively
+      small as compared to that at the equinoxes. This can be seen if we
+      look at a graph of this.
+    </p>
+
+    <figure>
+      <image width="56%" source="images/SantaBarbaraDaylight.png" />
+    </figure>
+
+    <p>
+      Notice that for days near the maximum which occurs at day <m>172</m> and the
+      minimum which occurs at day <m>356,</m> the number of hours of daylight does
+      not vary too much. This reasoning is the basis nbehind Fermat's idea
+      to determine where a maximum or minimum occurs. In general, for a
+      function <m>f(x),</m> we set <m>f(x+h)=f(x).</m> After performing some algebra, we
+      set <m>h=0</m> to <q>make it correct.</q>
+    </p>
+
+    <p>
+      In Example <m>1,</m> we showed that out of all rectangles with a fixed
+    </p>
+
+    <figure>
+      <image width="18%" source="images/GenericRectangle.png" />
+    </figure>
+
+    <p>
+      perimeter, the one with the largest area is a square. We will use
+      Fermat's Method of Adequality to examine a related question:
+    </p>
+
+    <p>
+      {Example 3.} Out of all rectangles with a fixed area,
+      does a square have the smallest perimeter?
+    </p>
+
+    <p>
+      To look at this question, we need to transform it into a mathematical
+      problem where we can apply Fermat's method. To do this, consider a
+      rectangle whose length is given by x and width is given by <m>y.</m> The
+      area of the rectangle is given by <m>A=xy</m> and the perimeter is given by
+      <m>P=2x+2y.</m>
+    </p>
+
+    <p>
+      The mathematical problem is to minimize <m>P</m> given that <m>A</m> is fixed. To
+      apply Fermat's method, we need to use our constraint <m>A=xy</m> to eliminate
+      one of the variables in <m>P.</m> Solving for <m>y,</m> we get <m>y=A/x.</m> Substituting
+      into <m>P,</m> we get
+      <me>
+        P=P(x) = 2x+\frac{2A}{x}.
+      </me>
+    </p>
+
+    <p>
+      We used <m>P(x)</m> to emphasize that <m>P</m> is a function of <m>x</m> alone.
+      (Remember that <m>A</m> is fixed.)
+    </p>
+
+    <p>
+      Fermat's method says to first set <m>P(x+h)=P(x):</m>
+      <me>
+        2(x+h)+\frac{2A}{x+h}=2x+\frac{2A}{x}.
+      </me>
+    </p>
+
+    <p>
+      Performing some algebra, we get
+      <md>
+        <mrow>2x+2h+\frac{2A}{x+h}\amp =2x+\frac{2A}{x}</mrow>
+        <mrow>2h\amp =\frac{2A}{x}-\frac{2A}{x+h}</mrow>
+        <mrow>h\amp =\frac{A(x+h)-Ax}{x(x+h)}</mrow>
+        <mrow>\amp =\frac{Ah}{x(x+h)}.</mrow>
+        <intertext>Dividing by <m>h,</m> we get</intertext>
+        <mrow>1\amp =\frac{A}{x(x+h)}.</mrow>
+      </md>
+    </p>
+
+    <p>
+      Setting <m>h=0,</m> <q>to make it correct,</q> we get <m>1=A/x^2,</m> so <m>x^2=A.</m>
+      Substituting into the expression for <m>y,</m> we get <m>y=A/x=x^2/x=x.</m>
+    </p>
+
+    <p>
+      Putting this back into context, we have that <m>P</m> is optimized when
+      <m>y=x;</m> that is, when the rectangle is a square. The fact that <m>P</m> is
+      minimized comes from the context of the problem; a moment's thought
+      tells us that by making the length as long as we wish and the width
+      appropriately short, there is no maximum value for <m>P.</m>
+    </p>
+
+    <p>
+      Reconsider the problem from earlier in the chapter.
+    </p>
+
+    <problem>
+      <statement>
+        <figure>
+          <image width="14%" source="images/RectSolid.png" />
+        </figure>
+
+        <p>
+          Consider the following rectangular box with a square base.
+          <ul>
+            <li>
+              <title>(1)</title>
+              <p>
+                Find a formula for the volume of the box, <m>V.</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(2)</title>
+              <p>
+                Find a formula for the surface area of the box, <m>S.</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(3)</title>
+              <p>
+                Assuming that <m>V</m> is held fixed, use Fermat's Method
+                    of Adequality to find the dimensions of the box which will
+                    minimize <m>S.</m>  Is this box a cube?
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      If you think about Fermat's method, you quickly realize that Fermat is
+      exploiting the fact that at a maximum or minimum, the tangent line to
+      the curve is horizontal. In fact, Fermat modified his method to
+      determine (the slope of) the tangent line to a curve. We will
+      modernize Fermat's ideas as he talked of things such as subtangents
+      and we have replaced that notion with slope.
+    </p>
+
+    <p>
+      As you know, we need two points to determine the slope of a line, so
+      with Fermat in mind, we choose two points on the curve <m>y=f(x)</m> very
+      close together and use them to compute the slope of the line joining
+      them.
+    </p>
+
+    <figure xml:id="fig_" >
+      <caption>slope of secant line: <m>\frac{f(x+h)-f(x)}{x+h-x} = \frac{f(x+h)-f(x)}{h}</m></caption>
+      <image width="37%" source="images/Aedequality1.png" />
+    </figure>
+
+    <p>
+      After we perform some algebra, we set <m>h=0</m> to <q>make it correct.</q>
+      Setting <m>h=0</m> essentially merges the two points together and the
+      secant line becomes the desired tangent line. Let's try this on the
+      curve <m>y=x^2.</m> We have that the slope of secant line joining <m>(x,x^2)</m>
+      and <m>(x+h,(x+h)^2)</m> is given by
+      <md>
+        <mrow>\frac{(x+h)^2-x^2}{h}\amp =\frac{x^2+2xh+h^2-x^2)}{h}</mrow>
+        <mrow>\amp =2x+h.</mrow>
+      </md>
+    </p>
+
+    <p>
+      Setting <m>h=0</m> to <q>make it correct,</q> we have that the slope of the
+      tangent line at <m>(x,x^2 )</m> is given by <m>2x.</m> If we substitute the
+      values <m>x=-2, -1, 0, 1,</m> and <m>2</m> we obtain slopes of <m>-4, -2, 0, 2,</m>
+      and <m>4,</m> respectively. This does seem to be consistent with what we
+      can see on the graph.
+    </p>
+
+    <problem>
+      <statement>
+        <ol>
+          <li>
+            <p>
+              Use Fermat's method for tangents to compute the slope of the
+                  tangent line to <m>y=x^3</m> at the point <m>(x,x^3).</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Substitute the values <m>x=-2, -1, 0, 1,</m> and <m>2</m> into the formula you
+                  obtained for the slope and graph this to see if it makes sense.
+                  You should notice something odd about the tangent lines.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </problem>
+
+    <p>
+      As mentioned in the problem above, there is something a bit odd about
+      the tangent lines when you graph them, though the slopes appear to be
+      correct. There is also a logical problem with just letting <m>h=0</m> <q>to
+      make it correct.</q> If you've spotted it, good for you (maybe your
+      teacher will want to discuss it). If not, that is ok as well, for the
+      method does provide the correct answer (even though the logic behind
+      it is suspect). Examining these issues is for a later chapter as we
+      look at the foundations of the calculus. For now, we will develop the
+      rules and learn how to use them.
+    </p>
+
+    <p>
+      While Fermat's Method of Tangents has a fundamental flaw (though it
+      provides the correct answer), a contemporary of his, Ren&#xe9; Descartes
+      <m>(1596-1650),</m> provided an alternative method which is free of logical
+      issues.
+    </p>
+  </introduction>
+
+  <subsection xml:id="sec_descartes-normals">
+    <title>Tangent Lines: Decartes's Method of
+        Normals</title>
+    <p>
+      <em>Apollonius and Conic Sections</em>
+      The problem of finding the tangent line to a curve is a geometry
+      problem, so it is not surprising that some of the first attempts
+      were geometric. The Greek mathematician Apollonius of Perga (circa
+      262 BC to 190 BC) used geometric methods to construct tangent lines to
+      the classical conic sections: the ellipse, the hyperbola, and the
+      parabola.
+    </p>
+
+    <p>
+      Since algebra had not yet been invented, Apollonius's methods were
+      entirely geometric, and could not be easily generalized for curves
+      that were not conic sections.
+    </p>
+
+    <p>
+      Ren&#xe8; Descartes (1596-1650) was one of the pioneers in applying the
+      techniques of algebra to solve geometry problems. In his <em>La
+      Geometrie</em> he remarked that the problem of finding the tangent to a
+      curve was <q>. . . not only the most useful and most general problem
+      in geometry that I know, but even that I have ever desired to know.</q>
+    </p>
+
+    <p>
+      Descartes' technique is often called the Method of Normals<fn>In this context, <q>normal</q> means
+            perpendicular.</fn>because
+      what he actually finds is the line normal to (perpendicular to) a
+      curve. Once the normal is obtained, then the tangent line is
+      perpendicular to that.
+    </p>
+
+    <p>
+      His method for finding the normal to a curve can be described as
+      follows.
+    </p>
+
+    <p>
+      Given a curve and a point <m>P</m> on that curve, we find the circle
+      passing through <m>P</m> whose center is on the <m>x</m> axis. The line from the
+      center of that circle throught the point <m>P</m> will be the normal (and
+      its perpendicular through the point (P) will be the tangent.
+    </p>
+
+    <p>
+      Let's take a look at how this might be done in a particularly simple
+      situation. Consider the line <m>y=3x+2</m> and the point <m>(1,5)</m> on that
+      line.
+    </p>
+
+    <p>
+      \InsertGraphic
+    </p>
+
+    <p>
+      We know that the slope of the line normal to this curve<fn>Yes,
+        we know that lines aren't curved. It is convenient
+        to think of a line as a special case of a curve.</fn>is <m>-1/3.</m> Thus
+      the normal line passes through the point <m>(1,5)</m> with slope <m>-1/3</m> so
+      the equation of this line is
+      <m>y-5=-\frac13(x-1)</m>
+      or
+      <me>
+        y=-\frac13 x+\frac{16}{3}
+      </me>
+      which crosses the <m>x</m>-axis at <m>(16,0).</m> Since the distance from
+      <m>(1,5)</m> to <m>(16,0)</m> is <m>\sqrt{122}</m> we see that the equation of the
+      circle with center <m>(16, 0)</m> and radius <m>\sqrt{122}</m> is <m>(x-16)^2 +y^2
+      = 122,</m> as seen below.
+    </p>
+
+    <p>
+      \InsertGraphic
+    </p>
+
+    <p>
+      We now have a point on our tangent line, <m>(1,5),</m> and it's slope,
+      <m>3,</m> so we can write down the equation of the tangent line:
+      <md>
+        <mrow>y-5\amp =3(x-1), \text{ or, in slope-intercept form }</mrow>
+        <mrow>y\amp =3x+2.</mrow>
+      </md>
+    </p>
+
+    <p>
+      Wait a minute! That can't be! This is the equation of our original
+      line!
+    </p>
+
+    <p>
+      But think about it for a moment. When we say <q>tangent line</q> what do
+      we really mean? The first definition we usually encounter is <q>a line
+      that touches a curve at exactly one point.</q> But this can't possibly
+      work as a definition for a tangent line. To see why not consider the
+      tangent to the curve <m>y=x^3-3x</m> at the point <m>(-1,2).</m> It passes
+      through two points on the curve: <m>(-1,2)</m> and <m>(0,2).</m>
+    </p>
+
+    <p>
+      When we use the word <q>tangent</q> in ordinary speech we usually mean
+      something more like, <q>getting off of the main point, but in the same
+      direction that things are currently moving.</q> When we think
+      of <q>tangent</q> in this way is is clear that a line and it's tangent
+      must be the same line. After all, there is only one line <em>through a
+      given point</em> that <em>always</em> points in a given direction.
+    </p>
+
+    <p>
+      But we've gotten off on a tangent.
+    </p>
+
+    <p>
+      Returning to the problem at hand it is clear that we didn't really
+      need to find the equation of our circle. Once we have the slope of the normal line,
+      the slope of the tangent is known. But this is an artifact of the
+      simplicity of our problem. Straight lines are easy. When the curve is
+      more complex we <em>will</em> need the circle.
+    </p>
+
+    <p>
+      This is because there is one special curve, the circle, whose tangent line is
+      obvious. Pick a point on a circle and draw the radius to that
+      point. It is well known that the tangent line at that point will be
+      the line perpendicular to the radius.
+    </p>
+
+    <p>
+      We'll illustrate Descartes' idea with the following example.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Find the slope of the normal (and tangent) line to the curve <m>y=\sqrt{2x}</m> at the
+          point <m>(2,2).</m>
+        </p>
+
+        <p>
+          <image width="75%" source="images/DescartesCircle.png" />
+        </p>
+
+        <p>
+          Following Descartes' approach we look at the family of circles whose
+          centers lie on the <m>x</m> axis and which pass through the point <m>(2,2).</m>
+          The dashed circle represents a generic member of that family of
+          circles. Notice that typically these circles intersect the parabola twice. We
+          are searching for the circle that hits the curve only once. This is
+          the solid circle in our picture. If we can find the center of that
+          circle then its radius through the point <m>(2,2)</m> will be normal to the curve and we can find its
+          slope (and the tangent's slope).
+        </p>
+
+        <p>
+          If we let <m>(a,0)</m> denote the coordinates of the center of a generic circle in that
+          family, then the equation of the circle with center <m>(a,0)</m> is
+          <m>(x-a)^2+y^2=r^2</m> where <m>r</m> is the radius of the circle. Since we
+          require our circle to pass through the point <m>(2,2)</m> this radius will
+          be the distance from <m>(2,2)</m> to <m>(a,0).</m> That is
+          <m>r=\sqrt{(2-a)^2+2^2}.</m>
+          Thus we have
+          <me>
+            (x-a)^2+y^2=(2-a)^2+2^2.
+          </me>
+        </p>
+
+        <p>
+          Substituting <m>y=\sqrt{2x}</m> into the equation of the circle, we get
+          <md>
+            <mrow>(x-a)^2+2x\amp =(2-a)^2+4</mrow>
+            <mrow>x^2-2ax+a^2+2x\amp =4-4a+a^2+4</mrow>
+            <mrow>x^2+(2-2a)x+(4a-8)\amp =0</mrow>
+          </md>
+        </p>
+
+        <p>
+          It is tempting at this point, to use the quadratic formula to solve
+          for <m>x</m> and get (typically two) values for <m>x</m> in terms of <m>a.</m>
+          However, before do a bunch of unnecessary work, let's keep in mind
+          what we are trying to do. We want to find the value of <m>a</m> where the
+          circle and the curve intersect exactly once. We really don't care
+          about <m>x</m> at this point. But think about this for a moment. If we use
+          the quadratic formula to solve this equation then we will get only one
+          solution precisely when the discriminant (the part under the square
+          root) is zero. For our problem, the discriminant is
+          <m>(2-2a)^2-4(4a-8).</m> Setting this equal to zero and solving, we get
+          <md>
+            <mrow>4-8a+4a^2-16a+32\amp =0</mrow>
+            <mrow>4a^2-24a+36\amp =0</mrow>
+            <mrow>4(a-3)(a-3)\amp =0</mrow>
+            <mrow>a\amp =3.</mrow>
+          </md>
+        </p>
+
+        <p>
+          Thus the center of the circle which intersects the curve exactly once
+          is <m>(3,0)</m> and the slope of the normal line is <m>(2-0)/(2-3)=-2.</m>
+          So the tangent line to the curve <m>y=\sqrt{2x}</m> at <m>(2,2)</m> has slope
+          <m>1/2.</m>
+        </p>
+
+        <p>
+          Since we have both a point on the tangent line: <m>(2,2),</m> and the
+          slope of the tangent line we can use the point-slope form of the
+          equation of a line to write down the equation of the tangent
+          line:
+          <me>
+            y=\frac{1}{2}x+1.
+          </me>
+        </p>
+      </statement>
+    </example>
+
+    <problem>
+      <statement>
+        <p>
+          Use Descartes' Method of Normals to find the slope of the tangent
+          line to the curve <m>y=\sqrt{x}</m> at the point <m>(4,2).</m>
+        </p>
+      </statement>
+    </problem>
+
+    <problem>
+      <statement>
+        <p>
+          In a variation of Descartes' method, find the tangent line to the
+          curve <m>y=x^2</m> at the point <m>(3,9)</m> by considering the family of all
+          the lines passing through the point <m>(3,9).</m> Out of all those lines, only
+          two will intersect the curve exactly once, the vertical line and
+          the tangent line. Use this method to find the tangent line to
+          <m>y=x^2</m> at <m>(3,9).</m> What would happen if you tried this idea for
+          the curve <m>y=x^3?</m> (Maybe this explains why Descartes used
+          circles.)
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      Descartes' method is not only clever, it is completely algebraic.
+      But it is also unwieldy. And for curves that are more complex than
+      parabolas it is often simply impossible to use.
+    </p>
+
+    <p>
+      Descartes' Method of Normals was not the only technique developed for
+      finding tangent lines before Calculus was invented, but it is
+      typical in both it's applicability and in the computational effort
+      required.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Use Descartes' Method of Normals to verify Fermat's result that the
+          slope of the tangent line to <m>y=x^2</m> at the point <m>(1,1)</m> is given by
+          <m>2.</m> [You probably want to look at circles that are centered on the
+          <m>y</m>-axis instead of the <m>x</m>-axis.
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      Whereas Descartes' Method is free of the logical pitfalls that
+      Fermat's Method has, it is algebraically cumbersome to find where a
+      polynomial has a double root. A tool to examine this was found by
+      Johann van Waveren Hudde <m>(1628-1704).</m> We will state a special case
+      of this rule.
+    </p>
+
+    <p>
+      {Hudde's Rule:} Consider any polynomial <m>p(x)=a_0+a_1 x+ \cdots +a_n x^n.</m> Form the following <q>Hudde polynomial</q>
+      <me>
+        p^* (x)=a_1 x+2a_2 x^2+\ldots+na_n x^n.
+      </me>
+    </p>
+
+    <p>
+      If <m>r</m> is a double root of <m>p(x),</m> then <m>r</m> is a root of the
+      Hudde<fn>Put in Hudde problem later in the section on
+          the product rule and the chain rule.  It could look like this:
+
+        Recall that we introduced Hudde's Rule on page XX to search for the double root of a polynomial (if it has one).  In fact, Hudde stated a more general rule than what we gave before.
+
+      {Hudde's Rule:}  Consider the polynomial <m>p(x)=a_0+a_1x+a_2x^2+\ldots{}+a_n x^n.</m> Let <m>a,b</m> be any real numbers and form the Hudde polynomial
+      <me>
+        p^*(x)=a_0 a+a_1 (a+b)x+a_2 (a+2b) x^2+a_3 (a+3b) x^3+\ldots+a_n
+        (a+nb) x^n.
+      </me>
+      If <m>r</m> is a double root of <m>p(x)</m> then <m>r</m> is a root of the Hudde
+      polynomial <m>p^*(x)</m> 
+
+        Hudde proved this is a completely algebraic manner before the invention of Calculus, but with calculus, we can polish this off pretty readily.
+
+      <problem>
+        <statement>
+          <ol>
+            <li>
+              <p>
+                Show that if <m>r</m> is a double root of the polynomial
+                            <m>p(x)</m> 
+                            then it is a root of <m>\dfdx{p}{x}.</m>  [Hint: If <m>r</m> is a double root
+                            of <m>p(x),</m> then <m>p(x)=(x-r)^2 q(x)</m> for some polynomial
+                            <m>q(x).</m>]
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Show that the Hudde polynomial
+                            <m>p^*(x)=ap(x)+bx\dfdx{p}{x}</m> 
+                            and use this to prove Hudde's Rule.
+              </p>
+            </li>
+          </ol>
+        </statement>
+      </problem>
+
+      </fn>polynomial <m>p^*(x).</m>
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Suppose <m>p(x)</m> is a quadratic polynomial with a double root <m>r.</m> Thus <m>p(x)=a(x-r)^2</m>
+          <ol>
+            <li>
+              <p>
+                Expand <m>p(x)</m> and use this to form the Hudde polynomial <m>p^*(x).</m> 
+                  Show that <m>p^*(r)=0</m> (so that <m>r</m> is a root of <m>p^*(x)).</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      Another contemporary of Fermat and Descartes, Gilles Personne de
+      Roberval <m>(1602-1675)</m> developed a method for constructing tangents
+      which is a bit more dynamic in nature. We will explore this dynamical
+      viewpoint later when we talk about Newton. For now, let's look at
+      Roberval's idea. Roberval thought of a curve in the plane as being
+      generated by a point whose motion is compounded from two known
+      motions. By combining the <q>velocity vectors</q> of these motions, the
+      tangent vector (and thus line) will result. We'll apply this concept
+      to a parabola. You may think of a parabola as being determined by a
+      quadratic formula (which it is), but there are other ways to describe
+      it. For example, one definition is that a parabola is the set of
+      points in a plane which are equidistant from a fixed point called the
+    </p>
+
+    <figure>
+      <image width="37%" source="images/GeometricParabola1.png" />
+    </figure>
+
+    <p>
+      focus and a fixed line called the directrix. A diagram is in Figure
+      1. In Figure 1, the point <m>P</m> on the parabola is the same distance from
+      the focus <m>F</m> as it is from the directrix <m>d.</m> This distance changes as <m>P</m>
+      moves along the parabola, but the distance from <m>P</m> to <m>F</m> will always
+      equal the distance from <m>P</m> to <m>d.</m>
+    </p>
+
+    <p>
+      If we think of the motion of <m>P</m> as being a combination of the motion
+      away from <m>F</m> and the motion away from <m>d,</m> then we can modify our
+      drawing to reflect this [Figure 2]. The resultant of these will
+      provide the tangent to the curve at <m>P.</m>
+    </p>
+
+    <figure>
+      <image width="37%" source="images/GeometricParabola2.png" />
+    </figure>
+
+    <p>
+      While this geometric approach does not produce the equation of the
+      tangent line, it does have an interesting consequence in optics. To
+      see this, let's examine how light reflects off a mirror. As we had
+      noted earlier, when applying mathematics to natural phenomena, people
+      often start with the assumption that nature is lazy; that is, nature
+      tries to optimize. Take, for example, a beam of light. If one were
+      to shine a laser pointer in a room, then it would be reasonable to
+      assume that light travels in a straight line which minimizes distance
+      traveled. This premise is reflected<fn>Pun intended.</fn>in light
+      reflecting off a mirror. Assuming that light travels the shortest
+      path, we can examine what path light would travel in this case.
+      Mathematically, we are given two points <m>A,</m> <m>B</m> and a line <m>m</m> (for
+      mirror, not slope). We wish to find the shortest path from <m>A</m> to <m>m</m>
+      to <m>B.</m>
+    </p>
+
+    <p>
+      <image width="93%" source="images/ReflectingMirror1.png" />
+    </p>
+
+    <p>
+      This can be done without Calculus by reflecting <m>B</m> across <m>m.</m> We will
+      denote this reflection by <m>B_R.</m> Clearly the shortest path from <m>A</m> to <m>m</m>
+      to <m>B_R</m> is a straight line.
+    </p>
+
+    <p>
+      <image width="93%" source="images/ReflectingMirror2.png" />
+    </p>
+
+    <p>
+      Specifically, this says that the solid straight line path in the above
+      picture is shorter than the dotted path. If we reflect the parts of
+      the paths that are below line <m>m,</m> then the solid path will still be
+      shorter than the dotted path.
+    </p>
+
+    <p>
+      <image width="93%" source="images/ReflectingMirror3.png" />
+    </p>
+
+    <p>
+      This solid path represents the shortest path from <m>A</m> to <m>m</m> to <m>B.</m> Notice
+      that on this shortest path, we have the following situation.
+    </p>
+
+    <p>
+      <image width="93%" source="images/ReflectingMirror4.png" />
+    </p>
+
+    <p>
+      To sum up, this says that by traveling the shortest path, light
+      reflects off of a mirror so that the angle of incidence, <m>\angle 1,</m> is
+      congruent to the angle of reflection, <m>\angle 3.</m>
+    </p>
+
+    <problem>
+      <statement>
+        <figure>
+          <image width="37%" source="images/GeometricParabola3.png" />
+        </figure>
+
+        <ol>
+          <li>
+            <p>
+              Explain why the parallelogram in Figure 2 is a rhombus.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Given that the parallelogram in Figure 3 is a rhombus, show
+                  that the two angles, <m>\alpha,</m> <m>\beta</m> are congruent.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </problem>
+
+    <p>
+      Given what we noted about how light reflects, this result says that
+      any light ray, radio wave, sound wave, etc. which comes in parallel to
+      <image width="37%" source="images/Telescopes.png" />
+      the axis of the parabola (perpendicular to the directrix) will reflect
+      off the parabola to the focus. Among other things, this is why
+      satellite dishes and primary mirrors in reflective telescopes are
+      parabolic.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Consider that an ellipse is the set of points in a plane, the sum of
+          whose distances from two fixed points (foci) is a constant. Using
+          Roberval's idea, we can think of the motion of a point <m>P</m> on the
+          <image width="37%" source="images/Ellipse.png" />
+          ellipse as being the result of a motion away from one focus and
+          toward the other focus.
+        </p>
+
+        <p>
+          Explain why the parallelogram in the figure must be a rhombus and
+          use this to show that angle <m>\alpha</m> is congruent to angle <m>\beta.</m>
+        </p>
+      </statement>
+    </problem>
+
+    <figure>
+      <image width="37%" source="images/Kidney1.png" />
+      <image width="37%" source="images/Kidney2.png" />
+    </figure>
+
+    <p>
+      Again, applying this to optics, this says that any light ray, sound
+      wave, etc. emanating from one focus will reflect off of the ellipse to
+      the other focus. Among other things, this reflective property is used
+      to treat kidney stones. The treatment is called Extracorporeal Shock
+      Wave Lithotripsy (ESWL) and is really what the name says. Lithotripsy
+      literally means <q>rock grinding,</q> and this technique uses shock waves
+      which are generated outside the body [See figures below]
+    </p>
+
+    <figure>
+      <image width="37%" source="images/CassegrainTelescope.png" />
+    </figure>
+
+    <p>
+      As you can see in the second figure, the table contains a cup which is
+      in the shape of part of an ellipse. At one focus of the ellipse is an
+      electrode which generates shock waves. These shock waves reflect off
+      the elliptical cup and converge on the other focus. When the kidney
+      stone is positioned at that focus, the shock waves will pummel it into
+      small pieces which can be passed relatively painlessly through the
+      ureter.
+    </p>
+
+    <p>
+      A hyperbola is the set of points in the plane, the difference of whose
+      distances from two fixed points (foci) is constant. This idea is
+      utilized in the secondary mirror of Cassegrain telescopes.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          <image width="75%" source="images/Hyperbola1.png" />
+        </p>
+
+        <p>
+          Using the ideas of Roberval, show that any light ray, sound wave, etc. directed at one focus will reflect off of the hyperbola toward the other focus.
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      We've examined the reflection of light (without Calculus); what about
+      refraction of light as it passes from one medium to another, say from
+      water to air.
+    </p>
+
+    <p>
+      <image width="93%" source="images/Refraction1.png" />
+    </p>
+
+    <p>
+      Notice that light does not travel the shortest path anymore, as this
+      would be a straight line from the fish to the kingfisher. This seems
+      incongruous with our tenet before that nature will be lazy and light
+      will travel the shortest path. We will get to that in a moment, but
+      for now we will try to determine what the path of refracted light is.
+    </p>
+
+    <p>
+      The physical law is known as Snell's Law, named after the Dutch
+      Astronomer Willebrord Snellius <m>(1580-1626)</m> though it was accurately
+      described before that time. In modern terms, Snell's Law can be
+      stated as follows.
+    </p>
+
+    <p>
+      <em>Snell's Law of Refraction:</em> Suppose that light travels
+      with a velocity of <m>v_1</m> in medium <m>1</m> and velocity <m>v_2</m> in medium
+      <m>2.</m>
+      <image width="84%" source="images/Refraction2.png" />
+      Then the path that light follows satisfies
+      <me>
+        \frac{\sin(\theta_1)}{v_1} = \frac{\sin(\theta_2)}{v_2 }.
+      </me>
+    </p>
+
+    <p>
+      A number of mathematicians (including Snell) provided derivations of
+      this, but we will focus (a bit) on Fermat. To attack this problem,
+      Fermat assumed that light would travel the fastest path, not
+      necessarily the shortest path. Notice that this is not incongruous
+      with our observations concerning reflecting light. In that case, the
+      speed of light was constant so the shortest path was, in fact, the
+      fastest path.
+    </p>
+
+    <p>
+      Let's see what happens when we try to use Fermat's Method of
+      Adequality to find this fastest path.
+    </p>
+
+    <problem xml:id="FermatSnell">
+      <statement>
+        <p>
+          Consider the following labeling in the above diagram:
+          <image width="75%" source="images/Refraction3.png" />
+          Find an expression for the time <m>T</m> traveled along the path from <m>A</m> to
+          <m>B</m> in terms of the variable <m>x</m> and the constants <m>a, b, c, v_1, v_2.</m>
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      If you try to apply Fermat's Method of Adequality to minimize T, you
+      will run across some pretty daunting algebra. You should try to start
+      this, but don't get discouraged if you can't complete the algebra. (We
+      couldn't do it either.) The square roots involved make the algebra
+      difficult at best.
+    </p>
+
+    <p>
+      Somehow Fermat was able to minimize this and derive Snell's Law, but
+      there aren't many Fermats around. What about the rest of us? This is
+      where Newton and Leibniz come in.
+    </p>
+
+    <p>
+      Deriving Snell's Law was the second application in Leibniz's <m>1684</m> paper
+      on Calculus, <em>A New Method for Maxima and Minima, as Well as Tangents,
+      Which is Impeded Neither by Fractional nor Irrational Quantities, and
+      a Remarkable Type of Calculus for This.</em>
+    </p>
+
+    <p>
+      The title may be long, but it is very revealing. Clearly, the problem
+      of optimizing (finding maxima and minima) is of central importance (as
+      we mentioned before) and somehow finding tangent lines to curves is
+      involved. Also, it is not impeded by fractional (exponents) nor
+      irrational quantities (square roots). In this paper, Leibniz remarks,
+      <q>Other very learned men [such as Fermat] have sought in many devious
+      ways what someone versed in this Calculus can accomplish in these
+      lines as by magic.</q>
+    </p>
+
+    <p>
+      We will come back to the problem of deriving Snell's Law, utilizing
+      these systematic rules and techniques, but first we need to develop
+      these rules and become fluent with them before we can perform our
+      <q>magic.</q>
+    </p>
+  </subsection>
+</section>
+

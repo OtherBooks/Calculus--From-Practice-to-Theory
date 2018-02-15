@@ -1,0 +1,405 @@
+
+
+<section>
+  <title>exercises</title>
+  <introduction>
+    <exercise>
+      <statement>
+        <p>
+          Find all values of <m>x</m> for which each of the following curves is
+          increasing and for which it is decreasing.
+        </p>
+
+        <p>
+          Hint:
+          Recall that the definition of the absolute value is:
+          <me>
+            \abs{x} =
+                     \begin{cases}x\amp  \text{ if }  x\ge0 \\
+                       -x\amp  \text{ if }  x\lt 0
+            \end{cases} .
+          </me>
+          <ul>
+            <li>
+              <title>(a)</title>
+              <p>
+                <m>y=\frac{1}{x^2}</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(b)</title>
+              <p>
+                <m>y=\frac{x^2}{x+1}</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(c)</title>
+              <p>
+                <m>y=\abs{x}</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(d)</title>
+              <p>
+                <m>y=\cos^2x -\cos x, 0\le x\le 1\pi</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(l)</title>
+              <p>
+                <m>y=</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(l)</title>
+              <p>
+                <m>y=</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(l)</title>
+              <p>
+                <m>y=</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(l)</title>
+              <p>
+                <m>y=</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(l)</title>
+              <p>
+                <m>y=</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(l)</title>
+              <p>
+                <m>y=</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(l)</title>
+              <p>
+                <m>y=</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(l)</title>
+              <p>
+                <m>y=</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Consider the top view of an airplane <m>P</m> starting at the point
+          <m>(1,0)</m> and traveling up the line <m>x=1</m> at a constant speed <m>v.</m>
+          When the plane is at <m>(1,0),</m> a homing missile <m>M</m> is fired from
+          the origin directly at the plane. Assuming that the missile
+          travels at a speed which is <m>k</m> times the speed of the plane
+          <m>(k>1)</m> and is always aimed directly at the plane, find the path
+          the missile takes. [Such a path is called a pursuit curve.] The
+          diagram below shows the situation at time <m>t.</m>
+          <image width="75%" source="images/PursuitCurve.png" />
+          <ul>
+            <li>
+              <title>(a)</title>
+              <p>
+                If we let <m>s</m> denote the distance the missile has traveled
+                      at time <m>t,</m> show that the pursuit curve must satisfy the
+                      differential equation
+                <me>
+                  \dfdx{y}{x}=\frac{(\frac{s}{k}-y)}{1-x}
+                </me>
+                and use this to show that the pursuit curve must satisfy the
+                      differential equation
+                <me>
+                  (1-x) \dfdxn{y}{x}{2}=1/k \dfdx{s}{x}=1/k \sqrt{1+(\d y/\d x)^2}
+                </me>
+                with the initial conditions <m>y(0)=0,</m> <m>\dfdx{y}{x}(0)=0.</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(b)</title>
+              <p>
+                Solve the differential equation in part (a).  [Hint: Let
+                      <m>z=\dfdx{y}{x}</m> and solve the resulting equations for <m>z.</m>]
+              </p>
+            </li>
+
+            <li>
+              <title>(c)</title>
+              <p>
+                How long does it take for the missile to catch the plane?
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <ul>
+          <li>
+            <title>(a)</title>
+            <p>
+              Show that <m>x^2=1+2(x-1) +(x-1)^2.</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(b)</title>
+            <p>
+              Find the equation of the straight line tangent to the
+                  graph of <m>y=x^2</m> at the point <m>(1,1).</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(c)</title>
+            <p>
+              How is your formula in part (b) related to the formula in
+                  part (a)?
+            </p>
+          </li>
+        </ul>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Consider the functions:\-\marginpar{ This belongs with the foreshadowing of power series}
+          <me>
+            y(x) = \frac{x^2}{x^2+1} \text{ and }  p(x)=Ax^2+Bx+C.
+          </me>
+        </p>
+
+        <p>
+          We want to find values for the parameters, <m>A, B,</m> and <m>C</m> that make
+          the graphs of these two functions as similar as possible near the
+          point <m>(2, 4/5).</m>
+          <ul>
+            <li>
+              <title>(a)</title>
+              <p>
+                First compute <m>\dfdx{y}{x},</m> and <m>\dfdxn{y}{x}{2}</m> at the
+                    point <m>x=2.</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(b)</title>
+              <p>
+                Naturally we'll want both functions to pass through the
+                    point <m>(2, 4/5)</m> so we set
+                <md>
+                  <mrow>p(2) \amp = f(2).</mrow>
+                  <intertext>To guarantee that the graphs are <q>pointing in the
+                          same direction</q> we set their derivatives at the point <m>(2,
+                          4/5)</m> equal as well.</intertext>
+                  <mrow>y^\prime(2) \amp = p^\prime(2)</mrow>
+                  <intertext>To guarantee that the graphs are <q>similarly curved</q>
+                          we set their second derivatives at the point <m>(2,
+                          4/5)</m> equal as well.</intertext>
+                  <mrow>y^{\prime\prime}(2) \amp = p^{\prime\prime}(2)</mrow>
+                </md>
+                Solve <xref ref="TS_1">equations</xref>,<nbsp /> <xref ref="TS_2"></xref>, and <xref ref="TS_3"></xref> to find <m>A,
+                    B,</m> and <m>C.</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(c)</title>
+              <p>
+                On the same set of axes graph <m>f(x)</m> and <m>p(x).</m> How are
+                    these graphs similar and how are they different?
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          \-\marginpar{ This should be somewhere else.} L'Hopital's Rule
+          problem: <m>\limit{x}{0}{(1-ax)^{\frac1x}}.</m> (Form: <m>0^0</m> but is
+          <em>not</em> equal to <m>1.</m>
+        </p>
+      </statement>
+    </exercise>
+  </introduction>
+
+  <subsection>
+    <title>Rainbows</title>
+    <p>
+      Did you ever notice a double rainbow?
+      \InsertGraphic
+      Look carefully at the order of the colors in the primary rainbow and
+      the secondary rainbow. Do you notice that it is reversed? Why does
+      this happen? There are some other questions which readily come to
+      mind. Why is the primary rainbow below the secondary one? Why is the
+      primary rainbow brighter and why isn't there always a secondary
+      rainbow? We will use what we know about the refraction and reflection
+      of light to examine some of these questions.
+    </p>
+
+    <p>
+      When a ray of light enters a raindrop (which is spherical), it gets
+      both refracted and reflected.
+      <image width="37%" source="images/Rainbow1.png" />
+    </p>
+
+    <p>
+      As you can see in the diagram, the ray of light entering the raindrop
+      at an angle of radian measure <m>\alpha</m> is refracted to an angle of radian
+      measure <m>\beta.</m> This is governed by Snell's Law <m>\sin\alpha/v_a =\sin\beta/v_b,</m>
+      where <m>v_a</m> and <m>v_b</m> are the velocities of light in air and water,
+      respectively. Actually only a portion is refracted as the other
+      portion is reflected off the exterior of the raindrop. Once inside
+      the raindrop, it reflects off of the back of the raindrop (again only
+      a portion) so that the angle of incidence equals the angle of
+      reflection. A portion of the light then exits the raindrop governed
+      by Snell's Law again. The total amount of (clockwise) rotation in
+      this process is called the deviation angle <m>D(\alpha).</m>
+    </p>
+    <exercise>
+      <statement>
+        <p>
+          Show that <m>D(\alpha)=\pi-2(2\beta-\alpha)=\pi-4\beta+2\alpha.</m>
+        </p>
+
+        <p>
+          Notice that <m>\alpha</m> and <m>\beta</m> are not independent, they are governed by Snell's Law which we will rewrite as
+          <me>
+            \sin\alpha=v_a/v_b\sin\beta=k \sin\beta
+          </me>
+          where <m>k=v_a/v_b</m> is the index of refraction (for water). In the case of white light, this index of refraction is about <m>4/3.</m> Graphing <m>D(\alpha)</m> for this value of <m>k</m> and <m>0\le\alpha\le \pi/2,</m> we have
+          <image width="37%" source="images/Rainbow2.png" />
+        </p>
+
+        <p>
+          Notice from the graph that the minimum of this curve appears to be
+          around the point <m>(1.03,2.41).</m> This says that the minimum value of
+          <m>D(\alpha)</m> is about <m>2.41 radians\approx 138^\circ</m> and it occurs when <m>\alpha\approx 1.03
+          radians\approx 59.4^\circ.</m> Notice from an enlargement the graph near that minimum
+          that for values of <m>\alpha</m> near <m>1.03</m> the amount of deviation is roughly the
+          same.
+          <image width="37%" source="images/Rainbow3.png" />
+        </p>
+
+        <p>
+          This says that light rays entering the raindrop at approximately
+          <m>59\circ</m> have the highest concentration when exiting the raindrop.
+          At other values of <m>\alpha</m> the dispersion of light is greater. This
+          provides the angle that the rainbow makes with an observer. This
+          supplementary angle to <m>D(\alpha)</m> is called the rainbow angle,
+          <me>
+            R(\alpha)=\pi-D(\alpha)  radians=180^\circ-(180^\circ)/\pi D(\alpha).
+          </me>
+        </p>
+
+        <p>
+          <image width="37%" source="images/Rainbow4.png" />
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Show that for an index of refraction <m>k</m> that <m>D(\alpha)</m> is minimized when
+          <m>\sin\alpha=\sqrt{(4-k^2)/3}.</m> Use this to fill in the following table:
+          <me>
+            \begin{array}{|c|c|c|c|}
+                \hline{}
+                Color\amp k\amp \alpha in degrees\amp R(\alpha) in degrees\\\hline
+                 \text{ Red } \amp 1.331\amp \amp \\\hline
+                Orange\amp 1.332\amp \amp \\\hline
+                Yellow\amp 1.333\amp \amp \\\hline
+                Green\amp 1.335\amp \amp \\\hline
+                Blue\amp 1.337\amp \amp \\\hline
+                Indigo\amp 1.340\amp \amp \\\hline
+                Violet\amp 1.344\amp \amp \\\hline
+            \end{array}
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      The values of <m>R(\alpha)</m> you obtained in the table accounts for the
+      various color bands that appear in the rainbow as sunlight hits
+      droplets at various angles.
+    </p>
+
+    <p>
+      <image width="37%" source="images/Rainbow5.png" />
+    </p>
+
+    <p>
+      The primary rainbow is created by light entering the upper portion of
+      the raindrop. If light is bright enough then a secondary rainbow is
+      created from light entering the lower portion of the raindrop as in
+      the diagram below.
+    </p>
+
+    <p>
+      <image width="37%" source="images/Rainbow6.png" />
+    </p>
+
+    <p>
+      This time the deviation angle <m>D(\alpha)</m> is the total amount of clockwise
+      rotation and the rainbow angle would be <m>R(\alpha)=D(\alpha)-\pi.</m> Note that the
+      extra reflection accounts for the rainbow being not as bright.
+    </p>
+    <exercise>
+      <statement>
+        <p>
+          Show that in the case of the secondary rainbow
+          <me>
+            D(\alpha)=2\alpha-6\beta+2\pi.
+          </me>
+          and show that this is minimized when <m>\cos\alpha\sqrt{(k^2-1)/8.}</m> Use
+          this to complete the following table.
+          <me>
+            \begin{array}{|c|c|c|c|}
+                \hline{}
+                Color\amp k\amp \alpha in degrees\amp R(\alpha) in degrees\\\hline
+                 \text{ Red } \amp 1.331\amp \amp \\\hline
+                Orange\amp 1.332\amp \amp \\\hline
+                Yellow\amp 1.333\amp \amp \\\hline
+                Green\amp 1.335\amp \amp \\\hline
+                Blue\amp 1.337\amp \amp \\\hline
+                Indigo\amp 1.340\amp \amp \\\hline
+                Violet\amp 1.344\amp \amp \\\hline
+            \end{array}
+          </me>
+        </p>
+
+        <p>
+          Use this table and the table in the previous problem to explain why the secondary
+          rainbow is above the primary rainbow and its colors are reversed.
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+</section>
+

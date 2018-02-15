@@ -1,0 +1,205 @@
+
+
+<section>
+  <title>exercises</title>
+  <introduction>
+    <exercise>
+      <statement>
+        <p>
+          Compute the differential, <m>\d y,</m> for each of the following functions:
+          <ul>
+            <li>
+              <title>(a)</title>
+              <p>
+                <m>y=\sin(2x)</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(b)</title>
+              <p>
+                <m>y=\cos(-3x)</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(c)</title>
+              <p>
+                <m>y=\sin(x)\cos(x)</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(d)</title>
+              <p>
+                <m>y=\sin^2(x)</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(e)</title>
+              <p>
+                <m>y=\sin(x^2)</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(f)</title>
+              <p>
+                <m>y=\cos^2(x)</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(g)</title>
+              <p>
+                <m>y=\cos(x^2)</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(h)</title>
+              <p>
+                <m>y=\cos(\sin(x))</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(i)</title>
+              <p>
+                <m>y=3\sin^2(3x)-3\cos^2(3x)</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(j)</title>
+              <p>
+                <m>y=\cos(5x^3-2x^2-3x+12)</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(k)</title>
+              <p>
+                <m>y=\sin^2(7\pi x) + \cos^2(7\pi x)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </exercise>
+  </introduction>
+
+  <subsection xml:id="subsec_diff-other-trig">
+    <title>The Derivatives of the Other Trigonometric Functions</title>
+    <introduction>
+      <p>
+        Once the differential of <m>\sin x</m> is known, the differentials of the
+        other trigonometric functions are easily computed. Since our current
+        goal is simply to develop the tools we will need later we will not
+        spend any more time on this than necessary.
+      </p>
+    </introduction>
+    <subsubsection>
+    <title>The Tangent and Cotangent</title>
+    <p>
+      Observe that by definition <m>\tan(x)=\frac{\sin x}{\cos x},</m> so it
+      seems that the Quotient Rule applies:
+      <md>
+        <mrow>\d\left(\tan x\right) \amp = \d\left(\frac{\sin x}{\cos x}\right)</mrow>
+        <mrow>\amp = \frac{\cos x \d(\sin x)-\sin x\d(\cos x)}{\cos^2x}</mrow>
+        <mrow>\amp = \frac{\cos^2 x\d x +\sin^2 x\d x}{\cos^2x}</mrow>
+        <mrow>\amp = \frac{1}{\cos^2x}\d x</mrow>
+        <intertext>and since <m>\sec x = 1/\cos x</m> we have</intertext>
+        <mrow>\dfdx{\left(\tan x\right)}{x} \amp = \sec^2x.</mrow>
+      </md>
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Use the Quotient Rule to show that
+          <me>
+            \d{(\cot x)} = -\csc^2x\d{x}.
+          </me>
+        </p>
+      </statement>
+    </problem>
+
+    </subsubsection>
+
+
+    <subsubsection>
+    <title>The Secant and Cosecant</title>
+    <p>
+      Observe that by definition <m>\sec x = \frac{1}{\cos x} = \inverse{(\cos
+        x)}.</m> Differentiating, we have
+      <md>
+        <mrow>\d(\sec x) \amp = \d\inverse{(\cos  x)}.</mrow>
+        <intertext>By the Power Rule we have</intertext>
+        <mrow>\amp =(-1)(\cos x)^{-2}\d(\cos x),</mrow>
+        <intertext>so that</intertext>
+        <mrow>\amp = (-1)(\cos x)^{-2}(-\sin x)\d x.</mrow>
+        <intertext>Simplifying this gives</intertext>
+        <mrow>\d(\sec x) \amp = \frac{\sin x}{\cos^2x}\d x</mrow>
+        <mrow>\amp = \frac{1}{\cos x}\cdot\frac{\sin x}{\cos x}\d x</mrow>
+        <intertext>so that, finally we have</intertext>
+        <mrow>\dfdx{(\sec x)}{x}   \amp = \sec x\tan x.</mrow>
+      </md>
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Show by similar means that <m>\dfdx{(\csc x)}{x} = -\csc x\cot x.</m>
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      So the derivatives of all six trigonometric functions are given
+      below. <em>Memorize them!</em>
+      <index><main>Differentiation Rules</main><sub>Trig Functions</sub></index>
+      <ol>
+        <li>
+          <p>
+            <m>\dfdx{ (\sin x)}{x} = \cos x</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>\dfdx{ (\cos x)}{x} = -\sin x</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>\dfdx{ (\tan x)}{x} = \sec^2 x</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>\dfdx{ (\cot x)}{x} = -\csc^2 x</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>\dfdx{ (\sec x)}{x} = \sec x\tan x</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>\dfdx{ (\csc x)}{x} = -\csc x\cot x</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+
+    </subsubsection>
+  </subsection>
+</section>
+

@@ -1,0 +1,12 @@
+
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="cha_foundations">
+  <title>Foundations</title>
+  <xi:include  href="sec_whats-wrong-with.ptx" />
+  <xi:include  href="sec_limits.ptx" />
+  <xi:include  href="sec_defin-deriv.ptx" />
+  <xi:include  href="sec_rolles-theorem-mean.ptx" />
+  <xi:include  href="sec_some-obvi-theor.ptx" />
+  <xi:include  href="sec_diff-rules-redux.ptx" />
+</chapter>
+

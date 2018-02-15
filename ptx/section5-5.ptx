@@ -1,0 +1,117 @@
+
+
+<section>
+  <title>exercises</title>
+  <exercise>
+    <statement>
+      <p>
+        The area of a rectangle is <m>400 m^2.</m> Find a formula for the
+        perimeter of the rectangle in terms of one of the sides of the
+        rectangle. Remember to define what your variables are (along with
+        their units). Also remember to include the possible values for
+        your independent variable (the domain of your function).
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <ul>
+        <li>
+          <title>a)</title>
+          <p>
+            You throw a ball straight up with an initial velocity of
+                  <m>50 m/s.</m> Assuming that there is no air resistance and that the
+                  ball accelerates toward the earth at a constant rate of
+                  <m>9.8 ((m/s))/s,</m> what would the ball's velocity be at <m>t</m>
+                  seconds.
+          </p>
+        </li>
+
+        <li>
+          <title>b)</title>
+          <p>
+            How would your formula change if you threw the ball
+                 downward?
+          </p>
+        </li>
+      </ul>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        If a promoter charges <m>\dollar50</m> each for concert tickets, then he/she
+        will sell <m>15000</m> tickets. For each <m>\dollar1</m> increase in price per
+        ticket, <m>100</m> tickets less will be sold. Determine a formula for
+        the revenue based on the price per ticket, assuming that the price
+        will be at least <m>\dollar50</m> per ticket.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        The perimeter of an isosceles triangle is <m>100</m> units. Find the
+        area of the triangle as a function of the base. Don't forget to
+        define your variables and give the domain of the function.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        A cylindrical tank must hold <m>500</m> cubic feet of water. The ends of
+        the tank are cut from two individual squares of metal, and the
+        side is constructed from one rectangular sheet of metal. The
+        metal for the ends costs <m>\dollar5</m> per square foot and the metal for the
+        side costs <m>\dollar4</m> per square foot. The weld for the seams costs <m>\dollar2</m>
+        per linear foot. What is the cost of the tank (a) As a function of
+        its height? (b) As a function of the radius? Don't forget
+        to identify variables and to provide the domain.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Consider a rectangular box with a square base whose volume is
+        <m>500~ m^3.</m> Find the surface area of the box as a function of its
+        height. Now find it as a function of the length of the side of
+        the base. Don't forget to identify your variables and to provide
+        the domain.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <ul>
+        <li>
+          <title>(a)</title>
+          <p>
+            The fixed cost for publishing a specific calculus book
+                  is <m>\dollar100,000.</m> These are costs that the publisher would incur
+                  no matter how many books were printed.  Beyond that, it costs
+                  <m>\dollar20</m> per book to actually print the book.  If we let n denote
+                  the number of books printed and <m>C=C(n)</m> denote the cost in
+                  dollars from printing this many books, then give a formula for
+                  the total cost to print <m>n</m> books.  What would the cost per book
+                  be?
+          </p>
+        </li>
+
+        <li>
+          <title>(b)</title>
+          <p>
+            Suppose the company plans to charge <m>\dollar150</m> per book.
+                  Assuming the company can sell as many books as it produces (as
+                  with a print-on-demand company), write a formula for the profit
+                  <m>P</m> in dollars that the company would have from printing and
+                  selling <m>n</m> books.  How many books would need to be sold to
+                  break even?
+          </p>
+        </li>
+      </ul>
+    </statement>
+  </exercise>
+</section>
+

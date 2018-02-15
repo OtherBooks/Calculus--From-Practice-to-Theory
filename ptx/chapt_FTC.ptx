@@ -1,0 +1,189 @@
+
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="chapt_FTC">
+  <title>The Fundamental Theorem of Calculus</title>
+  <introduction>
+    <p>
+      { A Problem to Think About:
+      }
+
+      *********************
+
+      Consider the region bounded by <m>y=x^2,</m> <m>y=0,</m> <m>x=1,</m> <m>x=4</m> as below
+      <image width="93%" source="images/FTC-1.png" />
+      The problem at hand is to compute the area of this region. With this
+      in mind, suppose we place an infinitely skinny box in that region as
+      below.
+      <image width="93%" source="images/FTC-2.png" />
+      The height of this generic box is y. As we've done in the past with
+      differentiation, we will denote the width of the box by <m>\d x.</m> Thus the
+      area of this generic box is thus <m>y\d x.</m> If we envision this region as
+      being composed of such boxes, then the area of this region would be
+      the (infinite) sum of the areas of these boxes, as below
+      <image width="93%" source="images/FTC-3.png" />
+    </p>
+
+    <p>
+      You might wonder, looking at the picture, how we can say that the
+      area of the (curved) region can be the sum of rectangular boxes.
+      Bear in mind that the drawing above is not totally accurate as the
+      boxes are infinitely skinny and there are infinitely many of them.
+      Later we will examine this more carefully and use this observation
+      to approximate areas under more complicated curves, but for now
+      let's imagine that the boxes are infinitely skinny. We will see, as
+      mathematicians saw in the 1700's, that this will be very fruitful.
+      We need some notation for this sum. Originally, Leibniz used the
+      notation omn which was short for the Latin word omnis meaning all.
+      Shortly after, he replaced omn with an elongated s which stood for
+      the latin word summa (sum). We use this notation today and write
+      the sum of these infinite areas as
+      <me>
+        \text{ Total area }  =\int_{x=1}^4 y \d x =\int_{x=1}^4x^2 \d x.
+      </me>
+    </p>
+
+    <p>
+      As we will see, having a good notation will help when we apply this
+      technique to more applications that go beyond computing areas, but it
+      doesn't tell us how to add infinitely many, infinitely small areas.
+      Surprisingly, we actually have the tools to accomplish this task, and
+      this realization was one of the things that made calculus such a great
+      tool from the 1700's until now. To do this with our above example,
+      let's choose a random value <m>x=b</m> and let <m>A(b)</m> denote the area under the
+      curve <m>y=x^2</m> from <m>x=1</m> to <m>x=b.</m> In other words,
+      <me>
+        A(b)=\int_{x=1}^bx^2 \d x.
+      </me>
+    </p>
+
+    <p>
+      Suppose we increase <m>b</m> by the infinitely small differential <m>\d b.</m>
+      If <m>\d A</m>
+      denotes the corresponding change in area, then we have <m>\d A=y(b)\d x=b^2
+      \d b.</m> [See below.]
+      <image width="75%" source="images/FTC-4.png" />
+      To recap, we have this function <m>A(b),</m> we don't have a formula for it,
+      but we know some things about it.
+      <me>
+        \dfdx{A}{b}=b^2,\ \      A(1)=0
+      </me>
+    </p>
+
+    <p>
+      We know how to solve this antidifferentiation problem.
+      <me>
+        A(b)=\frac{b^3}{3}+C
+      </me>
+      where <m>C</m> is a constant. Using the fact that <m>A(1)=0,</m> we get
+      <md>
+        <mrow>0\amp =A(1)</mrow>
+        <mrow>\amp =\frac{1^3}{3}+C \text{ so that }</mrow>
+        <mrow>C\amp =-\frac{1^3}{3}.</mrow>
+        <intertext>Thus we have</intertext>
+        <mrow>\int_{x-1}^bx^2\d x \amp = A(b)</mrow>
+        <mrow>\amp = \frac{b^3}{3}=\frac{1^3}{3}.</mrow>
+        <intertext>Letting <m>b=4,</m> we get</intertext>
+        <mrow>\int_{x-1}^bx^2\d x \amp = \frac{4^3}{3}-\frac{1^3}{3}</mrow>
+        <mrow>\amp = \frac{63}{3}= 21.</mrow>
+      </md>
+    </p>
+
+    <p>
+      We could apply the same technique to compute
+      <me>
+        \int_{x=0}^\pi\sin x\d x.
+      </me>
+    </p>
+
+    <p>
+      Letting <m>A(b) = \int_{x=0}^b\sin x\d x</m> and letting <m>\d b</m> denote an
+      infinitely small change in <m>b,</m> we have <m>\d A=\sin b\d b</m> which leads
+      to the antidifferentiation problem
+      <me>
+        \dfdx{A}{b} = \sin b,\ A(0)=0.
+      </me>
+    </p>
+
+    <p>
+      Solving this, we get
+      <me>
+        A(b) =-\cos b+C.
+      </me>
+    </p>
+
+    <p>
+      Using the initial condition <m>0=A(0)=-\cos 0+C,</m> gives <m>C=-(-\cos0)</m> so
+      that
+      <me>
+        \int_{x=0}^b\sin x\d x = A(b) = -\cos b-(-\cos 0)
+      </me>
+      and so
+      <me>
+        \int_{x=0}^b\sin x\d x = -\cos\pi-(-\cos 0)=1+1=2.
+      </me>
+    </p>
+
+    <p>
+      Notice that we deliberately did not simplify the above equation right
+      away as it demonstrates how our technique can be generalized.
+      Specifically, suppose we have a function, <m>y=y(x)</m> with an antiderivative <m>Y,</m> that
+      is <m>\dfdx{Y}{x}=y.</m> To compute <m>A(b)=\int_{x=a}^by\d x,</m> notice that
+      we have
+      <me>
+        \dfdx{A}{b}=y(b), \ A(a)=0.
+      </me>
+    </p>
+
+    <p>
+      Solving this antidifferentiation problem, we have
+      <me>
+        A(b)=Y(b)+C.
+      </me>
+    </p>
+
+    <p>
+      Using the initial condition, we get
+      <md>
+        <mrow>0\amp =A(a)</mrow>
+        <mrow>\amp =Y(a)+C \text{ so that }</mrow>
+        <mrow>C\amp =-Y(a).</mrow>
+      </md>
+    </p>
+
+    <p>
+      Thus
+      <me>
+        \int_{x-a}^by\d x = A(b)=Y(b)-Y(a).
+      </me>
+    </p>
+
+    <p>
+      The amazing fact that an area problem can be reduced to an
+      antidifferentiation problem is called the Fundamental Theorem of
+      Calculus, and can be summarized as follows.
+    </p>
+
+    <theorem>
+      <statement>
+        <p>
+          {The Fundamental Theorem of Calculus}
+          If <m>Y</m> is an antiderivative of <m>y,</m> then
+          <me>
+            \int_{x=a}^b y\d x = Y(b)-Y(a).
+          </me>
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      Notice that the Fundamental Theorem states that <m>Y</m> is
+      <em>an</em> antiderivative of <m>y</m> not <em>the</em>
+      antiderivative. This is because if a function has an antiderivative,
+      then it has many<fn>Infinitely many, in fact.</fn>. The theorem does
+      not require that we find a particular antiderivative. Any of them will
+      do.
+    </p>
+  </introduction>
+  <xi:include  href="sec_natural-logarithm.ptx" />
+</chapter>
+

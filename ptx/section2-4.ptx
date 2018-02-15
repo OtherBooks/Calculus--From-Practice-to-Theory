@@ -1,0 +1,350 @@
+
+
+<section>
+  <title>The Chain Rule</title>
+  <introduction>
+    <p>
+      Before the invention of Calculus arithmetic primers gave the following
+      simple rule to be used to, among other things, convert money from one
+      currency to another: Suppose we have <m>x</m> dollars that we want to
+      convert to British pounds. If we know that
+      <men xml:id="eq_Dollar2PoundConversion" >
+        z \text{ dollars }   = y \text{ pounds }
+      </men>
+      then if we divide both sides of <xref ref="eq_Dollar2PoundConversion">equation</xref> by (<m>z</m> dollar) we get
+      <me>
+        1=\frac{y \text{ pounds } }{z \text{ dollars }  }.
+      </me>
+    </p>
+
+    <p>
+      Notice that the left side of this last formula is just the number one. So we start with <m>x</m> dollars, multiply by one in the form <m>1=\frac{y \text{ pounds } }{ z \text{ dollars }  }</m> to get
+      <md>
+        <mrow>x \text{ dollars }  \amp = x\text{ dollars } \cdot1 = x\text{ dollars } \cdot\frac{y \text{ pounds } }{ z \text{ dollars }  }</mrow>
+        <mrow>\amp = x\cdot y/z\cdot\frac{\text{\cancel{dollars}}  \cdot\text{ pounds } }{\text{\cancel{dollars}} }</mrow>
+        <intertext>and since the dollars cancel (at least symbolically) we have</intertext>
+        <mrow>\amp = xy/z\text{ pounds. }</mrow>
+      </md>
+    </p>
+
+    <p>
+      Now suppose that <m>1 \text{ dollar } =.85\text{ pounds } ,</m> and that <m>1 \text{ pound }  = 221 \text{ Chinese yuan } .</m> Then<fn>We're making these numbers up. Don't use them to convert
+      currency.</fn>if we
+      need to convert <m>25</m> American dollars to Chinese yuan we compute as follows:
+      <md>
+        <mrow>25\text{ dollars }  \amp = 25\text{ dollars } \times \frac{.85\text{ 
+                              pounds } }{1 \text{ dollar } }\times \frac{221
+                              \text{ 
+                              yuan } }{1 \text{ pound } }</mrow>
+        <mrow>\amp = 25\times.85\times221\left(\text{\cancel{dollars}} \right)
+                              \left(\frac{\text{\bcancel{pounds}} }{\text{\cancel{dollars}} }\right)
+                              \left(\frac{\text{ yuan } }{\text{\bcancel{pounds}} }\right)</mrow>
+        <mrow>\amp = 4696.25 \text{ yuan }</mrow>
+      </md>
+    </p>
+
+    <p>
+      The crucial observation here is that in the expression
+      <m>\left(\text{ dollars } \right)
+      \left(\frac{\text{ pounds } }{\text{ dollars } }\right)
+      \left(\frac{\text{ yuan } }{\text{ pounds } }\right)</m> we have this symbolic
+      cancellation of both dollars and pounds so that when finished only
+      yuan are left. This daisy chain of symbolic cancellation was called
+      the Chain Rule and it was very helpful in a time when currency
+      exchange was done by people. Nowadays of course, since these computations
+      are done by computers a name is no longer needed. Machines don't
+      care about such things.
+    </p>
+
+    <p>
+      However, with the invention of Calculus, and especially when the
+      differential notation is used to take the derivative, the same sort of
+      symbolic cancellation is seen to occur, except that it is done in
+      reverse; we <q>uncancel</q> instead of cancelling.
+    </p>
+
+    <p>
+      We are accustomed to <q>cancelling</q> out <m>\dfdx{y}{x}\cdot\dfdx{x}{t}</m>
+      to get <m>\dfdx{y}{t}.</m> But if if <m>y</m> depends on <m>x</m> which depends on
+      <m>t</m> and we wish to compute <m>\dfdx{y}{t}</m> we <q>uncancel</q> as follows:
+      <md>
+        <mrow>\dfdx{y}{x}        \amp =   \dfdx{y}{x}</mrow>
+        <mrow>\d y  \amp = \dfdx{y}{x}\d x</mrow>
+        <intertext>and, "uncancelling" <m>\d t</m> on both sides gives,</intertext>
+        <mrow>\dfdx{y}{t} \amp = \dfdx{y}{x}\dfdx{x}{t}.</mrow>
+      </md>
+    </p>
+
+    <p>
+      <q>Uncancelling</q> is a surprisingly powerful tool in mathematics, but
+      unlike cancelling we don't get to simply cross something off. Instead
+      we have to figure out what we'd like to have and force it to appear.
+      The trick is to determine what needs to appear. This comes with
+      experience.
+    </p>
+
+    <p>
+      Notice that <em>symbollically</em> we don't seem to have accomplished
+      much with all of our machinations. On the right side of this last
+      formula the <m>\d x</m> that appears in the numerator appears to cancel out
+      the one in the denominator and in the end we have the (apparently)
+      obvious statement that <m>\dfdx{y}{t}= \frac{\d
+        y}{\text{\cancel{<m>\d x</m>}} }\frac{\text{\cancel{<m>\d x</m>}} }{\d t} =
+      \dfdx{y}{t}.</m>
+    </p>
+
+    <p>
+      However these symbols we're using are much like the pebbles used by
+      medieval merchants. At one level they are just empty symbols (pebbles)
+      lying on the page (counting board). Viewed in this manner it is
+      profoundly obvious that <m>\dfdx{y}{t} = \dfdx{y}{x}\dfdx{x}{t}.</m> Just
+      do the cancellation. Duh!
+    </p>
+
+    <p>
+      But just as a pebble lying here means <q>one</q> and the same pebble lying
+      there means <q>ten</q> and it is necessary to interpret the meaning of a
+      pebble here or there in order to compute. Similarly, we have invested
+      a good deal of meaning into our symbols, so at another, more abstract,
+      level there is much deeper significance to the equation: <m>\dfdx{y}{t}
+      = \dfdx{y}{x}\dfdx{x}{t}.</m>
+    </p>
+
+    <p>
+      We understand the symbol <m>\dfdx{y}{t}</m> to mean <q>the rate of change of
+      <m>y</m> with respect to <m>t</m></q> so this formula, when properly interpreted
+      says that the rate of change of <m>y</m> with respect to <m>t</m> is equal to
+      the rate of change of <m>y</m> <em>with respect to <m>x</m></em> multiplied
+      by the rate of change of <m>x</m> <em>with respect to <m>t.</m></em>
+    </p>
+
+    <p>
+      For example, suppose that <m>y=x^2.</m> Then as we've seen <m>\d y= 2x\d x.</m>
+      Now suppose that <m>x=t^3+1.</m> Then <m>\d x = 3t^2\d t.</m> Putting this all
+      together gives:
+      <md>
+        <mrow>\d y \amp = 2x\d x</mrow>
+        <mrow>\amp = 2x(3t^2\d t).</mrow>
+        <intertext>At this point we have <m>\d y</m> in terms of both <m>x</m> and <m>t.</m>
+                     There is nothing wrong with this, <em>per se</em> but in
+                     general we  prefer using one variable to two. So we make
+                     the substitution <m>x=t^3+1,</m> giving:</intertext>
+        <mrow>\d y    \amp = 2(t^3+1)(3t^2\d t).</mrow>
+      </md>
+    </p>
+
+    <p>
+      And finally, if we want <m>\dfdx{y}{t}</m> we simply divide through by <m>\d
+      t</m> giving:
+      <me>
+        \dfdx{y}{t} = \underbrace{2(t^3+1)}_{\dfdx{y}{x}}(\underbrace{3t^2}_{\dfdx{x}{t}}).
+      </me>
+    </p>
+
+    <p>
+      Notice that since <m>\dfdx{y}{x} =  2(t^3+1)</m> (since <m>x= t^3+1</m>) and that
+      <m>\dfdx{x}{t} = 3t^2</m> this is just a particular example of the formula
+      <me>
+        \dfdx{y}{t} =\dfdx{y}{x}\dfdx{x}{t}.
+      </me>
+    </p>
+
+    <p>
+      Since this looks so much like the older <q>Chain Rule</q> for changing
+      money<fn>In fact, it really is the same rule if you look at it
+        in just the right way. We'll come back to this later.</fn>from one
+      currency to another it has inherited the name <q>The Chain Rule,</q> and
+      is usually stated as a separate theorem as follows.
+    </p>
+
+    <theorem xml:id="thm_chain-rule">
+      <title>The Chain Rule</title>
+      <statement>
+        <p>
+          <index><main>Differentiation Rules</main><sub>Chain Rule</sub></index> If <m>y</m> depends on <m>x,</m> and <m>x</m> depends on <m>t</m> then
+          <me>
+            \dfdx{y}{t} =  \dfdx{y}{x}\dfdx{x}{t}.
+          </me>
+        </p>
+      </statement>
+    </theorem>
+  </introduction>
+
+  <subsection xml:id="subsec_DiffExamples">
+    <title>Differentiation Examples</title>
+    <example xml:id="ex_brute-force">
+      <statement>
+        <p>
+          We wish to find <m>\dfdx{y}{x}</m> if <m>y=5(x^2+x)^3.</m>
+          One way to do this is simple brute force. That is, we compute
+          <md>
+            <mrow>y=(x^2+x)^3 \amp = x^6+3x^5+3x^4+x^3,</mrow>
+            <intertext>so that</intertext>
+            <mrow>y \amp = 5x^6+15x^5+15x^4+5x^3.</mrow>
+            <intertext>Applying the Sum Rule  we
+              see that</intertext>
+            <mrow>\d y \amp = \d \left(5x^6\right)+\d \left(15x^5\right)+\d
+            \left(15x^4\right)+\d \left(5x^3\right).</mrow>
+            <intertext>Next we use the
+                   Constant Multiple
+                   Rule, to get</intertext>
+            <mrow>\d y \amp = 5\d \left(x^6\right)+15\d \left(x^5\right)+15\d
+            \left(x^4\right)+5\d \left(x^3\right).</mrow>
+            <intertext>Finally, we use the Power Rule
+               to get</intertext>
+            <mrow>\d y \amp = 30x^5\d x+75x^4\d x+60x^3\d x+15x^2\d x.</mrow>
+            <mrow>\d y \amp = (30x^5+75x^4+60x^3+15x^2)\d x.</mrow>
+          </md>
+        </p>
+
+        <p>
+          So that, in the end,
+          <men xml:id="ex2_1" >
+            \dfdx{y}{x} = 30x^5+75x^4+60x^3+15 x^2.
+          </men>
+        </p>
+
+        <p>
+          This works and it gives the correct answer. However there are some
+          difficulties with this <q>brute-force</q> procedure that will cause us
+          some problems later.
+        </p>
+
+        <p>
+          Let's find a simpler way.
+        </p>
+
+        <p>
+          Observe that if <m>y=5(x^2+x)^3</m> it seems as if we should be able to use
+          the Power Rule directly on the expression <m>(x^2+x)^3</m> without
+          expanding it out like we did above. We can, but we need to be
+          careful. If we set <m>z=x^2+x</m> then we have
+          <me>
+            y=5z^3.
+          </me>
+        </p>
+
+        <p>
+          We can now use
+          the Constant Multiple Rule and then the Power Rule to get
+          <me>
+            \d y = 5(3z^2\d z)= 15z^2\d z.
+          </me>
+        </p>
+
+        <p>
+          Substituting <m>x^2+x</m> back in for <m>z</m>
+          we get
+          <me>
+            \d y = 15(x^2+x)^2\d (x^2+x).
+          </me>
+        </p>
+
+        <p>
+          Computing <m>\d (x^2+x) = (2x+1)\d x</m>
+          and substituting again we have
+          <me>
+            \d y = 15(x^2+x)^2(2x+1)\d x
+          </me>
+          so that
+          <men xml:id="ex2_2" >
+            \dfdx{y}{x} = 15(x^2+x)^2(2x+1).
+          </men>
+        </p>
+
+        <p>
+          Not only does this involve considerably less algebra (and is thus less
+          prone to error) it also gives us <m>\dfdx{y}{x}</m> in a partially factored
+          form. This is important because in applications we will frequently
+          need to set <m>\dfdx{y}{x}</m> equal to zero and solve for <m>x.</m>
+        </p>
+
+        <p>
+          Using <xref ref="ex2_2">equation</xref> this is fairly easy. If <m>15(x^2+x)^2(2x+1) = 0</m> then clearly <m>x=0, x=-1,</m> and <m>x=-1/2</m> are
+          the solutions.
+        </p>
+
+        <p>
+          If we try to use <xref ref="ex2_1">equation</xref> we get the equation
+          <me>
+            30x^5+75x^4+60x^3+15 x^2 =0,
+          </me>
+          and the less said about that right
+          now, the better.
+        </p>
+      </statement>
+    </example>
+
+    <example>
+      <statement>
+      <p>
+        Find <m>\dfdx{y}{x}</m> if <m>y=
+         \underbrace{(x+2)^2}_{=z}\underbrace{(2x-3)^3}_{=w}=z\cdot w.</m>
+      </p>
+
+      <p>
+        As in <xref ref="ex_brute-force">example</xref> we <em>could</em> just multiply out
+        the expression <m>(x+2)^2(2x-3)^3.</m> But again this is very error
+        prone, and a lot of work.
+      </p>
+
+      <p>
+        Instead notice that <m>y</m> is the <em>product</em> of <m>z=(x+2)^2</m> and
+        <m>w=(2x-3)^3,</m> so the Product Rule seems a
+        likely place to begin. We have
+        <md>
+          <mrow>\d y \amp = z\d w + w\d z</mrow>
+          <mrow>\amp = (x+2)^2\underbrace{\d(2x-3)^3} + (2x-3)^3\underbrace{\d(x+2)^2}</mrow>
+          <mrow>\amp = (x+2)^2(3)(2x-3)^2\underbrace{\d(2x-3)} + (2x-3)^3(2)(x+2)\underbrace{\d(x+2)}</mrow>
+          <mrow>\amp = (x+2)^2(3)(2x-3)^2(2)\d x + (2x-3)^3(2)(x+2)\d x</mrow>
+          <intertext>so that</intertext>
+          <mrow>\dfdx{y}{x} \amp = 6(x+2)^2(2x-3)^2 + 2(2x-3)^3(x+2)</mrow>
+        </md>
+      </p>
+
+      <p>
+        As before this form is easier to work with if we ever need<fn>We
+        will.</fn>to set
+        <m>\dfdx{y}{x}</m> equal to zero and solve for <m>x.</m>
+      </p>
+
+      <p>
+        Let's try. The prospects for solving
+        <md>
+          <mrow>6(x+2)^2(2x-3)^2 + 2(2x-3)^3(x+2) \amp = 0</mrow>
+          <intertext>seem pretty glum at first. But, in fact, it isn't too
+            bad. We just need to notice that <m>(x+2)</m> and <m>(2x-3)^2</m> appear as
+          factors in both terms on the left hand side. Factoring these out
+          gives</intertext>
+          <mrow>(x+2)(2x-3)^2\left[6x(x+2)+2(2x-3)\right] \amp = 0</mrow>
+          <intertext>so that</intertext>
+          <mrow>(x+2)(2x-3)^2\left[6x^2+12x+4x-6)\right] \amp = 0</mrow>
+          <mrow>(x+2)(2x-3)^2(3x^2+8x-2) \amp = 0.</mrow>
+        </md>
+      </p>
+
+      <p>
+        Setting each factor equal to zero and solving gives <m>x=-2</m> and <m>x=3/2</m>
+        as solutions as well as all solutions of
+        <m>3x^2+8x-3=0.</m>
+      </p>
+
+      <problem xml:id="embed_dum">
+        <statement>
+          <p>
+            Complete this example by finding all solutions of this last equation.
+          </p>
+        </statement>
+      </problem>
+      </statement>
+    </example>
+
+    <p>
+      \-\marginpar{ We need a couple of simple examples of how to derive
+      differential equations from a word problem. Consider the constant
+      subtangent equal to one (exponential), and <m>x^2+y^2=1 \imp
+        \dfdx{y}{x}=-\frac{x}{y}.</m> Maybe one other?}
+    </p>
+  </subsection>
+</section>
+

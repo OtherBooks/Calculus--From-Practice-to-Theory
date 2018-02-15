@@ -1,0 +1,38 @@
+
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="chapt_RatesOfChange">
+  <title>Motion, Rates of Change, Tangent Lines</title>
+  <introduction>
+    <p>
+      It is a truth universally acknowledged that the Calculus was the
+      invention (discovery?) of two men, Isaac Newton <m>(1643-1727)</m> and
+      Gottfried Wilhelm von Leibniz <m>(1646-1716).</m> Newton developed his
+      ideas at his home of Woolsthorpe Manor in Lincolnshire while Cambridge
+      University was closed by a plague in the summer of <m>1665.</m> In a period
+      of less than two years he made the extraordinary advances while still
+      under the age of <m>25.</m> Independently Leibniz developed his ideas
+      during the period 1673-1675 while serving as a diplomat in Paris. He
+      wrote the first paper<fn>The rather cumbersome title of Leibniz
+        <m>1684</m> paper: <em>A New Method for Maxima and Minima, as Well as
+          Tangents, Which is Impeded Neither by Fractional nor Irrational
+          Quantities, and a Remarkable Type of Calculus for This,</em> is very
+        revealing.  Clearly, the problem of optimizing (finding maxima and
+        minima) is of central importance and somehow finding tangent lines
+        to curves is involved.  That this is a <em><em>new</em></em> method
+        means that other methods were available first.</fn>about calculus in
+      <m>1684.</m>
+    </p>
+
+    <p>
+      As with most scientific discoveries, although they are given credit,
+      it is a mistake to believe that these two men worked in isolation.
+      Indeed, Newton is frequently quoted as saying, <q>If I have seen
+      further than others, it is by standing upon the shoulders of giants,</q>
+      and, Leibniz remarks in his paper that <q>Other very learned men have
+      sought in many devious ways what someone versed in this calculus can
+      accomplish in these lines as by magic.</q>
+    </p>
+  </introduction>
+  <xi:include  href="sec_rates-change.ptx" />
+</chapter>
+

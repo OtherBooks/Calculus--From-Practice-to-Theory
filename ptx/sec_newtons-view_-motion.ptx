@@ -1,0 +1,202 @@
+
+
+<section xml:id="sec_newtons-view_-motion">
+  <title>Newton's View: Motion as a Metaphor</title>
+  <introduction>
+    <p>
+      Newton invented Calculus for a specific purpose. He was trying to
+      describe the physical motion. Naturally this affected the way that he
+      thought about Calculus and the language he used to talk about
+      it. Although he quickly realized that his Calculus could be used for
+      other purposes his approach is deeply tied to the idea of motion.
+    </p>
+
+    <p>
+      Newton's kinematic approach can be extended to other types of
+      problems. Recall that in order to find out how high the tossed ball
+      will go we first needed to discover how long it takes for the ball's
+      velocity to drop to zero. This is, obviously, because the ball
+      continues to rise until its velocity is zero. Thereafter it will
+      fall. Once we know that the velocity is zero at time, say
+      <m>t_{\text{ max } },</m> then we have <m>v(t_{\text{ max } })=0,</m> and the
+      position, <m>p(t_{\text{ max } }),</m> at the same time is the maximimum
+      height of the ball's flight.
+    </p>
+
+    <p>
+      This is all fairly intuitive.
+    </p>
+
+    <figure>
+      <image width="37%" source="images/metaphor1.png" />
+    </figure>
+
+    <p>
+      Can we use this same kind of reasoning to find the coordinates of the
+      highest point on the graph at the right?
+    </p>
+
+    <p>
+      Notice that the horizontal and vertical axes are no longer
+      <q>position</q> and <q>time.</q> Since there is no motion taking place there
+      is clearly no velocity, so we can't simply set our velocity function
+      equal to zero an solve for the time, <m>t,</m> when velocity is zero like
+      we did for the falling ball. Not only is there no velocity function,
+      there is no time <m>(t)</m> either!
+    </p>
+
+    <p>
+      Or can we? Yes, it is true that there is no motion, and no time
+      involved. But so what? Once we plot velocity against time we just have
+      a curve. The only place where either velocity or time appear is in the
+      labelling of the axes.
+    </p>
+
+    <p>
+      So let's just change the labels.
+    </p>
+
+    <p>
+      That is, let's pretend <mdash /> for now <mdash /> that this <em>is</em> a motion
+      problem, that the vertical axis <em>is</em> position, and that the
+      horizontal axis <em>is</em> time. In that case we can proceed as before:
+      Find the velocity function (derivative), set it equal to zero to find
+      the time (number of chocolate bars) when the velocity (derivative) is
+      zero, put that back into the position (anxiety) function, <m>A(C),</m> to
+      find the maximum level of anxiety.
+    </p>
+
+    <p>
+      This was Newton's idea. Any such problem can be thought of as a
+      problem of motion. In this case we think of our anxiety level as
+      dependent on how many chocolate bars we have. If the number of
+      chocolate bars changes then the anxiety level increases (or decreases)
+      accordingly.
+    </p>
+
+    <p>
+      But it is silly to rename our functions just to do the analysis and
+      then change them back. Rather than explicitly pretending that motion
+      is involved we keep that conceit in the background and adapt our
+      notation and language to our motion metaphor.
+    </p>
+
+    <p>
+      In particular we have seen that <m>\dfdx{p}{t}=v,</m> (velocity is the
+      derivative of position). Since velocity is by definition the rate of
+      change of position <q>with respect to time</q> we adopt the convention,
+      in this case, of interpreting the symbol <m>\dfdx{A}{C}</m> as the rate of
+      change of anxiety <q>with respect to the number of chocolate bars we
+      own.</q>
+    </p>
+
+    <p>
+      In this way the metaphor of motion is simply built into the language
+      and notation we use, and we say things like <q>As the number of
+      chocolate bars increases our anxiety decreases, then increases, and
+      then decreases again,</q> just as if <m>C,</m> (the number of chocolate
+      bars) is constantly increasing in the same way that <m>t,</m> (time) does.
+    </p>
+
+    <figure>
+      <image width="37%" source="images/metaphor2.png" />
+    </figure>
+
+    <p>
+      It can be illuminating to look at the graph of both our function and
+      its derivative at the same time. The sketch at the left shows the graph
+      of <m>A(C)</m> (in green) and <m>\dfdx{A}{C}</m> (in orange) together on the
+      same set of axes.
+    </p>
+
+    <p>
+      Since <m>A(0) = 5</m> when <m>C=0</m> we seem to be fairly anxious. This is probably
+      because we have no chocolate. As our number of chocolate bars
+      increases<fn>Notice how the language of motion is naturally
+        co-opted for our purposes. We either own chocolate or we
+        don't. Nothing is changing, but we pretend that as time goes on we
+        are getting more chocolate.</fn>our anxiety level is decreasing so the value of <m>\dfdx{A}{C}</m> is
+      negative (below the horizontal axis). When <m>\dfdx{A}{C} =0,</m> at
+      slightly less than one chocolate bar, our anxiety level <q>bottoms
+      out.</q> Presumably this is because we're looking forward to eating our
+      chocolate. As we gain chocolate our anxiety level rises again,
+      probably because in these uncertain times you never know who is
+      coveting your chocolate, or when it might be taken from you just because you
+      have a lot of it. As we accumulate more our anxiety level drops again
+      because we have plenty to share so we don't need to worry about some
+      theif taking it from us.
+    </p>
+
+    <p>
+      This is a silly example of course, but the point of this silliness is
+      quite serious: The derivative of a curve can tell us a lot about the
+      curve. If we simply pretend that the curve is the position of some
+      object and that the derivative is its velocity then it is clear what
+      the derivative can tell us:
+      <ol>
+        <li>
+          <p>
+            If the derivative is positive then the object is moving in the
+              positive direction. Usually this will be <em>up</em> or <em>to the
+                right</em>, but in any case the object moves in the positive direction
+              whatever that is in our coordinate system.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If the derivative is negative then the object is moving in the
+              negative direction. Usually this will be <em>down</em> or <em>to the
+                left</em>, but in any case the object moves in the negative direction
+              whatever that is in our coordinate system.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If the derivative is neither positive nor negative <mdash /> that is,
+              if it is zero <mdash /> then the object has stopped moving<fn>Our
+                metaphor actually breaks down a little bit here. No one would say
+                that a vertically tossed ball is not moving at the top of its
+                flight since it immediately begins to fall. Nevertheless, at the
+                top of its flight its velocity is zero and it does <q>stop</q> just
+                for an instant.</fn>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </introduction>
+
+  <subsection xml:id="sec_population-growth">
+    <title>Population Growth</title>
+    <p>
+      Suppose we have a single microbe living in a petri dish and that it
+      divides once every hour. Then after one hour we have two microbes and
+      our population has grown by one microbe per hour. After the second
+      hour our population is now <m>4</m> microbes, and the rate of growth during
+      that second hour is <m>3</m> microbes per hour. If this continues for <m>10</m>
+      hours our microbe population will have grown according to the
+      following chart\-\marginpar{ This is supposed to be <m>P(t)=(5/2)^t.</m> Check the numbers.}:
+      <me>
+        \begin{array}{|ccc||ccc|}
+        \hline
+          \text{ hours } \amp \text{ population } \amp \text{ rate of
+                                          growth } \amp \text{ hours } \amp \text{ population } \amp \text{ rate
+                                                                                  of
+                                                                                  growth } \\\hline{}
+          1\amp 2.5\amp 1.5\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\amp 6\amp 244.1\amp 97.2\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\\[1mm]
+          2\amp 6.3\amp 2.5\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\amp 7\amp 610.4\amp 242.9\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\\[1mm]
+          3\amp 15.6\amp 6.2\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\amp 8\amp 1525.9\amp 607.2\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\\[1mm]
+          4\amp 39.1\amp 15.5\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\amp 9\amp 3814.7\amp 1518.0\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\\[1mm]
+          5\amp 97.7\amp 38.9\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\amp 10\amp 9536.7\amp 3795.1\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\\[1mm]\hline
+        \end{array}
+      </me>
+    </p>
+
+    <p>
+      Can we find a function <m>P(t)</m> which tells us our microbe
+      population at any time?
+    </p>
+  </subsection>
+</section>
+

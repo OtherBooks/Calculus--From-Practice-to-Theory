@@ -1,0 +1,25 @@
+
+
+<section xml:id="sec_some-obvi-theor">
+  <title>Some <q>Obvious</q> Theorems</title>
+  <p>
+    { A Problem to Think About:
+    }
+
+    *********************
+
+    \-\marginpar{ Note: Here we want to prove that a positive derivative means an
+    increasing function. Also negative implies decreasing
+    }
+  </p>
+
+  <p>
+    \-\marginpar{ And Fermat's Theorem and its converse.
+    }
+  </p>
+
+  <p>
+    And if <m>f^\prime(x) = 0, \forall x\in[a,b]</m> then <m>f(x) =0</m> on <m>[a,b].</m>
+  </p>
+</section>
+

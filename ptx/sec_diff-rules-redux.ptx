@@ -1,0 +1,359 @@
+
+
+<section xml:id="sec_diff-rules-redux">
+  <title>Differentiation Rules, Redux</title>
+  <introduction>
+    <p>
+      { A Problem to Think About:
+      }
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Exponential Development</title>
+    <p>
+      We'd like to find <m>y</m> as a function of <m>x,</m> (denoted <m>y(x),</m>) which
+      has the property that \-\marginpar{ Unclear.}
+      <m>\dfdx{y}{x} =y.</m> As posed this problem is similar to asking for a
+      solution of the algebraic equation <m>3y-2x=0</m> because there are, in
+      fact, many solutions. Put another way, there is no
+      <em>unique</em> solution. For example, <m>(3,2),</m> <m>(6,4),</m> and <m>(12,8)</m>
+      are all solutions of <m>3y-2x=0</m>. If we add another constraint, for
+      example,
+      <m>8y-5x=1</m> then there is a unique solution. (Find it.).
+    </p>
+
+    <p>
+      We need to add another constraint to this problem in
+      order to have a unique solution. We'll add this one<fn>This
+        question of when unique solutions exist is deep and complex. We will not
+        address it now because it is not important at the moment.</fn>: When <m>x=0,</m>
+      <m>y=1.</m> What can we find out about the graph of this function?
+    </p>
+
+    <p>
+      Before we start try to imagine what the graph of <m>y(x)</m> would look
+      like. Notice that the statement <m>\dfdx{y}{x} =y</m> says that the slope
+      of the graph, <m>\dfdx{y}{x}</m> is exactly the same as the <m>y</m>
+      coordinate. So when <m>y(x)</m> is very small then the tangent line is
+      nearly horizontal. When <m>y(x)</m> very large then the tangent line is
+      nearly vertical.
+    </p>
+
+    <p>
+      Keeping this in mind, we ask what happens if <m>y(x)</m> is exactly equal
+      to zero for some value of <m>x?</m> That is, if there is a number, <m>b</m> such
+      that <m>y(b) = 0</m> what does this tell us about <m>y(x)?</m> To find out
+      suppose that <m>t\lt b</m> and that <m>y(t) >0.</m> This situation is
+      pictured in the following sketch:
+      <image width="37%" source="images/ExpFunc1.png" />
+    </p>
+
+    <p>
+      But wait! What we have drawn in this sketch is impossible! Do you see why?
+    </p>
+
+    <p>
+      Clearly the slope of the tangent line drawn at the point
+      <m>(t_1,y(t_1))</m> is negative. But <m>y(t_1)>0</m> and
+      <me>
+        \left.\dfdx{y}{x}\right|_{x=t_1} = y(t_1) > 0.
+      </me>
+    </p>
+
+    <p>
+      So <m>\left.\dfdx{y}{x}\right|_{x=t_1} >0</m> and
+      <m>\left.\dfdx{y}{x}\right|_{x=t_1} \lt 0.</m> But a number cannot be both
+      positive <em>and</em> negative, so our original assumption, that
+      <m>y(t_1)>0</m> must be wrong.
+    </p>
+
+    <p>
+      Therefore it must be true that <m>y(t_1)\leq 0.</m>
+      <index><main>Proof by contradiction</main></index>
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Actually we haven't been completely honest with you in the arguments
+          above. Specifically, in the first diagram it will not necessarily be
+          true that the graph of <m>y(x)</m> passes through the point
+          <m>(t_1, y(t_1))</m> with a negative slope. Nevertheless, there will
+          always be a point to the left of <m>b</m> where the slope of the
+          tangent line will be negative. Convince yourself of this and give a
+          written explanation. Make it as clear as you can.
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      But <m>y(t_1)</m> cannot be strictly less than zero either. You can
+      convince yourself of this by using essentially the same argument as
+      above and the following sketch:
+      <image width="37%" source="images/ExpFunc2.png" />
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Modify the argument above and use the previous sketch to show that
+          <m>y(t_1)\geq0.</m> Again, this sketch does not capture all of the
+          possibilities in that there is no <em>a priori</em> reason to believe
+          that the slope of the tangent line will be positive. However, as in
+          the previous problem there will always be a point to the left of <m>b</m>
+          where the slope of the tangent line is positive.
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      The only possible conclusion then, is that <m>y(t_1)=0</m> for every
+      <m>t_1\lt b.</m>
+    </p>
+
+    <p>
+      Thus we have the following lemma:
+    </p>
+
+    <lemma>
+      <statement>
+        <p>
+          If <m>\dfdx{y}{x}=y</m> and <m>y(b)=0</m> for any real number <m>b,</m> then <m>y(x)
+            = 0</m> for every <m>x\lt b.</m>
+        </p>
+      </statement>
+    </lemma>
+
+    <p>
+      This is interesting. Even more interesting is the fact that when <m>x>b</m>
+      it remains true that <m>y(x)=0.</m> To see this consider the following
+      sketch:
+      <image width="56%" source="images/ExpFunc3.png" />
+    </p>
+
+    <p>
+      In our sketch <m>y(b)=0</m> so <m>y(x)=0</m> for all <m>x\lt b</m> by our argument
+      above. But to the right of <m>b</m> either <m>y(x)\geq0</m> or <m>y(x)\leq0.</m> In
+      our sketch we have assumed that <m>y(x)\ge0.</m> Look closely at the
+      tangent line of <m>y(x)</m> at the point <m>x</m> and at that secant line
+      between the points <m>(b,0)</m> and <m>(x,y(x).</m>
+    </p>
+
+    <p>
+      In particular consider the slopes of these two lines. The slope of the
+      tangent line will be <m>\left.\dfdx{y}{x}\right|_{x=x_0}</m> since that's what the derivative
+      is. But since <m>\dfdx{y}{x}=y(x)</m> the slope of the tangent line at <m>x</m>
+      will be <m>y(x).</m>
+    </p>
+
+    <p>
+      Also it is clear from the sketch that the slope of the secant is
+      <m>\frac{y(x)}{x-b}</m> and that <m>\frac{y(x)}{x-b} \lt  \dfdx{y}{x} = y(x).</m>
+      So
+      <md>
+        <mrow>\frac{y(x)}{x-b} \amp \lt   y(x).</mrow>
+        <intertext>Since <m>y(x)\neq0</m> we can divide by it so</intertext>
+        <mrow>\frac{1}{x-b} \amp \lt   1.</mrow>
+      </md>
+    </p>
+
+    <p>
+      This last statement is impossible, but at first glance it may not be
+      obvious why. The only constraint we put on <m>x</m> is that <m>x>b.</m> That
+      means that <m>x</m> can be <em>any</em> number greater than <m>b</m> and it must
+      still be true that <m>\frac{1}{x-b}\lt 1.</m> Put this way it is a little more
+      clear that this can't be true. Suppose for example that <m>x=b+1/2.</m>
+      Then we get <m>2\lt 1</m> which is certainly not true.
+    </p>
+
+    <p>
+      Since this line of reasoning leads to impossible
+      conclusions<index><main>Proof by contradiction</main></index> it must be that our
+      initial assumption that is wrong. Therefore <m>y(x)</m> is not positive.
+    </p>
+
+    <p>
+      A similar argument will show that <m>y(x)</m> is not negative. Thus the
+      only conclusion is that <m>y(x)=0</m> and as before this is true for all
+      numbers to the right of <m>b.</m>
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Show that <m>y(x)</m> is not negative when <m>x>b.</m>
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      The question we've been addressing is, ``If <m>y(b)=0</m> for any number
+      <m>b</m> what can we tell about the function, <m>y(x)?</m> Based on the
+      arguments we've just seen the answer seems to be that if <m>y(x)</m> is
+      <em>ever</em> zero then it is <em>always</em> zero.
+    </p>
+
+    <p>
+      Does this mean that <m>y(x)</m> is constantly zero? If so that would be
+      very disappointing. But this isn't really what we've seen. Look
+      carefully at the statement, <q>If <m>y(x)</m> is <em>ever</em> zero then it is
+      <em>always</em> zero.</q> Another way<index><main>Contrapositive</main></index> to
+      say the same thing is <q>If <m>y(x)</m> is not zero <em>somewhere</em>, then
+      it is not zero <em>anywhere</em>.</q> That is, if <m>y(x)</m> is positive
+      anywhere it must be positive everywhere. This is because if it is
+      positive in one place and negative in another then it must be zero in
+      between. But that isn't possible since we've just shown that <m>y(x)</m> is
+      zero anywhere then it is zero everywhere. Similarly if <m>y(x)</m> is
+      negative anywhere then it is negative everywhere.
+    </p>
+
+    <p>
+      This will be important later so we formalize the results of this
+      discussion as a theorem.
+    </p>
+
+    <theorem xml:id="thm_zero-exp">
+      <statement>
+        <p>
+          If <m>y(x)</m> is a function which satisfies the differential equation
+          <men xml:id="eq_exp-diffeq" >
+            \dfdx{y}{x} = y,
+          </men>
+          then one of the following statements is true:
+          <ol>
+            <li>
+              <p>
+                <m>y(x)</m> is always positive,
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>y(x)</m> is always negative, or
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>y(x)</m> is always zero.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      This result took a long time to get and our reasoning was fairly
+      subtle. The next result is a little simpler so we will simply state it
+      as a theorem and prove it.
+    </p>
+
+    <theorem xml:id="thm_exp-multiple">
+      <statement>
+        <p>
+          If <m>y(x)</m> and <m>g(x)</m> both satisfy <xref ref="eq_exp-diffeq">equation</xref>, and
+          that <m>g(x)\neq0.</m> Then <m>y(x) = c\cdot g(x)</m> for some constant <m>c.</m>
+        </p>
+      </statement>
+    </theorem>
+
+    <proof>
+      <p>
+        This follows immediately from the
+        Quotient Rule as follows.
+        Taking the derivative of the quotient <m>y(x)/g(x)</m> we have:
+        <md>
+          <mrow>\dfdx{\left(\frac{y(x)}{g(x)}\right)}{x} \amp =
+                                  \frac{g(x)\dfdx{y}{x}-y(x)\dfdx{g}{x}}{\left[g(x)\right]^2}</mrow>
+          <mrow>\amp =\frac{g(x)y(x)-y(x)g(x)}{\left[g(x)\right]^2}</mrow>
+          <mrow>\amp =0.</mrow>
+        </md>
+      </p>
+
+      <p>
+        From <xref ref="thm_zero-exp">theorem</xref> we see that
+        <m>\dfdx{\left(\frac{y(x)}{g(x)}\right)}{x}=0.</m> So from
+        <xref ref="thm_ConstantDifferential">theorem</xref> we have
+        <m>\frac{y(x)}{g(x)}</m> is a constant. Call that constant <m>c</m> so that
+        <me>
+          y(x) = c\cdot g(x).
+        </me>
+      </p>
+    </proof>
+
+    <theorem xml:id="thm_exp-add-prop">
+      <statement>
+        <p>
+          If <m>a</m> is a real number and <m>y(x)</m> satisfes <xref ref="eq_exp-diffeq">equation</xref>, then
+          <m>y(x+a)=y(x)\cdot y(a).</m>
+        </p>
+      </statement>
+    </theorem>
+
+    <proof>
+      <p>
+        From <xref ref="eq_exp-diffeq">equation</xref> we see that
+        <me>
+          \dfdx{y}{x}(x+a) = y(x+a),
+        </me>
+        so by <xref ref="thm_exp-multiple">theorem</xref> we have
+        <me>
+          y(x+a) = c\cdot y(a).
+        </me>
+      </p>
+
+      <p>
+        This must be true for any value of <m>a</m> so we can find <m>c</m> by simply
+        taking <m>a=0.</m> In that case
+        <md>
+          <mrow>y(x) \amp = c\cdot y(0),</mrow>
+          <intertext>but since <m>y(0)=1,</m> again by <xref ref="eq_exp-diffeq">equation</xref>
+                 we have</intertext>
+          <mrow>y(x) \amp = c</mrow>
+        </md>
+        so that
+        <me>
+          y(x+a) = y(x)\cdot y(a).
+        </me>
+      </p>
+    </proof>
+
+    <p>
+      At this point we will pause to clean up our notation a bit. The
+      property
+      <me>
+        y(x+a) = y(x)\cdot y(a).
+      </me>
+      is very familiar. The function <m>f(x) = 2^x</m> has this property since
+      <m>f(x+a) = 2^{x+a} = 2^x\cdot2^a = f(x)\cdot f(a),</m> as does <m>3^x,</m> or
+      <m>5^x</m> In fact, any function of the form <m>g(x) = a^x</m> where <m>a>0</m> has
+      this property. Such a function is called an <em>exponential
+      function.</em> The <em>natural exponential</em> is <em>defined</em> to be
+      the function
+      <me>
+        \text{ exp } (x) = e^x
+      </me>
+      where the number <m>e</m> is chosen so that <m>\text{ exp } (x)</m> satisfies the
+      conditions <m>y(0) = 1</m> from <xref ref="eq_exp-diffeq">equation</xref>. That is
+      <md>
+        <mrow>\dfdx{(\text{ exp } )}{x} \amp = \text{ exp } (x).</mrow>
+      </md>
+    </p>
+
+    <p>
+      If we take <m>y=e^x</m> then <m>y(x)</m> satisfies the differential
+      <xref ref="eq_exp-diffeq">equation</xref> by definition.
+    </p>
+
+    <p>
+      IIIII
+    </p>
+
+    <p>
+      \part{Integral Calculus: Practice}
+    </p>
+  </subsection>
+</section>
+

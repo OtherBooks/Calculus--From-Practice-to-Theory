@@ -1,0 +1,1118 @@
+
+
+<section xml:id="sec_rates-change">
+  <title>Rates of Change</title>
+  <introduction>
+    <p>
+      One of the <q>learned giants</q> that Newton and Leibniz referred to was
+      Galileo Galilei (1564-1642).
+    </p>
+
+    <p>
+      Galileo was interested in questions like these: Suppose you throw a
+      ball straight up into the air with an initial velocity of <m>15</m>
+      meters per second. How high will the ball go? How long will it take
+      for it to hit the ground? What will its velocity be at impact? If
+      you throw the ball up with twice as much initial velocity will it go
+      twice as high?
+    </p>
+
+    <p>
+      We will spend some time examining how Calculus is used to describe the
+      motion of objects. If physics isn't your particular interest be
+      assured that this is only a starting point. Calculus is applicable to
+      the real world far beyond physics. However it was first invented as a
+      way to describe motion, and the language of Calculus reflects
+      this. Moreover, motion will serve as the foundational metaphor for
+      many of the other applications so it is well worth out time to
+      understand this fundamental problem very well before proceeding.
+    </p>
+
+    <p>
+      Of course, an object falling freely under the influence of Earth's
+      gravity gets moving pretty quickly so it's speed can be hard to
+      measure and the tools for measuring time in Galileo's day were limited
+      to say the least. He slowed things down by letting small balls roll
+      down a ramp assuming, correctly, that friction with the ramp would not
+      significantly influence his measurements or computations. He noticed
+      that the balls always accelerated at a constant rate which depended on
+      the steepness the ramp. That is, the ball's velocity increased at a
+      constant rate. More precisely, the acceleration of the rolling ball varied with the
+      angle <m>\theta,</m> as in this diagram.
+      <image width="18%" source="images/GalileoRamp.png" />
+    </p>
+
+    <p>
+      \begin{wraptable}[]{r}{1.75in}
+    </p>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><m>\theta</m></cell>
+        <cell>Acceleration</cell>
+      </row>
+      <row>
+        <cell>(in radians)</cell>
+        <cell>in <m>(m/s^2)</m></cell>
+      </row>
+      <row>
+        <cell>[2mm]
+         \hline
+           <m>\pi/3</m></cell>
+        <cell>4.9</cell>
+      </row>
+      <row>
+        <cell><m>\pi/4</m></cell>
+        <cell>6.93</cell>
+      </row>
+      <row>
+        <cell><m>\pi/6</m></cell>
+        <cell>8.49</cell>
+      </row>
+      <row>
+        <cell><m>\pi/12</m></cell>
+        <cell>9.47</cell>
+      </row>
+      <row>
+        <cell><m>\pi/24</m></cell>
+        <cell>9.72</cell>
+      </row>
+      <row>
+        <cell><m>\pi/48</m></cell>
+        <cell>9.78</cell>
+      </row>
+      <row>
+        <cell><m>\pi/100</m></cell>
+        <cell>9.795</cell>
+      </row>
+      <row>
+        <cell><m>\pi/200</m></cell>
+        <cell>9.799</cell>
+      </row>
+      <row>
+        <cell><m>\pi/300</m></cell>
+        <cell>9.799</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular>
+    <p>
+      \end{wraptable}
+      When <m>\theta=\pi/2</m> clearly the ball doesn't move so its acceleration
+      is zero. When <m>\theta=0</m> the ball accelerates freely under the
+      influence of gravity. Galileo measured the acceleration associated
+      with steeper and steeper ramps (that is for <m>\theta</m> closer and closer
+      to zero) obtaining a table of values for similar to the one at the right.
+      From this table it is clear that as <m>\theta</m> gets closer and closer to
+      zero the acceleration is getting closer and closer to <m>9.8.</m> Thus
+      Galileo deduced that when there is no ramp (when
+      <m>\theta =0</m>) the <em>velocity</em> will increase each second by <m>9.8\,
+      m/s.</m>
+    </p>
+
+    <p>
+      That is, the <em>acceleration</em> of an object falling under the
+      influence of the earth's gravity is <m>9.8</m> meters per second each
+      second. This is usually abbreviated as <m>9.8\,m/s^2.</m>
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Actually, Galileo wouldn't have made that many measurements. Instead
+          he would have made one measurement very carefully and deduced the
+          vertical acceleration, <m>g=9.8 m/s^2,</m> from that.
+        </p>
+
+        <p>
+          Use the first line of the table above and the following diagram, and
+          the knowledge that <m>\cos\left(\frac{\pi}{6}\right)=\frac12</m>
+        </p>
+
+        <p>
+          \InsertGraphic
+          to deduce that <m>g=9.8.</m>
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      This means that as an object falls its <em>velocity</em> increases at the
+      constant rate of <m>9.8\, m/s</m> every second so we have <m>v=9.8t.</m> If we
+      drop the ball from some height, then initially its initial velocity is
+      zero. It is not moving. After one second it will be falling at a rate
+      of <m>9.8\,m/s,</m> after two seconds, its speed will be
+      <m>9.8\times2=19.6\,m/s,</m> etc.
+    </p>
+
+    <p>
+      In general, if the ball's <em>velocity</em> in meters per second
+      (<m>m/s</m>) is changing at a constant rate, say <m>r</m> meters per second, per
+      second (<m>m/s^2</m>) and <m>t</m> is the number of elapsed seconds then
+      <me>
+        v=rt.
+      </me>
+    </p>
+
+    <p>
+      We can verify that this is correct<fn>Or nearly so.</fn>by looking
+      at the units of measurement. Since the acceleration, <m>r,</m> is measured
+      in <m>m/s^2</m> and <m>t</m> is measured in seconds when they are multiplied the
+      obvious symbolic cancellation gives
+      <me>
+        m/s^2\cdot s = m/s
+      </me>
+      or meters per second, which are the units of measurement of velocity
+      as they should be.
+    </p>
+
+    <p>
+      Of course the specific value of <m>9.8\,m/s</m> is an artifact of the units
+      we've chosen to measure distance (meters) and the fact that we are on
+      the surface of a particular planet. If we measure distance in feet
+      instead then a falling object will accelerate at <m>32 ft/s^2.</m> If we
+      are on the surface of the moon it will accelerate at <m>1.6\, m/s.</m>
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Show that if we measure distance in feet the acceleration constant
+          on the moon is <m>5.2 m/s^2.</m>
+        </p>
+      </statement>
+    </problem>
+  </introduction>
+
+  <subsection xml:id="subsec_simpl-case_-dropp">
+    <title>The Simplest Case: A Dropped Ball</title>
+    <p>
+      To begin we will only consider the case of an object falling
+      vertically under the influence of gravity. Suppose we drop a ball
+      from a height of <m>9.8</m> meters. Will it hit the ground at the end of
+      that first second?
+    </p>
+
+    <p>
+      Clearly not. To reach the ground after <m>1</m> second the ball would have
+      to average <m>9.8\,m/s</m> during the entirety of that first second. But at
+      first it is not moving at all (velocity <m>=0</m>). After one second its
+      velocity has increased to <m>9.8 m/s.</m> So for the entire duration of
+      that first second the ball's <em>average</em> velocity is <em>less
+      than</em> <m>9.8 m/s.</m> So it has not yet hit the ground. But exactly how
+      far it has fallen is not yet clear.
+    </p>
+
+    <p>
+      Reasoning similarly, at the beginning of the next second the ball is
+      already falling at <m>9.8\,m/s</m> and thereafter it increases, so it falls
+      <em>at least</em> <m>9.8</m> meters during the next second. So, while we
+      cannot yet tell <em>exactly</em> how far it falls during either second,
+      we can say that it will hit the ground some time during the second
+      second<fn>How the word <q>second</q> came to have two such
+        different meanings is interesting. Google it.</fn></p>
+
+    <p>
+      But how can we find out exactly when the ball strikes the ground?
+    </p>
+
+    <p>
+      Clearly, the formula <m>v=rt</m> which tells us the ball's velocity at any
+      time <m>t</m> is not sufficient. But if we had a similar expression for
+      <m>p,</m> the ball's position at any time <m>t</m> we would be in much better
+      shape.
+    </p>
+
+    <p>
+      \begin{mynotation}{Function}
+      Since <m>p</m> and <m>t</m> are the quantities of interest, and <m>p</m> depends on
+      <m>t</m> we will use the functional notation, <m>p(t)</m> to represent all of
+      this succinctly. This is just a shorter way to indicat that
+      position <m>p,</m> depends on the elapsed time <m>t.</m>
+      \end{mynotation}
+      Now suppose we know that the graph of <m>p(t)</m> looks like this:
+    </p>
+
+    <p>
+      <image width="37%" source="images/GenericVelocity.png" />
+    </p>
+
+    <p>
+      We are not suggesting that the graph above actually is the graph of
+      <m>p(t).</m> After all, if we knew that our problem would be solved.
+      But suppose it is. Can we tell from this
+      what the velocity, <m>v(t),</m> will be at a given time, <m>t?</m>
+    </p>
+
+    <p>
+      Sure we can.
+    </p>
+
+    <p>
+      All we need are the differentials that we introduced in
+      <xref ref="chapt_differentials">Chapter</xref>. That is, if <m>p(t)</m> is the ball's
+      position at time <m>t,</m> and we allow time to tick forward by an
+      infinitesimal amount, <m>\d{t}</m> then we have the following picture:
+    </p>
+
+    <p>
+      <image width="37%" source="images/GenericVelocityWithDiffTri.png" />
+    </p>
+
+    <p>
+      We know from our work in <xref ref="chapt_differentials">Chapter</xref> that
+      <m>\dfdx{p}{t}</m> is the derivative of <m>p(t).</m>
+    </p>
+
+    <p>
+      Moreover <m>\d{p}</m> is measured in meters while <m>\d{t}</m> is measured in
+      seconds so <m>\dfdx{p}{t}</m> is measured in meters per second. The obvious
+      conclusion is that if <m>p(t)</m> gives the position of the ball then
+      <m>\dfdx{p}{t}</m> is it's velocity.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Use an argument analogous to this to show that the derivative of
+          velocity is acceleration.
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      Our problem of course is exactly the reverse of this. We have the
+      velocity
+      <me>
+        v(t) = 9.8 t = \dfdx{p}{t}
+      </me>
+      and we need to construct the position function, <m>p(t).</m> This might seem
+      a little daunting at first but it really isn't too bad. We need only
+      ask ourselves what <m>v(t) = 9.8t</m> is the derivative of? Clearly it is
+      <me>
+        p(t) = \frac{9.8}{2}t^2=4.9t^2
+      </me>
+      since
+      <me>
+        \dfdx{4.9t^2}{t}=2(4.9)t=9.8t.
+      </me>
+    </p>
+
+    <p>
+      So we can now solve our problem, right? All we have to do is find the
+      time, <m>t,</m> when our position <m>p(t),</m> is zero. That is, we solve
+      <md>
+        <mrow>p(t)\amp =0</mrow>
+        <mrow>4.9t^2\amp =0</mrow>
+        <mrow>t^2\amp =0</mrow>
+        <mrow>t\amp =0.</mrow>
+      </md>
+    </p>
+
+    <p>
+      So the ball reaches the ground after zero seconds.
+    </p>
+
+    <p>
+      <sc>Wait!</sc> That can't be right.
+    </p>
+
+    <p>
+      At zero seconds we've just released the ball <m>9.8</m> meters above the
+      ground so our position at <m>t=0,</m> <m>p(0)</m> should be <m>9.8</m> not zero. And
+      <m>p(t)</m> should be zero for some <em>positive</em> value of <m>t,</m> since
+      the ball strikes the ground some time <em>after</em> we drop it.
+    </p>
+
+    <p>
+      Something seems to have gone terribly wrong with our analysis of the
+      problem<fn>Most likely you already see what's gone wrong. If so,
+      good for you! If not, no big deal. Keep reading.</fn>. What could it be?
+    </p>
+
+    <p>
+      There really isn't anything wrong with our <em>reasoning.</em> The
+      difficulty is with some <em>assumptions</em> we made that we weren't
+      really aware of as we worked through the problem.
+    </p>
+
+    <p>
+      Specifically, we concluded that the ball's position is given by
+      <m>p(t)=4.9t^2.</m> This is actually true but we need to remember that
+      position is always given as a distance from somewhere else, some other
+      location. In this case since at <m>t=0</m> we have <m>p(0)=0,</m> our <m>p(t)</m>
+      gives us the distance from our starting position. Thus when we solved
+      <m>p(t)=0</m> what we found was how long it takes for the ball to reach its
+      starting position. Since it is already there, naturally this is <m>t=0</m>
+      seconds.
+    </p>
+
+    <p>
+      Apparently what we need to solve is <m>p(t)=9.8.</m> This will tell us how
+      long it takes the ball to travel the <m>9.8</m> meters to the
+      ground. Solving this gives
+      <md>
+        <mrow>p(t) \amp = 9.8</mrow>
+        <mrow>4.9t^2\amp =9.8</mrow>
+        <mrow>t^2\amp =2</mrow>
+        <mrow>t\amp =\sqrt{2}\approx 1.414</mrow>
+      </md>
+      or slightly less than one and a half seconds.
+    </p>
+
+    <p>
+      <em>Coordinate Systems</em>
+    </p>
+
+    <p>
+      It is tempting to leave things there, but this problem of implicit
+      assumptions <mdash /> assumption we are not aware we are making <mdash /> is a
+      difficulty that will come back over and over again, sometimes in much
+      more complex situations so we will take a few pages to understand it
+      now in this much simpler context.
+    </p>
+
+    <p>
+      When we observed that the velocity <m>v(t),</m> is the derivative of
+      position, <m>p(t),</m> we asked what <m>9.8t</m> is the derivative of. The
+      answer we found was <m>p(t) =4.9t^2.</m> But this is only one
+      possibility. The derivative of <m>4.9t^2+5</m> is also <m>9.8t;</m> and of
+      <m>4.9t^2+12;</m> and of <m>4.9t^2-700;</m> and in particular the deriviative
+      of <m>4.9t^2+9.8</m> is also <m>9.8t.</m> In fact if <m>k</m> is any constant
+      whatsoever then the derivative of <m>4.9t^2+k</m> is still <m>9.8t.</m>
+    </p>
+
+    <p>
+      When we chose <m>p(t)=4.9t^2</m> as our position function we implicitly
+      assumed that our constant was zero. However we could have chosen <m>k</m>
+      to be any constant whatsoever. All that changes is what distance is being measured.
+    </p>
+
+    <figure>
+      <image width="18%" source="images/FallingBall1.png" />
+    </figure>
+
+    <p>
+      For example either <m>p_1(t) =4.9t^2</m> or <m>p_2(t)=4.9t^2-9.8</m> will work
+      as a position function. What is the difference between them?
+    </p>
+
+    <p>
+      If we use <m>p_1(t) = 4.9t^2</m> we are assuming that at time <m>t=0</m> our
+      position is also zero. Physically we have the following situation:
+    </p>
+
+    <p>
+      where at <m>p(0) =0</m> and <m>p(\sqrt{2}=9.8.</m> We have
+    </p>
+
+    <figure>
+      <image width="18%" source="images/FallingBall2.png" />
+    </figure>
+
+    <p>
+      implicitly assumed that at time zero our starting position is also
+      zero. After releasing the ball time moves forward as usual so <m>t</m>
+      increases through positive numbers, and since <m>p(t)</m> measures the
+      distance from our starting point, it also increases through positive
+      numbers.
+    </p>
+
+    <p>
+      On the other hand, if we use <m>p_2(t)=4.9t^2-9.8</m> to measure distance
+      then
+      we have implicitly assumed that our starting position (<m>t=0</m>) is
+      at <m>-9.8</m> meters, that is <m>9.8</m> meters above the ground, so that
+      <m>p_2(t)</m> measures how far the ball is away from the ground.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          If other values of <m>k</m> are used then the starting position (position
+          when <m>t=0</m>) and ending position (position when <m>t=\sqrt{2}</m>) of the
+          ball are implicitly changed, but the falling time will not. Find the
+          position function for each of the following values of <m>k.</m> Also give
+          a sketch like the two above for each value of <m>k,</m> and show that in
+          every case the falling time is <m>\sqrt{2}.</m>
+          <ul>
+            <li>
+              <title>(a)</title>
+              <p>
+                <m>k=5</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(b)</title>
+              <p>
+                <m>k=12</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(c)</title>
+              <p>
+                <m>k=-700</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(d)</title>
+              <p>
+                <m>k=9.8</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(e)</title>
+              <p>
+                <m>k=-9.8</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+
+        <p>
+          Which of these seems to you like the best choice<fn>There is
+              no correct answer to this question. That is the point.</fn>.
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      In either case, we are asking how long it takes the ball to fall <m>9.8</m>
+      meters. In the first case we are asking how long it takes the ball
+      to move <m>9.8</m> meters <em>from</em> the starting position. In the
+      second we are asking how long it takes to move <em>to</em> the
+      ending position.
+    </p>
+
+    <p>
+      The former probably feels more natural. This is because we habitually
+      measure our position in the future by assigning it a value (in meters)
+      which tells us how far we have moved from our starting position. We do
+      this every when we tell a friend something like, <q>You're about
+      five miles away from me.</q>
+    </p>
+
+    <p>
+      But just because this is a common habit of mind does not mean that it
+      is necessarily <em>always</em> the best way to measure position.
+    </p>
+
+    <p>
+      For example, one consequence of this for our current problem is that
+      the ball falls in the <em>positive</em> direction. This is true whether
+      we use <m>p_1(t)</m> or <m>p_2(t)</m> In the former case is that as <m>t</m>
+      increases the position, <m>p_1(t),</m> changes from zero to <m>9.8</m> meters <mdash /> it becomes
+      <q>more positive.</q> In the latter it also becomes more positive but in
+      this case <m>p_2(t)</m> changes from <m>-9.8</m> to zero meters<fn>Perhaps
+      we should call this <q>less negative?</q></fn>. In either case the position
+      now is represented by a number that is greater than the position
+      previously, so the positive direction is <em>downward</em> when we use
+      either <m>p_1(t)</m> or <m>p_2(t).</m>
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          We don't normally think of down as positive. Find a new position
+          function <m>p_3(t)</m> which models the same falling ball but has down as
+          the negative direction. There is more than one way to do this so
+          verify that you have a valid function by solving for the time needed
+          to reach the ground. You should still get <m>\sqrt{2}.</m>
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      Ultimately what this all comes down to is choosing a coordinate system
+      to work in. You are used to thinking of coordinates as an ordered pair
+      of numbers <m>(x,y),</m> that specify a location in the plane. But you were
+      using a coordinate system long before you started graphing equations
+      in the plane.
+    </p>
+
+    <p>
+      Choosing a coordinate system is nothing more or less than choosing a
+      distinguished point as a reference from which the location of all
+      other points is measured. So as soon as you were taught to think of
+      the real numbers <q>as points strung out on a line</q> you were using a
+      coordinate system. The point at zero is specified (and called the
+      origin) and all other points are named (<m>1, 2, 3, \ldots</m>) according
+      to how far they are from the origin.
+    </p>
+
+    <p>
+      This is what we did when we chose the <em>k</em>onstant above. When we
+      chose <m>k=0</m> so that <m>p(t)=4.9t^2</m> we placed the origin at <m>9.8</m> meters
+      above the surface of the earth. When we chose <m>k=-9.8</m> so that
+      <m>p(t)=4.9t^2-9.8</m> we placed the origin at the surface of the
+      earth. But of course neither gravity nor the ball care what coordinate
+      system we use so it falls to the ground in <m>\sqrt{2}</m> seconds no
+      matter where we decide to place the origin.
+    </p>
+
+    <p>
+      In the first case since <m>p(t)=4.9t^2</m> we see that <m>p(0) = 0</m> and
+      <m>p(\sqrt{2}) = 9.8</m> so the ball moved from <m>0</m> to <m>9.8</m> meters. It
+      follows that <q>down</q> must be the positive direction and <q>up</q> the
+      negative direction.
+    </p>
+
+    <p>
+      Similarly if we use <m>p(t)=4.9t^2-9.8</m> we see that <m>p(0) = -9.8</m> and
+      <m>p(\sqrt{2}) = 0.</m> Although the position of the ball is always
+      negative, it moves from a more negative position, <m>-9.8,</m> to a
+      non-negative position, <m>0.</m> So again <q>down</q> must be the positive and
+      <q>up</q> the negative direction.
+    </p>
+
+    <p>
+      This seems natural when we think about a falling ball, but of course
+      when we choose a coordinate system we get to choose both the origin
+      and the directionality. In the next section it will be more natural
+      to take <q>up</q> as the positive direction.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec_tossed-ball">
+    <title>A Tossed Ball: How High Will the Ball Go?</title>
+    <p>
+      Instead of simply dropping the ball suppose we toss it vertically
+      upwards with some initial velocity of say <m>15 m/s.</m> Then after one
+      second it will have <em>lost</em> <m>9.8 m/s</m> of its initial
+      velocity. That is, its velocity after <m>1</m> second will be
+      <m>15-9.8=5.02\,m/s.</m> After <m>2</m> seconds, its velocity will be
+      <m>15-9.8\times{}2=-4.58 m/s.</m>
+    </p>
+
+    <p>
+      In general, after <m>t</m> seconds its velocity will be <m>15-9.8t\, m/s.</m>
+      Notice that the velocity is positive at the one second mark <m>(t=1)</m>
+      and negative at the two second mark <m>(t=2.)</m>
+    </p>
+
+    <p>
+      As we observed at the end of the last section, it thus seems natural
+      to interpret <em>positive</em> velocity as climbing (moving in the
+      positive direction). We'll need to keep this in mind as we proceed.
+    </p>
+
+    <p>
+      So the height of the ball increases until the velocity drops to
+      zero. At that time the ball's height has reached its zenith. After
+      that the ball will continue to drop. But now its velocity will become
+      larger in the negative direction (because the ball is falling, or
+      moving in the negative direction), Although we don't know exactly what
+      the height is at any given time we can see that there is a point where
+      the ball reaches its zenith. The ball's height increases (velocity is
+      positive) until it reaches its zenith and then decreases (velocity is
+      negative) thereafter. The zenith occurs when the velocity has
+      decreased to zero.
+    </p>
+
+    <p>
+      Since we know that the velocity is positive at one second and negative
+      at two seconds we can say that the ball must reach its zenith at
+      somewhere between <m>1</m> second and <m>2</m> seconds after it is released.
+      To find out the exact time, notice that this is precisely when the
+      velocity equal to zero because for an instant at the top of its climb
+      the ball's velocity is zero. Solving for <m>t</m> gives:
+      <md>
+        <mrow>15-9.8 t\amp =0</mrow>
+        <mrow>t=15/9.8\amp \approx 1.53</mrow>
+      </md>
+    </p>
+
+    <p>
+      Thus the zenith is reached after approximately <m>1.53</m> seconds.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Suppose the initial velocity is double what it was originally.
+          Would it take twice as long for the ball to reach its maximum
+          height? What if the initial velocity was half?
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      So far, so good. But now we ask: How high will the ball go?
+    </p>
+
+    <p>
+      As before what we need is not the velocity function, <m>v(t) =15-9.8t,</m>
+      but the position function, <m>p(t).</m> Since we know how long it takes to
+      reach the maximum height (<m>\approx 1.53</m> seconds) all we need to do is
+      compute <m>p(1.53).</m>
+    </p>
+
+    <p>
+      Since we know that position is the derivative of velocity all we need
+      to do is ask ourselves; What is <m>v(t) = 15-9.8t</m> the derivative of?
+      Give this a few moment's thought before reading on. See if you can
+      figure it out for yourself. We'll wait.
+    </p>
+
+    <p>
+      It should be clear that the position function is: <m>p(t) = 15t-4.9t^2.</m>
+      Is it?
+    </p>
+
+    <p>
+      But wait a moment. Remember the trouble we had before with the
+      konstant, <m>k?</m> Let's think about this a bit more. The derivative of
+      <me>
+        p(t) = 15t-4.9t^2 +k
+      </me>
+      is
+      <me>
+        v(t) =15-9.8t
+      </me>
+      no matter what the numerical value of <m>k</m> is, so let's see if we can
+      find the value of <m>k</m> that makes things easiest for
+      us. If<fn>Notice that we've rearranged the order of the
+        terms. This isn't really necessary, but it's a good idea to always
+        write polynomial in the standard form, unless there is a compelling
+        reason not to. This makes things easier to read when you come back
+        looking for the errors that will inevitably happen.</fn><m>p(t) =
+      -4.9t^2+15t +k</m> then at time <m>t=0</m> the ball's position is <m>p(0) =
+      -4.9(0)^2+15(0) +k = k.</m> Since we're standing on the ground when we
+      toss our ball we'll probably release the ball about <m>5</m> feet above the
+      ground<fn>Both authors are over six feet tall. If you are much
+        taller or much shorter you should adjust this number as
+        appropriate.</fn>, or about <m>1\frac{2}{3} = 5/3</m> meters. So it seems to
+      make sense to set <m>k=5/3.</m> Thus our position function is:
+      <me>
+        p(t) = -4.9t^2+15t +  5/3
+      </me>
+    </p>
+
+    <p>
+      Therefore the maximum height of the ball is approximately <m>p(1.53) =
+      -4.9(1.53)^2+15(1.53) +  5/4 \approx 13.15</m> meters.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Suppose you toss the ball twice as hard so that its initial velocity
+          (its velocity when it leaves your hand) is <m>30 m/s.</m>
+          <ul>
+            <li>
+              <title>(a)</title>
+              <p>
+                How long will it take to reach its maximum height?
+              </p>
+            </li>
+
+            <li>
+              <title>(b)</title>
+              <p>
+                What is its maximum height?
+              </p>
+            </li>
+
+            <li>
+              <title>(c)</title>
+              <p>
+                How long does it take the ball to hit the ground?
+              </p>
+            </li>
+
+            <li>
+              <title>9c)</title>
+              <p>
+                What is its velocity when it hits the ground?
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      We now have everything we need to describe the motion of a ball thrown
+      vertically. We know the following facts:
+      <ol>
+        <li>
+          <p>
+            The derivative of the position <m>p(t),</m> is the velocity <m>v(t).</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The derivative of the velocity <m>v(t),</m> is the acceleration.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            At the surface of the earth the acceleration due to gravity is
+              <m>9.8\,m/s^2.</m> To keep our analysis as general as possible we will
+              just say that the acceleration is a constant and us <m>\alpha</m> to
+              represent it.
+          </p>
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      First, to find the velocity function <m>v(t),</m> we ask, what is the
+      constant <m>\alpha</m> is the derivative of? Clearly this is
+      <me>
+        v(t) =\alpha t+ v_0
+      </me>
+      where <m>v_0</m> is an unknown constant. To determine the value of <m>v_0</m>
+      we evaluate the velocity when <m>t=0.</m> Since
+      <me>
+        v(0) = \alpha\cdot0+v_0 = v_0
+      </me>
+      we see that <m>v_0</m> is the <em>initial velocity</em> of the ball;
+      its velocity just as it is released.
+    </p>
+
+    <p>
+      Next we ask what is
+      <me>
+        v(t) = \alpha t+v_0
+      </me>
+      the derivative of? Clearly this is
+      <me>
+        p(t) = \frac{\alpha}{2}t^2+v_0t+p_0
+      </me>
+      where <m>p_0</m> is the <em>initial position</em> by a similar argument.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Suppose you toss the ball vertically with an initial velocity of
+          <m>30\,m/s</m> while standing at the edge of a <m>120</m> meter building.
+          (its velocity when it leaves your hand) is <m>30 m/s.</m>
+          <ul>
+            <li>
+              <title>(a)</title>
+              <p>
+                How long will it take to reach its maximum height?
+              </p>
+            </li>
+
+            <li>
+              <title>(b)</title>
+              <p>
+                What is its maximum height?
+              </p>
+            </li>
+
+            <li>
+              <title>(c)</title>
+              <p>
+                How long does it take the ball to hit the ground?
+              </p>
+            </li>
+
+            <li>
+              <title>9c)</title>
+              <p>
+                What is its velocity when it hits the ground?
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec_moti-param-form">
+    <title>Motion in Parametric Form</title>
+    <figure>
+      <image width="37%" source="images/FallingBallGraph1.png" />
+    </figure>
+
+    <p>
+      Suppose we toss a ball upward from the ground with an initial velocity
+      of <m>15\,m/s.</m> Then if we place the origin at ground level, and the
+      position function is given by:
+      <me>
+        p(t) = 5/3 + 15t-4.9t^2,
+      </me>
+      and its graph is shown at the right.
+    </p>
+
+    <p>
+      Before we go on take a moment to notice that this is <em>not</em>
+      the graph of the ball's trajectory. Remember the ball is moving
+      straight up and down. Rather this graph represents a fairly abstract
+      representation of the purely vertical motion of the ball. Notice that
+      the horizontal axis of this graph represents <m>t,</m> the elapsed time.
+    </p>
+
+    <p>
+      That is if we start our clock at the moment the ball leves our hands
+      then at time <m>t=0</m> we have <m>p(0)=5/3.</m> so the point <m>(0,5/3)</m>
+      represents the fact that when we start our clock the ball is <m>5/3</m>
+      meters above ground.
+    </p>
+
+    <p>
+      Moreover, as we observed previously sin in this graph the vertical is
+      measured in meters and the horizontal in seconds, it should be clear
+      that the slope of <m>p(t)</m> at <m>t=0</m> is the velocity at <m>t=0.</m> That is,
+      <me>
+        \left.\dfdx{p}{t}\right|_{t=0} = \left.v\right|_{t=0} = 15-9.8(0)^2= 15
+        \text{ meters. }
+      </me>
+    </p>
+
+    <p>
+      Our point is that although this graph contains a great deal of
+      information about the ball's motion it is <em>not</em> a picture of
+      the ball's <em>actual path</em> through the air if it is thrown
+      vertically. Recall that the ball moves vertically upward from our
+      hands and then vertically downward to the ground.
+    </p>
+
+    <p>
+      However we all know that it is nearly impossible to toss a ball
+      perfectly vertically. Inevitably the ball will receive some non-zero
+      lateral (horizontal) velocity. When that happens the path the ball
+      follows will indeed look very much like the previousl graph. This can
+      lead to confusion so it is worth taking a few moments to clarify this
+      a bit.
+    </p>
+
+    <p>
+      If we were to releast the ball in such a way that its initial
+      <em>vertical</em> velocity is <m>15 m/s</m> as before, but also with an
+      initial <em>horizontal</em> velocity of <m>1 m/s</m> then the path the
+      ball follows looks exactly like the previous graph:
+    </p>
+
+    <figure>
+      <image width="37%" source="images/FallingBallPath1.png" />
+    </figure>
+
+    <p>
+      <em>except</em> for the labelling on the axes. Notice that the
+      horizontal axis shown is labelled <q><m>x</m></q> and the vertical is
+      <q><m>y.</m></q> This is because the horizontal axis now represents the
+      physical, horizontal distance the ball has traveled, rather than the
+      number of seconds elapsed since it was released.
+    </p>
+
+    <p>
+      The vertical axis still represents the vertical position of the ball
+      but since the position now requires two coordinates, <m>x</m> and <m>y,</m> we
+      now simply label the vertical axis <q><m>y</m></q> as per tradition.
+    </p>
+
+    <p>
+      The reason the two graphs are identical (except for the axis labels,
+      of course) in this case is that we chose an initial horizontal
+      velocity of <m>v(0)=1.</m> If we also choose our horizontal origin to be
+      where we are standing when we release the ball, then the horizontal
+      position is given by:
+      <me>
+        x=t.
+      </me>
+    </p>
+
+    <p>
+      Since the initial vertical velocity is unchanged (as is the
+      acceleraton due to gravity: <m>9.8 m/s^2</m>) the vertical position is
+      still
+      <me>
+        p(t) = 5/3 + 15t-4.9t^2.
+      </me>
+    </p>
+
+    <p>
+      We use <m>y</m> (instead of <m>p</m>) to represent the vertical position of the
+      ball because the ball's position in this situation requires
+      two<fn>Actually we need <m>3.</m> Do you see why we can ignore the
+        third this time? If not, pause here and think about it for a moment.
+      We'll wait.</fn>coordinates, <m>x</m> <em>and</em> <m>y,</m> whereas previously we only
+      needed one, the <m>y</m> coordinate.
+    </p>
+
+    <p>
+      If we want to use <m>p</m> to represent the ball's position at time <m>t</m> (we
+      do) then <m>p(t)</m> will have to return two coordinates for each value of
+      <m>t:</m>
+      <me>
+        p(t) = \left(x(t), y(t)\right).
+      </me>
+    </p>
+
+    <p>
+      To see why the two graphs above coincide we need only observe that
+      since
+      <me>
+        x=t
+      </me>
+      it doesn't matter whether we label the horizontal axis <m>t,</m> in which
+      caxse the graph gives the vertical position at any time <m>t,</m> or <m>x,</m>
+      in which case the curve gives the actuall position of the eball. They
+      <em>look</em> the same even if they mean different things.
+    </p>
+
+    <p>
+      We got <m>x=t</m> because we assumed an initial horizontal velocity,
+      <m>v_x(0)</m> of <m>1 m/s</m> and an initial horizontal position, <m>x_0</m> of
+      zero.
+    </p>
+
+    <figure>
+      <image width="37%" source="images/FallingBallPath2.png" />
+    </figure>
+
+    <p>
+      Suppose we set our horizontal origin <m>2</m> meters to the left of where
+      we released the ball. Then we get
+      <md>
+        <mrow>x\amp =t+2</mrow>
+        <mrow>y\amp =5/3 + 15t-4.9t^2,</mrow>
+      </md>
+      so the ball follows the given trajectory.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          For each set of conditions given below, answer the following three questions:
+          <ul>
+            <li>
+              <title>(1)</title>
+              <p>
+                What are the <m>x</m> and <m>y</m> coordinates of the ball's
+                      position at time, <m>t.</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(2)</title>
+              <p>
+                Plot the ball's position on the <m>x-y</m> plane.
+              </p>
+            </li>
+
+            <li>
+              <title>(3)</title>
+              <p>
+                Plot the <em>vertical position only</em> of the ball
+                      on the <m>p-t</m> plane. (This should not necessarily look the same
+                      as the graph you drew for part (b). (You should be curious about
+                      the difference. In fact, you should be so curious that you will
+                      spend a few minutes trying to puzzle out why and how they are
+                      different. If you are not curious, pretend that you are and do
+                      it anyway.)
+              </p>
+            </li>
+
+            <li>
+              <title>(4)</title>
+              <p>
+                At what time does the ball reach its maximum height?
+              </p>
+            </li>
+
+            <li>
+              <title>(5)</title>
+              <p>
+                What is the maximum height?
+              </p>
+            </li>
+
+            <li>
+              <title>(6)</title>
+              <p>
+                How long before the ball hits the ground?
+              </p>
+            </li>
+
+            <li>
+              <title>(7)</title>
+              <p>
+                Where does it strike the ground?
+              </p>
+            </li>
+
+            <li>
+              <title>(8)</title>
+              <p>
+                What is it's horizontal and vertical velocity at the
+                      moment it strikes the ground?
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <title>(a)</title>
+              <p>
+                Suppose our initial horizontal velocity is <m>2 m/s,</m> and that
+                    the initial vertical velocity is <m>15 m/s.</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(b)</title>
+              <p>
+                Suppose our initial horizontal velocity is <m>1/2 m/s,</m> and that
+                    the initial vertical velocity is <m>15 m/s.</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(c)</title>
+              <p>
+                Suppose our initial horizontal velocity is <m>0 m/s,</m>  that
+                    the initial vertical velocity is <m>15 m/s,</m> but
+                    that the ball is accelerating to the right at a constant rate of
+                    <m>2 m/s^2.</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      The position of a moving object must always be given as a function of
+      time because we always need to know when it arrives at some position
+      along with the position itself.
+    </p>
+
+    <p>
+      When, like our falling ball, the object is moving both horizontally
+      and vertically we clearly need two coordinates in order to specify its
+      position. That is, the <m>x</m> and <m>y</m> coordinates depend on <m>t</m> as a
+      common parameter.
+    </p>
+
+    <p>
+      Thus the equations
+      <md>
+        <mrow>x\amp =2t-3</mrow>
+        <mrow>y\amp =5/3 + 15t-4.9t^2,</mrow>
+      </md>
+      are called <em>Parametric Equations.</em>
+    </p>
+
+    <p>
+      We have barely scratched the surface of this important topic but this
+      is enough for now. We will return to this in more depth later.
+    </p>
+  </subsection>
+</section>
+

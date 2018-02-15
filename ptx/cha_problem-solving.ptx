@@ -1,0 +1,376 @@
+
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="cha_problem-solving">
+  <title>Problem Solving: Some Advice From the Authors</title>
+  <p>
+    Our purpose here is to give you our very best advice on how to succeed
+    in this course and a realistic impression of the level of difficulty
+    of the course material. Please read this carefully and take our advice. We,
+    the authors of this textbook, know what we are talking about.
+  </p>
+
+  <p>
+    Because the topic we will be studying is called
+    <em>Calculus</em> there is a strong tendency to assume that
+    that <em>only</em> the concepts and techniques of Calculus are needed to
+    solve the problems that will be posed in this course. Nothing could be
+    further from the truth. You will need all of the mathematics you
+    know. And probably more. Really.
+  </p>
+
+  <p>
+    As a demonstration consider the following problem which we've chosen
+    because it is neither particularly easy nor particularly difficult. It
+    is typical of the kinds of <q>medium level</q> problems that appear in
+    most Calculus textbooks.
+  </p>
+
+  <p>
+    <em> Problem:</em>
+    The lengths of two sides of a triangle are <m>a</m> and <m>b.</m> If the third
+    side is chosen in such a way that the area of the triangle is as
+    large as possible what is the length of the third side?
+  </p>
+
+  <p>
+    You may be able to intuit the correct answer to this problem. That's
+    ok, but you should try to solve it too. By <q>solve</q> we mean <q>be
+    able to explain why your answer is correct</q> to someone with the
+    same mathematical skills you have at the moment. Before reading
+    further do your best to solve this problem by yourself. We'll wait.
+  </p>
+
+  <p>
+    { No, really. Give this problem a serious shot
+    <em>before</em> you turn the page. It is important that you
+    try, whether you succeed or not.}
+  </p>
+
+  <p>
+    <em>Partial Solution:</em>
+  </p>
+
+  <p>
+    It can be difficult at first to see where to begin. This will frequently
+    be the case in the problems you encounter in mathematics or anywhere
+    else<fn>That's why they're called problems.</fn>. <em>Don't
+    let this stop you!</em> In our experience the most common mistake
+    mathematics students make is giving up too soon. <em>Don't do
+    that.</em> Keep thinking.
+  </p>
+
+  <figure>
+    <image width="37%" source="images/Advice1.png" />
+  </figure>
+
+  <p>
+    Since we know two sides of our triangle let's draw it. The sketch at
+    the right would be typical. The question is,
+    what is the length of the third side, <m>c,</m> that
+    makes the total area of the triangle as large as possible.
+  </p>
+
+  <p>
+    Now what?
+  </p>
+
+  <p>
+    Well, this looks like a right triangle doesn't it? If so then we can
+    find the length of <m>c</m> via the Pythagorean Theorem:
+    <me>
+      c=\sqrt{a^2+b^2},
+    </me>
+    right?
+  </p>
+
+  <p>
+    Can it really be that simple? Think about this for a moment. Can you
+    see any flaws in our reasoning?
+    { Once again, before you turn the page take a moment and really
+    try to find any flaws in our reasoning. It is more important that
+    you <em>try</em> than that you succeed.}
+
+    Sure you can. There is no reason to believe that the triangle we seek
+    must be a right triangle. That was just an accident of our diagram. If
+    this seems like a really dumb mistake of the sort that you would never
+    make, be careful. It <em>is</em> a mistake but it is an easy mistake to
+    make, especially when the problems get more complicated. This is not
+    dumb mistake. It is just a mistake, no dumber, and no smarter, than
+    any other mistake.
+  </p>
+
+  <p>
+    By definition, mistakes are wrong. They all look dumb
+    <em>after</em> you see them, but not before. Everyone makes
+    mistakes in the course of solving a problem. The process of making
+    mistakes, recognizing them as mistakes, and figuring out why they are
+    mistakes is called <sc>learning</sc>. The very best, smartest people
+    (like Newton, Leibniz, Galileo, Fermat, or Einstein for example) made
+    lots of mistakes. Making mistakes <mdash /> <em>and then figuring out what was
+    wrong</em> <mdash /> is how they got to be so smart.
+  </p>
+
+  <p>
+    Newton was once asked how he had been able to solve problems that no
+    one before him had. His reply: <q>By thinking, and thinking, and
+    thinking about them.</q> Of course, when he described his solutions left
+    out all of his errors because, who cares about that? As a result
+    making mistakes doesn't typically get the attention it deserves.
+  </p>
+
+  <p>
+    But make no mistake <sc>(Gasp!)</sc> about it. It is very important to
+    make mistakes, but that is just the first step. You then need to
+    resolve them.
+  </p>
+
+  <p>
+    An expert is someone who has made every possible mistake. This is why
+    your teacher will seldom err<fn>And will be embarrassed when
+      (s)he does.</fn>. Each mistake reflects the level of your current
+    understanding of the problem. Each mistake you make takes you a little
+    closer to expertise. <em>Embrace your mistakes and make lots of them.</em>
+    They are proof that you are making progress.
+  </p>
+
+  <p>
+    Sadly, for some reason mistakes are too often seen as a source of
+    embarrassment. Too many students berate themselves as stupid every
+    time they make a mistake. Don't do that. It is counter-productive. All
+    it will do is destroy your self confidence. Don't do it<fn>Did
+      we mention that you shouldn't do this. You really shouldn't.</fn>. You
+    would not have made it this far if you couldn't do this, but it
+    <em>is</em> hard and there is still much to learn. Keep
+    working. <em>Keep making mistakes</em>, ask for help when you need
+    it, and don't give up. You have not failed until you stop trying.
+  </p>
+
+  <figure>
+    <image width="46%" source="images/Advice3.png" />
+  </figure>
+
+  <p>
+    The triangle we seek might look like the first one we drew on
+    <xref ref="fig_Advice1">page</xref>, or it might look like either of the ones drawn
+    in the diagram at the left. Or myriad others. We simply don't have
+    enough information to decide at this point. That is the problem.
+  </p>
+
+  <p>
+    But from the diagrams we've drawn so far we can see that side
+    <m>a</m> is pinned at the left end of side <m>b</m> so for each angle between
+    <m>a</m> and <m>b</m> we have a different possible triangle.
+  </p>
+
+  <p>
+    Do you see how that worked? Yes, our first attempt was simple-minded.
+    But by drawing our first sketch and then figuring out why it won't work
+    we were led to this insight: We can think of <m>b</m> as static, and we can
+    think of <m>a</m> as swinging freely while pinned to the end of <m>b.</m>
+  </p>
+
+  <figure>
+    <image width="56%" source="images/Advice4.png" />
+  </figure>
+
+  <p>
+    Clearly we need to find the angle between <m>a</m> and <m>b</m> <mdash /> let's call it
+    <m>C</m> as in the sketch at the right <mdash /> that makes the triangle largest.
+    But which angle does that?
+  </p>
+
+  <p>
+    Whenever triangles are involved it is a good idea to recall your
+    Trigonometry. After all, that's what trigonometry is about, isn't it?
+    Also, since we're trying to maximize the area we should probably write
+    down the area formula: <m>A=\frac12(\text{ base } )(\text{ height } ).</m> Since
+    we are thinking of <m>b</m> as fixed we may as well use it as the base,
+    which makes the height equal to <m>a\sin(C).</m> Thus the area of the
+    triangle is <m>A=\frac{1}{2}ab\sin(C).</m>
+  </p>
+
+  <p>
+    Is it clear that our initial guess was correct? The angle, <m>C,</m> that
+    maximizes the area will be the one whose sine is as large as
+    possible. That would be <m>\phi=\frac{\pi}{2}</m> so <m>c=\sqrt{a^2+b^2}</m>
+    provides the maximum area.
+  </p>
+
+  <p>
+    This is the correct solution, but now we'd like to try to convince you
+    that it isn't.
+  </p>
+
+  <figure>
+    <image width="37%" source="images/Advice5.png" />
+  </figure>
+
+  <p>
+    If we increase angle <m>\phi</m> just a bit in the counter-clockwise direction
+    we add just a bit more area to the triangle, don't we? To be sure we
+    subtract some as well as shown in the sketch at the left, but we'll be
+    adding more than we subtract, won't we?
+  </p>
+
+  <figure>
+    <image width="37%" source="images/Advice6.png" />
+  </figure>
+
+  <p>
+    Also, we didn't have to use <m>b</m> as the base. We could have used <m>c</m>
+    instead. In that case our diagram will look like the sketch at the
+    right.
+  </p>
+
+  <p>
+    In this case angle <m>\phi</m> is clearly less than <m>\frac{\pi}{2},</m> but
+    the area is the same, isn't it? This is puzzling, no?
+  </p>
+
+  <p>
+    Can you account for either of these objections? If not, then the
+    problem remains unsolved.
+  </p>
+
+  <p>
+    As we said above, <m>C=\frac{\pi}{2}</m> is correct so <m>c=\sqrt{a^2+b^2}</m>
+    is the maximum area of the triangle. But we need to <em>know</em> this,
+    not just believe it. Unless we can show an irrefutable argument <mdash /> an
+    argument that addresses all possible objections <mdash /> then we just
+    believe it. And belief is not knowledge.
+  </p>
+
+  <p>
+    We will return to this problem and solve it completely on
+    <xref ref="">page</xref>. Until then, although we believe that
+    <m>c=\sqrt{a^2+b^2}</m> is the maximum area of the triangle, it is only a
+    conjecture so far.
+  </p>
+
+  <p>
+    <em>Our advice, a synopsis:</em>
+  </p>
+
+  <p>
+    In order to solve a problem, any problem you must:
+    <ul>
+      <li>
+        <title>Have an idea.</title>
+        <p>
+          Solving a mathematical problem is a bit like getting dropped in
+              the woods without a cell phone and being told to find your way
+              out<fn>Except, of course, that you won't die of exposure,
+                and you always have the option of declaring the math problem
+                <q>Stupid</q> and doing something more fun. If you are dropped in
+                the woods you don't have that option. You <em>must</em> solve
+                the problem or you will die. It is astonishing how quickly that
+                knowledge will focus the mind.</fn>. First you have to find a
+              path. Once a path is found you have to follow it. Nothing else
+              really has a chance of working. 
+
+              Having an idea is like finding a path in the woods. It's a start,
+              but that's all it is. You still have to  follow it, and you
+              probably still have a lot of hard work to do before you get out of
+              the woods. 
+
+              If an idea occurs to you, follow it. Most likely you will not hit
+              on the best approach right away. You may not even hit on a good,
+              or even a workable approach the first time. Or the first three
+              times. That's ok. Keep thinking about the problem anyway. It is
+              frustrating and it doesn't feel like progress, but it is. As long
+              as you are having and discarding ideas you are making progress.
+        </p>
+      </li>
+
+      <li>
+        <title>No, really. Have an idea. If you don't have a good idea, then
+            use a bad one.</title>
+        <p>
+          Ok, we hear you say, but what if I don't have <em>any</em> good
+              ideas, just dumb ones? What do I do then?
+
+              Use the dumb idea. 
+
+              This is what you've been doing all of your life anyway isn't it?
+              You just didn't tell anyone because you were sure you were doing
+              something wrong, right? 
+
+              You weren't. 
+
+              The most important thing you can do is get started. That's what
+              having an idea is for: getting started. All we did to start
+              this     problem was draw the lines <m>a</m> and <m>b.</m> Look back up at
+              the beginning of our solution and see. The first thing we did was
+              make this drawing:
+          <image width="37%" source="images/Advice1.png" />
+          Can you think of anything more simple-minded? And yet it
+              worked. It didn't work right away, but it got us moving in the
+              right direction.
+        </p>
+      </li>
+
+      <li>
+        <title>Have another idea.</title>
+        <p>
+          Because this is a textbook we couldn't really waste time and pages
+              by running down blind alleys, so we started off with an idea that
+              we knew would take us in the right direction. In real life this
+              usually won't happen. Most often your first (two or three or four)
+              ideas aren't going in the right direction. That's ok. Figure out
+              what is wrong with them. Something about the problem led you to
+              your idea. Figuring out why it didn't work will clarify things for
+              you just a bit. That will help. 
+
+              So have another idea that is based on what you learned from your
+              first idea. And another. And another after that. Keep having ideas
+              until you find one that works. Another way to say this
+              is, <em>Don't give up.</em>
+        </p>
+      </li>
+
+      <li>
+        <title>Ask for help when you get stuck, not before.</title>
+        <p>
+          Sometimes ideas
+              just won't come to you. That's ok. Sometimes you will need
+              help. Ask for it. Ask your teacher, another student, a tutor if
+              one is available, your Mom, your Dad, a former teacher.
+
+              Ask. For. Help.
+
+              But ask constructively. If you are asking another student, a peer,
+              it is fine to ask, <q>How do I do this problem?</q> But if you are
+              asking your teacher, or a tutor, this sounds a lot like, <q>This
+              problem looks hard, my friends are meeting up in half an hour and
+              besides I don't really want to spend any more time on it. Please,
+              do this problem and let me watch so I can turn it in and go have
+              fun with my friends<fn>To be clear, your teacher knows that
+                a serious student does not mean this, that you really just want
+                to learn how to do the problem. The difficulty is that there are
+                always some students who have no qualms about asking their
+                instructor to do problem after problem with no intention of
+                learning anything. They just want to copy the answers down and
+                quit. Teachers quickly learn to identify these students from the
+                way they ask questions. If you approach your instructor in the
+                same fashion that a non-serious student does the response you
+                get won't be as helpful as you would like.
+
+                Teachers <em>want</em> to help serious students, but non-serious
+                students are a waste of time. Be sure you sound like a serious
+                student.</fn>.</q> This is not usually effective. Moreover some
+              teachers will get a little testy about it. Instead ask something
+              like, <q>I've tried this, and this, and this, but I keep getting
+              stuck here. Can you give me some direction?</q>  That shows that you
+              have already put real effort into solving the problem and are
+              willing to continue working on it.
+
+              Or, if you find the problem so mystifying that you can't even
+              think of a first idea ask, <q>I really don't know where to begin on
+              this problem. Can you point me in the right direction to get me
+              started?</q>
+        </p>
+      </li>
+    </ul>
+  </p>
+</chapter>
+

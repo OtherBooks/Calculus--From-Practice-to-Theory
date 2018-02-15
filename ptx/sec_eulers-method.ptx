@@ -1,0 +1,226 @@
+
+
+<section xml:id="sec_eulers-method">
+  <title>Euler's Method</title>
+  <p>
+    If we have the slope of a curve at a particular point we have
+    <em>local</em> information. That is, if we know the slope <em>here</em> we
+    can reasonably assume that it won't change <mdash /> much <mdash /> as long as we
+    don't move too far. But tells us nothing about the slope <em>there</em>
+    if <q>there</q> is very far away. Newton's Method exploits this. It works
+    because the roots of functions is a local property, not a global
+    property.
+  </p>
+
+  <p>
+    On the other hand if we know the slope of a graph at <em>every</em>
+    point then we know a great deal about the graph. We know enough, in
+    fact, that we can (almost) completely reconstruct the graph just by
+    knowing its derivative.
+  </p>
+
+  <p>
+    For example we know that if <m>y=x^2</m> then <m>\dfdx{y}{x}=2x.</m> Thus the
+    slope of our graph at any point on the graph is twice the value of the
+    <m>x-</m>coordinate. So
+    <md>
+      <mrow>\left.\dfdx{y}{x}\right|_{x=-4}\amp =2\cdot(-4)=-8,</mrow>
+      <mrow>\left.\dfdx{y}{x}\right|_{x=-3}\amp =2\cdot(-3)=-6,</mrow>
+      <mrow>\left.\dfdx{y}{x}\right|_{x=-2}\amp =2\cdot(-2)=-4,</mrow>
+      <mrow>\left.\dfdx{y}{x}\right|_{x=-1}\amp =2\cdot(-1)=-2,</mrow>
+      <mrow>\left.\dfdx{y}{x}\right|_{x=-1/2}\amp =2\cdot(-1/2)=-1,</mrow>
+    </md>
+    <md>
+      <mrow>\left.\dfdx{y}{x}\right|_{x=-0}\amp =2\cdot0=0,</mrow>
+      <mrow>\left.\dfdx{y}{x}\right|_{x=1/2}\amp =2\cdot(1/2)=1,</mrow>
+      <mrow>\left.\dfdx{y}{x}\right|_{x=1}\amp =2\cdot1=2,</mrow>
+      <mrow>\left.\dfdx{y}{x}\right|_{x=2}\amp =2\cdot2=4,</mrow>
+      <mrow>\left.\dfdx{y}{x}\right|_{x=3}\amp =2\cdot3=6,</mrow>
+      <mrow>\left.\dfdx{y}{x}\right|_{x=4}\amp =2\cdot4=8,</mrow>
+    </md>
+  </p>
+
+  <p>
+    The graph of <m>y=x^2</m> along with a few of its tangent lines indicates
+    how the function might be reconstructed from knowledge of
+    <m>\dfdx{y}{x}.</m>
+  </p>
+
+  <p>
+    <image width="56%" source="images/parab-envelope.png" />
+  </p>
+
+  <p>
+    The problem is that to reconstruct the whole graph we need
+    <em>all</em> of the tangent lines. That is a lot of information.
+    We would normally not have that much.
+  </p>
+
+  <p>
+    On the other hand, if we lower our expectations perhaps we can use the
+    local information about the slope of the tangent line to
+    <em>approximate</em> (rather than reconstruct completely) the graph.
+  </p>
+
+  <p>
+    An example is in order. Suppose we know that some curve passes through
+    the point <m>(0,1)</m> and that at every point on the curve the relation
+    between the slope and the curve is given by the formula
+    <me>
+      \dfdx{y}{x} = y.
+    </me>
+  </p>
+
+  <p>
+    We can interpret this either as
+    <ul>
+      <li>
+        <title>Newtonian interpretation:</title>
+        <p>
+          The rate of change of the <m>y-</m>coordinate is
+            exactly equal to the <m>y-</m>coordinate itself.
+        </p>
+      </li>
+
+      <li>
+        <title>Leibnizian interpretation:</title>
+        <p>
+          At every point on
+            the curve the slope of the tangent line is given by the
+            <m>y-</m>coordinate.
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    Notice that the given information tells us that our curve passes
+    through the point <m>(0,1)</m> with a slope equal the <m>y-</m>coordinate: <m>1.</m>
+    So the tangent of our curve is given by the graph below.
+    <image width="37%" source="images/exp-envelope1.png" />
+    This is not a lot to work with, but let's not set our sites too
+    high.
+  </p>
+
+  <p>
+    Near the point <m>(0,1)</m> the tangent line and the curve are going to be
+    nearly indistiguishable. Moreover we have enough information (a slope
+    and a point) to write down the equation of the tangent line at
+    <m>(0,1).</m> That is, we can find any point on this line. So if we stay on
+    the tangent line and move the <m>x-</m>coordinate just a little bit away
+    from zero then the corresponding <m>y-</m>coordinate <em>on the line</em> will be
+    close to the <m>y-</m>coordinate <em>on the curve</em>.
+  </p>
+
+  <p>
+    The equation of our tangent line is <m>y=x+1</m> so when <m>x=0.1</m> <m>y=1.1.</m>
+    So now we have two points on our curve: <m>(0,1)</m> and <m>(0.1, 1.1).</m>
+  </p>
+
+  <p>
+    Ok, <m>(0.1, 1.1)</m> isn't really on the curve, but it's close. Since
+    these two points are so close together the curve between them will be
+    practically a straight line and the line tangent at <m>(0.1, 1.1)</m> will
+    have a slope of approximately <m>y=1.1.</m> Adding this to our previous
+    graph we have
+    <image width="37%" source="images/exp-envelope2.png" />
+    So far, so good.
+  </p>
+
+  <p>
+    Now suppose we move to the right again, to <m>x=0.2</m> this time. It won't
+    help to stay on our tangent line; that only approximates our curve
+    near the point of tangency. To stray too far from that is useless.
+  </p>
+
+  <p>
+    What we need now is a new tangent line at the point on our curve where
+    <m>x=0.1.</m> If we had that we could just repeat the previous computation
+    at this point. But, of course, we can't find that line since we have
+    neither the slope of that line nor the <m>y-</m>coordinate of that
+    point. All we have is the approximation: <m>(0.1, 1.1).</m>
+  </p>
+
+  <p>
+    But wait. Can we use these approximate coordinates to get an
+    approximate tangent line?
+  </p>
+
+  <p>
+    Of course we can! It's easy. We just need to pretend that the point
+    <m>(0.1, 1.1)</m> is actually a point on our curve. In that case the curve
+    passes through this point with a slope of <m>\dfdx{y}{x} = y = 1.1.</m>
+  </p>
+
+  <p>
+    If we now simply repeat this process, moving to the right again to
+    <m>x=0.2,</m> we get the point <m>(0.2, 1.21).</m> Continuing in this fashion
+    we compute the points:
+    <md>
+      <mrow>\amp (0.3,1.331)</mrow>
+      <mrow>\amp (0.4,1.4641)</mrow>
+      <mrow>\amp (0.5,1.61051)</mrow>
+    </md>
+    and so on.
+  </p>
+
+  <p>
+    If we plot these points and the tangent lines of each the graph
+    will look something like this:
+    <image width="37%" source="images/exp-envelope3.png" />
+    An approximation to our curve will be the pieces of each tangent line
+    between <m>x=0</m> and <m>x=.1,</m> between <m>x=.1</m> and <m>x=.2</m> and so on.
+    <image width="37%" source="images/exp-piecewise-linear.png" />
+  </p>
+
+  <p>
+    The procedure we have just outlined is known as <em>Euler's Method</em>;
+    named for the great eighteenth century mathematicial Leonard
+    Euler. The problem of recreating a curve given it's <m>y-</m>coordinate and
+    slope at a single point is called an <em>Initial Value Problem</em>, or
+    IVP for short.
+  </p>
+
+  <p>
+    We need to recognize that this is not the actual graph of the curve
+    which solve our IVP:
+    <me>
+      \dfdx{y}{x} =y, \ \ y(0)=1.
+    </me>
+  </p>
+
+  <p>
+    The very first point we computed
+    was an approximation, and at each step we used the previous
+    approximation to compute the next, so it would be miraculous if
+    we had actually found <em>exactly</em> the points on the graph of
+    our curve.
+  </p>
+
+  <p>
+    Still, it seems reasonable to believe that the curve we've found at
+    least resembles the desired curve. If it does then we can draw some
+    conclusion about this curve based on our graph. For example this graph
+    clearly continues to increase as we tak greater values of <m>x.</m>
+  </p>
+
+  <problem>
+    <statement>
+      <p>
+        If <m>y=\sin(x)</m> then
+        <me>
+          \dfdx{y}{x}=\cos(x), \text{ and }  y(0)=0.
+        </me>
+      </p>
+
+      <p>
+        Use the method we've just developed to approximate the graph of
+        <m>y=\sin(x)</m> from this Initial Value Problem. The point of this
+        exercise is to convince you that Euler's Method really does give a
+        qualitative sense of the shape of the curve, even if all of the
+        numbers are only approximations.
+      </p>
+    </statement>
+  </problem>
+</section>
+

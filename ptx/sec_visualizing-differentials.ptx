@@ -1,0 +1,125 @@
+
+
+<section xml:id="sec_visualizing-differentials">
+  <title>The Differential: Geometry and Dynamics</title>
+  <p>
+    Historically, Calculus has been viewed in two fundamentally different
+    ways. Leibniz's approach was built on the classical methods of
+    geometry, and Newton used a dynamical, physical approach. As a
+    mindset<fn>A mindset is just a <q>way of thinking</q> about
+      something. For example, many people have the mindset that <q>Math is
+      hard because it is just a horrible gobbledy-gook of stupid symbols
+      that don't mean anything.  I will never understand it.</q> Such a
+      mindset prevents many otherwise very capable people from
+      understanding even the simplest mathematics.''  Aren't you glad
+      you're not making that particular mistake?</fn>neither approach is
+    either correct or incorrect. They are simply two different ways to
+    come at the same idea. However some problems are easier to think about
+    geometrically and some are easier to think about dynamically so it
+    will be useful to be familiar with both mindsets.
+  </p>
+
+  <p>
+    Since most people have a good intuitive feel for how moving objects
+    behave we will start by adopting Newton's kinematic
+    viewpoint. However, this will immediately cause a problem since the
+    notation used by Leibniz has become standard.
+  </p>
+
+  <p>
+    Leibniz thought long and hard about inventing a notation that
+    reflected his ideas and it is his notation that was eventually
+    adopted. Thus we have this fundamental tension when we learn
+    Calculus. We begin with Newton's kinematic approach fused with
+    Leibniz's geometric notation.
+  </p>
+
+  <figure>
+    <image width="37%" source="images/DifferentialLine.png" />
+  </figure>
+
+  <p>
+    Consider a point starting at the origin and moving in a straight line
+    along the <m>x</m> axis so that its position at time <m>t</m> is given by
+    <m>x(t).</m> We take the differential <m>\d{t}</m> to mean the <q>next instant</q>
+    of time<fn>Please do not think too much about the meaning of the
+      phrase <q>in the next instant of time.</q> You will go mad. We will
+      return to this later.</fn>and the differential <m>\d{x}</m> to be the
+    position of our point also in the <q>next instant</q> of time.
+  </p>
+
+  <p>
+    \begin{mynotation}{Leibniz's Differential vs. Newton's Dot}
+    Leibniz would say that the differentials <m>\d{x}</m> and <m>\d{t}</m> are
+    fixed geometric quantities and that their ratio, <m>\dfdx{x}{t},</m> is
+    an (infinitesimal) distance divided by an (infinitesimal) time, so
+    it is represents the velocity with which our point is moving.
+  </p>
+
+  <p>
+    Newton would say that at any given moment the moving point has some
+    velocity which he denoted <m>\dot{x}.</m> Clearly then
+    <m>\dfdx{x}{t}=\dot{x}.</m> Just as clearly the mindsets behind these two
+    notational schemes are at odds with each other. The Leibniz, or
+    differential, notation is static. That is, <m>\d{x}</m> and <m>\d{t}</m> are
+    fixed quantities whose ratio is clearly meant to reflect the idea
+    that the velocity of the point can be computed via the fraction
+    <m>\frac{\text{ distance } }{\text{ time } }.</m> On the other hand Newton's
+    dot notation takes velocity itself as a basic quantity not to be
+    computed from simpler concepts, and so it is about motion.
+  </p>
+
+  <p>
+    Again, there is nothing either inherently right, or inherently
+    wrong, with either notation. The two notations simply reflect
+    different mindsets <mdash /> point of view <mdash /> that can be adopted as
+    needed.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        The quantity denoted by either <m>\dfdx{x}{t}</m> or <m>\dot{x}</m> is
+        called the derivative<fn>Newton's dot notation is still
+            used by physicists in the special case where motion is
+            involved. That is, <m>\dot{x}</m> is used specifically to represent the
+            change of position with respect to time, ie., velocity.
+
+            Sadly, it is the only notation invented by Newton which is still
+            in common use. Four hundred years later, Leibniz's much more
+            carefully designed differential notation has become universal.</fn>of <m>x</m> with respect to <m>t.</m> When <m>x</m> depends on only one other
+        variable this is often shortened to <q>the derivative of <m>x</m></q>
+        since there is no ambiguity. But eventually we will be dealing with
+        situations where <m>x</m> might depend on two or more other variables so
+        keep in mind that the variable <m>t</m> is an essential part of the
+        derivative.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    One of the difficulties with learning Calculus is the abundance of
+    different notations available for basic concepts like the
+    derivative<fn>These are only two of them. There are
+        others.</fn>. This can be a little overwhelming at first so to keep
+    things simple we will be using the differential notation,
+    <m>\dfdx{x}{t},</m> exclusively at first. This will cause a certain
+    awkwardness in some situations. For example, using Newton's dot
+    notation if we want to refer to the velocity of our point <m>5</m>
+    seconds after starting our clock we would simply write <m>\dot{x}(5)</m>
+    as usual. Using the differential notation we will adopt the
+    convention that the velocity at <m>5</m> seconds is written thus:
+    <me>
+      \left.\dfdx{x}{t}\right|_{t=5}.
+    </me>
+  </p>
+
+  <p>
+    This probably seems unnecessarily cumbersome to you but be assured we
+    have not made this choice lightly, and this notation, while it is a
+    bit cumbersome, has certain advantages that will become apparent
+    later.
+    \end{mynotation}
+  </p>
+</section>
+

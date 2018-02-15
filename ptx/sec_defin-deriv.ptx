@@ -1,0 +1,71 @@
+
+
+<section xml:id="sec_defin-deriv">
+  <title>The Definition of the Derivative</title>
+  <p>
+    { A Problem to Think About:
+    }
+    Functions are more complicated entities than we might suppose at
+    first. We have alluded to the fact that some functions do not have
+    derivatives, but the reality is much more subtle and interesting
+    than we might suppose at first. Some functions have derivatives
+    everywhere in their domain except at a single point. Some at multiple
+    points.
+  </p>
+
+  <p>
+    Some do not have derivatives anywhere and yet are continuous
+    everywhere. Very strange.
+  </p>
+
+  <p>
+    Unfortunately this is not the place to investigate all of this in
+    depth, but we will consider the following: Each of the following
+    functions is differentiable everywhere, except possibly at <m>x=0.</m> Can
+    you tell which is, and which is not differentiable at <m>x=0?</m>
+    <ul>
+      <li>
+        <p>
+          <m>f(x) =
+            \begin{cases}x^{\frac13}\sin\left(\frac1x\right)\amp  x\neq0\\
+              0                                \amp  x=0
+          \end{cases}</m>
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <m>f(x) =
+            \begin{cases}x\sin\left(\frac1x\right)\amp  x\neq0\\
+              0                                \amp  x=0
+          \end{cases}</m>
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <m>f(x) =
+            \begin{cases}x^{\frac23}\sin\left(\frac1x\right)\amp  x\neq0\\
+              0                                \amp  x=0
+          \end{cases}</m>
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <m>f(x) =
+            \begin{cases}x^2\sin\left(\frac1x\right)\amp  x\neq0\\
+              0                                \amp  x=0
+          \end{cases}</m>
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    *********************
+
+    \-\marginpar{ Note: Here we want to show that differentiability implies continuity.}
+  </p>
+</section>
+

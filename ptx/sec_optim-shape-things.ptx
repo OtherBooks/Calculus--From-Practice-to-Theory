@@ -1,0 +1,412 @@
+
+
+<section xml:id="sec_optim-shape-things">
+  <title>The Shape of Things</title>
+  <p>
+    Whether we use Newton's dynamic view or Leibniz's more geometric
+    interpretation of the techniques of Calculus is largely a matter of
+    choice, and personal preference. For some problems Newton's
+    interpretation is more natural and easier to use, for others Leibniz's
+    viewpoint is better. What is important is that we recognize that
+    neither approach <em>is</em> The Calculus. They are ways of
+    interpreting, or <q>thinking about</q> The Calculus.
+  </p>
+
+  <p>
+    In this section we will try to think about Calculus directly, without
+    any metaphors between us and the topic. For the most part we will
+    fail, but never mind that. This is just our first attempt. We will get
+    better.
+  </p>
+
+  <p>
+    In the previous two sections<fn>specifically, on
+    <xref ref="list_FirstDerivTest-Newton">pages</xref>, <xref ref="list_FirstDerivTest-Lines"></xref>
+    and <xref ref="list_FirstDerivTest-Leibniz"></xref></fn>we saw that the derivative
+    gives us information about curves in much the same way that the slope
+    of a straight line gives us information about the line. The only
+    difference is that since the numerical value of the derivative changes
+    at each point it only gives us <em>local</em> information about the
+    curve at that point. Whereas the slope gives us global information
+    about the whole line.
+  </p>
+
+  <p>
+    Moreover, since we reached the same conclusions regardless of whether
+    we used Newton's or Leibniz's point of view, we can be reasonably
+    confident that our conclusions are independent of which point of view we
+    use. That is, we can be sure that what we have found are fundamental
+    truths of The Calculus itself. We repeat these conclusions in the
+    abstract:
+    <ul>
+      <li>
+        <title>Increasing Functions:</title>
+        <p>
+          If the derivative of a function is
+            positive at some point then the function is increasing at that
+            point.
+        </p>
+      </li>
+
+      <li>
+        <title>Decreasing Functions:</title>
+        <p>
+          If the derivative of a function is
+            negative at some point then the function is decreasing at that
+            point.
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    As simple and intuitive as this seems there are two problems with
+    it. We will need to proceed carefully.
+  </p>
+
+  <figure>
+    <image width="37%" source="images/Abstract1.png" />
+  </figure>
+
+  <p>
+    The first problem is, what do we mean by increasing and decreasing?
+  </p>
+
+  <p>
+    No, really. What do we mean?
+  </p>
+
+  <p>
+    You've been taught all of your life that increasing means <q>rising to
+    the right</q> and that decreasing means <q>dropping to the right.</q> Thus
+    the graph at the right is usually said to be is increasing from the
+    far left to a point somewhere between zero and one, decreasing from
+    that point to a point somewhere between three and four, and then
+    increasing again thereafter. That interpretation is deeply tied to
+    the convention of saying that as we go farther to the right on the
+    <m>x</m>-axis the values of <m>x</m> get bigger. But this is only a convention.
+  </p>
+
+  <p>
+    Conventions are handy, but they are not reality. If, for some reason,
+    we had adopted the convention that moving farther to the <em>left</em>
+    causess the value of <m>x</m> to increase then we would say (reading
+    right-to-left) that this graph decreases first, then increases for a
+    while, and then decreases again.
+  </p>
+
+  <p>
+    The good news here is that we <em>will</em> be adopting the usual
+    conventions so we can say, loosely, that a graph is increasing if it
+    rises as we move to the right. <em>But</em> keep in mind that what
+    this really means is that a function, <m>f(x),</m> gets bigger if <m>x</m> gets
+    bigger. Which direction means <q>bigger</q> depends entirely on the
+    context of a given problem.
+  </p>
+
+  <p>
+    Resolving this issue was simply a matter of recognizing our own
+    convention. Such difficulties are usually easy to resolve once we
+    realize that's what they are. However, distinguishing between a
+    convention (especially one as old and comfortable as this one) and
+    reality can be very difficult because conventions, once we've gotten
+    comfortable with them, begin to feel as if they are <em>actual</em>
+    reality. They are not.
+  </p>
+
+  <p>
+    But we have another problem and this one cannot be resolved by
+    noticing that we've mistaken a convention for reality. We stated above
+    that if the derivative of some function <m>f(x),</m> is positive at some
+    point <m>x=a,</m> then <m>f(x)</m> is increasing <em>at that point.</em>
+  </p>
+
+  <p>
+    The problem is, what does it mean to be increasing at a single point?
+  </p>
+
+  <p>
+    In order to know that <m>f(x)</m> has increased we need to move away from
+    <m>x=a</m> to some point (to the right of <m>a</m> in our adopted convention),
+    say <m>x=a+h,</m> and see if <m>f(a+h)</m> is bigger than <m>f(a).</m> But even if
+    <m>f(a+h)</m> <em>is</em> bigger the only information we have is that
+    <m>f(a+h)>f(a).</m> This does not guarantee that <m>f(x)</m> was increasing the
+    whole time. That is, there might be some point between <m>a</m> and <m>a+h</m> <mdash /> let's call it <m>\alpha,</m> <mdash /> where <m>f(\alpha)\lt f(a).</m> Even worse there
+    might be some point, <m>\beta</m> between <m>a</m> and <m>\alpha</m> where
+    <m>f(\beta)>f(a).</m> Yet again there might <em>another</em> point <m>\gamma</m>
+    between <m>a</m> and <m>\beta</m> where <m>f(\gamma) \lt  f(a),</m> again. And so on
+    <m>\ldots</m>
+  </p>
+
+  <p>
+    If the distance between <m>a</m> and <m>a+h</m> is very small (that is, if <m>h</m>
+    is very small) and if <m>f(a+h)>f(a),</m> it is very easy to
+    <em>believe</em> that <m>f(x)</m> increased through all of the points from
+    <m>a</m> to <m>a+h.</m> But belief is not knowledge. In fact, we have no
+    information whatsoever about the behavior of <m>f(x)</m> between <m>a</m> and
+    <m>a+h.</m> We simply know that when <m>x=a+h</m> the function was greater than
+    it was at <m>x=a.</m>
+  </p>
+
+  <p>
+    This is getting very hard to think about isn't it? That's because what
+    we are getting caught on here is one of Zeno's
+    Paradoxes<fn>Specifically, the arrow paradox. Briefly, Zeno said
+      that an arrow in flight can't really move. This is because to get
+      from where it is now, to any other point in space it has to traverse
+      all of the (infinitely many) points in between. But this is also
+      true of all of those points. Thus before the arrow can move once it
+      has to move infinitely many times. That's crazy.</fn>. If you have never
+    heard of the Greek philosopher Zeno, you really should {G{o}{o}{g}{l}{e}}him. He's an interesting guy.
+  </p>
+
+  <p>
+    But wait until you are done with your Calculus for today.
+  </p>
+
+  <p>
+    Here's how we get around this difficulty. We all know what we mean
+    when we say that a curve is increasing at a point. The mental image
+    that is generated is very clear. The problem is that any attempt to
+    put this into words runs headlong into Zeno and his paradox. We cannot
+    solve this problem, so we will simply go around it. That is, we first
+    recognize that the usual intuitive meaning of the word increasing does
+    not apply at a single point, since we need at least two points to say
+    we've increased from one to the other. We are thus free to define the
+    phrase <q>increasing at a point</q> in any manner we choose. We choose
+    the following:
+  </p>
+
+  <definition xml:id="def_first-deriv-test">
+    <statement>
+      <p>
+        Consider the graph of the function <m>y(x),</m> at some point <m>(a, y(a)).</m>
+        <ol>
+          <li>
+            <p>
+              The graph is said to be <em>increasing</em> at <m>x=a</m> if <m>\dfdxat{y}{x}{x=a} > 0</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The graph is said to be <em>decreasing</em><fn>Notice that
+                    our definition does <em>not</em> address the situation
+                    <m>\dfdxat{y}{x}{x=a}=0.</m> Since the definition does not address
+                    this we say that the function is neither increasing nor
+                    decreasing when <m>\dfdxat{y}{x}{x=a}=0.</m></fn>at <m>x=a</m> if
+                  <m>\dfdxat{y}{x}{x=a} \lt  0</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Does this feel like cheating to you? It probably does. After all,
+    what have we really accomplished? We took our highly intuitive
+    observation above, that if the derivative is positive then the
+    function is increasing, and turned it around to make it a
+    definition. It probably seems like we're blathering on about nothing
+    at all, making easy things seem difficult and getting lost in a jungle
+    of logical pecadillos. This is the usual criticism brought against
+    mathematicians and mathematics.
+  </p>
+
+  <p>
+    But stop and think about this just a little more deeply. Is that
+    really all that we've done?
+  </p>
+
+  <p>
+    Suppose we we would like to know when a function is increasing and
+    when it is decreasing (we do). In the absence of any other tools,
+    our only option is to look at the value of the function here, then
+    look at it over there, and decide which is bigger. Unfortunately, as
+    Zeno pointed out this tells us exactly nothing about what happened in
+    between. So we are obliged to look at a point in between, and another,
+    and another <m>\ldots</m>
+  </p>
+
+  <p>
+    On the other hand, if we know the derivative of our curve all we have
+    to do is check, to see for which values of <m>x</m> the derivative is
+    positive (function is increasing) and for which it is negative
+    (function is decreasing). Most of the time we don't have to look at
+    the points one at a time. We can consider entire classes of points all
+    at once.
+  </p>
+
+  <example>
+    <statement>
+    <p>
+      For example, consider the function whose derivative is <m>\dfdx{y}{x}=
+        3x^2-3.</m> Can you tell us where this curve is increasing and where it
+      is decreasing?
+    </p>
+
+    <p>
+      Sure you can. Since <m>\dfdx{y}{x}</m> is positive when <m>x\lt -1</m> and when
+      <m>x>1,</m> but negative when <m>-1\lt x\lt 1.</m> Thus our curve increases until
+      <m>x=-1,</m> decreases from <m>x=-1</m> to <m>x=1</m> and increases thereafter.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Do the computations necessary to show that <m>\dfdx{y}{x}</m> is
+          positive when <m>x\lt -1</m> and when <m>x>1,</m> but negative when <m>-1\lt x\lt 1.</m>
+        </p>
+
+        <p>
+          Then find at least one function whose derivative is <m>3x^2-3,</m>
+          graph it, and confirm that it increases when <m>x\lt -1</m> and when
+          <m>x>1,</m> and decreases when <m>-1\lt x\lt 1.</m>
+        </p>
+      </statement>
+    </problem>
+    </statement>
+  </example>
+
+  <p>
+    <xref ref="def_first-deriv-test">Definition</xref> is sometimes called the First
+    Derivative Test, but such an imposing name seems unnecessarily
+    overblown to us. On the other hand, we mention the name because it
+    suggests that there might be something called a Second Derivative
+    Test, and indeed there is. Here's what it says: If the second
+    derivative of a function is positive at a point then the graph of the
+    function is concave upward at that point. If the second
+    derivative of a function is negative at a point then the graph of the
+    function is concave downward at that point.
+  </p>
+
+  <p>
+    Clearly this will not make sense until we've understood all of the
+    words being used. For example, what can <q>concave upward</q> possibly
+    mean. We will illuminate this with the following examples.
+  </p>
+
+  <p>
+    Each of the following graphs:
+    <image width="75%" source="images/ConcaveUp.png" />
+    exemplifies the idea of <q>concave up,</q> whereas the following graphs are <q>concave down.</q>
+    <image width="75%" source="images/ConcaveDown.png" />
+  </p>
+
+  <p>
+    Obviously concave up means <q>a bowl that opens up,</q> and concave down
+    means ``a bowl that opens down. However it is easy to get the wrong
+    impression from simple examples so let's look at some more.
+  </p>
+
+  <p>
+    Is this graph
+    <image width="56%" source="images/ConcaveUpDown.png" />
+    concave up or concave down?
+  </p>
+
+  <p>
+    Clearly it is both. On the interval <m>(0,\pi)</m> it is concave down and
+    on the interval <m>(\pi,2\pi)</m> it is concave up. So this notion is like
+    increasing/decreasing in that we will always need to specify the
+    interval on which a given function is either concave up or concave down.
+  </p>
+
+  <p>
+    Now what about these two?
+    <image width="75%" source="images/ConcaveUpDownUnclear.png" />
+  </p>
+
+  <p>
+    The graph on the left is clearly<fn>Never mind that we can't
+      actually see <em>all</em> of the graph.</fn>concave up when <m>x\lt 0,</m> but
+    what about when <m>x>0?</m> Is it concave up there? Concave down? Neither?
+    Both? It is very hard to tell from the graph. The one on the right is
+    similarly vague in the region around <m>x=0.</m>
+  </p>
+
+  <p>
+    Clearly, if it is important for us to distiguish concave up from
+    concave down<fn>It is.</fn>we will need a more precise method
+    than simply looking at graphs.
+  </p>
+
+  <p>
+    Let's proceed slowly. Since we're studying Calculus the derivative
+    will probably be instrumental in our understanding of concavity, so we
+    ask what we can determine about the derivative of a function whose
+    graph is concave up.
+  </p>
+
+  <p>
+    Consider our first example <m>y(x) = x^2+1.</m> This is concave up
+    everywhere so we will consider how its derivative changes as <m>x</m> moves
+    increases. The following sketches show the graph and
+    its tangent at <m>x=1,</m> <m>x=2,</m> and <m>x=3.</m>
+    <image width="75%" source="images/ConcaveUpWithTangent.png" />
+    Notice that as <m>x</m> increases the tangent line gets steeper and
+    steeper. That is to say its slope gets larger. Or, even more formally,
+    the derivative increases.
+  </p>
+
+  <problem>
+    <statement>
+      <p>
+        Look back up to the graph of the other <q>concave up</q> examples and
+        convince yourself that this is true of all of them: As <m>x</m> increases
+        the derivative of each function also increases.
+      </p>
+    </statement>
+  </problem>
+
+  <p>
+    Does that mean that the derivative of a concave down function will
+    decrease as <m>x</m> increases? Yes, of course it does.
+  </p>
+
+  <problem>
+    <statement>
+      <p>
+        Look back up to the graph of the <q>concave down</q> examples and
+        convince yourself that this is true of all of them: As <m>x</m> increases
+        the derivative of each function decreases.
+      </p>
+    </statement>
+  </problem>
+
+  <p>
+    So, apparently in order to distinguish where a function is concave up
+    from where it is concave down we need to locate where the derivative
+    is increasing and where it is decreasing. If only we had a tool to
+    tell us when a function is increasing and when it is decreasing the
+    problem would be solved.
+  </p>
+
+  <p>
+    But we do! That's exactly what the First Derivative Test tells us! If
+    we want to know where the graph of <m>y(x)</m> is increasing or decreasing
+    we look at its derivative, <m>\dfdx{y}{x}</m> and find where this is
+    positive or negative.
+  </p>
+
+  <p>
+    To find out where the graph of <m>y(x)</m> is concave up or concave down,
+    we ask where its derivative, <m>\dfdx{y}{x},</m> is increasing and where it
+    is decreasing. Where the derivative is increasing the graph of <m>y(x)</m>
+    will be concave up and where it is decreasing the graph of <m>y(x)</m> will
+    be concave down.
+  </p>
+
+  <p>
+    To determine where the derivative is increasing or decreasing we need
+    to look at the <em>derivative of the derivative,</em> <m>\dfdxn{y}{x}{2}</m>
+    and ask where it is positive and where it is negative.
+  </p>
+
+  <p>
+    So apparently the derivative of <m>y(x)</m> can tell us where a function is
+    increasing, decreasing, concave up, and concave down. This is actually quite a lot to tell
+  </p>
+</section>
+

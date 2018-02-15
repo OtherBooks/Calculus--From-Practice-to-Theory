@@ -1,0 +1,233 @@
+
+
+<section xml:id="sec_high-order-deriv">
+  <title>Higher Order Derivatives: Derivatives of Derivatives</title>
+  <p>
+    We have seen that if, for example, <m>y=x^3,</m> then <m>\dfdx{y}{x} = 3x^2.</m>
+    If we differentiate the expression <m>3x^2</m> we get <m>6x,</m>
+    but what should we call <m>6x</m> as it relates to <m>y?</m> Since we got <m>6x</m>
+    by differentiating <m>y=x^3</m> twice the obvious choice is to call <m>6x</m>
+    the <em>second derivative</em> of <m>y=x^3.</m> Clearly then <m>3x^2</m> is the
+    <em>first derivative</em> and <m>6</m> the <em>third derivative</em> of
+    <m>y=x^3.</m>
+  </p>
+
+  <p>
+    All well and good, but what <em>notation</em> should we use when
+    writing these things?
+  </p>
+
+  <p>
+    For better or worse the notation that has been invented and become
+    standard is this:
+    <md>
+      <mrow>\text{ If }  y \amp = x^3 \text{ then }</mrow>
+      <mrow>\dfdx{y}{x}=\dfdx{}{x}(y) \amp = 3x^2 \text{ as before, and }</mrow>
+      <mrow>\dfdx{}{x}\left(\dfdx{y}{x}\right)=\dfdxn{y}{x}{2} \amp = 6x. \text{ 
+                                                             Notice the
+                                                             placement of
+                                                             the exponents. }</mrow>
+    </md>
+  </p>
+
+  <p>
+    Differentiating one more time we get
+    <me>
+      \dfdx{}{x}\left(\dfdxn{y}{x}{2}\right)=\dfdxn{y}{x}{3} = 6.
+    </me>
+  </p>
+
+  <p>
+    Once more and we get <m>\dfdxn{y}{x}{4} = 0.</m> Obviously we can continue
+    this process as many times as we would like, although for this
+    particular example since the fourth derivative and every derivative
+    thereafter is zero this would be rather dull. The following example is
+    more interesting.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Consider the expression <m>y=\sin(x).</m> As we've seen <m>\dfdx{y}{x}=
+          \cos(x).</m> Continuing we have <m>\dfdxn{y}{x}{2} = -\sin(x),</m>
+        <m>\dfdxn{y}{x}{3} = -\cos(x),</m> and finally <m>\dfdxn{y}{x}{4} =
+          \sin(x).</m> Thereafter the pattern of derivatives clearly repeats.
+      </p>
+    </statement>
+  </example>
+
+  <problem>
+    <statement>
+      <ul>
+        <li>
+          <title>(a)</title>
+          <p>
+            Compute <m>\dfdxn{}{x}{34}\left(\sin(x)\right),</m>   <m>\dfdxn{}{x}{17}\left(\sin(x)\right),</m> <m>\dfdxn{}{x}{1999}\left(\sin(x)\right),</m> and
+                <m>\dfdxn{}{x}{103}\left(\sin(x)\right).</m>
+          </p>
+        </li>
+
+        <li>
+          <title>(b)</title>
+          <p>
+            Repeat part (a), but using the <m>\cos(x).</m>
+          </p>
+        </li>
+      </ul>
+    </statement>
+  </problem>
+
+  <p>
+    We would be remiss if we did not point out some very
+    troubling aspects of this notation.
+  </p>
+
+  <p>
+    Consider, when we introduced the concept of a differential in <xref ref="chapt_differentials">Chapter</xref> we appealed to your understanding of
+    <em>finite</em> differences. That is, if <m>x_1\lt x_2</m> then the finite
+    difference
+    <me>
+      \Delta{}x=x_2-x_1
+    </me>
+    is a measure of the actual separation between <m>x_2</m> and <m>x_1.</m>
+    Extending this to differential, if we imagine that <m>x_2</m> and <m>x_1</m> are
+    <em>infinitely</em> close together <mdash /> but still distinct <mdash /> then we
+    represented the distance between them as
+    <me>
+      \d x = x_2-x_1.
+    </me>
+  </p>
+
+  <p>
+    It is all well and good to <em>write</em> expressions like <m>\d x</m> or
+    <m>\d y</m> but what does <m>\d x</m> represent, really?
+  </p>
+
+  <p>
+    If <m>x_2</m> and <m>x_1</m> are infinitely close together doesn't that mean that
+    they are <em>not</em> separated at all? If they are not separated
+    then <m>x_2=x_1.</m> In that case isn't <m>\d x =x_2-x_1</m> just zero? And if
+    <m>\d x =0</m> then isn't the expression <m>\dfdx{y}{x}</m> dividing by zero,
+    which we know is meaningless?
+  </p>
+
+  <p>
+    Now consider the meaning of the <em>second</em> derivative. If the
+    first derivative is obtained by computing the ratio of quantities that
+    are infinitely close together, what can it possibly mean to
+    differentiate it again? If we've already taken numbers that are
+    infinitesimally close together to compute the first derivative, what
+    can we possibly be using to compute the second, or the third
+    derivative?
+  </p>
+
+  <p>
+    What is the infinitesimal difference (<m>\d^2 x</m>) of an infinitesimal
+    difference (<m>\d x)?</m>
+  </p>
+
+  <p>
+    This is all very puzzling and it is tempting to toss it all away,
+    except that we have a great deal of confidence that
+    <m>\dfdx{\left(x^3\right)}{x}=3x^2,</m> and that
+    <m>\dfdx{\left(3x^2\right)}{x}=6x.</m> We've seen both of these used in the
+    last section to compute the roots of polynomials correctly. There must
+    be something to this, but it is extremely hard to tell at this
+    point what it is.
+  </p>
+
+  <p>
+    If we are honest with ourselves we must acknowledge these
+    questions. There is something here that we do not understand. We
+    would like to understand it, but we do not yet. We will proceed for
+    now, but very cautiously.
+  </p>
+
+  <p>
+    {{ Foreshadowing: An Extension of the Tangent Line Idea}}
+    When <m>\frac{-\pi}{2}\le x\le\frac{\pi}{2}</m> a well known approximation
+    of <m>\cos(x)</m> is
+    <me>
+      \cos(x)\approx 1-\frac{x^2}{2}+\frac{x^4}{24}.
+    </me>
+  </p>
+
+  <p>
+    An obvious question is, <q>How do we obtain this approximation?</q> That
+    is, when you compare the graphs it is clear that this polynomial stays
+    close to <m>\cos(x)</m> for small values of <m>x,</m> but how would anyone come
+    up with it in the first place?
+  </p>
+
+  <p>
+    This is actually a straightforward consequence of the
+    construction of tangent lines using the derivative.
+  </p>
+
+  <p>
+    We begin by constructing the tangent line of this graph at the point
+    <m>(0,1).</m> This is not hard. If
+    <m>y=\cos(x)</m> then <m>\left.\dfdx{y}{x}\right|_{x=0}=0.</m> Therefore an equation of the
+    tangent line at <m>(0,1)</m> is
+    <me>
+      y=\underbrace{\left[\left.\dfdx{y}{x}\right|_{x=0}\right]}_{=0}(x-0) +1
+    </me>
+    or
+    <me>
+      y=1.
+    </me>
+  </p>
+
+  <p>
+    Most likely you knew that already.
+    From following figure
+  </p>
+
+  <p>
+    <image width="37%" source="images/CosApprox.png" />
+    we see that at the point of tangency the graphs of <m>y=\cos(x)</m> and
+    <m>y=1</m> share two interesting features:
+    <ol>
+      <li>
+        <p>
+          Both pass through the point <m>(0,1)</m> and
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Both have a slope of zero at that point.
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <p>
+    That is, when <m>x=0</m> the slope of <m>\cos(x)</m> is the same as the slope of
+    our tangent line. Indeed, this is fairly obvious. That's what a
+    tangent line is. But suppose we could find a function whose first
+    <em>and second</em> derivatives match <m>\cos(x)</m> at <m>x=0?</m> What would
+    that look like?
+  </p>
+
+  <p>
+    That function is <m>y=1-\frac{x^2}{2}</m> and it looks like this:
+    \InsertGraphic
+  </p>
+
+  <p>
+    You can see where this is going, right? The curve <m>y=
+    1-\frac{x^2}{2}+\frac{x^4}{24}</m> is the polynomial with the property
+    that its first four derivatives at <m>x=0</m> match the first four
+    derivatives of <m>\cos(x),</m> also at <m>x=0.</m>
+    {\
+    ************************************}
+  </p>
+
+  <p>
+    This completes the introductory portion of a first course
+    in Calculus. At this point we have derived all of the differentiation
+    rules you will need to differentiate a very large class of functions.
+  </p>
+</section>
+

@@ -1,0 +1,36 @@
+
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="cha_appl-integr">
+  <title>Applications of Integrals</title>
+  <p>
+    { A Problem to Think About:
+    }
+
+    *********************
+  </p>
+
+  <problem xml:id="prob_tractrix">
+    <statement>
+      <p>
+        Recall that in Problem<nbsp /> , you showed that the tractrix
+        <me>
+          y=\ln\left(\frac{1+\sqrt{1-x^2}}{x}\right)-\sqrt{1-x^2}
+        </me>
+        satisfied the equations
+        <md>
+          <mrow>\dfdx{y}{x}\amp =-\frac{\sqrt{1-x^2}}{x}</mrow>
+          <mrow>y(1)\amp =0.</mrow>
+        </md>
+      </p>
+
+      <p>
+        Here you will show where this formula for <m>y</m> came from as follows.
+      </p>
+
+      <p>
+        After you separate the variables, you can substitute <m>x= \cos\theta</m> in your integral.
+      </p>
+    </statement>
+  </problem>
+</chapter>
+

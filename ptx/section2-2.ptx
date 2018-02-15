@@ -1,0 +1,340 @@
+
+
+<section>
+  <title>exercises</title>
+  <exercise>
+    <statement>
+      <p>
+        Suppose that <m>3x-4y+7z=2.</m>
+        <ul>
+          <li>
+            <title>(a)</title>
+            <p>
+              Assuming that <m>y</m> and <m>z</m> depend on <m>x,</m> compute
+                        <m>\dfdx{y}{x}</m> and <m>\dfdx{z}{x}.</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(b)</title>
+            <p>
+              Assuming that <m>x</m> and <m>y</m> depend on <m>z,</m> compute
+                        <m>\dfdx{x}{z}</m> and <m>\dfdx{y}{z}.</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(c)</title>
+            <p>
+              Assuming that <m>x</m> and <m>z</m> depend on <m>y,</m> compute
+                        <m>\dfdx{x}{y}</m> and <m>\dfdx{z}{y}.</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(d)</title>
+            <p>
+              Assume that both <m>x,</m> <m>y,</m> and <m>z</m> depend on a third
+                        variable, <m>t.</m> Find <m>\dfdx{x}{t}</m> in terms of <m>\dfdx{y}{t},</m>
+                        and <m>\dfdx{z}{t}.</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(e)</title>
+            <p>
+              Assume that both <m>x,</m> <m>y,</m> and <m>z</m> depend on a third
+                        variable, <m>t.</m> Find <m>\dfdx{y}{t}</m> in terms of <m>\dfdx{x}{t},</m>
+                        and <m>\dfdx{z}{t}.</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(f)</title>
+            <p>
+              Assume that both <m>x,</m> <m>y,</m> and <m>z</m> depend on a third
+                        variable, <m>t.</m> Find <m>\dfdx{z}{t}</m> in terms of <m>\dfdx{x}{t},</m>
+                        and <m>\dfdx{y}{t}.</m>
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Find <m>\dfdx{y}{x}</m> for each of the following.
+        <ul>
+          <li>
+            <title>(i)</title>
+            <p>
+              <m>y=3x+2</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(b)</title>
+            <p>
+              <m>y=4x-2</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(c)</title>
+            <p>
+              <m>y=\frac{x}{3}+12</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(d)</title>
+            <p>
+              <m>y=\frac{3x}{2}-7</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(e)</title>
+            <p>
+              <m>y+3x=2</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(f)</title>
+            <p>
+              <m>3x-y=0</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(g)</title>
+            <p>
+              <m>ax-by=0</m> (<m>a</m> and <m>b</m> are constants.)
+            </p>
+          </li>
+
+          <li>
+            <title>(h)</title>
+            <p>
+              <m>7-\frac65y+\frac85x=0</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(i)</title>
+            <p>
+              <m>y=3x+2</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(j)</title>
+            <p>
+              <m>1/x=5/y</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(k)</title>
+            <p>
+              <m>\frac{y}{x}=\frac23</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(l)</title>
+            <p>
+              <m>\frac{x}{y} -1 = \frac{2x}{3y}+2</m>
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Two cars pass the same point at the same time. Car A is traveling at
+        <m>30 m/h</m> and Car B is traveling at <m>50 m/h.</m>
+        <ul>
+          <li>
+            <title>(a)</title>
+            <p>
+              Use the formula
+                  <m>\text{ Distance } =\text{ Rate } \times\text{ Time }</m> to find a formula
+                  for Car A's position, <m>D_A</m> after they pass.
+            </p>
+          </li>
+
+          <li>
+            <title>(b)</title>
+            <p>
+              Use the formula
+                  <m>\text{ Distance } =\text{ Rate } \times\text{ Time }</m> to find a formula
+                  for Car B's position, <m>D_B</m> after they pass.
+            </p>
+          </li>
+
+          <li>
+            <title>(c)</title>
+            <p>
+              Give a formula for the distance between the cars after
+                  they pass.
+            </p>
+          </li>
+
+          <li>
+            <title>(d)</title>
+            <p>
+              Use the formula you found in part (c) to show that the
+                  cars are separating at a rate<fn>Yes this is obvious, and
+                    yes, this is a lot of work just to get something so
+                    obvious. But, we are just beginnning and it is important that
+                    you learn how to use the notation of Calculus in a simple
+                    context before you try to use it on more complex problems. The
+                    problems will get harder. We promise.</fn>of <m>20 m/h.</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(e)</title>
+            <p>
+              Find the rate of change of Car A <em>with respect
+                    to Car B</em>.
+            </p>
+          </li>
+
+          <li>
+            <title>(f)</title>
+            <p>
+              Find the rate of change of Car B <em>with respect
+                    to Car A</em>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    <index><main>Differentiation Rules</main><sub>Trig Functions</sub></index>
+  </p>
+  <tabular>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>\multicolumn{4}{|c|}</cell>
+    </row>
+    <row>
+      <cell>\multicolumn{4}{|c|}{\LargeDifferentiation of }</cell>
+    </row>
+    <row>
+      <cell>\multicolumn{4}{|c|}</cell>
+    </row>
+    <row>
+      <cell>\multicolumn{2}{|c||}{\LargeTrig Functions}</cell>
+      <cell>\multicolumn{2}{|c|}{ Inverse Trig Functions}</cell>
+    </row>
+    <row>
+      <cell>\multicolumn{2}{|c||}</cell>
+      <cell>\multicolumn{2}{|c|}</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>y</m></cell>
+      <cell><m>\dfdx{(y)}{x}</m></cell>
+      <cell><m>y</m></cell>
+      <cell><m>\dfdx{(y)}{x}</m></cell>
+    </row>
+    <row bottom="medium">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell  ><m>\sin x</m></cell>
+      <cell><m>\cos x</m></cell>
+      <cell><m>\inverse\sin x</m></cell>
+      <cell><m>\frac{1}{\sqrt{1-x^2}}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\cos x</m></cell>
+      <cell><m>-\sin x</m></cell>
+      <cell><m>\inverse\cos x</m></cell>
+      <cell><m>\frac{-1}{\sqrt{1-x^2}}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\tan x</m></cell>
+      <cell><m>\sec^2 x</m></cell>
+      <cell><m>\inverse\tan x</m></cell>
+      <cell><m>o\frac{1}{1+ x^2}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\cot x</m></cell>
+      <cell><m>-\csc^2 x</m></cell>
+      <cell><m>\inverse\cot x</m></cell>
+      <cell><m>\frac{-1}{1+
+                                                     x^2}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\sec x</m></cell>
+      <cell><m>\sec x\tan x</m></cell>
+      <cell><m>\inverse\sec x</m></cell>
+      <cell><m>\frac{1}{\abs{x}\sqrt{x^2-1}}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\csc x</m></cell>
+      <cell><m>-\csc x\cot x</m></cell>
+      <cell><m>\inverse\csc x</m></cell>
+      <cell><m>\frac{-1}{\abs{x}\sqrt{x^2-1}}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+  </tabular>
+</section>
+

@@ -1,0 +1,508 @@
+
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="chapt_differentials">
+  <title>Differentials, and Differentiation Rules</title>
+  <introduction>
+    <p>
+      \begin{wraptable}{r}{3.6in}
+    </p>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\multicolumn{3}{|c|}{General}</cell>
+      </row>
+      <row>
+        <cell>\multicolumn{3}{|c|}{Differentiation Rules}</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Rule<nbsp /> <xref ref="thm_ConstantDifferential"></xref></cell>
+        <cell>The differential of</cell>
+        <cell>If <m>a</m> is a constant then</cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell>a constant is zero.</cell>
+        <cell><m>\d a = 0.</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Rule<nbsp /> <xref ref="thm_LinearityConstantMultiple"></xref></cell>
+        <cell>The constant</cell>
+        <cell>If <m>a</m> is a constant and</cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell>multiple rule.</cell>
+        <cell><m>x</m> is a variable then</cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell>\small<m>\d(ax) = a\d{x}.</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Rule<nbsp /> <xref ref="thm_LinearitySum"></xref></cell>
+        <cell>The sum</cell>
+        <cell>If <m>x</m> and <m>y</m> are variables then</cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell>rule.</cell>
+        <cell><m>\d(x+y) = \d x + \d y.</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Rule<nbsp /> <xref ref="thm_product-rule"></xref></cell>
+        <cell>The Product</cell>
+        <cell>If <m>x</m> and <m>y</m> are variables then</cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell>Rule.</cell>
+        <cell><m>\d(xy) = x\d y + y\d x.</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Rule<nbsp /> <xref ref="thm_power-rule"></xref></cell>
+        <cell>The Power</cell>
+        <cell>If <m>x</m> is variables and</cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell>Rule.</cell>
+        <cell><m>n</m> is a rational number then</cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell><m>\d(x^n) = nx^{n-1}\d x</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Rule<nbsp /> <xref ref="thm_quotient-rule"></xref></cell>
+        <cell>The Quotient</cell>
+        <cell>If <m>x</m> and <m>y</m> are variables then</cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell>Rule.</cell>
+        <cell><m>\d\left(\frac{x}{y}\right) = \frac{y\d x
+              - x\d y}{x^2}</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Rule<nbsp /> <xref ref="thm_chain-rule"></xref></cell>
+        <cell>The Chain</cell>
+        <cell>If <m>y</m> depends on
+        c    <m>x,</m></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell>Rule.</cell>
+        <cell>and <m>x</m> depends on <m>t</m> then</cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell><m>\d y = \dfdx{y}{x}\dfdx{x}{t}\d t</m></cell>
+      </row>
+      <row>
+        <cell>[2mm]
+            \hline</cell>
+      </row>
+    </tabular>
+    <p>
+      \end{wraptable}
+      In the last chapter, we looked at some pre-calculus techniques
+      invented the Calculus of Newton and Leibniz. Clever as these ad-hoc
+      techniques were, they were very limited in their applicability.
+      Newton and Leibniz were well-aware of these techniques, and their
+      limitations. Newton was the first to develop his calculus during a
+      two-year period at his home in Woolsthorpe, Lincolnshire, UK when
+      Cambridge was closed due to an outbreak of plague in <m>1665.</m> He was
+      under <m>25</m> at the time. Leibniz independently developed his rules for
+      calculus while employed as a diplomat in Paris during the period
+      <m>1672-1674.</m> He was <m>26</m> at the time. Though their approaches are
+      fundamentally different, their results were essentially the same.
+    </p>
+
+    <p>
+      Newton preferred to think of quantities as changing with time
+      (fluents) and developed rules for computing their instantaneous rates
+      of change (fluxions), whereas Leibniz focused on infinitely small
+      differences (differentials). They and their contemporaries,
+      recognized that these different approaches were equivalent. We will
+      eventually see this as well. Each approach has its advantages. We
+      will start with Leibniz's geometric approach.
+    </p>
+
+    <p>
+      Although Newton probably discoverd his Calculus first, Leibniz published the first
+      paper on Calculus in <m>1684.</m> In his paper,
+    </p>
+
+    <sidebyside>
+      {A New Method for Maxima and Minima, as Well as Tangents,
+            Which is Impeded Neither by Fractional nor Irrational
+            Quantities, and a Remarkable Type of Calculus for This}
+    </sidebyside>
+    <p>
+      Leibniz provides rules for computing and
+      applications of his differential calculus. Literally speaking,
+      differential calculus means <q>rules for differences.</q>
+      Leibniz (and Newton)aassumed that a varying quantity could be
+      increased or decreased by an infinitely small amound that he called an
+      infinitesimal difference, or just a differential. So if <m>x</m> is some quantity, then its differential <m>\d x</m> represents an infinitely
+      small increase or decrease in <m>x.</m> This may sound a little strange to
+      you, to talk of infinitesimal changes, and in truth, Leibniz did not
+      try to define what an infinitesimal was. Mathematicians had
+      successfully, and informally, used the the notion before Leibniz and he did
+      the same.
+    </p>
+
+    <p>
+      Neither Leibniz nor Newton let such matters disturb them greatly. They
+      developed their computational schemes, verified that they worked, and
+      that was enough for them. They didn't let foundational questions like,
+      <q>What does it mean for an increment to be infinitely small, and yet
+      not zero?</q> paralyze them.
+    </p>
+
+    <p>
+      Nor will we.
+    </p>
+
+    <p>
+      However this question will turn out to be important and will
+      eventually we will have to address it. Foundational problems are not something to
+      be swept under the rug and ignored. If we do not proceed carefully
+      from clearly stated first principles, using solid logical arguments we
+      can never really know if what we are doing is valid or not. So this
+      question as to the nature of an infinitely small magnitude is
+      paramount. If we do not resolve it all of our work will rest on an
+      unstable foundation and we can never really know whether it is valid
+      or not. We <em>must</em> address this problem.
+    </p>
+
+    <p>
+      But not right now. Newton, Leibniz and their contemporaries
+      did truly amazing things by working intuitively, and there is no
+      reason we can't do the same. At first. So we will hold of these
+      <q>foundational issues</q> until we have gained a solid intuitive
+      understanding of Calculus.
+    </p>
+
+    <p>
+      We have precedent for this. All of geometry depends on the notion of
+      a mathematical point which has no length, width, or height. But what
+      is that, really, but a useful fiction. Usually it is dismissed as an
+      undefined term, but that says nothing more or less than that we don't
+      know what it is. For now, we will treat the notion of an infinitely
+      small, but non-zero, magnitude (a differential) in much the same
+      manner, focusing on its utility rather than its existence.
+    </p>
+
+    <p>
+      The utility of a differential comes not from trying to measure its
+      (infinitesimal) size, but from looking at the relationship between
+      differentials. Specifically, if we have two (or more) quantities, <m>x</m>
+      and <m>y,</m> related by some equation, then we want to apply the rules of
+      Calculus to create a <q>differential equation</q> relating the
+      differential of <m>y,</m> <m>\d{y}</m> to the differential of <m>x,</m> <m>\d{x}.</m> The
+      process of finding the differential of a quantity is called
+      differentiation. In some applications, we will use the problem to
+      define a differential equation and use this to see how the quantities
+      are related. This reverse process is called antidifferentiation.
+      Before we go any further, let's state the rules for differentiation:
+    </p>
+
+    <p>
+      The rules for differentiation are surprisingly easy to learn and
+      remember. Moreover there are only seven of them.
+      In fact, you are already familiar with the first <m>3</m> rules in a
+      different context. Recall that the slope of a line is given by
+      <m>\frac{\Delta y}{\Delta x}</m> where <m>\Delta y</m> is the (finite) change in
+      <m>y</m> and <m>\Delta x</m> is the (finite) change in <m>x.</m> We know that if <m>x</m>
+      is constant (unchanging) then
+      <m>{\Delta x} =0.</m>
+    </p>
+
+    <p>
+      The only difference between this and the infinitesimal case is that we
+      think of the increments as infinitesimally small rather than
+      finite. Leibniz used the letter <m>"d"</m> to indicate differentials. Thus
+      just as <m>\Delta x</m> is a finite change in <m>x,</m> <m>\d{x}</m> in an
+      infinitesimal change in <m>x.</m>
+    </p>
+
+    <p>
+      So if, for example, <m>x</m> is constantly <m>7,</m> then both
+      <m>(\Delta x)</m> and <m>\d{x}</m> are equal to zero.
+    </p>
+
+    <p>
+      So we have the following rule:
+    </p>
+
+    <p>
+      {Differentiation Rule <hash />1:} If <m>c</m> is a constant, then <m>\d c=0.</m>
+    </p>
+
+    <p>
+      The first rule was particularly simple since only one quantity was
+      involved and it was unchanging. The second is only slightly more
+      complex. Suppose we have two varying quantities, <m>x</m> and <m>y</m> which are
+      related by the formula:
+      <m>y=3x.</m> We'd like to find the relationship between the differentials,
+      <m>\d{y}</m> and <m>\d{x}.</m>
+    </p>
+
+    <p>
+      Again the finite case is illuminating. If <m>x_1</m> and <m>x_2</m> are two
+      different values of <m>x,</m> and <m>y_1</m> and <m>y_2</m> are the corresponding
+      values of <m>y</m> then clearly:
+      <md>
+        <mrow>\Delta y \amp = y_2-y_1</mrow>
+        <mrow>\amp = 3x_2-3x_1</mrow>
+        <mrow>\amp = 3(x_2-x_1)</mrow>
+        <mrow>\amp = 3\Delta x.</mrow>
+      </md>
+    </p>
+
+    <p>
+      Clearly there is nothing special about the constant <m>3</m> so we have the
+      following, sometimes called the Constant Multiple rule:
+    </p>
+
+    <p>
+      {Differentiation Rule <hash />2:} If <m>a</m> is a constant, then <m>\d(ax)=a\d x.</m>
+    </p>
+
+    <p>
+      Similarly, if <m>x</m> and <m>y</m> are again varying quantities then the
+      following rule, sometimes called the Sum Rule, is also true.
+    </p>
+
+    <p>
+      {Differentiation Rule <hash />3:} <m>\d(x+y)=\d x+\d y.</m>
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Show, by an argument similar to the one we use for Rule <hash />2 that
+          Rule <hash />3 is also valid.
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      In most cases it is not the differentials themselves but the
+      relationship between two related differentials that is most useful.
+      To see this consider the line <m>y=4x+7.</m> Applying our differentiation rules
+      to this we create the differential equation
+      <me>
+        \d{y}=\d(4x+7)=\d(4x)+\d(7)=4\d{x}+0=4\d{x}.
+      </me>
+    </p>
+
+    <p>
+      Notice that this differential equation can be rewritten as
+      <m>\dfdx{y}{x}=4</m> which says that the
+      the slope of the line <m>y=4x+7</m> is <m>4.</m> Of course you knew that
+      already, but again, what is important here is that it is the
+      relationship between the differentials <m>\d{y}</m> and <m>\d{x}</m> that is
+      useful and informative.
+    </p>
+
+    <figure>
+      <image width="28%" source="images/ProductRule1.png" />
+    </figure>
+
+    <p>
+      Conceptually, the difference between the formula:
+      <m>\frac{\Delta y}{\Delta x} =4</m> and <m>\dfdx{y}{x}=4</m> that in the first
+      we think of <m>\Delta y</m> and <m>\Delta x</m> as finite, whereas <m>\d{y}</m> and
+      <m>\d{x}</m> are infinitesimals. Otherwise both say that the slope of this
+      line is <m>4.</m> The reason for making a distinction between finite
+      changes <m>\Delta y,</m> <m>\Delta x,</m> and infinitesimal changes <m>\d y,</m>
+      <m>\d x,</m> will become clear we try to compute the slope of (the tangent
+      line to) a non-linear function.
+    </p>
+
+    <figure>
+      <image width="37%" source="images/ProductRule.png" />
+    </figure>
+
+    <p>
+      To see this rule, we will use an area model. With this in mind,
+      consider the area <m>A</m> of a rectangle with side lengths <m>x</m> and <m>y.</m>
+    </p>
+
+    <figure>
+      <image width="28%" source="images/gnomon1.png" />
+    </figure>
+
+    <p>
+      If we increase (or decrease) <m>x</m> and <m>y</m> by infinitesimal amounts <m>\d x,</m> and <m>\d y</m>
+      respectively, then the area will change by an infinitely small amount
+      as well.
+    </p>
+
+    <p>
+      The change in area <m>\d A</m> is represented by the <m>L</m> shaped region (
+      called a gnomon) on the right and top of the rectangle. Clearly
+      <md>
+        <mrow>\d A\amp =(x+\d x)-(y+\d y)-xy</mrow>
+        <mrow>\amp =xy+x\d y+y\d y+\d x \d y-xy</mrow>
+        <mrow>\amp =x\d y+y\d x+\d x \d y.</mrow>
+      </md>
+    </p>
+
+    <p>
+      The three terms which make up <m>\d A</m> can be seen in the figure at the
+      right.
+    </p>
+
+    <p>
+      This is where we deviate from the world of finite differences and
+      utilize the fact that we are working with infinitesimals. Since
+      <m>\d x</m> and <m>\d y</m> are both infinitely small, then their product
+      <m>\d x\d y</m> is infinitely small compared to either of them, so we will
+      conveniently ignore it<fn>Notice that we have just asserted that
+        <m>y\d{x}</m> and <m>\d{y}\d{x}</m> are both and infinitely small (since
+        <m>\d{A}</m> is) but that <m>\d{y}\d{x}</m> is <em>so much smaller than
+          <m>y\d{x}</m></em> that it is effectively zero so we can ignore it. This
+        should bother you. If it does then know that you are in very good
+        company.  Leibniz himself struggled to find the correct product
+        rule. When he his original calculus paper he did not provide a
+        justification, writing instead <q>The demonstration of this will be
+        easy to one who is experienced in these matters <m>\ldots</m></q> This is a
+        foundational matter that we promise to come back to. In the mean
+        time if the looseness of our reasoning here bothers you, consider
+        declaring a math major. We do lots of this stuff.)</fn>. This leaves us with
+    </p>
+
+    <p>
+      {Differentiation Rule <hash />4 (The Product Rule):}
+      <me>
+        \d (xy)=x \d y+y \d x.
+      </me>
+    </p>
+
+    <p>
+      Notice that if we apply the Product Rule (<hash />4) to the product <m>x\cdot
+      x = x^2</m> we get
+      <md>
+        <mrow>\d (x^2)\amp =\d (x\cdot x)</mrow>
+        <mrow>\amp =x\d x+x\d x</mrow>
+        <mrow>\amp =2x\d x.</mrow>
+      </md>
+    </p>
+
+    <p>
+      If we extend this idea, we get
+      <md>
+        <mrow>\d (x^3)\amp =\d (x^2\cdot x)</mrow>
+        <mrow>\amp =x^2\d x+x\d (x^2)</mrow>
+        <mrow>\amp =x^2\d x+x(2x\d x)</mrow>
+        <mrow>\amp =3x^2\d x.</mrow>
+      </md>
+    </p>
+
+    <problem>
+      <statement>
+        <ol>
+          <li>
+            <p>
+              Use the above idea to show that <m>\d (x^4)=4x^3\d x,</m>   <m>\d
+                  (x^5)=5x^4\d x,</m> and  <m>\d (x^6)=6x^5\d x.</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Show that if <m>\d (x^{99})=99x^{98}\d x</m> then <m>\d
+                  (x^{100})=100x^{99}\d x.</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              If you familiar with induction, provide an induction proof
+                  of The Power Rule: <m>\d (x^n)=nx^{n-1}\d x</m> 
+
+                  for any positive integer <m>n.</m>  [Actually,
+                  it works for <m>n=0</m> as well, since <m>\d (x^0)=\d (1)=0=0 x^{0-1}\d x.</m> ]
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </problem>
+
+    <p>
+      {Differentiation Rule <hash />5 (The Power Rule):}
+    </p>
+
+    <p>
+      If <m>n</m> is a positive integer then, <m>\d(x^n)=nx^{n-1}</m>
+    </p>
+
+    <p>
+      Recall that the title of Leibniz's first paper on Calculus made
+      reference to <q>Maxima and Minima, as Well as Tangents.</q> A reasonable
+      question to ask is <q>What do these rules have to do with tangents,
+      maxima or minima?</q> Good question! Our gateway to this
+      comes in the form of an old friend, the slope of a line.
+    </p>
+  </introduction>
+  <xi:include  href="sec_diff-slope-line.ptx" />
+  <xi:include  href="section2-2.ptx" />
+  <xi:include  href="sec_visualizing-differentials.ptx" />
+  <xi:include  href="section2-4.ptx" />
+  <xi:include  href="section2-5.ptx" />
+  <xi:include  href="sec_diff-transc-funct.ptx" />
+  <xi:include  href="section2-7.ptx" />
+  <xi:include  href="section2-8.ptx" />
+  <xi:include  href="sec_newtons-method.ptx" />
+  <xi:include  href="section2-10.ptx" />
+  <xi:include  href="sec_eulers-method.ptx" />
+  <xi:include  href="section2-12.ptx" />
+  <xi:include  href="sec_high-order-deriv.ptx" />
+  <xi:include  href="section2-14.ptx" />
+</chapter>
+

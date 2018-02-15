@@ -1,0 +1,214 @@
+
+
+<section xml:id="sec_leibn-view_-geom">
+  <title>Leibniz's View: Geometry and Differentials</title>
+  <figure>
+    <image width="37%" source="images/LeibnizGraph1.png" />
+  </figure>
+
+  <p>
+    Newton's dynamical view of the Calculus is very useful. However it is
+    only one way to approach the topic. Leibniz had an entirely different
+    approach. In Leibniz's view every point on the graph at the right is
+    already in place so the graph can be thought of as a completed
+    entity. It is not <q>brought into being</q> by the motion of a point, a
+    pixel, or anything else. If we want to know the shape of this graph
+    . . . well, that's easy isn't it? Just look at it.
+  </p>
+
+  <p>
+    Of course that only works if we have a picture of the graph in hand,
+    or if we can generate one easily. But suppose we hadn't shown you the
+    above graph. Suppose instead we'd asked you to describe the graph of:
+    <me>
+      y=-\frac15(4x^3-16x^2+11x-9).
+    </me>
+  </p>
+
+  <p>
+    Ok. Sure. Since you're living after the invention of computing
+    technology you'd have just pulled some electronic device out of your
+    pocket, opened your favorite graphing app, punched in the formula
+    above, held it out to us and said, <q>Here it is.</q>
+  </p>
+
+  <p>
+    Touch&#xea; You got us.
+  </p>
+
+  <p>
+    Obviously though, neither Newton nor Leibniz could have done that, but
+    so what? We can, so we're done, right?
+  </p>
+
+  <p>
+    Well maybe.
+  </p>
+
+  <p>
+    Suppose now that we'd said there is curve whose derivative
+    is
+    <me>
+      \dfdx{y}{x}=-\frac{12}{5}x^2 +\frac{32}{5}x-\frac{11}{5},
+    </me>
+    and asked, <q>What is its shape?</q>
+  </p>
+
+  <p>
+    This is harder, but Leibiz's differential notation is extremely
+    well-suited to express his approach. The expression <m>\dfdx{y}{x}</m>
+    clearly expresses the idea that the deriviative is the slope of the
+    tangent to<fn>Leibniz would have said <q>tangent of</q> rather
+    than <q>tangent to.</q> In his view he was computing the slope of the
+    curve itself.</fn>the curve <m>y</m> at the point <m>.</m>
+  </p>
+
+  <p>
+    We know a lot about lines. For example we know that:
+    <ol>
+      <li>
+        <p>
+          If the slope of a line is positive then the <m>y</m> coordinate is
+            increasing.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          If the slope is negative then the <m>y</m> coordinate is decreasing.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          If the slope is zero then the <m>y</m> coordinate is not changing.
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <p>
+    Of course, lines are easy because the slope of a line never
+    changes. But we're interested in curves. The slope of a curve changes
+    from point to point so how does this list help us?
+  </p>
+
+  <p>
+    This is where Leibniz's conception of the derivative as a ratio of
+    differentials is helpful. Since <m>\dfdxat{y}{x}{x=a}</m> is the slope of
+    the function at the point <m>x=a</m> it is clear that the above list of
+    statements generalizes as follows:
+    <ol>
+      <li>
+        <p>
+          At every point <m>x=a</m> where <m>\dfdxat{y}{x}{x=a}>0</m>  the curve is
+            increasing. (Notice that we can only claim that the curve is
+            increasing at the single point <m>x=a.</m>
+        </p>
+      </li>
+
+      <li>
+        <p>
+          At every point <m>x=a</m> where <m>\dfdxat{y}{x}{x=a}\lt 0</m>  the curve is
+            decreasing. (Notice that we can only claim that the curve is
+            decreasing at the single point <m>x=a.</m>
+        </p>
+      </li>
+
+      <li>
+        <p>
+          At every point <m>x=a</m> where <m>\dfdxat{y}{x}{x=a}=0</m>  the curve is
+            horizontal.
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <figure>
+    <image width="37%" source="images/MaxMin1.png" />
+  </figure>
+
+  <p>
+    Regarding item 3) above, if
+    <m>\dfdxat{y}{x}{x=a}=0</m> then clearly near <m>x=a</m> the graph of <m>y</m> has
+    one of the two shapes at the right, which confirms that we can find
+    the maximum height of a tossed by by setting
+    <me>
+      v(t) = \dfdx{p}{t} =0
+    </me>
+    and solving for <m>t.</m> This is only common sense.
+  </p>
+
+  <p>
+    Unfortunately our common sense fails us here. It is, in fact,
+    <em>not</em> true that if
+    <me>
+      \dfdxat{y}{x}{x=a}=0
+    </me>
+    then <m>y</m> is either a maximum or a minimum at <m>x=a</m> as the following
+    problem demonstrates.
+  </p>
+
+  <problem>
+    <statement>
+      <p>
+        Consider the polynomial
+        <me>
+          y = (x+1)^3(x-1)(x+3).
+        </me>
+        <ul>
+          <li>
+            <title>(a)</title>
+            <p>
+              Show that <m>\dfdxat{y}{x}{x=-1}=0.</m> (Hint: You can save
+                yourself a lot of work on this problem by keeping you eye on the
+                goal. You are not asked to compute <m>\dfdx{y}{x}.</m> The problem is to
+                show that <m>\left.\dfdx{y}{x}\right|_{x=-1}=0.</m> You don't need to
+                fully expand <m>\dfdx{y}{x}</m> to do that.)
+            </p>
+          </li>
+
+          <li>
+            <title>(b)</title>
+            <p>
+              Graph <m>y</m> near <m>x=1</m> to convince yourself that <m>y</m> is
+                neither a maximum nor a minimum at <m>x=-1</m>.
+            </p>
+          </li>
+
+          <li>
+            <title>(c)</title>
+            <p>
+              We don't really need a polynomial as complicated as the one
+                given in part (a) to make the point we're getting at. Repeat parts
+                (a) and (b) with the polynomial <m>y=x^3</m> at <m>x=0.</m>
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </problem>
+
+  <p>
+    It is important to notice, as we did above, that when we are dealing
+    with curves rather than lines we can only state that the curve is
+    increasing at the single point where the derivative is positive.
+  </p>
+
+  <p>
+    Compare this with the ease of finding the equation of the tangent
+    line to <m>y=x^3</m> in the problem above using Calculus: We have <m>y=x^3</m>
+    from which we have <m>\dfdx{y}{x} = 3x^2.</m> So the slope of the tangent
+    line at <m>(3,9)</m> is <m>\left.\dfdx{y}{x}\right|_{x=3} = 3(3)^2=27.</m> Thus
+    the equation of the line tangent to <m>y=x^3</m> at the point <m>(3,9)</m> is
+    <me>
+      y-9=27(x-3). \text{ (Tada!) }
+    </me>
+  </p>
+
+  <p>
+    It is easy to see how the methods of Calculus replaced previous
+    efforts.
+  </p>
+</section>
+

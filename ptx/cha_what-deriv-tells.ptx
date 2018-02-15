@@ -1,0 +1,11 @@
+
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="cha_what-deriv-tells">
+  <title>What the Derivative Tells Us</title>
+  <xi:include  href="sec_newtons-view_-motion.ptx" />
+  <xi:include  href="sec_leibn-view_-geom.ptx" />
+  <xi:include  href="sec_optim-shape-things.ptx" />
+  <xi:include  href="section5-4.ptx" />
+  <xi:include  href="section5-5.ptx" />
+</chapter>
+

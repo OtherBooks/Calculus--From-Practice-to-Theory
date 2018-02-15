@@ -1,0 +1,555 @@
+
+
+<section xml:id="sec_diff-slope-line">
+  <title>Differentials and the Slope of a Line</title>
+  <introduction>
+    <p>
+      Now that we have the idea of infinitesimal differentials, the familiar
+      idea that the slope of a line is the change in y divided by the change
+      in <m>x</m> can be extended to more general curves.
+    </p>
+
+    <p>
+      Notice that if a curve is not a straight line then the slope will
+      change from point to point on the curve. For example, consider the
+      parabola <m>y=x^2:</m>
+    </p>
+
+    <figure>
+      <image width="37%" source="images/parabola1.png" />
+    </figure>
+
+    <p>
+      Notice that on the left side of the <m>y</m> axis, the slope appears to be
+      negative while on the right side, it appears to be positive.
+      Furthermore, as you move away from the origin, the curve appears to be
+      steeper (so the slope would be larger in magnitude). How does one
+      compute this slope?
+    </p>
+
+    <p>
+      First, since we are good at dealing with lines, let's look at the
+      tangent line to the parabola at the point <m>(x,x^2).</m> If you recall
+      from the previous section, Fermat determined that the slope of this
+      tangent line is given by <m>2x.</m> This should ring a bell. We just used
+      Leibniz's rules to show that <m>\d (x^2)=2x\d x.</m> This would suggest
+      that if <m>y=x^2,</m> then <m>\d y/\d x=\d (x^2)/\d x=2x\d x/\d x=2x.</m> Since <m>\d x</m>
+      is an infinitely small change in <m>x,</m> and <m>\d y</m> is the infinitely
+      small change in <m>y</m> along the curve, does the quotient of these
+      changes give the slope of the tangent line?
+    </p>
+
+    <p>
+      Since we are talking about infinitely small changes, let's get
+      infinitely close to the curve at the generic point <m>(x,x^2)</m> to see
+      what is happening.
+    </p>
+
+    <p>
+      <image width="75%" source="images/parabola-zoom.png" />
+    </p>
+
+    <p>
+      These images seem to suggest that as we zoom in, it is getting harder
+      to distinguish between the curve and the tangent line. If we could
+      zoom in infinitely close, then the curve and the tangent line would
+      become indistinguishable, so it makes sense that the slope of the
+      curve <m>\dfdx{y}{x}</m> is also the slope of the tangent line. In the
+      previous chapter, we saw that it is very hard to use Fermat's method to determine
+      the slope of the tangent line to the curve <m>y=x^3</m> at the point
+      <m>(x,x^3).</m> However, using Leibniz's rules gives
+      <m>\dfdx{y}{x}=\frac{\d(x^3 )}{\d x}=\frac{3x^2 \d x}{\d x}=3x^2.</m> Does
+      this match your answer from before? Maybe this really is a <q>New
+      Method for Tangents.</q>
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          We have all heard that the tangent line to a circle is perpendicular
+          to the radius. Of course, this can be proven geometrically (You may
+          have seen such a proof). We even used this fact in Descartes'
+          Method of Normals. Find the slope <m>\dfdx{y}{x}</m> of the tangent line to the
+          circle <m>x^2+y^2=r^2</m> at the point <m>(x,y)</m> and verify that the radius and
+          the tangent line are in fact perpendicular.
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      Solving problems such as the previous ones show that these Calculus
+      rules seem to work, even if the foundations are questionable. But
+      wait! What about the curve <m>y=\sqrt{2x}?</m> We used Descartes' Method of
+      Normals to find the slope of the tangent line to this curve at the
+      point <m>(2,2).</m> Can Leibniz do this problem as well with his <q>New
+      Method?</q> First notice that <m>y=\sqrt{2}\cdot x^{1/2}.</m> Since <m>\sqrt{2}</m> is a constant,
+      which we know how to handle, it becomes a matter of differentiating
+      <m>x^{1/2}.</m> Would Leibniz' Power rule work for this as well? Let's
+      see. If we wanted to differentiate <m>y=x^{1/2},</m> we could rewrite this
+      as <m>y^2=x.</m> Differentiating, we obtain
+      <md>
+        <mrow>\d(y^2)\amp =\d x</mrow>
+        <mrow>2y \d y\amp =\d x</mrow>
+        <mrow>\d y\amp =1/2y \d x</mrow>
+        <mrow>\amp =1/2x^{1/2} \d x</mrow>
+        <mrow>\amp =1/2 x^{-1/2} \d x</mrow>
+        <mrow>\amp =1/2  x^(1/2-1) \d x</mrow>
+        <intertext>Thus we see that the slope of the tangent line to <m>y=\sqrt{2x}</m> at <m>(2,2)</m> is given
+           by</intertext>
+        <mrow>\left. \dfdx{y}{x}\right|_{x=2}\amp =\left.\sqrt{2} \left(\frac12
+               x^{-1/2}\right)\right|_{x=2}=1/2.</mrow>
+      </md>
+    </p>
+
+    <p>
+      This should match what you obtained before.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Suppose <m>y=x^{p/q},</m> where <m>p,</m> and <m>q</m> are positive integers. Mimic the
+          derivation above to show that
+          <me>
+            \d x^{p/q}=p/q x^{p/q-1} \d x.
+          </me>
+        </p>
+
+        <p>
+          Thus, as Leibniz said, <q><m>\ldots</m> Which is Impeded Neither by Fractional nor Irrational Quantities, <m>\ldots</m></q>
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      What about negative exponents? For example, <m>y=1/x = \inverse{x}</m> represents an
+      equilateral hyperbola whose axis is the line <m>y=x.</m> Can we use the
+      rules of calculus to find the slope of the tangent line to this curve
+      at the point <m>(x,y)?</m> If <m>y=1/x</m> then <m>xy=1.</m> Applying our current rules,
+      we have
+      <md>
+        <mrow>\d(xy)=\d(1)</mrow>
+        <mrow>x\d{y}+y\d{x}\amp =0</mrow>
+        <mrow>x\d{y}\amp =-y\d{x}</mrow>
+        <mrow>\dfdx{y}{x}\amp =-y/x</mrow>
+        <mrow>\amp =-1/x^2</mrow>
+        <mrow>\amp  =-1x^{-1-1},</mrow>
+      </md>
+      so the power rule works for <m>n=-1</m> as well.
+    </p>
+
+    <p>
+      Before we go any further with this, let's see if the answer makes
+      sense geometically. Here is a graph of the
+      curve <m>y=1/x.</m>
+    </p>
+
+    <p>
+      Notice on the graph that the tangent line at <m>(x,y)</m> is parallel to the
+      tangent line at <m>(-x,-y)</m> and always has negative slope. Also, given
+      the symmetry of the graph around the line <m>y=x</m> that the slope of the
+      tangent line at <m>(x,1/x)</m> should be the reciprocal of the slope of the
+      tangent line at <m>(1/x,x).</m>
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Verify the observations made in the previous paragraph by examining <m>\dfdx{(x^{-1})}{x}.</m>
+        </p>
+      </statement>
+    </problem>
+
+    <problem>
+      <statement>
+        <p>
+          Let <m>r</m> be positive rational number. Mimic the idea in differentiating <m>y=x^{-1}</m> to show that if <m>y=x^{-r}=1/x^r,</m> then
+          <me>
+            \d y=-rx^{-r-1} \d x
+          </me>
+          so that the power rule holds for any rational number, positive or negative.
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      Of course, all the differentiation rules need to work in
+      concert, not separately. That is, they must be applied as appropriate whenever the situation
+      arises. For example
+      <md>
+        <mrow>\d\left(\frac{2-3x^2}{\sqrt{x}}\right)\amp =\d(\left(\frac{2}{x^{1/2}}
+             -\frac{3x^2}{x^{1/2}}\right)</mrow>
+        <mrow>\amp =\d\left(2x^{-1/2}-3x^{3/2}\right)</mrow>
+        <mrow>\amp =2\d\left(x^{-1/2}\right)-3\d(\left(x^{-3/2}\right)</mrow>
+        <mrow>\amp =2\left(-\frac12 x^{-3/2}\right)\d{x}-3\left(-3/2 x^{-5/2}\right)\d{x}</mrow>
+        <mrow>\amp =-\left(x^{-3/2}+\frac92 x^{-5/2}\right)\d{x}.</mrow>
+      </md>
+    </p>
+
+    <p>
+      What about <m>\d\left(\frac{\sqrt{x}}{2-3x^2}\right)?</m> It is not so
+      easy to separate as above and prompts us to derive the quotient rule.
+    </p>
+
+    <p>
+      {Differentiation Rule <hash />5 (The Quotient Rule):}
+      <m>\displaystyle \d\left(\frac{x}{y}\right) = \frac{y\d{x}-x\d{y}}{y^2}</m>
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Derive the Quotient Rule. (Hint: <m>\frac{x}{y}=x\inverse{y}</m>
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      Applying the quotient rule to the above, we have
+      <md>
+        <mrow>\d\left(\frac{\sqrt{x}}{2-3x^2}\right) \amp =\frac{(2-3x^2)\d\left(x^{1/2}\right)-x^{1/2} \d(2-3x^2)}{(2-3x^2)^2}</mrow>
+        <mrow>\amp =\frac{(2-3x^2)(\frac12 x^{-1/2} )-x^{1/2} (-6x))}{(2-3x^2 )^2}.</mrow>
+      </md>
+    </p>
+
+    <p>
+      By the way, don't simplify things unless you have some reason to do
+      so. In this problem, there is no reason to do so. If this was in
+      the context of some larger problem, then it might force you to
+      simplify, but it is not, so don't. But this assumes that you could
+      if you had to.
+    </p>
+
+    <p>
+      Put in Practice problems finding equations oftangent lines to curves. Can include tangents toall the conics and graph these to see if theanswers are correct.
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Some Applications</title>
+    <p>
+      As you might have noticed, the differentiation rules were written in
+      differential form while in many of the problems you were asked to find
+      slopes, which involved the quotients of differentials. You may or may
+      not think that this is a big deal, but it comes down to the fact that
+      in verifying the differentiation rules, it is often easier to consider
+      <q>differential</q> equations of the form <m>\d y=2x \d x</m> whereas for rates of
+      change (as in slope) it makes more sense to consider quotients like
+      <m>\dfdx{y}{x}=2x.</m> We don't want to make a mountain out of a molehill at this
+      point (wait until the foundations), but there is a slight difference
+      in the two notions. In the first equation, we are equating two
+      infinitely small changes. Their quotient in the second equation is a
+      finite quantity. In fact, there is a name for the finite quantity
+      <m>\dfdx{y}{x}.</m> It is called the derivative of <m>y</m> with respect to <m>x</m> and it
+      represents the instantaneous rate of change of <m>y</m> with respect to <m>x.</m>
+      Whether you want to write <m>\d y=2x\d x</m> or <m>\dfdx{y}{x}=2x</m> will depend on the
+      circumstances and it is really up to you. You will gain more feel for
+      what is better in a given application with more experience. What you
+      {cannot} do is to write <m>\d y=2x.</m> This doesn't make sense as <m>\d y</m> is
+      infinitesimal and <m>2x</m> is finite.
+    </p>
+
+    <figure xml:id="fig_" >
+      <caption>Mackinac Bridge, Michigan</caption>
+      <image width="75%" source="images/MackinacBridge1.png" />
+    </figure>
+
+    <p>
+      To start exploiting the calculus rules we've developed, consider the
+      shape of the center cable on a stable suspension bridge.
+    </p>
+
+    <p>
+      The shape appears to be parabolic, but how can we be sure? To examine
+      this, we will assume that the weight of the cable is negligible with
+      respect to the weight of the deck (which we will assume is horizontal,
+      for simplicity). Suppose the deck is made of a material that weighs <m>W</m>
+      newtons per meter. Since the curve is symmetric about its lowest
+      point, let's look at half of the cable. Consider a point <m>P</m> on the
+      cable and all of the forces involved.
+    </p>
+
+    <figure>
+      <image width="56%" source="images/MackinacBridge2.png" />
+    </figure>
+
+    <p>
+      Here <m>H</m> represents the (magnitude of) the horizontal tension on the
+      cable and is constant throughout the cable (otherwise the cable would
+      move sideways), <m>Wx</m> represents the weight of the deck from the lowest
+      point at <m>x=0</m> to the point <m>P,</m> (recall that we are ignoring the weight
+      of the cable). <m>T</m> represents (the magnitude of) the tension on the
+      cable at point <m>P</m> which is tangent to the cable at that point. For the
+      cable to be stable, the vertical component of <m>T</m> must equal the weight
+      of the deck and the horizontal component must equal <m>H.</m>
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          <image width="37%" source="images/MackinacBridge3.png" />
+          <ol type="labelalph">
+            <li>
+              <p>
+                Use the above analysis and  schematic of the
+                      forces involved
+                to show that the curve which
+                      represents the cable must satisfy the differential equation
+                <me>
+                  \dfdx{y}{x}=\frac{Wx}{H}.
+                </me>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Show that the parabola  <m>y=\frac{WH}{2} x^2+b</m>  satisfies this differential equation
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </problem>
+
+    <figure>
+      <image width="37%" source="images/HangingChain1.png" />
+    </figure>
+
+    <p>
+      As long as we are talking about hanging cables, consider the following
+      related problem.
+    </p>
+
+    <p>
+      Galileo Galilei (1564-1642) mentioned in his {Discoursi} of <m>1638</m> that
+      the shape of a chain hanging under its own weight was a parabola.
+      This reflected the common belief at the time. Let's explore this
+      belief.
+    </p>
+
+    <p>
+      We will apply a similar analysis as we did above concerning the cable
+      on a suspension bridge. The difference is that there is no deck, and
+      the vertical force will be the weight of the chain (cable) from the
+      lowest point to <m>P.</m>
+    </p>
+
+    <p>
+      Before we send you off to attack this problem, we need to introduce a
+      topic that will take on more significance later. For now, it is more
+      notational. If we have <m>y=x^3+5x-7,</m> then differentiating, we have
+      <me>
+        \dfdx{y}{x}=3x^2+5.
+      </me>
+    </p>
+
+    <p>
+      Differentiating again, we have
+      <me>
+        \dfdx{}{x}\left(\dfdx{y}{x}\right)=\dfdx{(3x^2+5)}{x}=6x.
+      </me>
+    </p>
+
+    <p>
+      This <q>second</q> derivative is denoted by
+      <me>
+        \dfdx{}{x}\left(\dfdx{y}{x}\right) =
+        \dfdx{}{x}\left(\dfdx{}{x}(y)\right) = \dfdxn{y}{x}{2}.
+      </me>
+    </p>
+
+    <p>
+      Of course, we could keep going and compute the <q>third derivative</q>
+      <m>\dfdxn{}{x}{3} (x^3+5x-7)
+      =\dfdx{}{x}\left(\dfdxn{}{x}{2}(x^3+5x-7)\right)=\dfdx{}{x} (6x)=6.</m>
+    </p>
+
+    <problem>
+      <statement>
+        <ol type="labelalph">
+          <li>
+            <p>
+              If we let <m>w</m> represent the weight density of the chain in
+                    newtons per meter and <m>s</m> represent the length of the chain from
+                    the lowest point to <m>P</m> then show that the curve represented by
+                    the chain must satisfy the differential equation
+              <me>
+                \dfdx{y}{x}=ws/H
+              </me>
+              and use this to show that the curve must satisfy the differential equation
+              <me>
+                \dfdxn{y}{x}{2}=\frac{w}{H}  \dfdx{s}{x}=w/H
+                \sqrt{1+\left(\dfdx{y}{x}\right)^2 }.
+              </me>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Show that the general parabola <m>y=ax^2+bx+c</m> does <em>not</em> satisfy this
+                differential equation (and so Galileo was mistaken!)  The curve
+                which does satisfy it is called a catenary, which is not too
+                illuminating as catenary is derived from the Latin word {catena} which
+                means chain.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </problem>
+
+    <figure>
+      <image width="37%" source="images/RefractiveAndReflectiveTelescopes.png" />
+    </figure>
+
+    <p>
+      So, the previous problem says that the catenary is not a parabola.
+      Clearly, we need to extend our differentiation rules to more
+      functions. Before we do that, let's look at another application which
+      we can handle at this point.
+    </p>
+
+    <p>
+      To set the stage on this application, you may have learned that there
+      are two types of telescopes, refractive and reflective.
+    </p>
+
+    <p>
+      Refractive telescopes (top image) utilizes two lenses to refract
+      light. Reflective telescopes (bottom image) utilizes a parabolic
+      objective (primary) mirror to reflect light toward the focus of the
+      parabola (remember Roberval) where the flat (secondary) mirror
+      reflects it to the eyepiece. Large telescopes tend to be reflective
+      telescopes as they really don't need the tube (which actually only
+      holds the two lenses in the refractive telescope in place). As an
+      example, consider the Large Binocular Telescope at Mt. Graham, AZ.
+    </p>
+
+    <p>
+      Each parabolic reflector mirror is <m>8.4</m> meters in diameter. The
+      following image gives you an idea of the size of one of these mirrors.
+    </p>
+
+    <p>
+      How does one make such a large parabolic mirror? The Steward
+      Observatory Mirror Laboratory <q>spin casts</q> these large mirrors. That
+      is, they load borosilicate glass into a revolving oven. [See images
+      below.]
+    </p>
+
+    <figure>
+      <image width="37%" source="images/SpinCasting2.png" />
+    </figure>
+
+    <p>
+      As the glass melts and spins, the middle goes down and the sides go up
+      as any liquid would. What is interesting is that the surface of the
+      revolving liquid will form a parabola. We actually have the tools to
+      show this, as the following problem explores.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Consider a cylinder partially filled with a liquid which is rotating
+          with an angular velocity of <m>\omega</m> radians per second. Of course, in
+          such a setting the middle will go down and the sides will go up as
+          in the diagram below.
+        </p>
+
+        <figure>
+          <image width="37%" source="images/SpinCasting3.png" />
+        </figure>
+      </statement>
+    </problem>
+
+    <p>
+      Our task is to find the shape of the surface of the liquid (that is
+      the shape of the above curve which will be rotated around the <m>y</m> axis.
+      If we consider a point mass <m>m</m> at point <m>(x,y)</m> on the surface, then the
+      force from the liquid which keeps that point elevated is perpendicular
+      to the surface. (Think about a hose with a hole in it. The water
+      sprays out in a stream perpendicular to the hose.)
+    </p>
+
+    <p>
+      If we separate that force into its vertical and horizontal components,
+      then we get the following diagram.
+      The (magnitude of) the vertical component is <m>mg,</m> where <m>g</m> is the
+      acceleration due to gravity. This is the force needed to counter the
+      weight of the particle. The horizontal force has a magnitude of
+      <m>mx\omega^2.</m> This is the centripetal force which is keeping the
+      particle moving in a circle around the axis. [We will see why this is
+      the centripetal force later, but for now, take it on faith.]
+      <ol type="labelalph">
+        <li>
+          <p>
+            Use the above information to show that the curve must
+                  satisfy the differential equation
+            <me>
+              \dfdx{y}{x}=\frac{\omega^2}{g} x
+            </me>
+            and that the curve satisfying this must be a parabola.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            What will happen to the parabola as <m>\omega</m> increases?  Does this
+                  make sense with the physical problem?
+          </p>
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      Notice that in the problem, we furnished a formula for the centripetal
+      force. Where did this come from? Again, we need to extend our
+      differentiation rules to beyond polynomials.
+    </p>
+
+    <p>
+      Recall that Fermat was able to deduce Snell's Law of Refraction by
+      minimizing the amount of time it took for light to travel from point <m>A</m>
+      in air to point <m>B</m> in <xref ref="FermatSnell">water</xref>. Fermat was able to do this before
+      the advent of calculus, but in his paper, Leibniz applied his
+      differential calculus to solve the problem. Recall
+      <xref ref="FermatSnell-mbed">Problem</xref> on <xref ref="FermatSnell">page</xref> from
+      <xref ref="cha_science-before-calc">Chapter</xref>.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          <image width="75%" source="images/Refraction3.png" />
+          Consider the following labeling in the above diagram.
+          Find an expression for the time <m>T</m> traveled along the path from <m>A</m>
+          to <m>B</m> in terms of the variable <m>x</m> and the constants <m>a,</m> <m>b,</m> <m>c,</m> <m>v_1,</m>
+          and <m>v_2.</m>
+        </p>
+
+        <p>
+          The answer to this problem is
+          <me>
+            T=T(x)=\frac{\sqrt{a^2+x^2}}{v_1} +\frac{\sqrt{b^2+(c-x)^2}}{v_2}.
+          </me>
+        </p>
+
+        <p>
+          As with Fermat, Leibniz knew that if we graphed this curve, then at
+          the minimum there would be a horizontal tangent line. This says that
+          we should set <m>\dfdx{T}{x}=0</m> to find this minimum. Differentiating, we get
+          <me>
+            \dfdx{T}{x}=\frac{1}{v_1}   \dfdx{\sqrt{a^2+x^2}}{dx}+\frac{1}{v_2}
+            \dfdx{\sqrt{b^2+(c-x)^2}}{x}.
+          </me>
+        </p>
+
+        <p>
+          We've reached an impasse. We don't yet know how to differentiate the
+          quantities involved. This is where Rule <hash />7 - The Chain Rule comes in.
+        </p>
+      </statement>
+    </problem>
+  </subsection>
+</section>
+

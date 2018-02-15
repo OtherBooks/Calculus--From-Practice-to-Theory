@@ -1,0 +1,477 @@
+
+
+<section xml:id="sec_diff-transc-funct">
+  <title>Derivatives of Transcendental Functions</title>
+  <introduction>
+    <p>
+      The differentiation rules we've learned so far are general in the
+      sense that they are applicable to a wide variety of functions. That is, we
+      can use them to compute the differential of each of the following:
+      <md>
+        <mrow>y\amp =(x-1)^3\left(\sqrt{x^2-3}\right)</mrow>
+        <mrow>[2mm]
+          y\amp =\frac{(x-1)^3}{\sqrt{x^2-3}}.</mrow>
+      </md>
+    </p>
+
+    <p>
+      The formula can change, but the differentiation rules still work.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Compute <m>\dfdx{y}{x}</m> for each of the curves above.
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      As useful as the differentiation rules we've worked out so far are
+      they are not enough. The fact is that differentiation rules come
+      in two flavors: those like the ones we've seen already which are
+      general and work in a wide variety of situations, and the rules which
+      apply to specific expressions, like <m>\sin(x),</m> which simply have to be
+      memorized. In this section we will work out the differentiation rules
+      for all of the trigonometric functions, and all of the inverses of
+      trigonometric functions.
+    </p>
+
+    <p>
+      This may sound like a large undertaking but it turns out that there
+      are many similarities in the development of each of these. These can
+      be exploited to make the development easier and, perhaps more
+      importantly, to make the memorization process a little easier too.
+    </p>
+
+    <p>
+      But make no mistake, we are developing basic tools here. Learn
+      them. {Memorize them!} It will be expected hereafter that you have all
+      of these techniques at your fingertips at all times.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec_diff-sine-funt">
+    <title>The Derivative of the Sine and Cosine Functions</title>
+    <p>
+      Consider the sketch below
+      <image width="37%" source="images/DiffSin.png" />
+      where we have a unit circle with an angle, <m>x,</m> in standard
+      position. Notice that <m>\sin(x) = AB.</m> If we allow the angle to vary by
+      an infinitesimal amount, <m>\d x,</m> then the sides of the triangle
+      <m>\Delta BDC</m> are also infinitesimally small, so that <m>\d(\sin(x)) =
+      BD,</m> and <m>\d{x}=CD.</m> Moreover, since this in a <em>unit</em> circle we
+      also have <m>\d x = BC</m><fn>Because when the radius of a circle is
+        one, the radian measure of the the central angle is the same as the
+        arclength of the subtended angle. This is the whole point of using
+        radian measure.</fn></p>
+
+    <problem>
+      <statement>
+        <p>
+          Finally, triangles <m>\Delta OAB</m> and <m>\Delta DBC</m> are similar, but we
+          will leave that as an exercise for you.
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      Therefore from the properties of similar
+      triangles,
+      <me>
+        \frac{\d(\sin(x))}{\d x} = \frac{\cos(x)}{1}
+      </me>
+      or
+      <me>
+        \frac{\d(\sin(x))}{\d x} = \cos(x)
+      </me>
+      which is our next differentiation formula.
+    </p>
+
+    <p>
+      {Objection! <m>BC</m> is not a straight line, so <m>\Delta DBC</m>
+      isn't really a triangle. This <q>proportion</q> is not true.}
+      \-\marginpar{ We may want to have an <q>Objection</q> construct which we can
+      use to point out logical problems. At least we need to take a moment
+      to address this particular objection.}
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Supose <m>y=3x\sin(x).</m> What is <m>\dfdx{y}{x}?</m>
+        </p>
+
+        <p>
+          From the Constant Multiple Rule we see that
+          <md>
+            <mrow>\d y \amp = 3\d(x\sin(x)).</mrow>
+            <intertext>Next the Product Rule gives</intertext>
+            <mrow>\amp =3\left(x\d(\sin(x)) + \sin(x)\d x\right)</mrow>
+            <intertext>so that</intertext>
+            <mrow>\dfdx{y}{x} \amp =3\left(x\cos(x) + \sin(x)\right)</mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Supose <m>y=(x^3-2x^2)\sin(x^2-x).</m> What is <m>\dfdx{y}{x}?</m>
+        </p>
+
+        <p>
+          The Product Rule gives
+          <md>
+            <mrow>\d y \amp = (x^3-2x^2)\cos(x^2-x)\d(x^2-x) + \sin(x^2-x)\d(x^3-2x^2)</mrow>
+            <mrow>\amp = (x^3-2x^2)\cos(x^2-x)(2x-1)\d x + \sin(x^2-x)(3x^2-4x)\d x</mrow>
+            <intertext>so that</intertext>
+            <mrow>\dfdx{y}{x} \amp = \left[(x^3-2x^)\cos(x^2-x)(2x-1) + \sin(x^2-x)(3x^2-4x)\right]</mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Supose <m>y=\sin(2x).</m> What is <m>\dfdx{y}{x}?</m>
+        </p>
+
+        <p>
+          Clearly,
+          <me>
+            \dfdx{y}{x} = \sin(2x)\d (2x) = 2\sin(2x).
+          </me>
+        </p>
+      </statement>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Supose <m>y=\sin(x^2).</m> What is <m>\dfdx{y}{x}?</m>
+        </p>
+
+        <p>
+          As before
+          <me>
+            \dfdx{y}{x} = \sin(x^2)\d(x^2)\d x = 2x\sin(x^2).
+          </me>
+        </p>
+      </statement>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+          Supose <m>y=\sin(k-x),</m> where <m>k</m> is constant. What is <m>\dfdx{y}{x}?</m>
+        </p>
+
+        <p>
+          We see that
+          <md>
+            <mrow>\d y \amp = \d(\sin(k-x))</mrow>
+            <mrow>\amp = \cos(k-x)\d(k-x)</mrow>
+            <mrow>\amp = -\cos(k-x)\d x</mrow>
+            <intertext>and so</intertext>
+            <mrow>\dfdx{y}{x} \amp =-\cos(k-x).</mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      This last example actually gives us the differential of the
+      cosine function. We simply take <m>k=\frac{\pi}{2}</m> so that
+      <md>
+        <mrow>\cos(x) \amp = \sin\left(\pi/2-x\right)</mrow>
+        <intertext>and</intertext>
+        <mrow>\sin(x) \amp = \cos\left(\pi/2-x\right).</mrow>
+        <intertext>Thus</intertext>
+        <mrow>\d(\cos(x))\amp = \d\left(\sin\left(\pi/2-x\right)\right)</mrow>
+        <mrow>\amp =\cos\left(\pi/2-x\right)\d\left(\pi/2-x\right)</mrow>
+        <mrow>\amp =-\cos\left(\pi/2-x\right)\d x</mrow>
+        <intertext>and so</intertext>
+        <mrow>\dfdx{(\cos(x))}{x}\amp =-\sin(x).</mrow>
+      </md>
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          If <m>y=\cos\left(x^2+2x\right)</m> find <m>\d y.</m>
+          <md>
+            <mrow>\d y \amp = \d\left(\cos\left(x^2+2x\right)\right)</mrow>
+            <mrow>\amp =-\sin\left(x^2+2x\right)\d\left(x^2+2x\right)</mrow>
+            <mrow>\amp =-2x\sin\left(x^2+2x\right)</mrow>
+            <intertext>so that</intertext>
+            <mrow>\dfdx{ y}{x} \amp =-2x\sin\left(x^2+2x\right).</mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+
+    <problem>
+      <statement>
+        <figure>
+          <image width="18%" source="images/Centripetal1.png" />
+        </figure>
+
+        <figure>
+          <image width="18%" source="images/SpinCasting5.png" />
+        </figure>
+
+        <p>
+          Recall that in spin casting [p. <xref ref="SpinCasting"></xref>], we gave you
+          the formula for centripetal force. Specifically, for a mass <m>m</m>
+          revolving in a circle of radius <m>r</m> meters around an axis with an
+          angular speed of <m>\omega</m> radians/second, the centripetal force is a force
+          directed toward the axis. This force keeps the mass going in a
+          circle instead of traveling off in a straight line.
+        </p>
+
+        <p>
+          The formula given for the magnitude of this force was
+          <me>
+            mr\omega^2
+          </me>
+        </p>
+
+        <p>
+          We will use our knowledge of trigonometric functions to
+          derive this.
+        </p>
+
+        <p>
+          First, recall that <em>force=mass<times />acceleration.</em> Thus we want to
+          show that the centripetal acceleration is given by <m>r\omega^2.</m>
+        </p>
+
+        <p>
+          Let's put in some coordinates and consider the following diagram.
+          <ul>
+            <li>
+              <title>(a)</title>
+              <p>
+                Show that the coordinates of <m>P</m> are given by
+                <me>
+                  x=r\cos\theta, \ \ y=r\sin\theta.
+                </me>
+              </p>
+            </li>
+
+            <li>
+              <title>(b)</title>
+              <p>
+                The velocity vector <m>v</m> is tangent to the circle and is
+                  composed of the velocity in the <m>x</m> direction <m>\left(\dfdx{x}{t}\right)</m> and the velocity
+                  in the <m>y</m> direction <m>\left(\dfdx{y}{t}\right).</m> Show that the
+                  length of v (which will be the speed) is given by
+                <me>
+                  \sqrt{\left(\dfdx{x}{t}\right)^2+\left(\dfdx{y}{t}\right)^2}=r\dfdx{\theta}{t}.
+                </me>
+              </p>
+            </li>
+
+            <li>
+              <title>(c)</title>
+              <p>
+                Let's assume that the angular velocity is given by
+                  <m>\dfdx{\theta}{t}=\omega</m> for some constant <m>\omega</m>.  In this case, we only have centripetal
+                  acceleration represented by the following vector a composed of the
+                  vertical acceleration <m>\left(\dfdxn{y}{t}{2}\right)</m> and horizontal acceleration
+                  <m>\left(\dfdxn{x}{t}{2}\right).</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      Remember all of those identities you had to memorize in trigonometry?
+      You can reduce the memorization burden a bit by using Calculus. It
+      turns out that if you differentiate an identity you get another
+      identity! This is because if two variable quantities are equal then
+      their differentials must be equal too.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Consider the double angle formula for the sine function:
+          <md>
+            <mrow>\sin2x\amp =2\sin x\cos x.\nonumber</mrow>
+            <intertext>Differentiating gives</intertext>
+            <mrow>\cos2x\d x \amp = \cos^2x\d x -\sin^2x\d x\nonumber</mrow>
+            <intertext>or</intertext>
+            <mrow>\cos2x \amp =\cos^2x-\sin^2x.</mrow>
+          </md>
+          which is the double angle formula for the cosine function.
+        </p>
+      </statement>
+    </example>
+
+    <problem>
+      <statement>
+        <p>
+          What do you think will happen if we differentiate both sides of
+          <xref ref="eq_CosDouble">equation</xref><nbsp />? Try it and see.
+        </p>
+      </statement>
+    </problem>
+
+    <example xml:id="Sin2Cos2">
+      <statement>
+        <p>
+          We know that <m>\sin^2x+\cos^2x=1</m> no matter what value <m>x</m> has, so
+          we'd expect that differential of <m>\sin^2x+\cos^2x</m> to be
+          zero. Let's check.
+        </p>
+
+        <p>
+          By the Sum Rule
+          <md>
+            <mrow>\d(\sin^2x+\cos^2x) \amp = \d(\sin^2x) + \d(\cos^2x)</mrow>
+            <intertext>and by the Power Rule we have</intertext>
+            <mrow>\amp = 2\sin x\d(\sin x) + 2\cos x\d(\cos x)</mrow>
+            <mrow>\amp = 2\sin x\cos x + 2\cos x(-\sin x)\d x</mrow>
+            <mrow>\amp = 2(\sin x\cos x - \sin x\cos x)\d x</mrow>
+            <mrow>\amp = 0.</mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      {{ Foreshadowing: What does it really mean when a differential is zero?}}
+      This example is actually much more interesting, and important, than it
+      first appears to be. We will digress for a moment to see why.
+    </p>
+
+    <p>
+      We have seen that the differential
+      of a constant is <em>necessarily</em> zero. Is the reverse also true?
+      That is, if we can show that the differential of some expression
+      is zero can we conclude that the expression is constant? Symbolically,
+      does <m>\d y = 0</m> imply that <m>y=c,</m> where <m>c</m> is some constant.
+    </p>
+
+    <p>
+      To be definite, we showed in <xref ref="Sin2Cos2">example</xref> that
+      <m>\d(\sin^2x+\cos^2x)=0.</m> Can<fn>Since we already know that <m>\sin^2x+\cos^2x=1</m>
+      the question may seem silly. However when examining new ideas or
+      concepts it is always a good idea to start with a question whose
+      answer is known. That way we can tell whether our intuition is leading
+      us astray. In particular we are not asking, <q>Is <m>\sin^2(x) +
+      \cos^2(x)</m> a constant?</q> We already know that it is. Instead we are
+      asking <q>Does  <m>\sin^2(x) +
+      \cos^2(x)</m> <em>have</em> <em>to</em> <em>be</em> a constant,
+      given that it's derivative is zero?</q> This is a different question.</fn></p>
+
+    <p>
+      First, as a matter of logic, the statement:
+      <q>If <m>y</m> is constant, then <m>\d y=0.</m></q>is <em><em><em> not</em></em></em> the same as the
+      statement:
+      <q>If <m>\d y=0,</m> then <m>y</m> is a constant.</q>To see this a more banal example is useful. Consider the statement:
+      If it is raining, then I will open my umbrella.''This is clearly <em>not</em> the same as:
+      If my umbrella is open, then it is raining.''because I could open my umbrella for any number of reasons in addition
+      to rain.
+    </p>
+
+    <p>
+      So, knowing that
+      <q>If <m>y</m> is constant then <m>\d y=0''</m>is not sufficient
+      to conclude that
+      ``If <m>\d y=0</m> then <m>y</m> is constant.</q>Nevertheless when we think about the meaning of the statement <m>\d y=0</m>
+      it certainly seems like it <em>ought</em> to be true that <m>y</m> is
+      constant. After all, this says that infinitesimal changes in <m>y</m> are
+      <em>always</em> zero. Or, to put it another way, it says that <m>y</m> is
+      not changing. If <m>y</m> is not changing then <m>y</m> is constant.
+    </p>
+
+    <p>
+      On the other hand, consider: <m>y=\frac{x}{x-1}-\frac{x-2}{x^2-3x+2}.</m>
+      It is straightforward to show that <m>\d y=0</m> but it is not at all clear
+      that <m>y</m> is constant.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Show that <m>\d\left(\frac{x}{x-1}-\frac{x-2}{x^2-3x+2}\right)=0.</m>
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      The point of the foregoing discussion is to convince you that the
+      statement
+      <q>If <m>\d y=0</m> then <m>y</m> is constant</q>is in fact true, even though we can not yet prove that it is true<fn>But
+      we will eventually.</fn>.
+    </p>
+
+    <p>
+      Finally, to see why this is important here is a problem that we will
+      eventually need to be able to solve.
+    </p>
+
+    <example xml:id="ex_exact-differential">
+      <statement>
+        <p>
+          Suppose we know that
+          <me>
+            x\cos x\d y +\sin y\d x =0.
+          </me>
+        </p>
+
+        <p>
+          Can we reconstruct <m>y</m> in terms of <m>x</m> from
+          this information?
+        </p>
+
+        <p>
+          Obviously the answer is yes, else this example is pointless, but how?
+          Observe that if we take <m>z=x\sin y</m> then
+          <md>
+            <mrow>\d z \amp = \underbrace{x\cos y\d y +\sin y\d x}_{=0} \text{ and so }</mrow>
+            <mrow>\d z \amp =0, \text{ and therefore }</mrow>
+            <mrow>z\amp =c \text{ where \(c\) is an unknown constant. And thus }</mrow>
+            <mrow>x\sin y\amp =c</mrow>
+            <mrow>\sin y \amp =c/x</mrow>
+            <mrow>y\amp =\inverse\sin\left(c/x\right).</mrow>
+          </md>
+        </p>
+
+        <p>
+          The crucial observations to this argument are:
+          <ol>
+            <li>
+              <p>
+                <m>\d z = x\cos x\d y +\sin y\d x =0</m>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                If <m>\d z = 0</m> then <m>z=c.</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      The hard part of <xref ref="ex_exact-differential">example</xref>, of course, was finding <m>z=x\sin y.</m>
+      Eventually you'll learn how to do that yourself, but not today. Also,
+      it would be helpful to know the value of <m>c.</m> But again, not
+      today.
+      {\
+      ************************************}
+    </p>
+  </subsection>
+</section>
+

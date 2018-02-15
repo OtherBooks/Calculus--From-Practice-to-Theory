@@ -1,0 +1,13 @@
+
+
+<section xml:id="sec_whats-wrong-with">
+  <title>What's Wrong with Differentials?</title>
+  <p>
+    On <xref ref="MurkyFoundation">page</xref> in
+    <xref ref="sec_calc-stack-pebbl">section</xref> we mentioned that the foundations
+    of the Calculus have always been murky. For example, we have developed
+    all of our differentiation rules using the concept of infinitely
+    small displacements: differentials.
+  </p>
+</section>
+

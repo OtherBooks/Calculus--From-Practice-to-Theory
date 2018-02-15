@@ -1,0 +1,941 @@
+
+
+<section xml:id="sec_natural-logarithm">
+  <title>The Natural Logarithm</title>
+  <introduction>
+    <p>
+      Suppose we have a single microbe living in a petri dish and that it
+      divides once every hour. Then after one hour we have two microbes and
+      our population has grown by one microbe per hour. After the second
+      hour our population is now <m>4</m> microbes, and the rate of growth during
+      that second hour is <m>3</m> microbes per hour. If this continues for <m>10</m>
+      hours our microbe population will have grown according to the
+      following chart\-\marginpar{ This is supposed to be <m>P(t)=(5/2)^t.</m> Check the numbers.}:
+      <me>
+        \begin{array}{|ccc||ccc|}
+        \hline
+          \text{ hours } \amp \text{ population } \amp \text{ rate of
+                                          growth } \amp \text{ hours } \amp \text{ population } \amp \text{ rate
+                                                                                  of
+                                                                                  growth } \\\hline{}
+          1\amp 2.5\amp 1.5\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\amp 6\amp 244.1\amp 97.2\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\\[1mm]
+          2\amp 6.3\amp 2.5\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\amp 7\amp 610.4\amp 242.9\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\\[1mm]
+          3\amp 15.6\amp 6.2\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\amp 8\amp 1525.9\amp 607.2\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\\[1mm]
+          4\amp 39.1\amp 15.5\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\amp 9\amp 3814.7\amp 1518.0\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\\[1mm]
+          5\amp 97.7\amp 38.9\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\amp 10\amp 9536.7\amp 3795.1\frac{\text{ \tiny microbes } }{\text{ \tiny hour } }\\[1mm]\hline
+        \end{array}
+      </me>
+    </p>
+
+    <p>
+      Can we find a function <m>P(t)</m> which tells us our microbe
+      population at any time?
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Logistic Growth</title>
+    <p>
+      Before, we looked at exponential growth models, that is models
+      governed by the equation
+      <me>
+        \dfdx{p}{t}=rp.
+      </me>
+    </p>
+
+    <p>
+      Here, <m>p=p(t)</m> is the population level at time <m>t</m> and <m>r</m> is the
+      (continuous) growth rate of the population. Recall that the solution
+      to this is the exponential function <m>p=p_0 e^rt</m> where <m>p_0</m> is the
+      initial population. As we pointed out, this model is really only
+      applicable in the short run, as this function grows exponentially.
+      For example, if <m>r=10=.1</m>) and <m>p_0=1</m> gram of a bacteria population,
+      and <m>t</m> is measured in hours, then <m>p(100)=e^.1(100)\approx{}22026</m> grams and
+      <m>p(200)=e^.1(200)\approx{}485165195</m> grams. Clearly, there are limitations to
+      this model. This is the case with all mathematical models which, of
+      necessity, must be simplified to make tractable. People who model
+      with mathematics understand this and the mantra is to start simple,
+      and add on extra complications. While no model will be exactly real
+      life, the idea is to put in enough complexity to approximately real
+      life, while keeping the model simple enough to use. We will do this
+      in this case.
+    </p>
+
+    <p>
+      For example, consider the differential equation
+      <me>
+        \dfdx{p}{t}=.1p\left(1-\frac{p}{500}\right).
+      </me>
+    </p>
+
+    <p>
+      Notice that this is similar to the differential equation for
+      exponential growth, but has an extra factor, namely <m>(1-p/500).</m> The
+      <m>500</m> is called the carrying capacity of the environment (notice that it
+      must be measured in grams to match the unit of <m>p</m>). This number
+      represents the limitation placed on the population by the environment,
+      and does not allow the population to grow exponentially without bound.
+    </p>
+
+    <problem>
+      <statement>
+        <ul>
+          <li>
+            <title>(a)</title>
+            <p>
+              Show that for <m>0\lt p\lt 500</m> the population is growing, and
+                  for <m>p>500</m> the population is shrinking.  Does the name carrying
+                  capacity make sense now?  Explain.  Plot a graph of growth rate
+                  vs. time.
+            </p>
+          </li>
+
+          <li>
+            <title>(b)</title>
+            <p>
+              For what level of p is the population growing at the fastest
+                  rate?  What is this rate?
+            </p>
+          </li>
+
+          <li>
+            <title>(c)</title>
+            <p>
+              For what values of p is the growth rate increasing (that is,
+                  the population's level is accelerating)?  For what values is the
+                  population's growth rate decreasing?
+            </p>
+          </li>
+
+          <li>
+            <title>(d)</title>
+            <p>
+              According to the model, what happens to the population if it
+                  should ever hit <m>500?</m>  What happens to the growth rate as p
+                  approaches <m>500?</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(e)</title>
+            <p>
+              On the same set of axes, draw reasonable graphs of the
+                  population level <m>p(t)</m> with the given initial values:
+                  <m>p(0)=100,</m> <m>p(0)=300,</m> <m>p(0)=500,</m> <m>p(0)=600.</m>  (It is a fact from the
+                  theory of differential equations that these trajectories will
+                  never cross.  You can assume this when you draw your graphs.)
+            </p>
+          </li>
+        </ul>
+        <p>
+          This model is called a logistic growth model, and is a refinement of
+          the original exponential model. Notice that for small values of <m>p,</m>
+          the factor <m>(1-p/500)\approx 1</m> and the model is very much like exponential
+          growth. However, this model is more refined than the original as it
+          better illustrates the fact that the population cannot grow
+          exponentially without bound. Notice also, that this differential
+          equation is a bit harder to solve (we will learn integration
+          techniques to solve it later). Nonetheless, we were able to use it to
+          provide reasonable qualitative graphs of <m>p(t)</m> without actually having
+          an equation for <m>p(t).</m>
+        </p>
+      </statement>
+    </problem>
+
+    <problem>
+      <statement>
+        <p>
+          Let <m>f(t)</m> represent the amount of a certain
+          species of fish in a lake (in tons) at time <m>t.</m> If fishing is
+          allowed at a (uniform) rate of <m>20</m> tons per year, then the growth
+          rate of the population can be modeled with the differential equation
+          <me>
+            \dfdx{f}{t}=0.25f\left(1-\frac{f}{500}\right)-20.
+          </me>
+          <ul>
+            <li>
+              <title>(a)</title>
+              <p>
+                What is the carrying capacity of the population?
+              </p>
+            </li>
+
+            <li>
+              <title>(b)</title>
+              <p>
+                Plot the graph of <m>\dfdx{g}{t}</m> vs. <m>t.</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(c)</title>
+              <p>
+                What will happen to the population over time if initially
+                  <m>f(0)=150?</m>
+              </p>
+            </li>
+
+            <li>
+              <title>(d)</title>
+              <p>
+                Suppose initially <m>f(0)=150,</m> but fishing is allowed at a
+                  uniform rate of <m>30</m> tons per year.  How would the differential
+                  equation be altered and what would the model predict about the
+                  population over time?
+              </p>
+            </li>
+          </ul>
+        </p>
+
+        <p>
+          Alas, with every model, the logistic model also has limitations.
+          Consider the following refinement of that model.
+          <me>
+            \dfdx{p}{t} = 0.1p\left(1-\frac{p}{500}\right)\left(\frac{
+            p}{20}-1\right).
+          </me>
+        </p>
+
+        <p>
+          The number <m>20</m> is called the minimum viability level of the
+          population.
+        </p>
+      </statement>
+    </problem>
+
+    <problem>
+      <statement>
+        <p>
+          Plot the graph of <m>\dfdx{p}{t}</m> vs. <m>t.</m> In
+          particular, where is the growth rate positive, negative, and zero.
+          Explain why <m>20</m> is called the minimum viability level of the
+          population?
+        </p>
+      </statement>
+    </problem>
+
+    <problem>
+      <statement>
+        <p>
+          Use the graph of <m>\dfdx{p}{t}</m> to plot
+          reasonable graphs of <m>p(t)</m> for various initial values. Specifically
+          use <m>p(0)=15, 20, 150, 400, 500, 600.</m>
+        </p>
+
+        <p>
+          Notice that even without having a formula for <m>p(t),</m> we were able
+          to understand it from information given by the function
+          <m>\dfdx{p}{t}.</m> This function has a special name, the derivative. The
+          history of this name is interesting and represents a shift in the
+          study of calculus. Throughout the 1700's, infinitesimal
+          differentials were utilized to help explain physical and
+          mathematical phenomena (as you have experienced in this book so
+          far). There were issues as to what an infinitely small quantity is,
+          but it was overshadowed by its power and utility. Too make a long
+          story short, foundational issues as to what an infinitely small
+          difference is grew in importance. To help address these issues,
+          Joseph Louis Lagrange developed the concept of a <em>fonction d&#xe9;riv&#xe9;e</em>,
+          that is a function derived from the original function. Thus instead
+          of focusing on curves, this marked the beginning of focusing on
+          functions and derivatives instead of infinitely small differentials
+          (useful as they are). He even developed an new notation, <m>f^\prime(x),</m>
+          instead of <m>\dfdx{f}{x}.</m> Today these symbols are synonymous, but
+          in Lagrange's day, it represented an attempt to suppress the
+          infinitely small. In practice, it is still advantageous to utilize
+          the older differential notation, but there are times where the
+          <q>prime</q> notation has its advantages, especially when one wants to
+          focus on the derivative as a function rather than a process
+          (differentiation). One of the first places is what we've been
+          doing, namely gathering information from a function by examining its
+          derivative.
+        </p>
+      </statement>
+    </problem>
+  </subsection>
+
+  <subsection>
+    <title>Compound Interest and the Exponential Functions</title>
+    <p>
+      Suppose I invest money in a bond which nominally pays 5<percent /> annually,
+      compounded quarterly. The effective yield would be 5.09<percent />. What does
+      any of this mean?
+    </p>
+
+    <p>
+      To start, the effective yield represents the actual amount of money I
+      will have earned at the end of one year. For example, if the
+      investment was not compounded at all, then at the end on one year,
+      every dollar invested would yield <m>\dollar1.05</m> in return. If the investment
+      is compounded semiannually, then this means that half of interested
+      earned in paid out halfway through the year. This money is then
+      re-invested for the next half year. This is summarized in the
+      following table.
+    </p>
+
+    <table xml:id="tab_1" >
+      <caption>Semiannual compounding</caption>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>Time <m>t</m> in years</cell>
+          <cell>Amount investment is worth in dollars</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>1/2</m></cell>
+          <cell><m>\dollar1+\dollar1\dollar\left(\frac{.05}{2}\right)=\dollar1\left(1+\frac{.05}{2}\right)</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell><m>\dollar1\left(1+\frac{.05}{2}\right)\left(1+\frac{.05}{2}\right)=\dollar1\left(1+\frac{.05}{2}\right)^2</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      If the investment was compounded three times in a year, we would have
+      the following modified table.
+    </p>
+
+    <table xml:id="tab_2" >
+      <caption>Compounding three times annually</caption>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>Time <m>t</m> in years</cell>
+          <cell>Amount investment is worth in dollars</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>1/3</m></cell>
+          <cell><m>\dollar1+\dollar1\dollar\left(\frac{.05}{3}\right)</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>2/3</cell>
+          <cell><m>\dollar1\left(1+\frac{.05}{3}\right)^2</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell><m>\dollar1\left(1+\frac{.05}{3}\right)^3</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      Compounded quarterly means that the interest is re-invested three
+      times. Our table looks like this:
+    </p>
+
+    <table xml:id="tab_3" >
+      <caption>Compounding quarterly</caption>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>Time <m>t</m> in years</cell>
+          <cell>Amount investment is worth in dollars</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>1/4</m></cell>
+          <cell><m>\dollar1+\dollar1\dollar\left(\frac{.05}{4}\right)</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>1/2</cell>
+          <cell><m>\dollar1\left(1+\frac{.05}{4}\right)^2</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>3/4</cell>
+          <cell><m>\dollar1\left(1+\frac{.05}{4}\right)^3</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell><m>\dollar1\left(1+\frac{.05}{4}\right)^4\approx \dollar1.0509</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      The effective yield comes from the last entry in the table. That is,
+      it is the difference between the amount the investment is worth at the
+      end of the year and what it is worth at the beginning of the year:
+      <m>1.0509-1=.0509=5.09\%.</m>
+    </p>
+
+    <p>
+      Following the same reasoning, if the investment was compounded daily,
+      then the effective yield would be <m>(1+.05/365)^{365}-1\approx.0513=5.13\%.</m>
+    </p>
+
+    <p>
+      In general, if we compound n times in a year, then the return the
+      investment on one dollar at the end of one year would be
+      <me>
+        \left(1+\frac{.05}{n}\right)^n.
+      </me>
+    </p>
+
+    <p>
+      <em>Alternative 1.</em> Doing exponential function first, then
+      logarithm
+    </p>
+
+    <p>
+      Going one step further, if we let <m>p(t)</m> denote the value of the investment of one dollar earning <m>5\%</m> annually, compounded <m>n</m> times per year, after <m>t</m> years, then we have
+      <me>
+        p(t)=\left(1+\frac{.05}{n}\right)^{nt}, \ \ t=0,1,2,\ldots
+      </me>
+    </p>
+
+    <p>
+      What if the investment was compounded continuously? What does this
+      mean, and what would the value <m>p(t)</m> be? To examine this, it will be
+      convenient to write <m>p(t)</m> as
+      <me>
+        p(t)=\left(1+\left(\frac{.05}{n}\right)\right)^{\frac{n(.05t)}{.05}}
+        =\left[\left(1+\frac{.05}{n}\right)^{\frac{n}{.05}}\right]^{.05t}
+        =\left[\left(1+\frac{1}{\frac{n}{.05}}\right)^{\frac{n}{.05}}\right]^{.05t}
+      </me>
+    </p>
+
+    <p>
+      Let's rewrite <m>m=\frac{n}{.05},</m> and consider what would happen if we
+      compounded a very large number of times (let <m>n</m> be very large).
+      <xref ref="tab_4">Table</xref> looks at some values of
+      <m>\left(1+\frac{1}{m}\right)^m,</m> where <m>m</m> is large.
+    </p>
+
+    <table xml:id="tab_4" >
+      <caption>Compounding quarterly</caption>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>m</m></cell>
+          <cell><m>\left(1+\frac{1}{m}\right)^m</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>100</m></cell>
+          <cell><m>2.70481382942</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>1000</m></cell>
+          <cell><m>2.71692393224</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>10000</m></cell>
+          <cell><m>2.71814592683</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>100000</m></cell>
+          <cell><m>2.71826823717</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>1000000</m></cell>
+          <cell><m>2.71828046932</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>1000000</m></cell>
+          <cell><m>2.71828169255</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      It would appear from <xref ref="tab_4">Table</xref>, that <m>(1+\frac{1}{m})^m</m> approaches a fixed number
+      as <m>m</m> becomes indefinitely large. This will be given more precision
+      later, but for now let's assume that it does and call this number <m>e.</m>
+      By the table, it appears that <m>e\approx{}2.71828169255.</m> All of this suggests
+      that if the investment is being continually compounded, then
+      <me>
+        p(t)=e^.05t.
+      </me>
+    </p>
+
+    <p>
+      Let's examine the situation from a different perspective. If we abuse
+      notation by letting <m>p(t)</m> be the amount that the investment is worth
+      at time <m>t</m> in <xref ref="tab_1">Tables</xref>, <xref ref="tab_2"></xref>, <xref ref="tab_3"></xref> as well,
+      then <xref ref="tab_1">Table</xref> says
+      <me>
+        p(0)=1,\ p(1/2)=(1+.05/2),p(0), \ p(2/2)=(1+.05/2)p(1/2).
+      </me>
+    </p>
+
+    <p>
+      Likewise, <xref ref="tab_2">Table</xref> says
+      <me>
+        p(0)=1,\ p(1/3)=(1+.05/3)p(0),\ p(2/3)=(1+.05/3)p(1/3),\ p(3/3)=(1+.05/3)p(2/3).
+      </me>
+      and <xref ref="tab_3">Table</xref> says
+      <me>
+        p(0)=1,\ p(1/4)=(1+.05/4)p(0),\ p(2/4)=(1+.05/4)p(1/4),\ p(3/4)=(1+.05/4)p(2/4),\ p(4/4)=(1+.05/4)p(3/4).
+      </me>
+    </p>
+
+    <p>
+      If we let <m>\Delta t=1/n</m> denote the change in time, then this can be
+      written more succinctly as
+      <me>
+        \Delta p=p(t+ \Delta t)-p(t)=(1+.05\cdot\Delta
+        t)p(t)-p(t)=.05\cdotp(t)\cdot\Delta t.
+      </me>
+    </p>
+
+    <p>
+      Extrapolating this to the case of continuous compounding where we use
+      the infinitesimal quantity <q><m>\d t</m></q> instead of the increment <m>\Delta t,</m> we have
+      that the amount the investment is worth at time <m>t</m> must satisfy the
+      differential equation <m>``\d'' p=.05p\cdot ``\d'' t.</m>
+    </p>
+
+    <p>
+      All of this suggests that <m>p=e^{.05t}</m> satisfies the differential
+      equation <m>``d'' p/``d'' t=.05p</m> with initial condition <m>p(0)=1.</m> In
+      general, we would have <m>p(t)=e^{rt}</m> satisfying the equations <m>``d'' p/``d''
+      t=rp,\ \ p(0)=1.</m>
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          What would the effective yield be for a bond nominally rated at
+          <m>5\%</m> annually compounded continuously? How does this compare to
+          the effective yield of an investment compounded daily?
+        </p>
+      </statement>
+    </problem>
+
+    <problem>
+      <statement>
+        <p>
+          Suppose we had two investments growing continually with nominal
+          rates of <m>5\%</m> and <m>10\%</m> annually? Would the effective yield of
+          the second investment be twice that of the first? Justify your
+          answer.
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      For <m>r=1,</m> we have the function <m>p(t)=e^t,</m> which is called the
+      natural exponential function and it satisfies <m>``d'' e^t /``d'' t=e^t,\
+      \ e^0=1.</m>
+    </p>
+
+    <p>
+      Such a function which grows this way constitutes exponential growth.
+      You might have heard the phrase <q>growing exponentially</q> referring to
+      something which grows very fast. The following graph of <m>p(t)=e^t</m>
+      illustrates this
+      <image width="56%" source="images/ExpGraph.png" />
+      Indeed, Table compares values of <m>f(x)=x^2</m> and <m>p(x) = e^x</m> for
+      various values of <m>x.</m>
+    </p>
+
+    <table xml:id="tab_5" >
+      <caption>Compounding quarterly</caption>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>x</m></cell>
+          <cell><m>f(x)=x^2</m></cell>
+          <cell><m>p(x)=e^x</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>1</m></cell>
+          <cell><m>1</m></cell>
+          <cell>2.71828</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>2</m></cell>
+          <cell><m>4</m></cell>
+          <cell>7.38906</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>3</m></cell>
+          <cell><m>9</m></cell>
+          <cell>20.08554</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>4</m></cell>
+          <cell><m>16</m></cell>
+          <cell>54.59815</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>5</m></cell>
+          <cell><m>25</m></cell>
+          <cell>148.41316</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>6</m></cell>
+          <cell><m>36</m></cell>
+          <cell>403.42879</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell><m>\vdots{}</m></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>100</m></cell>
+          <cell><m>10000</m></cell>
+          <cell><m>2.68817\times 10^{43}</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>1000</m></cell>
+          <cell><m>1000000</m></cell>
+          <cell><m>1.97007 \times 10^{434}</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      Not only do continuously compounded investments grow in this manner,
+      but exponential growth can be used to model other phenomena (at least
+      in the short run). As an example, consider the following situation.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Consider a strain of bacteria growing in a Petri dish. Initially
+          there are <m>10</m> mg of the bacteria growing continually at a (nominal)
+          hourly rate of 25<percent />. How much bacteria would there be at time <m>t</m>
+          hours.
+        </p>
+
+        <p>
+          {<em>Solution:</em>} Let <m>b=b(t)</m> denote the amount of bacteria (in mg) at time <m>t</m> hours. We have that <m>b</m> satisfies the following differential equation and initial condition
+          <me>
+            \dfdx{b}{t}=.25b,\ \ b(0)=10.
+          </me>
+        </p>
+
+        <p>
+          This says that <m>b(t)=10e^.25t.</m>
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      The term nominal growth rate, though appropriate for investing money,
+      is not typically used in such a biological example. Typically, such
+      problems are stated more in this fashion.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Consider a strain of bacteria growing in a Petri dish. Initially
+          there is <m>10</m> mg of the bacteria and it is noticed that in <m>3</m> hours,
+          the amount has doubled. How much will there be at any time <m>t.</m>
+        </p>
+
+        <p>
+          {<em>Solution:</em>} As before, we let <m>b=b(t)</m>
+          represent the amount of bacteria (in mg) at time <m>t</m> hours. Assuming
+          that the bacteria grows at a rate proportional to the amount
+          present, we have the following
+          <me>
+            \dfdx{b}{t}=rb\ \ b(0)=10.
+          </me>
+          where <m>r</m> is some as yet to be determined constant. At this point, we
+          know that <m>b=10e^rt,</m> and we need to determine <m>r.</m> To do this, we have
+          a different piece of information, namely, <m>b(3)=20.</m> Substituting this
+          in, we get
+          <me>
+            20=b(3)=10b^{3r}
+          </me>
+        </p>
+
+        <p>
+          What we need to do is find the inverse of this exponential function.
+          With this in mind, we define the <em>natural logarithm</em> function, denoted
+          <m>\ln x,</m> as follows.
+          <m>y=\ln x</m> exactly when <m>x=e^y.</m>
+        </p>
+
+        <p>
+          Another way of saying this is that <m>\ln x</m> is the exponent so that
+          <m>e^{\ln x}=x.</m>
+          For example, we have some fairly straightforward observations:
+        </p>
+
+        <p>
+          At this point it would be useful to compare the graphs of <m>y=e^x</m> and
+          <m>y=\ln x.</m> Since they are inverse functions then one graph is the
+          reflection of the other about the line <m>y=x.</m>
+          <image width="56%" source="images/LogAndExp.png" />
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      Before we delve further into the natural logarithm function, let's see
+      how it applies to our problem above.
+    </p>
+
+    <p>
+      We needed to solve the equation <m>20=10e^3r.</m> To do this, we get
+      <md>
+        <mrow>2\amp =e^3r</mrow>
+        <mrow>\ln 2\amp =\ln e^3r =3r</mrow>
+        <mrow>r\amp =ln2/3 \approx 2.463</mrow>
+      </md>
+    </p>
+
+    <p>
+      Thus the amount of bacteria at time t is given by
+      <me>
+        b\approx 10e^{2.463t}.
+      </me>
+    </p>
+
+    <p>
+      Of course, as with any mathematical model, this is only an
+      approximation of real life. As we noticed, this exponential function
+      would grow exponentially, and there is definitely a limit to the
+      amount of bacteria that will grow in a Petri dish. At best, this
+      model can only be used for relatively small values of <m>t.</m> Later we
+      will look at more complicated models for this growth, where we put
+      limitations in. But for now, notice that we can play with our
+      function mathematically, we can get an equation that might be a bit
+      more appealing.
+      <me>
+        b=10e^{\ln2/3 t}=10\left(e^{\ln 2}\right)^(t/3)=10\cdot2^{t/3}
+      </me>
+    </p>
+
+    <p>
+      This general exponential function is a bit more appealing as it
+      encapsulates better the idea that the amount doubles every <m>3</m> hours.
+      The natural logarithm function is actually the key to a number of
+      related properties of general exponential functions. But before we do
+      that, let's consider the case of exponential decay. You may have
+      heard of utilizing radioactive carbon dating to determine the age of
+      various fossils. What does this entail and how is it related to what
+      we have been talking about? Radioactive carbon dating was invented by
+      Willard Libby in the late <m>1940</m>'s at it became a standard tool for
+      archeologists to date their discoveries. Libby received the Nobel
+      Prize in Chemistry in <m>1960</m> for his work on this. The idea is based on
+      the fact that radiocarbon (<m>C_{14}</m>) is constantly being created in the
+      atmosphere by the interaction of cosmic rays with atmospheric
+      nitrogen. The resulting radiocarbon combines with atmospheric oxygen
+      to form radioactive carbon dioxide, which is incorporated into plants
+      by photosynthesis; animals then acquire <m>C_{14}</m> by eating the plants. When
+      the animal or plant dies, it stops exchanging carbon with its
+      environment, and from that point onwards the amount of <m>C_{14}</m> it contains
+      begins to reduce as the <m>C_{14}</m> undergoes radioactive decay. Measuring the
+      amount of <m>C_{14}</m> in a sample from a dead plant or animal such as piece of
+      wood or a fragment of bone provides information that can be used to
+      calculate when the animal or plant died
+      (http://en.wikipedia.org/wiki/Radiocarbon_dating). Exponential decay
+      comes from the fact that radioactive materials decay at a rate which
+      is proportional to the amount of radioactive material left. This rate
+      is measured by the materials half-life. For example, <m>C_{14}</m> has a
+      half-life of about <m>5730</m> years. This says that if we have an amount of
+      <m>C_{14},</m> then in <m>5730</m> years we would have half of that amount, in another
+      <m>5730</m> years we would have half of that (one quarter the original), and
+      so on. The following example illustrates how the technique works.
+    </p>
+
+    <example>
+      <statement>
+        <p>
+          Let <m>c=c(t)</m> represent the amount of Carbon-14 in a sample at any time
+          <m>t</m> years. If we let <m>c(0)=c_0</m> denote the original amount in the
+          sample, then how much is in the sample at any time <m>t.</m>
+        </p>
+
+        <p>
+          {<em>Solution:</em>} We have that <m>c</m> satisfies the
+          differential equation <m>\dfdx{c}{t}=rc.</m> This says that <m>c=c_0e^{rt}.</m>
+          To determine <m>r,</m> notice that <m>c(5730)=1/2 c_0.</m> This gives us
+          <m>1/2c_0=c_0 e^{5730r},</m> <m>r=\ln(1/2)/5730.</m>
+        </p>
+
+        <p>
+          Thus we have
+          <me>
+            c=c_0 e^{\ln(1/2)/5730 t}=c_0 \left(e^{\ln(1/2)}\right)^{t/5730}=c_0
+            (1/2)^{t/5730}.
+          </me>
+        </p>
+
+        <p>
+          This is consistent with the idea that the amount halves every <m>5730</m>
+          years. Of course, we can apply this to other situations as well.
+        </p>
+      </statement>
+    </example>
+
+    <example>
+      <statement>
+      <p>
+        Suppose we have a wooden handle from a tool that contains 80<percent /> of
+        the amount of <m>C_{14}</m> that it should contain. How old is the tool?
+      </p>
+
+      <p>
+        {<em>Solution:</em>} Applying the previous formula, we have
+        <me>
+          c_0 e^{\ln(1/2)/5730 t}=.8c_0
+        </me>
+        and we need to find <m>t.</m> Solving we get:
+        <md>
+          <mrow>e^{\ln(1/2)/5730 t}\amp =.8</mrow>
+          <mrow>\ln(1/2)/5730 t\amp =\ln(.8)</mrow>
+          <mrow>t\amp =5730\ln(.8)/\ln(.5) \approx 1845 \text{ years }</mrow>
+        </md>
+      </p>
+
+      <problem>
+        <statement>
+          <p>
+            How old would the tool be if the amount of <m>C_{14}</m> was 70<percent /> or 90<percent />?
+          </p>
+        </statement>
+      </problem>
+      </statement>
+    </example>
+  </subsection>
+</section>
+

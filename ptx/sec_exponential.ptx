@@ -1,0 +1,460 @@
+
+
+<section xml:id="sec_exponential">
+  <title>The Natural Exponential</title>
+  <p>
+    Early efforts to find the line tangent to a curve focussed on what
+    was called the subtangent problem. That is, given a curve, <m>y,</m> as in
+    this figure
+    <image width="37%" source="images/subtan1.png" />
+    where <m>B</m> is on the curve, <m>y,</m> <m>AB</m> is perpendicular to <m>CA</m> and <m>BC</m>
+    is tangent to <m>y</m> at <m>B,</m> we'd like to find the coordinates of the
+    point <m>C.</m> The line segment <m>AC</m> is called the subtangent, and finding
+    the coordinates of <m>C</m> is equivalent to finding the derivative of <m>y</m>
+    at <m>B.</m> This is because if <m>B</m> and <m>C</m> are known then the slope of
+    the line segment <m>BC</m> is the derivative of <m>y</m> at <m>B.</m>
+  </p>
+
+  <p>
+    As a technique the subtangent problem quickly fell out of favor with
+    the invention of Calculus. However the following subtangent problem is
+    instructive: We ask is there a curve with the property that it
+    subtangent always has length one?
+    <image width="37%" source="images/subtan2.png" />
+    It is instructive because, <m>\dfdx{y}{x},</m> the derivative of <m>y</m>
+    appears very naturally. If we take <m>\d y</m> to be an infinitesimal
+    vertical displacement of the curve <m>y</m> at <m>B,</m> and <m>\d x</m> to be a
+    horizontal displacement
+    <image width="37%" source="images/subtan3.png" />
+    then by proportional triangles we have <m>\dfdx{y}{x} = \frac{y}{1},</m> or
+    <men xml:id="eq_ExpDiffeq" >
+      \dfdx{y}{x} = y.
+    </men>
+  </p>
+
+  <p>
+    For obvious reasons this is called a <em>differential equation.</em> In
+    fact, this is the same differential equation we examined in
+    <xref ref="sec_eulers-method">section</xref> so we already have an approximate
+    graph of this curve. Recall that in <xref ref="sec_eulers-method">section</xref> we
+    found that near the point <m>(0,1)</m> the curve looks like this:
+    <image width="37%" source="images/exp-piecewise-linear.png" />
+    A graphical approximation is nice but we'd really like an explicit formula.
+  </p>
+
+  <p>
+    We would like to find a function, <m>f(x),</m> that satisfies
+    <xref ref="eq_ExpDiffeq">equation</xref>. Nothing really obvious comes to mind as a
+    solution but before we give up, let's see if we can
+    guess a solution.
+  </p>
+
+  <p>
+    No, really. Let's try guessing. It can be surprisingly effective. You
+    know this of course. You've been doing it all of your life, but you've
+    probably been discouraged from it in the past so you tend to deny
+    doing it. It's ok. Guess anyway. We won't tell anyone.
+  </p>
+
+  <p>
+    The fact is that guessing is a tried and true solution technique and
+    we encourage you to use it regularly. If you guess wrong, which is
+    most likely, then you have this related problem to think about:
+    All of your intuition said this was a good guess. Why didn't it work?
+    The answer to that question almost always gives some insight into the
+    original problem. Even a bad guess can be useful.
+  </p>
+
+  <p>
+    Bad guesses are
+    easy. If you don't know what else to do, make a bad guess. But all by
+    itself a bad guess is a waste of time. You must also figure out why
+    your bad guess doesn't work.
+  </p>
+
+  <p>
+    <em> But</em> the real danger in guessing <mdash /> the reason
+    it is usually discouraged <mdash /> is that when you do guess correctly
+    it is <em>very</em> tempting to just move on from there. <em>Don't
+    do that.</em> When you guess correctly it is crucial that you take a few
+    moments to ask yourself what was the intuition that lead you to that
+    guess. Guessing correctly means that your intuition was very good. But
+    intuition is unconcious. If you don't stop and ask yourself why this
+    seemed like a good idea your thought process will remain unconscious
+    and thus nearly useless. It is just as important to understand where a good
+    guess came from as it is to understand why a bad guess didn't work.
+  </p>
+
+  <p>
+    Stop. Take a breath. Think. Then move on.
+  </p>
+
+  <p>
+    So let's take a guess. There is no need to get really, really crazy
+    though. let's try this guess: <m>y = 1.</m> Obviously this won't work
+    because <m>\dfdx{y}{x}</m> is equal to zero, not one. But wait! The
+    derivative of <m>x</m> is <m>1</m> so if we we guess <m>y=1+x</m> we get <m>\dfdx{y}{x}
+    = 1.</m> This almost works. When we differentiate we recover the first, constant
+    term (<m>1</m>) but lose the second, linear term (<m>x</m>).
+  </p>
+
+  <p>
+    Can we adjust this last guess so as to recover the second term?
+    Sure. Let's try <m>y=1+x+\frac{x^2}{2}.</m> In that case <m>\dfdx{y}{x} =
+    1+x</m> and again, upon differentiating we get everything back but the
+    last term.
+  </p>
+
+  <p>
+    Clearly we can pick up that term by adding <m>\frac{x^3}{3\cdot2}</m> to
+    our last guess. That is, if we take
+    <m>y=1+x+\frac{x^2}{2}+\frac{x^3}{3\cdot2}</m> then <m>\dfdx{y}{x} =
+    1+x+\frac{x^2}{2}.</m> But again, the last missing term is a
+    problem. Continuing to add terms won't help as the following problem
+    shows.
+  </p>
+
+  <problem>
+    <statement>
+      <p>
+        Compute <m>\dfdx{y}{x}</m> and <m>y-\dfdx{y}{x}</m> for each of the following.
+        <ul>
+          <li>
+            <title>(a)</title>
+            <p>
+              <m>y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(b)</title>
+            <p>
+              <m>y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(c)</title>
+            <p>
+              <m>y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\frac{x^5}{5!}</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(d)</title>
+            <p>
+              <m>y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots +
+                    \frac{x^{n-1}}{(n-1)!} + \frac{x^n}{n!}</m>
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </problem>
+
+  <p>
+    Clearly, we've almost got something here. If we take
+    <md>
+      <mrow>y\amp = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots +
+        \frac{x^{999999}}{999999!} +   \frac{x^{1000000}}{1000000!}</mrow>
+      <intertext>then</intertext>
+      <mrow>\dfdx{y}{x} \amp = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots +
+        \frac{x^{999999}}{999999!},</mrow>
+      <intertext>and</intertext>
+      <mrow>y-\dfdx{y}{x} \amp = \frac{x^{1000000}}{1000000!}.</mrow>
+    </md>
+  </p>
+
+  <p>
+    So the difference between <m>y</m> and <m>\dfdx{y}{x}</m> is that stupid
+    one-millionth term! Surely we can handle that somehow!
+  </p>
+
+  <p>
+    Sadly no. The fact is that there is no polynomial that solves the
+    differential equation <m>\dfdx{y}{x}=y.</m>
+  </p>
+
+  <p>
+    So a fair question is, <q>Why have we led you down this wild goose
+    chase?</q>
+  </p>
+
+  <p>
+    As we mentioned earlier differential equations can be extremely
+    difficult to solve. But often in real applications an approximate
+    solution is almost as good. Clearly we have an approximate solution
+    here. One million is a very large number, so one million factorial
+    (<m>1000000!</m>) is inconceivably large. Thus for any reasonable value of
+    <m>x</m> that one millionth term, <m>\frac{x^{1000000}}{1000000!},</m> is
+    vanishingly small and can probably be ignored in real applications.
+  </p>
+
+  <p>
+    In fact, we don't really have to take anywhere near that many
+    terms. Depending on the application involved
+    <m>y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}</m> might be entirely adequate as an
+    approximate solution. Indeed, for some applications the approximation
+    <m>y=1+x</m> is all that is really needed. Although we haven't
+    <em>solved</em> the problem we have found a very good
+    approximation.
+  </p>
+
+  <p>
+    If there is no <em>polynomial</em> that solves
+    <xref ref="eq_ExpDiffeq">equation</xref> does that mean there is no solution at
+    all? Certainly not. In fact, since that last term of the polynomial
+    was always the stumbling block it should be clear that all we need to
+    do is <em>not have a last term</em>. That is, the solution of
+    <xref ref="eq_ExpDiffeq">equation</xref> is:
+    <me>
+      y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \cdots
+    </me>
+    where the dots at the end mean that the summation goes on
+    forever so there is no last term.
+  </p>
+
+  <problem>
+    <statement>
+      <p>
+        Differentiate
+        <me>
+          y= 1+x+\frac{x^2}{2!}+\frac{x^3}{3!} + \ldots
+        </me>
+        term-by-term to show that
+        <me>
+          \dfdx{y}{x}= y.
+        </me>
+      </p>
+    </statement>
+  </problem>
+
+  <p>
+    At this point we have two approximate answers to the question, ``What
+    curve satisfies the differential equation <m>\dfdx{y}{x}=y?"</m> By Euler's
+    Method we've found several approximate points on the curve and by
+    trying to guess a solution we've found that a polynomial of the form
+    <me>
+      y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+ \cdots + \frac{x^n}{n!}
+    </me>
+    is also probably a good approximation as well. If both of those
+    statements are true then the graphs should be similar. In the following
+    figure we have both our Euler approximation and the graph of
+    <m>y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}.</m>
+    <image width="112%" source="images/ExpEulerCubic.png" />
+    As you can see they are indeed similar, at least near the point
+    <m>(0,1),</m> so we can be confident that we are on the right track.
+  </p>
+
+  <p>
+    A disadvantage of Euler's Method is that a great deal of effort is
+    needed to find just a few (approximate) points on our curve. But now
+    that we have convincing evidence that the polynomials
+    <m>y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+ \cdots + \frac{x^n}{n!}</m> also
+    make good approximations we can use those to see what our function
+    looks like farther from <m>(0,1).</m> Here is the graph of the polynomial
+    <m>y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}:</m>
+    <image width="37%" source="images/CubicExpApprox.png" />
+    and here is the graph of <m>y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+ \cdots
+    + \frac{x^{10}}{10!}:</m>
+    <image width="37%" source="images/TenthExp.png" />
+  </p>
+
+  <p>
+    Do these graphs make sense to you? Stop and think about it for a
+    moment.
+  </p>
+
+  <p>
+    Our differential equation is <m>\dfdx{y}{x}=y.</m> This says that
+    the slope of the curve at any point is equal to its
+    <m>y-</m>coordinate. Put another way, as the graph rises is will get
+    steeper.
+  </p>
+
+  <p>
+    Here is the graph of <m>y=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+ \cdots +
+    \frac{x^{50}}{50!}.</m> You can see for yourself that this is what happens.
+    <image width="37%" source="images/FiftiethExp.png" />
+  </p>
+
+  <p>
+    But wait a minute! Have you seen a graph like this before?
+  </p>
+
+  <p>
+    Of course you have. The graph of <m>y=10^x</m> looks very similar:
+    <image width="37%" source="images/TenToTheX.png" />
+    Now this is interesting. If everything we've done so far is valid the
+    the solution of <m>\dfdx{y}{x}=y</m> is probably something like
+    <me>
+      y=e^x
+    </me>
+    where <m>e</m> is some, currently unknown, number.
+  </p>
+
+  <p>
+    Let's proceed on that assumption<fn>Obviously this is actually
+      true or we wouldn't have spent this much time on it.</fn>for now,
+    recognizing that this is only a conjecture for now. That is, we make
+    the following conjecture.
+  </p>
+
+  <conjecture>
+    <p>
+      There is a real number we'll denote by <m>e,</m> with the property that
+      <m>e^x</m> satisfies <xref ref="eq_ExpDiffeq">equation</xref>. That is
+      <me>
+        \dfdx{(e^x)}{x} = e^x.
+      </me>
+    </p>
+  </conjecture>
+
+  <p>
+    Depending on your mathematical background you may have seen this
+    number before and you may already know that it is approximately
+    <m>2.7128.</m> This is true but it isn't especially useful information for
+    our purposes right now.
+  </p>
+
+  <p>
+    What is useful is that we now have strong evidence that the solution
+    of <xref ref="eq_ExpDiffeq">equation</xref> is <m>y=e^x,</m> and that this can be
+    interpreted as an exponential function just like <m>10^x</m> or <m>2^x.</m>
+    Because of this the expression <m>e^x</m> has been named the <q>natural
+    exponential.</q>
+  </p>
+
+  <p>
+    We will admit that nothing seems <q>natural</q> about <m>y=e^x</m> being the
+    natural exponential function. One could say that satisfying <m>dy/dx=y</m>
+    makes it natural, but there is more to it than that. First, consider
+    that by the chain rule, if <m>x=kt</m> for some constant <m>k,</m> then
+    <m>\dfdx{y}{t}=\dfdx{e^kt}{t}=\dfdx{e^x}{x}\dfdx{x}{t}=e^x\cdot{}k=ky.</m>
+    If we interpret <m>t</m> as time, then this says that the quantity
+    <m>y=y(t)=e^kt</m> grows at a rate proportional to the amount present. In
+    here, the constant <m>k</m> is called the <q>relative (nominal) growth
+    rate.</q> The name makes sense if you notice that
+    <m>k=\frac{\dfdx{y}{t}}{y}=\frac {\frac{\d{y}}{y}}{t},</m> and often this
+    growth rate is stated as a percentage. Consider the following
+    example.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Suppose a strain of bacteria, under controlled conditions, grows
+        continuously with a relative growth rate of 5<percent /> per hour. If we
+        start with <m>2</m> grams of this bacteria, how much would we have in <m>4</m>
+        hours?
+      </p>
+
+      <p>
+        If we let <m>B</m> represent the amount of bacteria (in grams) at
+        time <m>t</m> hours, then we have that this must satisfy
+        <me>
+          \dfdx{B}{t}=.05 B, \ \     B(0)=2.
+        </me>
+      </p>
+
+      <p>
+        You can check that <m>B=Ce^.05t</m> will satisfy this differential
+        equation for any arbitrary constant <m>C.</m> To find <m>C,</m> we will utilize
+        the initial condition <m>B(0)=2.</m> Substituting <m>t=0,</m> and <m>B=2</m> into our
+        equation <m>B=Ce^kt</m> we get
+        <me>
+          2=Ce^{.05\cdot0}=C\cdot1=C
+        </me>
+        and so the amount of bacteria at any time is given by <m>B=2e^.05t</m>
+        and after <m>4</m> hours we have <m>B(4)=2e^{.05\cdot4}\approx 2.44</m> grams. Notice that
+        after <m>400</m> hours, the model predicts that we would have
+        <m>B(400)=2e^{.05\cdot400}\approx 970330390.8</m> grams. This illustrates the
+        notion that something growing exponentially grows really fast, and
+        that our model is not a good predictor for large values of <m>t.</m>
+        This limitation makes sense as the bacteria could not sustain a
+        growth rate of <m>5</m><percent /> indefinitely. There are modifications to this
+        model which we will explore later to take this into account, but
+        for now we will utilize this exponential growth within reason.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    We will explore some more examples of exponential growth models.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Suppose that any investment grows continuously at a nominal rate of
+        <m>7</m><percent /> per year. What would be the effective yield of this
+        investment? That is, how much would the investment actually pay in
+        one year?
+      </p>
+
+      <p>
+        Solution: Let <m>A=A(t)</m> denote the value of the investment (in dollars)
+        at time <m>t</m> years and let <m>A_0</m> denote the initial amount. Then we have
+        that <m>A</m> must satisfy
+        <me>
+          \dfdx{A}{t}=.07A,\ \  A(0)=A_0
+        </me>
+      </p>
+
+      <p>
+        Thus, as before, we have <m>A(t)=A_0e^.07t.</m> Thus in one year, the
+        investment is worth <m>A(1)=A_0e^.07\approx 1.0725A_0.</m> Thus, our annual
+        yield is actually <m>1.0725A_0-A_0=.0725A_0</m> which represents and
+        effective yield of <m>7.25</m><percent /> as opposed to a nominal rate of <m>7</m><percent />.
+      </p>
+
+      <p>
+        \-\marginpar{  Bud, we could put some of these at the end of the section on
+        logarithms, including some standard exponential growth and decay,
+        Newton's law of cooling.}
+      </p>
+
+      <p>
+        Of course, the relative (nominal) rate is not always given so neatly
+        and often we need to glean it from the information given. To do
+        this, we will need to look at the inverse of the natural exponential
+        function, namely the natural logarithm function. But before we do
+        this, we will utilize our new-found friend to settle the matter of
+        the catenary.
+      </p>
+    </statement>
+  </example>
+
+  <problem>
+    <statement>
+      <ul>
+        <li>
+          <title>(a)</title>
+          <p>
+            Show that the curve
+            <me>
+              y=\frac{H}{w} \left(\frac{e^{\frac{w}{H}x}+e^{-\frac{w}{H}
+                      x}}{2}\right)
+            </me>
+            really does satisfies the equation of the catenary
+            <me>
+              \dfdxn{y}{x}{2}=\frac{w}{H} \sqrt{1+(dy/dx)^2}
+            </me>
+            where <m>w</m> is the weight density of the chain, and <m>H</m> is the
+              constant (magnitude of the) horizontal tension.
+          </p>
+        </li>
+
+        <li>
+          <title>(b)</title>
+          <p>
+            Assume <m>w=1,</m> and  <m>H=1</m> and graph this curve.  Does it look like a chain?
+              What happens to the graph if we use <m>w=1, H=2</m> or <m>w=2, H=1.</m>  Does this
+              make sense physically?  Why or why not?
+          </p>
+        </li>
+      </ul>
+    </statement>
+  </problem>
+</section>
+

@@ -1,0 +1,416 @@
+
+
+<section>
+  <title>exercises</title>
+  <introduction>
+    <p>
+      Compute the differential, <m>\d y,</m> for each of the following functions:
+      <ul>
+        <li>
+          <title>(a)</title>
+          <p>
+            <m>y=\tan(10x)</m>
+          </p>
+        </li>
+
+        <li>
+          <title>(b)</title>
+          <p>
+            <m>y=\cot(\pi x)</m>
+          </p>
+        </li>
+
+        <li>
+          <title>(c)</title>
+          <p>
+            <m>y=\sec(2\pi x)</m>
+          </p>
+        </li>
+
+        <li>
+          <title>(d)</title>
+          <p>
+            <m>y=\csc(-\pi x)</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec_inverse-trig-funct">
+    <title>The Inverse Trigonometric Functions</title>
+    <introduction>
+      <p>
+        Recall that if <m>x</m> is in the interval <m>(-\pi/2,\pi/2)</m> and <m>\sin x =
+        y,</m> then by definition
+        <m>\inverse{\sin} y = x.</m> The function <m>\inverse\sin x</m> is called the
+        inverse function of the sine, or sometimes the <m>\arcsin x</m> (pronounced
+        <q>arc sine of x.</q>) There are similar inverse functions for each of
+        the six trigonometric functions. In this section we will derive
+        differentals of each of them.
+      </p>
+
+      <p>
+        Before we do that though, let's look at a specific, simpler situation. If we
+        start with the line,
+        <me>
+          3x-4y+2=0
+        </me>
+        then <m>y</m> as a function of <m>x</m> is given by: <m>y(x) = \frac34x+\frac12</m>
+        whereas <m>x</m> as a function of <m>y</m> is given by <m>x(y) =
+        \frac43y-\frac23.</m>
+        From these it is clear that <m>\dfdx{y}{x} = \frac34 =
+        \frac{1}{\frac43}=\frac{1}{\dfdx{x}{y}}.</m> Can we generalize from this
+        that <m>\dfdx{y}{x} = \frac{1}{\dfdx{x}{y}}?</m>
+      </p>
+
+      <p>
+        Well, yes and no.
+      </p>
+
+      <p>
+        The problem is that this example is too simple. When the expressions
+        involved are even slightly more complex we need to be very careful and
+        precise in our use of notation. We illustrate this in the next
+        example.
+      </p>
+
+      <example>
+        <statement>
+        <p>
+          For this example we only consider positive<fn>It probably
+              isn't clear why this is important. Try to figure it out. We'll
+              return to this later, but it will be easier to understand if you
+              give the question some serious thought now.</fn>values of <m>x.</m>
+        </p>
+
+        <p>
+          Suppose <m>y</m> is given as a function of <m>x</m> by the formula: <m>y=x^2.</m>
+          Then clearly <m>x</m> as a function of <m>y</m> is given by: <m>x=\sqrt{y}.</m>
+        </p>
+
+        <p>
+          Clearly <m>\dfdx{y}{x} = 2x,</m> and <m>\dfdx{x}{y}=\frac{1}{2\sqrt{y}}.</m>
+          But wait! Aren't these supposed to be mutually reciprocal? How is
+          <m>\frac{1}{2\sqrt{y}}</m> the reciprocal of <m>2x?</m>
+        </p>
+
+        <p>
+          In this example it is not hard to see what is happening. Since
+          <m>y=x^2</m> clearly <m>\sqrt{y}=x</m> so that in fact
+          <me>
+            \dfdx{x}{y}=\frac{1}{2\sqrt{y}} = \frac{1}{2x}
+          </me>
+          which is the reciprocal of <m>2x</m> as required.
+        </p>
+
+        <problem>
+          <statement>
+            <p>
+              Verify that <m>f(x) = \frac34x+\frac12,</m> and <m>\inverse f(x) =
+                \frac43y-\frac23</m> truly are mutually inverse.
+            </p>
+          </statement>
+        </problem>
+        </statement>
+      </example>
+
+      <p>
+        When the formulas involved are more complex or, as in the next
+        example, especially when they are more abstract it can be very
+        confusing and harder to resolve the confusion. We will reserve a
+        detailed discussion of these issues and their subtleties for a later
+        chapter. For now we just note we must be very careful differentiating
+        when inverse functions are involved. The issue has less with our
+        understanding than with our notation.
+      </p>
+
+      <example>
+        <statement>
+          <p>
+            {<em>A COMMON MISTAKE; DON'T DO THIS!</em>}
+          </p>
+
+          <p>
+            Clearly then if <m>\inverse\sin x</m> is the inverse of <m>\sin x</m> we have
+            <me>
+              \d\left(\inverse \sin x\right) = \frac{1}{\d(\sin x)}= \frac{1}{\cos
+                  x\d x}= \frac{\sec x}{\d x},
+            </me>
+            right?
+          </p>
+
+          <p>
+            As we indicated this is a common error so obviously, this is not
+            correct. But it certainly seems like it ought to be doesn't it? Let's
+            see what's wrong with it.
+          </p>
+        </statement>
+      </example>
+
+      <p>
+        Notice that in
+        <xref ref="eq_ReciprocalInverseDeriv">equation</xref> we have the variable <m>y</m> on
+        the left and the variable <m>x</m> on the right side of the equation,
+        whereas in our example we used only the <m>x</m> variable. This is clearly
+        not a correct use of our formula, but it is an incredibly easy mistake
+        to make. When we use general results in mathematics we must make
+        absolutely certain that our usage is consistent with the statement
+        of the result in <em>all</em> of its particulars.
+      </p>
+    </introduction>
+    <subsubsection xml:id="subsubsec_diff-inverse-sine">
+    <title>The Derivative of the Inverse Sine and Cosine
+      Functions</title>
+    <p>
+      In the following watch the roles of the <m>x</m> and
+      <m>y</m> variables closely. Since we are differentiating the <em>inverse</em>
+      function we are reversing the roles of <m>x</m> and <m>y.</m> That is, we are
+      thinking of <m>y</m> as the dependent and <m>x</m> as the independent variable
+      so it seems natural to write <m>x = \inverse\sin(y).</m> However, there is
+      no reason not to use <m>y=\sin(x)</m> as long as we keep in mind that we're
+      thinking of <m>y</m> as a function of <m>x</m> and that we are trying to
+      compute <m>\dfdx{x}{y}</m> and not its reciprocal, <m>\dfdx{y}{x}.</m>
+    </p>
+
+    <p>
+      So if
+      <md>
+        <mrow>y\amp =\sin(x) \text{ then }</mrow>
+        <mrow>\d y \amp = \cos(x)\d x</mrow>
+        <intertext>and solving for <m>\dfdx{x}{y}</m> gives</intertext>
+        <mrow>\dfdx{x}{y} \amp = \frac{1}{\cos(x)}.</mrow>
+      </md>
+    </p>
+
+    <p>
+      This must be correct since if we take the reciprocal of both sides we
+      get <m>\dfdx{y}{x} = \cos(x)</m> which we know is correct. But this
+      formula is almost completely useless for our present purposes.
+    </p>
+
+    <p>
+      Since we are thinking of <m>x</m> as the dependent and <m>y</m> as the
+      independent variables (<m>x</m> is a function of <m>y</m>) we would really like
+      to express <m>\dfdx{x}{y}</m> in terms of <m>y,</m> not <m>x.</m> It is as if, given
+      <m>y=x^2</m> we had found that <m>\dfdx{y}{x}=2\sqrt{y}.</m> This is true (since
+      <m>\sqrt{y} =x</m>) but almost useless.
+    </p>
+
+    <p>
+      So our problem now is to express the right side of the formula
+      <m>\dfdx{x}{y} = \frac{1}{\cos(x)}</m> in terms of the dependent variable
+      <m>y</m> instead of the dependent variable <m>x.</m> This is entirely an
+      exercise in trigonometry as we now show.
+    </p>
+
+    <p>
+      First observe that since <m>y=\sin(x)</m> we have
+      <m>x=\inverse\sin y</m>
+      so that
+      <me>
+        \dfdx{x}{y} = \frac{1}{\cos\left(\inverse\sin y\right)}.
+      </me>
+      so apparently all we have to do is figure out what
+      <m>\cos\left(\inverse\sin y\right)</m> is in terms of <m>x.</m>
+    </p>
+
+    <p>
+      This may seem a daunting task but this is an illusion caused mostly by
+      unwieldy notation. That is, it just looks scary. But it would be silly
+      to let our own notation frighten us. Besides, if we take it one piece
+      at a time it isn't so bad.
+    </p>
+
+    <p>
+      If <m>y=\sin(x)</m> then <m>y</m> is a number and <m>x</m> is an angle and we can
+      visualize this as in the following sketch:
+    </p>
+
+    <p>
+      <image width="37%" source="images/arcsin1.png" />
+    </p>
+
+    <p>
+      Since <m>x</m> is the dependent variable it makes sense to read the formula
+      <m>x=\inverse\sin y</m> as <q><m>x</m> is the angle whose sine is <m>y</m>.</q> Since we
+      want to find the <m>\cos(x)</m> we see from our sketch and the Pythagorean
+      Theorem that
+      <me>
+        \cos(x)=\cos\left(\inverse\sin y\right) = \sqrt{1-y^2}.
+      </me>
+    </p>
+
+    <p>
+      Therefore
+      <me>
+        \dfdx{x}{y} = \frac{1}{\sqrt{1-y^2}}.
+      </me>
+    </p>
+
+    <p>
+      \begin{mynotation}
+      Again, this is correct and we appear to be finished. Unfortunately
+      we have one more small point to make. This one will feel like we are
+      just going out of our way to make things difficult but we
+      aren't. This last change is not about understanding the concepts, it
+      is just about how
+    </p>
+
+    <p>
+      The inverse sine is an elementary function and equations using it
+      will most commonly be written like this
+      <me>
+        y = \inverse\sin x,
+      </me>
+      with <m>x</m> taking the role of the independent variable as usual.
+    </p>
+
+    <p>
+      However, unless there is a compelling reason to use <m>y</m> as the
+      independent variable the custom is to use <m>x.</m> In our derivation of
+      the derivative of the inverse sine we had a compelling reason to use
+      <m>y.</m> Having completed the derivation we now revert to the customary
+      usage.
+      \end{mynotation}
+    </p>
+
+    <p>
+      We have five more trigonometric functions to invert and differentiate
+      so let's get going. Fortunately the derivations are all essentially
+      the same so we will abbreviate the discussion.
+    </p>
+
+    <p>
+      Suppose <m>y=\inverse\cos x</m> so that <m>x=\cos y.</m> Then
+      <md>
+        <mrow>\d x \amp = \frac{1}{\d(\cos y)}\d y</mrow>
+        <mrow>\amp = \frac{1}{-\sin y}\d y</mrow>
+        <intertext>and thus,</intertext>
+        <mrow>\dfdx{x}{y} \amp = \frac{-1}{\sin \left(\inverse\cos y\right)}.</mrow>
+      </md>
+    </p>
+
+    <p>
+      From the sketch below
+    </p>
+
+    <p>
+      <image width="37%" source="images/arccos1.png" />
+      it should be clear that <m>\sin\left(\inverse\cos x\right)=
+      \sqrt{1-y^2},</m> so
+      <me>
+        \dfdx{x}{y} = \frac{-1}{\sqrt{1-y^2}}.
+      </me>
+    </p>
+
+    <p>
+      So again switching to the customary usage, if <m>y=\inverse\sin x</m> we have <m>\dfdx{y}{x} = \frac{-1}{\sqrt{1-x^2}}.</m>
+    </p>
+
+    </subsubsection>
+
+
+    <subsubsection xml:id="subsubsec_other-inverse-trig">
+    <title>The Other Inverse Trigonometric Functions</title>
+    <p>
+      Let <m>y=\inverse\tan x</m> so that <m>x=\tan y.</m> Then
+      <md>
+        <mrow>\d x \amp = \d(\tan y)</mrow>
+        <mrow>\amp = \sec^2 y\d y</mrow>
+        <intertext>from which</intertext>
+        <mrow>\dfdx{y}{x}  \amp = \frac{1}{\sec^2y}.</mrow>
+        <intertext>From the identity <m>1+\tan^2y=\sec^2y</m> we see that</intertext>
+        <mrow>\dfdx{ y}{x}\amp = \frac{1}{1+\tan^2y}</mrow>
+        <intertext>and thus</intertext>
+        <mrow>\dfdx{ y}{x} \amp = \frac{1}{1+x^2}.</mrow>
+      </md>
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Show that if <m>y=\inverse\cot x,</m> then <m>\dfdx{ y}{x} = \frac{-1}{1+x^2}.</m>
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      Let <m>y=\inverse\sec x</m> so that <m>x=\sec y.</m> Then
+      <md>
+        <mrow>\d x \amp = \d(\sec y)</mrow>
+        <mrow>\d x \amp = \sec y\tan y \d y</mrow>
+        <mrow>\dfdx{ y}{x}\amp = \frac{1}{\sec\left(\inverse\sec x\right)\tan y}.</mrow>
+        <mrow>\amp = \frac{1}{x\tan y}\d x.</mrow>
+        <intertext>From the identity <m>1+\tan^2y=\sec^2y</m> we see that <m>\tan y =
+          \sqrt{\sec^2y-1}.</m> Thus</intertext>
+        <mrow>\amp = \frac{1}{x\sqrt{\sec^2y-1}}\d x.</mrow>
+        <mrow>\amp = \frac{1}{x\sqrt{\left[\sec\left( \inverse\sec x\right)\right]^2-1}}\d x.</mrow>
+        <intertext>so that</intertext>
+        <mrow>\d y \amp = \frac{1}{x\sqrt{x^2-1}}\d{x}.</mrow>
+      </md>
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          Show that if <m>y=\inverse\csc x,</m> then <m>\d y = \frac{-1}{x\sqrt{x^2-1}}\d x.</m>
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      Actually, we've played a little fast and loose on these last two\-\marginpar{ Note to self: We should include some problems that bring this issue into focus.}
+      formulas. Because of the domain restrictions necessary to invert the
+      secant and cosecant functions the correct formula for the differential
+      of the inverse secant function is
+      <me>
+        \d (\inverse\sec x) = \frac{1}{\abs{x}\sqrt{x^2-1}} \d x,
+      </me>
+      and similarly for the inverse cosecant. But we have enough on our
+      plate right now so we won't overly concern ourselves with this at
+      the moment. All of the formulas given below are correct.
+      <em>Memorize them!</em><index><main>Differentiation Rules</main><sub>Inverse Trig Functions</sub></index>
+      <ol>
+        <li>
+          <p>
+            <m>\displaystyle\dfdx{ (\inverse\sin x)}{x} =  \frac{1}{\sqrt{1-x^2}}</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>\displaystyle\dfdx{ (\inverse\cos x)}{x} = \frac{-1}{\sqrt{1-x^2}}</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>\displaystyle\dfdx{ (\inverse\tan x)}{x} = \frac{1}{1+ x^2}</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>\displaystyle\dfdx{ (\inverse\cot x)}{x} = \frac{-1}{1+ x^2}</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>\displaystyle\dfdx{ (\inverse\sec x)}{x} = \frac{1}{\abs{x}\sqrt{x^2-1}}</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>\displaystyle\dfdx{ (\inverse\csc x)}{x} = \frac{-1}{\abs{x}\sqrt{x^2-1}}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+
+    </subsubsection>
+  </subsection>
+</section>
+

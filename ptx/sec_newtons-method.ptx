@@ -1,0 +1,455 @@
+
+
+<section xml:id="sec_newtons-method">
+  <title>Newton's Method</title>
+  <p>
+    If <m>x</m> and <m>y</m> are variable quantities then we have interpreted the
+    symbols <m>\d x</m> and <m>\d y</m> to mean infinitely small changes in <m>x</m> and
+    <m>y.</m> This is analogous to using <m>\Delta x</m> and <m>\Delta y</m> to represent
+    <q>the change in <m>x</m></q> and <q>the change in <m>y.</m></q> And just as the ratio
+    <m>\frac{\Delta y}{\Delta x}</m> represents the slope of a straight line we
+    interpret the ration <m>\dfdx{y}{x}</m> to be the slope of the graph of <m>y</m>
+    as a function of <m>x</m> or, what comes to the same thing, the slope of
+    the line tangent to that graph.
+  </p>
+
+  <p>
+    But if that graph is not a straight line then obviously its slope
+    changes from point to point. When the particular point of tangency,
+    say <m>x=a,</m> is
+    important we will use the notation
+    <me>
+      \left.\dfdx{y}{x}\right|_{x=a}
+    </me>
+    to indicate this. Otherwise we will use <m>\dfdx{y}{x}</m> as before.
+  </p>
+
+  <p>
+    Thus if <m>y=x^3</m> then
+    <md>
+      <mrow>\left.\left.\dfdx{y}{x}\right|_{x=2}=3x^2\right|_{x=2}=3\cdot(2^2)
+        \amp = 12.</mrow>
+      <intertext>Or if <m>y=\sin(6x)</m> then</intertext>
+      <mrow>\left.\left.\dfdx{y}{x}\right|_{x=\frac{\pi}{2}}=6\cos(6x)\right|_{x=\frac{\pi}{2}}=6\cos(3\pi)\amp =-6</mrow>
+    </md>
+  </p>
+
+  <p>
+    Now that we can use the derivative to find the equation of the line
+    tangent to a curve a natural question to ask is, <q>What use is this?</q>
+  </p>
+
+  <p>
+    One application of the derivative that is immediate and
+    extraordinarily useful is the solution of equations in one
+    variable. Unfortunately, it is difficult to convey to modern students
+    just how useful this is because modern technology renders it
+    completely trivial. For example, most mathematical software these days
+    will accept the equation <m>\cos x = x</m> as input and give the
+    <em>approximate</em> solution <m>x=0.739085</m> at the click of a mouse
+    button.
+  </p>
+
+  <p>
+    The problem thus appears to be simple.
+  </p>
+
+  <p>
+    But imagine yourself back in the late 17th century for a moment. The
+    only technology available for computation is paper and
+    pencil<fn>Actually, modern pencils were invented in the late
+      18th century. The point is that computations were done by
+      hand.</fn>. How would you solve this problem? How would you even
+    generate an approximate solution?
+  </p>
+
+  <p>
+    One possibility is to graph <m>y=x</m> and <m>y=\cos x</m> on the same set of
+    axes
+    <image width="56%" source="images/cosxeqx.png" />
+    and look for the value of <m>x</m> where the two graphs intersect. This
+    seems like a good idea until we realize that accurately graphing even
+    simple equations was an almost insurmountable task in those days
+    too. We clearly used modern technology to draw the graph above. Doing
+    this by hand would have been very difficult.
+  </p>
+
+  <p>
+    Here's another idea. If we rearrange the equation just a little we get
+    <me>
+      \cos x -x =0.
+    </me>
+  </p>
+
+  <p>
+    You wouldn't think such a simple change would be helpful but it
+    is. For now, instead of looking for the point where two graphs
+    intersect we are searching for value of <m>x</m> where the graph of the
+    curve <m>\cos x - x</m> crosses the <m>x-</m>axis. This is called a root of
+    <m>\cos x -x.</m>
+  </p>
+
+  <p>
+    Now look at the graph of <m>y=\cos x -x.</m>
+    <image width="56%" source="images/cosx-x.png" />
+    Clearly this crosses the <m>x-</m>axis somewhere between <m>0.5</m> and <m>1.0.</m>
+    Moreover if we draw the line tangent to <m>\cos x -x</m> at <m>x=0.5</m>
+    <image width="56%" source="images/cosx-x2.png" />
+    we see that the tangent line crosses the <m>x-</m>axis at very nearly the
+    same place that <m>\cos x- x</m> does. So this <m>x</m> value, whatever it is,
+    is actually a pretty good approximation to the root of <m>\cos x -x.</m> If
+    we zoom in on this part of our graph this is easy to see:
+    <image width="56%" source="images/cosx-x3.png" />
+    Let's call this first approximation of the root, <m>r_1.</m>
+  </p>
+
+  <p>
+    But wait! If we are calling that the <em>first</em> approximation
+    then we are clearly planning a second, and presumably better, such
+    approximation. Can you see how we might calculate <m>r_2?</m>
+  </p>
+
+  <p>
+    We have the <m>x</m> coordinate of our first approximation, <m>r_1</m> so the
+    <m>y</m> coordinate is easy to compute. It is <m>\cos(r_1)-r_1.</m> We now have
+    both coordinates of a point on our curve which is near to the
+    root. If we now find the line tangent to the graph of <m>\cos x -x</m> at
+    this point we will have the following picture:
+    <image width="56%" source="images/cosx-x4.png" />
+    Of course this last picture is useless because at this scale the graph
+    and its tangent line are indistinguishable.
+  </p>
+
+  <p>
+    But this is a good thing! If the curve and its tangent are essentially
+    identical then the tangent line will cross the <m>x-</m>axis at very nearly
+    the same place as the curve. In other words, <m>r_2</m> will be an
+    extremely good approximation to the solution of <m>\cos x -x =0.</m>
+  </p>
+
+  <p>
+    The pattern should be clear.
+    <ol>
+      <li>
+        <p>
+          We start by finding a point <q>near</q> the root we are seeking. In
+            view of what follows it seems reasonable to call this <m>r_0</m> our
+            zeroth approximation to the root we seek.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          We use this to generate <m>r_1,</m> our first approximation to the
+            root.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          We then use <m>r_1</m> to generate <m>r_2,</m> our second such
+            approximation.
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <p>
+    Clearly, we don't have to stop there. If we wanted a more accurate
+    approximation we could use <m>r_2</m> to generate an <m>r_3,</m> and so on. We
+    stop when our approximation is accurate enough for our purposes.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Let's run through this calculation quickly. Our initial
+        approximation was <m>r_0=0.5.</m> The point on our curve where we need
+        the first tangent line is <m>(0.5), \cos(0.5)-0.5) \approx (0.5,
+          0.378)</m> and the slope of the tangent line at this point is:
+        <m>-\sin(.05)-1\approx -1.48.</m>
+      </p>
+
+      <p>
+        Thus the equation of the tangent at this point is
+        <md>
+          <mrow>y-.378\amp =-1.48(x-.5)</mrow>
+          <intertext>or</intertext>
+          <mrow>y\amp =-1.48(x-.5)+.378.</mrow>
+          <intertext>Our first approximation to the root, <m>r_1</m> will be the <m>x</m>
+            coordinate where this line crosses the <m>x-</m>axis. That is, where
+            <m>y=0.</m> Solving this we have</intertext>
+          <mrow>0\amp =-1.48(x-.5)+.378</mrow>
+          <mrow>\frac{.378}{1.48}+.5\amp =x \text{ or }</mrow>
+          <mrow>x\amp \approx 0.755.</mrow>
+        </md>
+      </p>
+    </statement>
+  </example>
+
+  <problem>
+    <statement>
+      <p>
+        Find <m>r_3</m> for the previous example and compare it to the answer
+        <m>0.739085</m> we found by using modern technology.
+      </p>
+    </statement>
+  </problem>
+
+  <p>
+    Clearly this paper-and-pencil procedure is not as simple as handing
+    the problem off to your favorite computational software, so a natural
+    question to ask is, <q>Why bother? Why should we learn this?</q>
+  </p>
+
+  <p>
+    The answer is that whatever software you end up using to generate an
+    approximate solution to your problem will be performing either the
+    computations above or something very like them, and these computations
+    <em>will not always work.</em> If you hand this off to software without
+    any understanding of what the software is doing you run the risk of
+    getting wrong answers. More importantly, if you simply trust the
+    software without understanding it you run the risk of <em>believing </em>
+    the wrong answer when you get it. Depending on what you are computing
+    this could mean anything from a minor annoyance (if you are
+    calculating <m>\sqrt{2}</m> just for fun), to a deadly disaster (if you are
+    designing a control procedure for a self-driving car).
+  </p>
+
+  <p>
+    The procedure we have outlined was originally developed by Isaac
+    Newton in the late 17th century and is thus usually called
+    <em>Newton's Method.</em> To understand it fully we need to get
+    organized.
+  </p>
+
+  <p>
+    Suppose we have some curve <m>y</m> whose root or roots we would like
+    to compute<fn>For our purposes the symbol <m>f(x)</m> just means
+      ``some formula involving the variable <m>x</m> where, for example, <m>f(1)</m>
+      is the value of <m>y</m> when <m>x=1.</m> You may have seen this notation used
+      with a deeper meaning.</fn>. Newton's Method is as follows:
+    <ol>
+      <li>
+        <p>
+          Find an initial guess, <m>r_0</m> for the root. It is best if this
+            guess is as close to the actual root as we can make it.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Find the equation of the line tangent to <m>y=f(x)</m> and solve for
+            <m>x</m> when <m>y=0.</m> The tangent line is given by:
+          <me>
+            y-y(r_0) = \left(\left.\dfdx{y}{x}\right|_{x=r_0}\right)(x-r_0)
+          </me>
+          so when <m>y=0</m> we have
+          <me>
+            x=r_0-\frac{y(r_0)}{\left.\dfdx{y}{x}\right|_{x=r_0}}.
+          </me>
+          This is our second approximation so we set <m>r_1=x.</m>
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Repeat using the most recent root approximation until the
+            desired accuracy is attained.
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <p>
+    Even more succinctly we have:
+  </p>
+
+  <p>
+    <em>Newton's Method</em>
+    <ol>
+      <li>
+        <p>
+          Choose <m>r_0.</m>
+        </p>
+      </li>
+
+      <li>
+        <p>
+          For <m>n=1, 2, 3, \ldots</m> compute
+          <me>
+            r_{n+1}=r_n-\frac{y(r_n)}{\left.\dfdx{y}{x}\right|_{x=r_n}}.
+          </me>
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Newton's Method gives us an easy way to compute approximations to
+        irrational numbers such as <m>\sqrt{2}</m> or <m>\sqrt[5]{7}</m> for
+        example. All we need to do is find a function which has the given
+        number as a root. For example, <m>\sqrt{2}</m> is a root when <m>f(x) =
+          x^2-2</m> and <m>\sqrt[5]{7}</m> is a root when <m>f(x) = x^5-7.</m>
+      </p>
+    </statement>
+  </example>
+
+  <problem>
+    <statement>
+      <p>
+        Compute <m>\sqrt{2}</m> and <m>\sqrt[5]{7}</m> to <m>5</m> decimals.
+      </p>
+    </statement>
+  </problem>
+
+  <p>
+    When Newton's Method works it usually works extremely well. That is,
+    it will usually find the root of a function in just a few iterations
+    if the initial guess is reasonably close. This made it extremely
+    useful in the <m>17</m>th century when such computations were done by
+    hand. Indeed, it computes the
+    square root of a number pretty quickly even if the initial guess is
+    very bad. For example in the following graph the dotted curve is the
+    graph of <m>f(x)=x^2-2.</m> We start with an initial guess of <m>r_0=5</m>
+    (obviously a terrible guess) and
+    shoot the red tangent line down to the <m>x-</m>axis to find the next
+    guess, <m>r_1=2.7</m> which is better but still terrible. Repeating we
+    generate the green tangent line at <m>(r_1,f(r_1))</m> which crosses the
+    <m>x-</m>axis at <m>r_2= 1.72.</m> Finally we generate the orange tangent line
+    at <m>(r_2,f(r_2))</m> which crosses the <m>x-</m>axis at <m>r_3=1.44</m> which is
+    correct to one decimal.
+    <image width="75%" source="images/NewtonsMethod1.png" />
+    If we continue one more iteration (not shown) we get <m>r_4=1.1414.</m>
+    which is correct to four decimals.
+  </p>
+
+  <problem>
+    <statement>
+      <p>
+        Compute <m>\sqrt{3}</m> using the initial guess, <m>r_0=20.</m>
+      </p>
+    </statement>
+  </problem>
+
+  <p>
+    The problem with Newton's Method, as we mentioned, is that it doesn't
+    always work. In fact, it can fail in two distinct ways. One is quite
+    spectacular and you can see from the computations that it is
+    failing. The other can be quite subtle. That is, it can converge, but
+    not to the number we seek.
+  </p>
+
+  <p>
+    <em><em>Spectacular Failure</em></em>
+  </p>
+
+  <p>
+    The standard example of this is the following.
+  </p>
+
+  <problem>
+    <statement>
+      <p>
+        The only root of the function <m>f(x)=x^{1/3},</m> is zero.
+        <ul>
+          <li>
+            <title>(a)</title>
+            <p>
+              Use Newton's Method with the initial guess, <m>r_0=1</m> to
+                  see if it converges to zero. (It won't.)
+            </p>
+          </li>
+
+          <li>
+            <title>(b)</title>
+            <p>
+              Write down the iteration step (step 2) from Newton's
+                  Method for this function. Use this to explain why the method will
+                  not converge no matter what initial guess is used.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </problem>
+
+  <p>
+    Obviously we don't need to use Newton's Method to compute this. The
+    point of this example is that Newton's Method will not find the root
+    no matter what we do. Instead it will continue to generate larger and
+    larger (but alternately positive and negative) <q>approximations</q> to
+    <m>\frac{\pi}{2}.</m>
+  </p>
+
+  <p>
+    <em><em>Subtle Failure</em></em>
+  </p>
+
+  <p>
+    The best way to demostrate this is with an example.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Suppose we wish to compute <m>\frac{\pi}{2}</m> by finding the first
+        positive root of <m>\cos(x).</m> If we start with an initial guess of
+        <m>r_0=.1</m> (not a great first guess, but not horrible either) we then
+        get <m>r_1=10.07,</m> which is certainly seems like it might be a
+        problem since <m>\frac{\pi}{2}\approx 1.7.</m> If we ignore this and
+        continue we get <m>r_2= 11.4,</m> and <m>r_3=10.97.</m>
+      </p>
+
+      <p>
+        What's going on here? On the one hand the numbers seem to be
+        converging, but they are converging to the wrong answer. The
+        following figure shows what the difficulty is.
+        <image width="75%" source="images/NewtonsMethodFail1.png" />
+        In a nutshell, our initial guess was too far away from the
+        root. The slope of the tangent line at <m>(0.1, \cos(0.1))</m> is
+        <m>\sin(0.1)\approx -0.1</m> which means that the tangent line decreases
+        from left to right, but also that it is very shallow. Thus the
+        tangent line crosses the <m>x-</m>axis at about <m>r_1=10.07,</m> very far from
+        the root we seek. After that the approximations will settle in on
+        the root at <m>7\pi/2,</m> but the damage has already been done. We've
+        found the wrong root.
+      </p>
+
+      <p>
+        We call this a subtle failure because, although it is glaringly
+        obvious what goes wrong when we draw a picture of each
+        successive approximation the fact is that most of the time
+        there will be no pictures. In fact, most of the time these
+        computatiuons are done in software from which the only thing that
+        comes out is the final approximation to the root. Notice that,
+        unlike the spectacular failure above there is nothing in the
+        calculations being performed that could be detected in software to
+        let the human in charge know that things have gone wrong. If this is
+        not understood there is a real risk that that a ridiculous answer
+        could be accepted as correct.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    It is thus important that the initial guess be close enough to the
+    root we seek that the iterations will converge to the desired root.
+    This issue is particularly acute when a function has two roots which
+    are very close together, for example if
+    <m>f(x) =
+    \frac{1}{10}(10x^2-21x+11)(x-0.05)(x^3+7).</m>
+  </p>
+
+  <problem>
+    <statement>
+      <p>
+        Find approximations to all real roots of <m>f(x) =
+          \frac{1}{10}(10x^3-21x^2+11x).</m>
+      </p>
+    </statement>
+  </problem>
+</section>
+

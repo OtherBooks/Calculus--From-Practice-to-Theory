@@ -1,0 +1,440 @@
+
+
+<section xml:id="sec_natural-logarithm-1">
+  <title>The Natural Logarithm</title>
+  <p>
+    You may not have thought of it this way before, but exponentiation
+    changes addition to multiplication and multiplication to
+    exponentiation. Specifically, we have
+    <me>
+      b^{x+y}=b^x b^y,\ \ \ b^xy=(b^x )^y.
+    </me>
+  </p>
+
+  <p>
+    The inverse function (a logarithm) will do exactly the opposite; it
+    will change multiplication to addition and exponentiation to
+    multiplication. Here are the details.
+  </p>
+
+  <p>
+    As we mentioned in the last section, we need to look at the inverse of
+    an exponential function. This inverse is call a logarithm. The word
+    logarithm is a combination of two Greek words logos (reckoning) and
+    arithmos (number), so literally a logarithm is a <q>reckoning number.</q>
+    What does this mean?
+  </p>
+
+  <p>
+    Logarithms were invented by John Napier <m>(1550-1617)</m> as a device which
+    changes multiplication to addition. Nowadays, with the availability
+    of handheld calculators, this may not seem like a big deal. However,
+    back in the <m>16</m>th and <m>17</m>th centuries, where astronomy was growing and
+    calculations were completed by hand, this was a major innovation.
+    Think about it, is it easier to multiply astronomical numbers or to
+    add them? As put forth by the mathematical historian Howard Eves, the
+    invention of logarithms literally <q>doubled the life of the
+    astronomer.</q>
+  </p>
+
+  <p>
+    While logarithms' computational value has diminished somewhat, the
+    idea of changing multiplication to addition (and exponentiation to
+    multiplication) is a valuable mathematical tool and we will have
+    opportunities to exploit this. For now, let us see what the
+    connection is to exponential functions.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        Let <m>b>0,</m> and <m>x>0.</m> Then <m>y=\log_b x</m> exactly when <m>x=b^y.</m>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    A few things to note on this definition.
+    <ol>
+      <li>
+        <p>
+          The above definition says
+          <me>
+            b^{\log_b x} =b^y=x ,\  \log_b b^y =\log_b x=y.
+          </me>
+        </p>
+      </li>
+
+      <li>
+        <p>
+          The number <m>b</m> is called the base of the logarithm (and the
+            exponential function) and is relegated to being a positive number.
+            Furthermore, since <m>x=b^y,</m> then <m>x>0</m> is necessary as well.
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <p>
+    To see that the logarithm fulfills Napier's desire to change
+    multiplication into addition and exponentiation into multiplication,
+    we have the following result.
+  </p>
+
+  <problem>
+    <statement>
+      <p>
+        Let <m>b>0,</m> <m>x>0,</m> <m>y>0</m> and let <m>c</m> be any real number.
+        <ul>
+          <li>
+            <title>(a)</title>
+            <p>
+              Show that <m>\log_b  xy=\log_b x+\log_b y.</m>  [Hint: Consider
+                  <m>b^{\log_b x+\log_b y}</m>  and use properties of exponents to show that
+                  this equals <m>xy.</m>]
+
+                  Show that <m>\log_b x^c =c \log_b x.</m>  [Hint: Consider <m>b^{c
+                    log_b x}</m> and use properties of exponents to show that this
+                  equals <m>x^c.</m>]
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </problem>
+
+  <p>
+    Just as <m>e^x</m> is called the natural exponential function, <m>y=\log_e x</m>
+    is called the natural logarithm, and is denoted by <m>y=\ln x.</m> This is
+    just what we need to deal with exponential growth (and decay) when the
+    relative (nominal) growth rate is not explicitly given.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Suppose we have a bacteria culture which grows at a rate proportional
+        to the amount present. We noticed that initially we have <m>2</m> grams, and
+        <m>24</m> hours later we have <m>3</m> grams. How much would we have in <m>48</m> hours?
+      </p>
+
+      <p>
+        Before we solve this, what is your guess? Will it be <m>4</m> grams? More?
+        Less? Let's see.
+      </p>
+
+      <p>
+        As before, let <m>B=B(t)</m> be the amount of bacteria (in grams) at time <m>t</m>
+        (hours). Again, we know <m>B(0)=2.</m> Though we don't know what the
+        relative growth rate is, we can call it something, say <m>k.</m> Thus we
+        have
+        <me>
+          \dfdx{B}{t}=kB,\  B(0)=2,\text{ and }  B(24)=3.
+        </me>
+      </p>
+
+      <p>
+        The differential equation is satisfied by <m>B=Ce^kt</m> for some constant
+        <m>C.</m> Utilizing our initial condition, we can determine <m>C.</m>
+        <me>
+          2=B(0)=Ce^{k\cdot0}=C\cdot1=C.
+        </me>
+      </p>
+
+      <p>
+        So <m>C=2</m> and we have <m>B=2e^kt.</m> To determine <m>k,</m> we will utilize our
+        other bit of information.
+        <md>
+          <mrow>3\amp =B(24)=2e^24k</mrow>
+          <mrow>3/2\amp =e^24k</mrow>
+          <mrow>\ln \frac{3}{2}\amp =24k</mrow>
+          <mrow>\frac{1}{24} \ln \frac{3}{2}\amp =k.</mrow>
+        </md>
+      </p>
+
+      <p>
+        Thus <m>B=2e^{\left(\frac{1}{24} \ln \frac{3}{2}\right)t}.</m> This is kind
+        of cumbersome, so let's use properties of exponents and logarithms to
+        clean it up before we look at <m>B(48).</m>
+        <me>
+          B=(e^{\left(\frac{1}{24} \ln \frac{3}{2}\right)t} = \left(e^{\ln(3/2)}\right)^\frac{t}{24}  =\left(\frac{3}{2}\right)^{\frac{t}{24}}
+        </me>
+        <me>
+          B(48)=\left(\frac{3}{2}\right)^(48/24)=\left(\frac{3}{2}\right)^2=\frac{9}{4}=2.25
+          \text{ grams } .
+        </me>
+      </p>
+
+      <p>
+        How does this match your guess?
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    A natural question is to ask how long
+    will it take for the culture to reach <m>4</m> grams. Translating this into
+    a mathematical question, we want <m>t</m> when <m>B=4.</m>
+    <md>
+      <mrow>4\amp =\left(\frac{3}{2}\right)^{\frac{t}{24}}</mrow>
+      <mrow>\ln 4\amp =\ln \left(\frac{3}{2}\right)^{\frac{t}{24}}</mrow>
+      <mrow>\amp =\frac{t}{24} \ln \left(\frac{3}{2}\right)</mrow>
+      <mrow>t\amp =\frac{24  \ln 4}{\ln \left(\frac{3}{2}\right)}</mrow>
+      <mrow>\amp \approx 82.06 hours.</mrow>
+    </md>
+  </p>
+
+  <p>
+    Of course, this assumes that the exponential model holds for that long
+    a period of time.
+  </p>
+
+  <p>
+    Exponential functions are not only used to model growth, but also
+    decay. This is especially important when speaking of radioactive
+    decay. You might have heard terms such as radiocarbon dating and
+    half-life, but what do these terms mean? Let's look at both.
+  </p>
+
+  <p>
+    Radiocarbon dating is a technique for dating organic material from the
+    past. It was developed by Willard Libby in <m>1949</m> and revolutionized
+    the field of archeology. He was awarded the Nobel Prize in Chemistry
+    in <m>1960</m> for this development. Radiocarbon <m>(C_{14})</m> is a
+    radioactive isotope of carbon which is constantly being created in the
+    atmosphere by the interaction of cosmic rays with atmospheric
+    nitrogen. The resulting radiocarbon combines with atmospheric oxygen
+    to form radioactive carbon dioxide, which is incorporated into plants
+    by photosynthesis; animals then acquire <m>C_{14}</m> by eating the
+    plants. When the animal or plant dies, it stops exchanging carbon with
+    its environment, and from that point onwards the amount of <m>C_{14}</m> it
+    contains begins to decrease as the <m>C_{14}</m> undergoes radioactive
+    decay. Measuring the amount of <m>C_{14}</m> in a sample from a dead plant
+    or animal such as a piece of wood or a fragment of bone provides
+    information that can be used to calculate when the animal or plant
+    died
+  </p>
+
+  <pre>
+    .
+  </pre>
+
+  <p>
+    This is where the notion of half-life comes into play. The half-life
+    of <m>C_{14}</m> is about <m>5,730</m> years. This means that given any initial
+    amount of <m>C_{14},</m> in <m>5,730</m> years, half of the radiocarbon will
+    remain (the other half having decayed). Of course, the decaying
+    process is gradual. It is reasonable to assume that the rate of decay
+    of the radiocarbon (or any radioactive material) is proportional to
+    the amount present. After all, the more material there is, the more
+    there is to decay. All of these ideas are incorporated in the
+    following example.
+  </p>
+
+  <example>
+    <statement>
+    <p>
+      The Shroud of Turin is a religious relic which is reputed to be the
+      burial shroud of Jesus and bears the image of a man which is alleged
+      to be that of Jesus. The Vatican agreed to subject pieces of the
+      shroud to radiocarbon dating in <m>1987.</m> To examine this, let
+      <m>A=A(t)</m> be the amount of <m>14C</m> (in mg) at time <m>t</m> years, where <m>t=0</m>
+      represents when the shroud was used. Let <m>A(0)=A_0</m> be the initial
+      amount of <m>C_{14}</m> present in the sample. How much <m>C_{14}</m> would be present
+      if the shroud was 2000 years old? Mathematically, we have
+      <me>
+        \dfdx{A}{t}=kA,\ \ \ A(0)=A_0,\ \ \text{ and }    A(5730)=\frac{1}{2} A_0,
+      </me>
+      and we want to know what <m>A(2000)</m> is.
+    </p>
+
+    <p>
+      The solution of the differential equation and initial condition is <m>A=A_0e^kt.</m> To determine <m>k,</m> we utilize the half-life.
+      <md>
+        <mrow>1/2 A_0\amp =A(5730)</mrow>
+        <mrow>\amp =A_0 e^5730k</mrow>
+        <mrow>\frac{1}{2}\amp =e^5730k</mrow>
+        <mrow>k\amp =1/5730 ln \frac{1}{2}.</mrow>
+      </md>
+    </p>
+
+    <p>
+      Notice that this is negative since <m>\ln (1/2)=-ln 2.</m> This makes
+      sense. This the growth rate should be negative since the amount of
+      <m>C_{14}</m> is shrinking. Thus
+      <me>
+        A=A_0 e^{\frac{1}{5730}\ln (1/2) }t=A_0 \left(\frac{1}{2}\right))^\frac{t}{5730}
+      </me>
+      and so
+      <me>
+        A(2000)=A_0 \left(\frac{1}{2}\right)^{\frac{2000}{5730}} \approx 0.785A_0.
+      </me>
+    </p>
+
+    <p>
+      This says that an authentic shroud should contain about <m>78.5\%</m> of the original amount.
+    </p>
+
+    <problem>
+      <statement>
+        <p>
+          One of the samples contained <m>88.9\%</m> of the original <m>C_{14}.</m> How
+          old would this sample be?
+        </p>
+      </statement>
+    </problem>
+
+    <p>
+      The technique of carbon dating is not in dispute, but there are issues
+      about the quality of the sample and other issues. Interested readers
+      can read
+      https://www.usatoday.com/story/news/world/2013/03/30/shroud-turin-display/2038295/.
+    </p>
+    </statement>
+  </example>
+
+  <p>
+    \-\marginpar{ Bud, do we want to put in Newton's Law of cooling here, or wait until we talk more about solving differential equations. I can insert it here if you think we shouldn't wait.
+    }
+  </p>
+
+  <p>
+    You should already be familiar with logarithms as the inverses of
+    exponentials. That is, if <m>f(x)=10^x</m> and <m>\inverse{f}(x)=\log_{10}(x)</m>
+    then
+    <me>
+      f\left(\inverse f(x)\right) = 10^{\log_{10}(x)}=x
+    </me>
+    and
+    <me>
+      \inverse f\left(f(x)\right) = \log_{10}(10^x) = x.
+    </me>
+  </p>
+
+  <p>
+    We will define the <q>natural logarithm</q> in precisely the same way.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        If <m>f(x) = e^x</m> then <m>\inverse f(x) = \log_e(x),</m> where
+        <me>
+          f\left(\inverse f(x)\right) = e^{\log_{e}(x)}=x
+        </me>
+        and
+        <me>
+          \inverse f\left(f(x)\right) = \log_{e}(e^x) = x.
+        </me>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    \begin{mynotation}{Natural Logarithm}
+    The natural logarithm is often shortened to <m>\ln(x).</m> We will use
+    this shortened form hereafter.
+    \end{mynotation}
+  </p>
+
+  <p>
+    A natural question to ask is, ``What is the derivative of <m>\ln(x)?</m> At
+    first this may seem to be a difficult question to answer but
+    it is actually quite straight-forward. In fact, we will use the same
+    trick that we used to obtain
+    <m>\dfdx{\inverse\sin(x)}{x}=\frac{1}{\sqrt{1-x^2}}.</m>
+  </p>
+
+  <p>
+    First let <m>y=\ln(x)</m> and then we simply differentiate both sides of
+    <me>
+      e^y=x
+    </me>
+    to obtain
+    <md>
+      <mrow>e^y\dfdx{y}{x} \amp =1</mrow>
+      <intertext>from which</intertext>
+      <mrow>\dfdx{y}{x}    \amp = \frac{1}{e^y}</mrow>
+      <mrow>\amp = \frac{1}{e^{\ln(x)}}</mrow>
+      <mrow>\amp = \frac{1}{x}.</mrow>
+    </md>
+  </p>
+
+  <p>
+    Thus we have the following:
+  </p>
+
+  <theorem>
+    <statement>
+      <ol>
+        <li>
+          <p>
+            Suppose that <m>y=e^x.</m> Then <m>\dfdx{y}{x} = e^x.</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Suppose that <m>y=\ln(x).</m> Then <m>\dfdx{y}{x} = \frac1x.</m>
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </theorem>
+
+  <p>
+    Aside from being the inverse function of an exponential, a logarithm
+    is an important function in its own right, as illustrated in the
+    following problem.
+  </p>
+
+  <problem xml:id="prob_tractrix1">
+    <statement>
+      <p>
+        Consider the top view of a tractor-trailer. Initially, the center of
+        the rear axle of the tractor is at the origin and the center of the
+        rear axle of the trailer is at the point <m>(1,0).</m>
+        <image width="75%" source="images/Tractrix.png" />
+        <ul>
+          <li>
+            <title>(a)</title>
+            <p>
+              Suppose the tractor pulls the front wheels up the
+                  <m>y</m>-axis and that the rear wheels don't slip.  Show that the path
+                  <m>y=y(x)</m> that the center of the rear axle of the trailer follows
+                  must satisfy the equations
+              <md>
+                <mrow>\dfdx{y}{x}\amp =-\frac{\sqrt{1-x^2}}{x}</mrow>
+                <mrow>y(1)\amp =0.</mrow>
+              </md>
+              This path is called a tractrix from the Latin verb trahere <q>to
+                  drag or pull,</q> the same root that gives us farm tractors and
+                  <q>tractor beams</q> from science fiction.
+            </p>
+          </li>
+
+          <li>
+            <title>(b)</title>
+            <p>
+              Show that
+              <me>
+                y=\ln\left(\frac{1+\sqrt{1-x^2}}{x}\right)-\sqrt{1-x^2}
+              </me>
+              satisfies the above differential equation and the condition <m>y(1)=0.</m>
+                  Graph this.  Does it make sense?
+            </p>
+          </li>
+
+          <li>
+            <title>(c)</title>
+            <p>
+              How far will the tractor have gone (in trailer
+                  lengths) before the trailer is within one degree of vertical?
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </problem>
+</section>
+

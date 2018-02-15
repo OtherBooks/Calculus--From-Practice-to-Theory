@@ -1,0 +1,89 @@
+
+
+<section>
+  <title>exercises</title>
+  <exercise>
+    <statement>
+      <p>
+        Use Newton's Method to compute the root of each of the following
+        functions, using the given initial guess.
+        <ul>
+          <li>
+            <title>(a)</title>
+            <p>
+              <m>f(x)=x-2,\\ \text{ Guess: }  a=5</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(b)</title>
+            <p>
+              <m>f(x)=x^2-2,\\ \text{ Guess: }  a=5</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(c)</title>
+            <p>
+              <m>f(x)=x^3-2,\\ \text{ Guess: }  a=5</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(d)</title>
+            <p>
+              <m>f(x)=x-5,\\ \text{ Guess: }  a=2</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(e)</title>
+            <p>
+              <m>f(x)=x^2-5,\\ \text{ Guess: }  a=2</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(f)</title>
+            <p>
+              <m>f(x)=x^3-5,\\ \text{ Guess: }  a=2</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(g)</title>
+            <p>
+              <m>f(x)=x+7,\\ \text{ Guess: }  a=0</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(h)</title>
+            <p>
+              <m>f(x)=x^2+7,\\ \text{ Guess: }  a=0</m>
+            </p>
+          </li>
+
+          <li>
+            <title>(i)</title>
+            <p>
+              <m>f(x)=x^3-7,\\ \text{ Guess: }  a=0</m>
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose that a cubic polynomial has three real roots, that two
+        of them, <m>r_1</m> and <m>r_2</m> are known, and we wish to approximate the
+        third. Show that if we take the average of <m>r_1</m> and <m>r_2</m> as our
+        initial guess, Newton's Method will find the third root exactly in
+        one iteration.
+      </p>
+    </statement>
+  </exercise>
+</section>
+
