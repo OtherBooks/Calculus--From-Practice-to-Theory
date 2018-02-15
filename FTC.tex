@@ -9,7 +9,7 @@ The problem at hand is to compute the area of this region.  With this
 in mind, suppose we place an infinitely skinny box in that region as
 below.\\ 
 \centerline{\includegraphics*[height=2in,width=5in]{Figures/FTC-2}}
-The height of this generic box is y.  As we’ve done in the past with
+The height of this generic box is y.  As we've done in the past with
 differentiation, we will denote the width of the box by $\d x.$  Thus the
 area of this generic box is thus $y\d x.$  If we envision this region as
 being composed of such boxes, then the area of this region would be
@@ -22,8 +22,8 @@ the (infinite) sum of the areas of these boxes, as below\\
   boxes are infinitely skinny and there are infinitely many of them.
   Later we will examine this more carefully and use this observation
   to approximate areas under more complicated curves, but for now
-  let’s imagine that the boxes are infinitely skinny.  We will see, as
-  mathematicians saw in the 1700’s, that this will be very fruitful.
+  let's imagine that the boxes are infinitely skinny.  We will see, as
+  mathematicians saw in the 1700's, that this will be very fruitful.
   We need some notation for this sum.  Originally, Leibniz used the
   notation omn which was short for the Latin word omnis meaning all.
   Shortly after, he replaced omn with an elongated s which stood for
@@ -35,11 +35,11 @@ $$
 
 As we will see, having a good notation will help when we apply this
 technique to more applications that go beyond computing areas, but it
-doesn’t tell us how to add infinitely many, infinitely small areas.
+doesn't tell us how to add infinitely many, infinitely small areas.
 Surprisingly, we actually have the tools to accomplish this task, and
 this realization was one of the things that made calculus such a great
-tool from the 1700’s until now.  To do this with our above example,
-let’s choose a random value $x=b$ and let $A(b)$ denote the area under the
+tool from the 1700's until now.  To do this with our above example,
+let's choose a random value $x=b$ and let $A(b)$ denote the area under the
 curve $y=x^2$ from $x=1$ to $x=b.$  In other words,  
 $$
 A(b)=\int_{x=1}^bx^2 \d x.
@@ -49,7 +49,7 @@ If $\d A$
 denotes the corresponding change in area, then we have $\d A=y(b)\d x=b^2
 \d b.$ [See below.] \\
 \centerline{\includegraphics*[height=2in,width=4in]{Figures/FTC-4}}
-To recap, we have this function $A(b),$ we don’t have a formula for it,
+To recap, we have this function $A(b),$ we don't have a formula for it,
 but we know some things about it. 
 $$
 \dfdx{A}{b}=b^2,\ \      A(1)=0
@@ -275,7 +275,7 @@ $$
   to understand it from information given by the function
   $\dfdx{p}{t}.$ This function has a special name, the derivative. The
   history of this name is interesting and represents a shift in the
-  study of calculus.  Throughout the 1700’s, infinitesimal
+  study of calculus.  Throughout the 1700's, infinitesimal
   differentials were utilized to help explain physical and
   mathematical phenomena (as you have experienced in this book so
   far).  There were issues as to what an infinitely small quantity is,
@@ -291,9 +291,9 @@ $$
   in Lagrange's day, it represented an attempt to suppress the
   infinitely small.  In practice, it is still advantageous to utilize
   the older differential notation, but there are times where the
-  “prime” notation has its advantages, especially when one wants to
+  ``prime'' notation has its advantages, especially when one wants to
   focus on the derivative as a function rather than a process
-  (differentiation).  One of the first places is what we’ve been
+  (differentiation).  One of the first places is what we've been
   doing, namely gathering information from a function by examining its
   derivative.
 
@@ -383,7 +383,7 @@ p(t)=\left(1+\left(\frac{.05}{n}\right)\right)^{\frac{n(.05t)}{.05}}
 =\left[\left(1+\frac{1}{\frac{n}{.05}}\right)^{\frac{n}{.05}}\right]^{.05t}
 $$
 
-Let’s rewrite $m=\frac{n}{.05},$ and consider what would happen if we
+Let's rewrite $m=\frac{n}{.05},$ and consider what would happen if we
 compounded a very large number of times (let $n$ be very large).
 Table~\ref{tab:4} looks at some values of
 $\left(1+\frac{1}{m}\right)^m,$ where $m$ is large.
@@ -404,13 +404,13 @@ $\left(1+\frac{1}{m}\right)^m,$ where $m$ is large.
 
 It would appear from Table~\ref{tab:4}, that $(1+\frac{1}{m})^m$ approaches a fixed number
 as $m$ becomes indefinitely large.  This will be given more precision
-later, but for now let’s assume that it does and call this number $e.$ 
+later, but for now let's assume that it does and call this number $e.$ 
 By the table, it appears that $e\approx{}2.71828169255.$  All of this suggests
 that if the investment is being continually compounded, then
 $$
 p(t)=e^.05t.
 $$
-Let’s examine the situation from a different perspective. If we abuse
+Let's examine the situation from a different perspective. If we abuse
 notation by letting $p(t)$ be the amount that the investment is worth
 at time $t$ in Tables~\ref{tab:1}, \ref{tab:2}, \ref{tab:3} as well,
 then Table~\ref{tab:1} says
@@ -428,12 +428,12 @@ $$
 If we let $\Delta t=1/n$ denote the change in time, then this can be
 written more succinctly as 
 $$
-\Delta p=p(t+Δt)-p(t)=(1+.05\cdot\Delta
+\Delta p=p(t+ \Delta t)-p(t)=(1+.05\cdot\Delta
 t)p(t)-p(t)=.05\cdotp(t)\cdot\Delta t.
 $$
 
 Extrapolating this to the case of continuous compounding where we use
-the infinitesimal quantity $``\d" t$ instead of the increment $\Delta t,$ we have
+the infinitesimal quantity ``$\d t$'' instead of the increment $\Delta t,$ we have
 that the amount the investment is worth at time $t$ must satisfy the
 differential equation $``\d" p=.05p\cdot ``\d" t.$
 
@@ -545,19 +545,19 @@ reflection of the other about the line $y=x.$
 \centerline{ \includegraphics*[height=2.5in,width=3in]{Figures/LogAndExp}}
 \end{myexample}
 
-Before we delve further into the natural logarithm function, let’s see
+Before we delve further into the natural logarithm function, let's see
 how it applies to our problem above. 
 
 We needed to solve the equation $20=10e^3r.$  To do this, we get
 \begin{align*}
 2&=e^3r\\
 \ln 2&=\ln e^3r =3r\\
-r&=ln2/3≈2.463
+r&=ln2/3 \approx 2.463
 \end{align*}
 
 Thus the amount of bacteria at time t is given by 
 $$
-b≈10e^{2.463t}.
+b\approx 10e^{2.463t}.
 $$
 Of course, as with any mathematical model, this is only an
 approximation of real life.  As we noticed, this exponential function
@@ -576,11 +576,11 @@ This general exponential function is a bit more appealing as it
 encapsulates better the idea that the amount doubles every $3$ hours.
 The natural logarithm function is actually the key to a number of
 related properties of general exponential functions.  But before we do
-that, let’s consider the case of exponential decay.  You may have
+that, let's consider the case of exponential decay.  You may have
 heard of utilizing radioactive carbon dating to determine the age of
 various fossils.  What does this entail and how is it related to what
 we have been talking about?  Radioactive carbon dating was invented by
-Willard Libby in the late $1940$’s at it became a standard tool for
+Willard Libby in the late $1940$'s at it became a standard tool for
 archeologists to date their discoveries.  Libby received the Nobel
 Prize in Chemistry in $1960$ for his work on this.  The idea is based on
 the fact that radiocarbon ($C_{14}$) is constantly being created in the
